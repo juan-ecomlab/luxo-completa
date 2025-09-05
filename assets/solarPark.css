@@ -1,0 +1,85 @@
+#solarPark * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#solarPark {
+    text-align: center;
+}
+
+#solarPark .banner {
+    width: 100%;
+    height: 50vh;
+}
+
+#solarPark h2 {
+    margin: 40px 0;
+    text-align: center;
+    font-size: 2rem;
+}
+
+#solarPark p {
+    width: 55%;
+    text-align: center;
+    margin: 0 auto 40px;
+    font-size: 20px;
+}
+
+#solarPark .box {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: 30px auto;
+    align-items: center;
+}
+
+#solarPark .box p {
+    width: 50%;
+    padding: 0px 40px;
+}
+
+#solarPark .box img {
+    width: 50%;
+}
+
+#solarPark .datos {
+    width: 70%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    align-items: end;
+}
+
+#solarPark .datos div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 700;
+}
+
+#solarPark .datos span{
+    font-size: 55px;
+}
+
+#solarPark .datos div p {
+    font-size: 18px;
+    width: 60%;
+}
+
+#solarPark .pmas {
+    grid-row: 3/4;
+    grid-column: 4/5;
+    width: 100%;
+}
+
+#solarPark .imagenes {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+#solarPark .imagenes img {
+    width: 100%;
+}

@@ -1,0 +1,97 @@
+<div id="solarPark" style= text-align: center;>
+    <main>
+        <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" class="banner" alt="banner">
+        <section class="welcome">
+            <h2>BIENVENIDOS A SOLAR PARK ☀️</h2>
+            <p>Nuestra planta de confección textil en el Parque Industrial de La Rioja es mucho más que un espacio de
+                producción. <br><br>
+
+                Solar Park es una nave industrial de 1500 m2 equipada con 72 paneles solares que cubren 180 m² de
+                superficie, y nos permiten generar energía renovable para alimentar gran parte de nuestras operaciones
+                diarias<br><br>
+
+                Nuestro excedente de energía generado, que no llegamos a consumir, lo inyectamos a la red eléctrica del
+                parque industrial, colaborando así con otras empresas y contribuyendo a la reducción de emisiones de
+                CO2.<br><br>
+
+                En menos de un año, ya evitamos la emisión de 8,5 toneladas de dióxido de carbono. Y recién estamos
+                empezando.</p>
+        </section>
+        <section>
+            <div class="box">
+                <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+                <p>Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
+                    hasta el producto terminado que llega a tus manos. Esto significa no solo una mejora en la calidad,
+                    sino también garantizar procesos responsables, condiciones laborales justas y un impacto ambiental
+                    minimizado.
+                    Cada decisión dentro de Solar Park refleja los valores de LUXO: transparencia, innovación y
+                    compromiso con un futuro mejor.
+                    Solar Park abrió sus puertas en diciembre del 2022, sumando 50 nuevos puestos de trabajo, con el
+                    objetivo de llegar a más de 150 colaboradores en los próximos años. Apostamos al talento local, a la
+                    industria nacional y a demostrar que es posible construir un negocio rentable, auténtico y con
+                    propósito.
+                </p>
+            </div>
+            <div class="box">
+                <p>Esta planta fue clave para lograr nuestra certificación como Empresa B, pero más allá del sello, es
+                    un reflejo de un camino que elegimos: el camino del triple impacto, donde el crecimiento económico
+                    camina de la mano con el impacto social y ambiental.
+                    Hay momentos que definen el camino de una empresa y una marca. Decisiones que son más que
+                    estratégicas: son una declaración de principios. LUXO Solar Park es eso para nosotrxs: el salto más
+                    grande que dimos como empresa y un verdadero compromiso con la industria nacional y la
+                    sustentabilidad. Porque lo que hacemos importa, y cómo lo hacemos, todavía más.
+                </p>
+                <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            </div>
+
+        </section>
+        <video src=""></video>
+        <h2>Nuestros datos</h2>
+        <section class="datos">
+            <div><span>72</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>182</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>50</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>50</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>41.000</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>200</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>19,8</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>13,39</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>8,25</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <div><span>+100</span>
+                <p>Paneles solares monocristalinos</p>
+            </div>
+            <p class="pmas">Y vamos por muchos más...</p>
+        </section>
+        <h2>Detrás de estos números, hay humanos comprometidos.</h2>
+        <p>Sabemos que la onda de la ropa no es lo único que te importa de tu marca favorita.</p>
+        <p><b>A nosotros tampoco.</b></p>
+        <section class="imagenes">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+        </section>
+    </main>
+</div>
