@@ -3218,6 +3218,131 @@ DOMContentLoaded.addEventOrExecute(() => {
         }
     });
 
+    {# /* // Size selector hover functionality */ #}
+
+    jQueryNuvem(document).on("click", ".js-size-variant-add", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+
+        var $sizeButton = jQueryNuvem(this);
+        var $productContainer = $sizeButton.closest('.js-item-product');
+        var $sizesContainer = $sizeButton.closest('.item-sizes-container');
+        var $loadingOverlay = $sizesContainer.find('.js-size-variant-loading');
+
+        // Get product and variant data
+        var productId = $sizeButton.attr('data-product-id');
+        var variantId = $sizeButton.attr('data-variant-id');
+        var variationId = $sizeButton.attr('data-variation-id');
+        var optionId = $sizeButton.attr('data-option-id');
+        var sizeName = $sizeButton.attr('data-size-name');
+        var stock = parseInt($sizeButton.attr('data-stock') || '0');
+
+        // Prevent multiple clicks and check availability
+        if ($sizeButton.hasClass('adding-to-cart') || $sizeButton.prop('disabled') || !variantId || stock <= 0) {
+            return false;
+        }
+
+        // Show loading state
+        $sizeButton.addClass('adding-to-cart');
+        $loadingOverlay.show();
+
+        // Create form data for add to cart - use direct variant ID if available
+        var formData = {
+            'add_to_cart': productId
+        };
+        
+        if (variantId) {
+            formData['variant'] = variantId;
+        } else {
+            formData['variation[' + variationId + ']'] = optionId;
+        }
+
+        // AJAX add to cart request
+        jQueryNuvem.post("{{ store.cart_url }}", formData)
+            .done(function(data, textStatus, jqXHR) {
+                // Success callback
+                var callback_add_to_cart = function(){
+                    {# Update cart UI #}
+                    jQueryNuvem(".js-cart-widget-amount").html(data.cart_quantity);
+                    if(data.cart_quantity > 0) {
+                        jQueryNuvem(".js-cart-widget-amount").removeClass("hidden");
+                    }
+                    
+                    // Update cart panel if it exists
+                    if (jQueryNuvem('.js-ajax-cart-list').length) {
+                        jQueryNuvem('.js-ajax-cart-list').html(data.cart_html);
+                        jQueryNuvem('.js-ajax-cart-total').html(data.cart_total);
+                        jQueryNuvem('.js-ajax-cart-widget').addClass('js-cart-filled').removeClass('cart-empty');
+                    }
+
+                    // Show success notification
+                    var productName = $productContainer.find('.js-item-name').text() || '';
+                    var successMessage = '{{ "¡Genial! Agregamos el" | translate }} ' + productName + ' {{ "talle" | translate }} ' + sizeName + ' {{ "a tu carrito." | translate }}';
+                    
+                    jQueryNuvem('.js-cart-notification-item-name').text(productName + ' - ' + sizeName);
+                    jQueryNuvem('.js-cart-notification-item-price').text(data.item_price || '');
+                    
+                    var imageSrc = $productContainer.find('.js-item-image').attr('src') || $productContainer.find('.js-item-image').attr('data-srcset');
+                    if (imageSrc) {
+                        jQueryNuvem('.js-cart-notification-item-img').attr('src', imageSrc);
+                    }
+
+                    // Show notification
+                    setTimeout(function(){
+                        jQueryNuvem(".js-alert-added-to-cart").show().addClass("notification-visible").removeClass("notification-hidden");
+                    }, 300);
+
+                    // Auto-hide notification after delay
+                    setTimeout(function(){
+                        jQueryNuvem(".js-alert-added-to-cart").removeClass("notification-visible").addClass("notification-hidden");
+                        setTimeout(function(){
+                            jQueryNuvem('.js-cart-notification-item-img').attr('src', '');
+                            jQueryNuvem(".js-alert-added-to-cart").hide();
+                        }, 2000);
+                    }, 4000);
+
+                    // Hide loading state
+                    $loadingOverlay.hide();
+                    $sizeButton.removeClass('adding-to-cart');
+
+                    // Hide size selector overlay after successful add
+                    setTimeout(function(){
+                        $sizesContainer.css('opacity', '0');
+                    }, 1000);
+                };
+
+                var callback_error = function(){
+                    // Error handling
+                    $loadingOverlay.hide();
+                    $sizeButton.removeClass('adding-to-cart');
+                    
+                    // Show error message
+                    alert('{{ "Hubo un problema al agregar el producto. Por favor, intenta nuevamente." | translate }}');
+                };
+
+                // Execute success callback
+                callback_add_to_cart();
+            })
+            .fail(function(jqXHR, textStatus, errorThrown) {
+                // Handle AJAX error
+                $loadingOverlay.hide();
+                $sizeButton.removeClass('adding-to-cart');
+                alert('{{ "No pudimos agregar el producto al carrito. Por favor, verifica tu conexión e intenta nuevamente." | translate }}');
+            });
+
+        return false;
+    });
+
+    // Hide size selector when clicking outside the product item
+    jQueryNuvem(document).on('mouseleave', '.js-item-product', function() {
+        var $productItem = jQueryNuvem(this);
+        setTimeout(function() {
+            if (!$productItem.is(':hover')) {
+                $productItem.find('.item-sizes-container').css('opacity', '0');
+            }
+        }, 100);
+    });
+
 
     {# /* // Cart quantitiy changes */ #}
 

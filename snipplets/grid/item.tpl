@@ -182,6 +182,15 @@
                         </span>
                     {% endif %}
                 {% endif %}
+                {% if settings.product_size_hover_selector and not reduced_item %}
+                    {% if columns_mobile == 3 or theme_editor %}
+                        <span class="js-item-sizes-hover-container {% if columns_mobile == 3 %}d-none d-md-block{% endif %}">
+                    {% endif %}
+                        {% include 'snipplets/grid/item-sizes.tpl' %}
+                    {% if columns_mobile == 3 or theme_editor %}
+                        </span>
+                    {% endif %}
+                {% endif %}
                 {% if settings.product_installments and not reduced_item %}
                     {% if columns_mobile == 3 or theme_editor %}
                         <span class="js-item-installments-container d-none d-md-block">

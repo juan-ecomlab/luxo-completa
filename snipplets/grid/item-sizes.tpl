@@ -1,0 +1,81 @@
+{% if product.variations and product.variants %}
+    {% set has_size_variants = false %}
+    {% set size_variation_id = null %}
+    {% set size_options = [] %}
+
+    {# Check if product has size variations #}
+    {% for variation in product.variations %}
+        {% if variation.name in ['Talle', 'Talla', 'Tamanho', 'Size'] %}
+            {% set has_size_variants = true %}
+            {% set size_variation_id = variation.id %}
+            {% set size_options = variation.options %}
+        {% endif %}
+    {% endfor %}
+
+    {% if has_size_variants and size_options | length > 1 %}
+        <div class="js-item-sizes-container item-sizes-container" 
+             data-variants="{{ product.variants_object | json_encode }}"
+             data-size-variation-id="{{ size_variation_id }}">
+            <div class="item-sizes-overlay">
+                <div class="item-sizes-header">
+                    <span class="item-sizes-title">{{ 'Seleccionar talle' | translate }}</span>
+                </div>
+                <div class="item-sizes-grid">
+                    {% for option in size_options | slice(0, 8) %}
+                        {% set size_variant_available = false %}
+                        {% set size_variant_id = null %}
+                        {% set size_variant_stock = 0 %}
+                        
+                        {# Find matching variant for this size option #}
+                        {% for variant in product.variants %}
+                            {% if variant.option_values[size_variation_id] == option.id %}
+                                {% if variant.available and variant.stock > 0 %}
+                                    {% set size_variant_available = true %}
+                                    {% set size_variant_id = variant.id %}
+                                    {% set size_variant_stock = variant.stock %}
+                                    {% break %}
+                                {% endif %}
+                            {% endif %}
+                        {% endfor %}
+                        
+                        <button 
+                            type="button" 
+                            class="js-size-variant-add item-size-btn{% if not size_variant_available %} item-size-btn-disabled{% endif %}" 
+                            data-product-id="{{ product.id }}"
+                            data-variant-id="{{ size_variant_id }}"
+                            data-variation-id="{{ size_variation_id }}"
+                            data-option-id="{{ option.id }}"
+                            data-size-name="{{ option.name }}"
+                            data-stock="{{ size_variant_stock }}"
+                            {% if not size_variant_available %}disabled{% endif %}
+                            title="{% if size_variant_available %}{{ 'Agregar talle' | translate }} {{ option.name }} ({{ size_variant_stock }} {{ 'disponible' | translate }}){% else %}{{ 'Sin stock' | translate }}{% endif %}"
+                            aria-label="{% if size_variant_available %}{{ 'Agregar al carrito talle' | translate }} {{ option.name }}{% else %}{{ 'Talle' | translate }} {{ option.name }} {{ 'sin stock' | translate }}{% endif %}">
+                            <span class="item-size-btn-content">{{ option.name }}</span>
+                            {% if size_variant_available %}
+                                <svg class="item-size-btn-icon icon-inline icon-sm"><use xlink:href="#bag"/></svg>
+                            {% endif %}
+                            {% if size_variant_stock == 1 %}
+                                <span class="item-size-btn-last">!</span>
+                            {% endif %}
+                        </button>
+                    {% endfor %}
+                </div>
+                {% if size_options | length > 8 %}
+                    <div class="item-sizes-footer">
+                        <a href="{{ product.url }}" class="item-sizes-view-more" title="{{ 'Ver todos los talles' | translate }}" aria-label="{{ 'Ver todos los talles' | translate }}">
+                            {{ 'Ver más' | translate }} ({{ size_options | length - 8 }})
+                        </a>
+                    </div>
+                {% endif %}
+            </div>
+            
+            {# Loading state placeholder #}
+            <div class="js-size-variant-loading item-sizes-loading" style="display: none;">
+                <div class="item-sizes-loading-content">
+                    <div class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></div>
+                    <span class="sr-only">{{ 'Agregando al carrito...' | translate }}</span>
+                </div>
+            </div>
+        </div>
+    {% endif %}
+{% endif %}

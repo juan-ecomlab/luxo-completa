@@ -1114,6 +1114,9 @@ Listado de productos
 		name = product_hover
 		description = Mostrar la segunda foto al posar el mouse
 	checkbox
+		name = product_size_hover_selector
+		description = Mostrar selector de talles al pasar el mouse sobre productos
+	checkbox
 		name = product_item_slider
 		description = Mostrar las fotos en un carrusel para cada producto
 	subtitle
