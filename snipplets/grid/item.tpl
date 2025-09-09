@@ -85,6 +85,9 @@
                             <div class="js-product-item-slider-pagination-private item-slider-pagination swiper-pagination" data-item-slider-id="{{ product.id }}"></div>
                         </div>
                     {% endif %}
+                    {% if settings.product_size_hover_selector %}
+                        {% include 'snipplets/grid/item-sizes.tpl' %}
+                    {% endif %}
                 </div>
             {% endif %}
         {% endset %}
@@ -178,15 +181,6 @@
                         <span class="js-item-colors-container {% if columns_mobile == 3 %}d-none d-md-block{% endif %}">
                     {% endif %}
                         {% include 'snipplets/grid/item-colors.tpl' %}
-                    {% if columns_mobile == 3 or theme_editor %}
-                        </span>
-                    {% endif %}
-                {% endif %}
-                {% if settings.product_size_hover_selector and not reduced_item %}
-                    {% if columns_mobile == 3 or theme_editor %}
-                        <span class="js-item-sizes-hover-container {% if columns_mobile == 3 %}d-none d-md-block{% endif %}">
-                    {% endif %}
-                        {% include 'snipplets/grid/item-sizes.tpl' %}
                     {% if columns_mobile == 3 or theme_editor %}
                         </span>
                     {% endif %}

@@ -17,9 +17,6 @@
              data-variants="{{ product.variants_object | json_encode }}"
              data-size-variation-id="{{ size_variation_id }}">
             <div class="item-sizes-overlay">
-                <div class="item-sizes-header">
-                    <span class="item-sizes-title">{{ 'Seleccionar talle' | translate }}</span>
-                </div>
                 <div class="item-sizes-grid">
                     {% for option in size_options | slice(0, 8) %}
                         {% set size_variant_available = false %}
@@ -47,23 +44,10 @@
                             {% if not size_variant_available %}disabled{% endif %}
                             title="{% if size_variant_available %}{{ 'Agregar talle' | translate }} {{ option.name }} ({{ size_variant_stock }} {{ 'disponible' | translate }}){% else %}{{ 'Sin stock' | translate }}{% endif %}"
                             aria-label="{% if size_variant_available %}{{ 'Agregar al carrito talle' | translate }} {{ option.name }}{% else %}{{ 'Talle' | translate }} {{ option.name }} {{ 'sin stock' | translate }}{% endif %}">
-                            <span class="item-size-btn-content">{{ option.name }}</span>
-                            {% if size_variant_available %}
-                                <svg class="item-size-btn-icon icon-inline icon-sm"><use xlink:href="#bag"/></svg>
-                            {% endif %}
-                            {% if size_variant_stock == 1 %}
-                                <span class="item-size-btn-last">!</span>
-                            {% endif %}
+                            {{ option.name }}
                         </button>
                     {% endfor %}
                 </div>
-                {% if size_options | length > 8 %}
-                    <div class="item-sizes-footer">
-                        <a href="{{ product.url }}" class="item-sizes-view-more" title="{{ 'Ver todos los talles' | translate }}" aria-label="{{ 'Ver todos los talles' | translate }}">
-                            {{ 'Ver más' | translate }} ({{ size_options | length - 8 }})
-                        </a>
-                    </div>
-                {% endif %}
             </div>
             
             {# Loading state placeholder #}
