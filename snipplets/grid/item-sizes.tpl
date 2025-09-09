@@ -28,13 +28,10 @@
                         
                         {# Find matching variant for this size option #}
                         {% for variant in product.variants %}
-                            {% if variant.option_values[size_variation_id] == option.id %}
-                                {% if variant.available and variant.stock > 0 %}
-                                    {% set size_variant_available = true %}
-                                    {% set size_variant_id = variant.id %}
-                                    {% set size_variant_stock = variant.stock %}
-                                    {% break %}
-                                {% endif %}
+                            {% if variant.option_values[size_variation_id] == option.id and variant.available and variant.stock > 0 and not size_variant_available %}
+                                {% set size_variant_available = true %}
+                                {% set size_variant_id = variant.id %}
+                                {% set size_variant_stock = variant.stock %}
                             {% endif %}
                         {% endfor %}
                         

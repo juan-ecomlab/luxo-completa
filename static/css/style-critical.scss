@@ -2370,23 +2370,23 @@ header.head-main.compress .logo-img-small {
     cursor: pointer;
     transition: all 0.2s ease;
     padding: 0 8px;
+  }
 
-    &:hover:not(.item-size-btn-disabled) {
-      border-color: #007bff;
-      background: #f8f9fa;
-      transform: translateY(-1px);
-    }
+  .item-size-btn:hover:not(.item-size-btn-disabled) {
+    border-color: #007bff;
+    background: #f8f9fa;
+    transform: translateY(-1px);
+  }
 
-    &:active:not(.item-size-btn-disabled) {
-      transform: translateY(0);
-    }
+  .item-size-btn:active:not(.item-size-btn-disabled) {
+    transform: translateY(0);
+  }
 
-    &.item-size-btn-disabled {
-      background: #f5f5f5;
-      color: #999;
-      cursor: not-allowed;
-      border-color: #e0e0e0;
-    }
+  .item-size-btn.item-size-btn-disabled {
+    background: #f5f5f5;
+    color: #999;
+    cursor: not-allowed;
+    border-color: #e0e0e0;
   }
 
   .item-size-btn-content {
