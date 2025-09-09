@@ -258,7 +258,7 @@
 
           {% if cart.checkout_enabled %}
             <div class="row mb-3">
-              <input id="go-to-checkout" class="btn btn-primary btn-block" type="submit" name="go_to_checkout" value="{{ 'Iniciar Compra' | translate }}"/>
+              <input id="go-to-checkout" class="btn btn-primary btn-block" type="submit" name="go_to_checkout" value="{{ 'Finalizar Compra' | translate }}"/>
             </div>
           {% else %}
 
