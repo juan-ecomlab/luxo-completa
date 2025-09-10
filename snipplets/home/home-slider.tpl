@@ -4,7 +4,7 @@
 {% if not mobile %}
 <div class="js-home-main-slider-container home-slider-container {% if not has_main_slider and not params.preview %}hidden{% endif %}" data-transition="fade-in-up">
 {% endif %}
-	<div class="{% if mobile %}js-home-mobile-slider{% else %}js-home-main-slider{% endif %}-visibility {% if has_main_slider and has_mobile_slider %}{% if mobile %}d-md-none{% else %}d-none d-md-block{% endif %}{% elseif not settings.toggle_slider_mobile and mobile %}hidden{% endif %} mb-4">
+	<div class="{% if mobile %}js-home-mobile-slider{% else %}js-home-main-slider{% endif %}-visibility {% if has_main_slider and has_mobile_slider %}{% if mobile %}d-md-none{% else %}d-none d-md-block{% endif %}{% elseif not settings.toggle_slider_mobile and mobile %}hidden{% endif %}">
 		<div class="container-fluid">
 			<div class="row">
 				<div class="col section-slider p-0">
