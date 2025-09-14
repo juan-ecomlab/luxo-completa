@@ -110,7 +110,7 @@
             {% include "snipplets/product/product-quantity.tpl" %}
         {% endif %}
         {% set state = store.is_catalog ? 'catalog' : (product.available ? product.display_price ? 'cart' : 'contact' : 'nostock') %}
-        {% set texts = {'cart': "Agregar al carrito", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
+        {% set texts = {'cart': "COMPRAR AHORA", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
         <div class="{% if show_product_quantity %}col-8{% else %}col-12{% endif %}">
 
             {% if settings.product_stock and not settings.quantity_input and product.available and product.display_price %}
