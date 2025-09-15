@@ -1084,6 +1084,7 @@ window.tiendaNubeInstaTheme = (function(jQueryNuvem) {
 					const $productHomeItemPriceContainer = $productHomeItem.find('.js-item-price-container');
 					const $productHomeItemPriceCompare = $productGrid.find(".js-compare-price-display");
 					const $productHomeItemColorsContainer = $productGrid.find('.js-item-colors-container');
+					const $productHomeItemSizesContainer = $productGrid.find('.js-item-sizes-hover-container');
 					const $productHomeItemInstallmentsContainer = $productGrid.find('.js-item-installments-container');
 					const $productHomeItemQuickshop = $productGrid.find('.js-item-quickshop');
 
@@ -1095,6 +1096,7 @@ window.tiendaNubeInstaTheme = (function(jQueryNuvem) {
 							$productHomeItemName.addClass("d-none d-md-block");
 							$productHomeItemPriceContainer.removeClass("mb-2").addClass("mb-0 mb-md-2");
 							$productHomeItemColorsContainer.addClass("d-none d-md-block");
+							$productHomeItemSizesContainer.addClass("d-none d-md-block");
 							$productHomeItemInstallmentsContainer.addClass("d-none d-md-block");
 							$productHomeItemQuickshop.addClass("d-none d-md-inline-block");
 							$productHomeItem.find(".js-compare-price-display[data-price-compare-visibility='true']").addClass("d-none d-md-inline-block");

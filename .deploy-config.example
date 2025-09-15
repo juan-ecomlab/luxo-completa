@@ -1,0 +1,18 @@
+# TiendaNube Theme Deployment Configuration
+# Copy this file to .deploy-config and fill in your FTP credentials
+# 
+# IMPORTANT: .deploy-config is gitignored for security - never commit credentials
+
+# FTP Server Configuration
+URL=ftp.dlptest.com
+USER=dlpuser
+PASS=rNrKYTX9g7z3RgJRmxWuGHbeu
+FOLDER=/theme-test/
+
+# Optional Settings
+PROTOCOL=ftp
+PORT=21
+
+# Theme Settings (optional)
+THEME_NAME=my-theme
+BACKUP_ENABLED=true

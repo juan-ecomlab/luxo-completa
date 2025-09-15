@@ -15,7 +15,10 @@
     {% if has_size_variants and size_options | length > 1 %}
         <div class="js-item-sizes-container item-sizes-container" 
              data-variants="{{ product.variants_object | json_encode }}"
-             data-size-variation-id="{{ size_variation_id }}">
+             data-size-variation-id="{{ size_variation_id }}"
+             data-deployed="floating-elements-v2024"
+             data-debug-variants="{{ product.variants | json_encode }}"
+             data-debug-options="{{ size_options | json_encode }}">
             <div class="item-sizes-overlay">
                 <div class="item-sizes-grid">
                     {% for option in size_options | slice(0, 8) %}
@@ -25,10 +28,13 @@
                         
                         {# Find matching variant for this size option #}
                         {% for variant in product.variants %}
-                            {% if variant.option_values[size_variation_id] == option.id and variant.available and variant.stock > 0 and not size_variant_available %}
-                                {% set size_variant_available = true %}
-                                {% set size_variant_id = variant.id %}
-                                {% set size_variant_stock = variant.stock %}
+                            {% if not size_variant_available %}
+                                {# Check all option positions for size match #}
+                                {% if variant.option0 == option.name or variant.option1 == option.name or variant.option2 == option.name %}
+                                    {% set size_variant_available = variant.available and variant.stock > 0 %}
+                                    {% set size_variant_id = variant.id %}
+                                    {% set size_variant_stock = variant.stock %}
+                                {% endif %}
                             {% endif %}
                         {% endfor %}
                         
@@ -38,12 +44,12 @@
                             data-product-id="{{ product.id }}"
                             data-variant-id="{{ size_variant_id }}"
                             data-variation-id="{{ size_variation_id }}"
-                            data-option-id="{{ option.id }}"
+                            data-option-name="{{ option.name }}"
                             data-size-name="{{ option.name }}"
                             data-stock="{{ size_variant_stock }}"
+                            data-available="{{ size_variant_available ? 'true' : 'false' }}"
                             {% if not size_variant_available %}disabled{% endif %}
-                            title="{% if size_variant_available %}{{ 'Agregar talle' | translate }} {{ option.name }} ({{ size_variant_stock }} {{ 'disponible' | translate }}){% else %}{{ 'Sin stock' | translate }}{% endif %}"
-                            aria-label="{% if size_variant_available %}{{ 'Agregar al carrito talle' | translate }} {{ option.name }}{% else %}{{ 'Talle' | translate }} {{ option.name }} {{ 'sin stock' | translate }}{% endif %}">
+                            title="{% if size_variant_available %}{{ option.name }} - {{ size_variant_stock }} disponible{% else %}{{ option.name }} - Sin stock (DEBUG: option={{ option.name }}){% endif %}">
                             {{ option.name }}
                         </button>
                     {% endfor %}

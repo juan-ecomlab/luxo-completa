@@ -3257,78 +3257,55 @@ DOMContentLoaded.addEventOrExecute(() => {
             formData['variation[' + variationId + ']'] = optionId;
         }
 
-        // AJAX add to cart request
-        jQueryNuvem.post("{{ store.cart_url }}", formData)
-            .done(function(data, textStatus, jqXHR) {
-                // Success callback
-                var callback_add_to_cart = function(){
-                    {# Update cart UI #}
-                    jQueryNuvem(".js-cart-widget-amount").html(data.cart_quantity);
-                    if(data.cart_quantity > 0) {
-                        jQueryNuvem(".js-cart-widget-amount").removeClass("hidden");
-                    }
-                    
-                    // Update cart panel if it exists
-                    if (jQueryNuvem('.js-ajax-cart-list').length) {
-                        jQueryNuvem('.js-ajax-cart-list').html(data.cart_html);
-                        jQueryNuvem('.js-ajax-cart-total').html(data.cart_total);
-                        jQueryNuvem('.js-ajax-cart-widget').addClass('js-cart-filled').removeClass('cart-empty');
-                    }
+        // Create a temporary form to use with LS.addToCartEnhanced
+        var $tempForm = jQueryNuvem('<form>', {
+            'method': 'post',
+            'action': '{{ store.cart_url }}'
+        });
+        
+        // Add hidden inputs for product and variant
+        $tempForm.append(jQueryNuvem('<input>', {
+            'type': 'hidden',
+            'name': 'add_to_cart',
+            'value': productId
+        }));
+        
+        if (variantId) {
+            $tempForm.append(jQueryNuvem('<input>', {
+                'type': 'hidden',
+                'name': 'variant',
+                'value': variantId
+            }));
+        }
 
-                    // Show success notification
-                    var productName = $productContainer.find('.js-item-name').text() || '';
-                    var successMessage = '{{ "¡Genial! Agregamos el" | translate }} ' + productName + ' {{ "talle" | translate }} ' + sizeName + ' {{ "a tu carrito." | translate }}';
-                    
-                    jQueryNuvem('.js-cart-notification-item-name').text(productName + ' - ' + sizeName);
-                    jQueryNuvem('.js-cart-notification-item-price').text(data.item_price || '');
-                    
-                    var imageSrc = $productContainer.find('.js-item-image').attr('src') || $productContainer.find('.js-item-image').attr('data-srcset');
-                    if (imageSrc) {
-                        jQueryNuvem('.js-cart-notification-item-img').attr('src', imageSrc);
-                    }
+        // Success callback
+        var callback_add_to_cart = function(){
+            // Hide loading state
+            $loadingOverlay.hide();
+            $sizeButton.removeClass('adding-to-cart');
 
-                    // Show notification
-                    setTimeout(function(){
-                        jQueryNuvem(".js-alert-added-to-cart").show().addClass("notification-visible").removeClass("notification-hidden");
-                    }, 300);
+            // Hide size selector overlay after successful add
+            setTimeout(function(){
+                $sizesContainer.css('opacity', '0');
+            }, 1000);
+        };
 
-                    // Auto-hide notification after delay
-                    setTimeout(function(){
-                        jQueryNuvem(".js-alert-added-to-cart").removeClass("notification-visible").addClass("notification-hidden");
-                        setTimeout(function(){
-                            jQueryNuvem('.js-cart-notification-item-img').attr('src', '');
-                            jQueryNuvem(".js-alert-added-to-cart").hide();
-                        }, 2000);
-                    }, 4000);
+        // Error callback
+        var callback_error = function(){
+            $loadingOverlay.hide();
+            $sizeButton.removeClass('adding-to-cart');
+        };
 
-                    // Hide loading state
-                    $loadingOverlay.hide();
-                    $sizeButton.removeClass('adding-to-cart');
-
-                    // Hide size selector overlay after successful add
-                    setTimeout(function(){
-                        $sizesContainer.css('opacity', '0');
-                    }, 1000);
-                };
-
-                var callback_error = function(){
-                    // Error handling
-                    $loadingOverlay.hide();
-                    $sizeButton.removeClass('adding-to-cart');
-                    
-                    // Show error message
-                    alert('{{ "Hubo un problema al agregar el producto. Por favor, intenta nuevamente." | translate }}');
-                };
-
-                // Execute success callback
-                callback_add_to_cart();
-            })
-            .fail(function(jqXHR, textStatus, errorThrown) {
-                // Handle AJAX error
-                $loadingOverlay.hide();
-                $sizeButton.removeClass('adding-to-cart');
-                alert('{{ "No pudimos agregar el producto al carrito. Por favor, verifica tu conexión e intenta nuevamente." | translate }}');
-            });
+        // Use the theme's built-in add to cart function
+        LS.addToCartEnhanced(
+            $tempForm,
+            '{{ "¡Genial! Agregaste el producto al carrito" | translate }}',
+            '{{ "Agregando..." | translate }}',
+            '{{ "¡Uy! No tenemos más stock de este producto para agregarlo al carrito." | translate }}',
+            {{ store.editable_ajax_cart_enabled ? 'true' : 'false' }},
+            callback_add_to_cart,
+            callback_error
+        );
 
         return false;
     });

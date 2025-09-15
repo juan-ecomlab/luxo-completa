@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Talle Selector - Style Preview</title>
+    <style>
+        /* Reset and base styles */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f8f9fa;
+            padding: 20px;
+        }
+
+        /* Grid simulation */
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .product-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            position: relative;
+            cursor: pointer;
+        }
+
+        .product-image {
+            width: 100%;
+            height: 250px;
+            background: #e9ecef;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #6c757d;
+        }
+
+        .product-info {
+            padding: 15px;
+        }
+
+        .product-name {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: #333;
+        }
+
+        .product-price {
+            color: #007bff;
+            font-weight: 500;
+            font-size: 18px;
+        }
+
+        /* Size selector styles - ultra minimal, horizontal, bottom-aligned */
+        .item-sizes-container {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 3;
+            opacity: 0;
+            visibility: hidden;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+        
+        .product-item:hover .item-sizes-container {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .item-sizes-overlay {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: transparent;
+            border-radius: 0;
+            padding: 0;
+            backdrop-filter: none;
+        }
+
+        .item-sizes-header {
+            display: none;
+        }
+
+        .item-sizes-title {
+            display: none;
+        }
+
+        .item-sizes-grid {
+            display: flex;
+            flex-wrap: nowrap;
+            gap: 4px;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .item-size-btn {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 24px;
+            height: 24px;
+            border: none;
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 2px;
+            font-size: 10px;
+            font-weight: 600;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            padding: 0 6px;
+            margin: 0;
+        }
+
+        .item-size-btn:hover:not(.item-size-btn-disabled) {
+            background: white;
+            transform: scale(1.1);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .item-size-btn:active:not(.item-size-btn-disabled) {
+            transform: scale(1.05);
+        }
+
+        .item-size-btn.item-size-btn-disabled {
+            background: rgba(255, 255, 255, 0.4);
+            color: rgba(0, 0, 0, 0.4);
+            cursor: not-allowed;
+        }
+
+        .item-size-btn-content {
+            margin: 0;
+        }
+
+        .item-size-btn-icon {
+            display: none;
+        }
+
+        .item-size-btn-last {
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 8px;
+            height: 8px;
+            background: #ff4757;
+            color: white;
+            font-size: 6px;
+            font-weight: bold;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .item-sizes-footer {
+            display: none;
+        }
+
+        .item-sizes-view-more {
+            display: none;
+        }
+
+        .item-sizes-loading {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 8px;
+            padding: 20px;
+            z-index: 4;
+            display: none;
+        }
+
+        .item-sizes-loading-content {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            color: #666;
+        }
+
+        .spinner {
+            width: 16px;
+            height: 16px;
+            border: 2px solid #e9ecef;
+            border-top: 2px solid #007bff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Demo controls */
+        .demo-controls {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .demo-title {
+            font-size: 24px;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .demo-subtitle {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        button {
+            padding: 8px 16px;
+            margin: 0 5px 10px 0;
+            border: 1px solid #ddd;
+            background: white;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        button:hover {
+            background: #f8f9fa;
+        }
+
+        button.active {
+            background: #007bff;
+            color: white;
+            border-color: #007bff;
+        }
+
+        /* SVG Icon */
+        .icon {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+        /* Mobile responsive */
+        @media (max-width: 768px) {
+            .product-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .item-sizes-overlay {
+                min-width: 180px;
+                padding: 10px;
+            }
+            
+            .item-size-btn {
+                min-width: 28px;
+                height: 28px;
+                font-size: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="demo-controls">
+        <h1 class="demo-title">🎯 Ultra Minimal Talle Selector</h1>
+        <p class="demo-subtitle">Square buttons • No background • Bottom-aligned • Ultra clean. Hover over products to see the size selector.</p>
+        
+        <div>
+            <button onclick="toggleDemo('loading')" id="loadingBtn">Show Loading State</button>
+            <button onclick="toggleDemo('outOfStock')" id="stockBtn">Toggle Out of Stock</button>
+            <button onclick="toggleDemo('lastItem')" id="lastBtn">Toggle Last Item Badge</button>
+            <button onclick="toggleDemo('manyItems')" id="manyBtn">Toggle Many Sizes</button>
+        </div>
+    </div>
+
+    <div class="product-grid">
+        <!-- Product 1: Normal sizes -->
+        <div class="product-item">
+            <div class="product-image">
+                Product Image
+                <div class="item-sizes-container">
+                    <div class="item-sizes-overlay">
+                        <div class="item-sizes-grid">
+                            <button class="item-size-btn" data-size="XS">
+                                <span class="item-size-btn-content">XS</span>
+                            </button>
+                            <button class="item-size-btn" data-size="S">
+                                <span class="item-size-btn-content">S</span>
+                            </button>
+                            <button class="item-size-btn" data-size="M">
+                                <span class="item-size-btn-content">M</span>
+                                <span class="item-size-btn-last">!</span>
+                            </button>
+                            <button class="item-size-btn" data-size="L">
+                                <span class="item-size-btn-content">L</span>
+                            </button>
+                            <button class="item-size-btn item-size-btn-disabled" data-size="XL" disabled>
+                                <span class="item-size-btn-content">XL</span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="item-sizes-loading">
+                        <div class="item-sizes-loading-content">
+                            <div class="spinner"></div>
+                            <span>Agregando al carrito...</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Remera Classic Fit</div>
+                <div class="product-price">$2,450</div>
+            </div>
+        </div>
+
+        <!-- Product 2: Many sizes -->
+        <div class="product-item">
+            <div class="product-image">
+                Product Image
+                <div class="item-sizes-container">
+                    <div class="item-sizes-overlay">
+                        <div class="item-sizes-grid" id="manySizes">
+                            <button class="item-size-btn" data-size="36"><span class="item-size-btn-content">36</span></button>
+                            <button class="item-size-btn" data-size="37"><span class="item-size-btn-content">37</span></button>
+                            <button class="item-size-btn" data-size="38"><span class="item-size-btn-content">38</span></button>
+                            <button class="item-size-btn" data-size="39"><span class="item-size-btn-content">39</span></button>
+                            <button class="item-size-btn" data-size="40"><span class="item-size-btn-content">40</span></button>
+                            <button class="item-size-btn" data-size="41"><span class="item-size-btn-content">41</span></button>
+                            <button class="item-size-btn" data-size="42"><span class="item-size-btn-content">42</span></button>
+                            <button class="item-size-btn" data-size="43"><span class="item-size-btn-content">43</span></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Zapatillas Running Pro</div>
+                <div class="product-price">$8,990</div>
+            </div>
+        </div>
+
+        <!-- Product 3: Minimal sizes -->
+        <div class="product-item">
+            <div class="product-image">
+                Product Image
+                <div class="item-sizes-container">
+                    <div class="item-sizes-overlay">
+                        <div class="item-sizes-grid">
+                            <button class="item-size-btn" data-size="S">
+                                <span class="item-size-btn-content">S</span>
+                            </button>
+                            <button class="item-size-btn" data-size="M">
+                                <span class="item-size-btn-content">M</span>
+                            </button>
+                            <button class="item-size-btn" data-size="L">
+                                <span class="item-size-btn-content">L</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Buzo Oversize</div>
+                <div class="product-price">$3,200</div>
+            </div>
+        </div>
+
+        <!-- Product 4: No hover for comparison -->
+        <div class="product-item">
+            <div class="product-image">
+                Product Image<br>
+                <small style="opacity:0.7;">(No size selector)</small>
+            </div>
+            <div class="product-info">
+                <div class="product-name">Producto sin talles</div>
+                <div class="product-price">$1,800</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let demoStates = {
+            loading: false,
+            outOfStock: false,
+            lastItem: false,
+            manyItems: false
+        };
+
+        function toggleDemo(state) {
+            demoStates[state] = !demoStates[state];
+            updateButtons();
+            applyDemoStates();
+        }
+
+        function updateButtons() {
+            Object.keys(demoStates).forEach(state => {
+                const btn = document.getElementById(state + 'Btn');
+                if (demoStates[state]) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+        }
+
+        function applyDemoStates() {
+            // Toggle loading state
+            const loadings = document.querySelectorAll('.item-sizes-loading');
+            loadings.forEach(loading => {
+                loading.style.display = demoStates.loading ? 'block' : 'none';
+            });
+
+            // Toggle out of stock
+            const buttons = document.querySelectorAll('.item-size-btn:not(.item-size-btn-disabled)');
+            buttons.forEach(btn => {
+                if (demoStates.outOfStock) {
+                    btn.classList.add('item-size-btn-disabled');
+                    btn.disabled = true;
+                } else {
+                    btn.classList.remove('item-size-btn-disabled');
+                    btn.disabled = false;
+                }
+            });
+
+            // Toggle last item badges
+            const badges = document.querySelectorAll('.item-size-btn-last');
+            badges.forEach(badge => {
+                badge.style.display = demoStates.lastItem ? 'flex' : 'none';
+            });
+
+            // Toggle many sizes view
+            const manySizes = document.getElementById('manySizes');
+            if (demoStates.manyItems) {
+                manySizes.style.maxHeight = 'none';
+            } else {
+                manySizes.style.maxHeight = '80px';
+                manySizes.style.overflow = 'hidden';
+            }
+        }
+
+        // Add click simulation
+        document.querySelectorAll('.item-size-btn').forEach(btn => {
+            btn.addEventListener('click', function(e) {
+                if (!this.disabled) {
+                    const size = this.dataset.size;
+                    
+                    // Simulate add to cart
+                    this.style.background = '#28a745';
+                    this.style.color = 'white';
+                    this.style.borderColor = '#28a745';
+                    
+                    setTimeout(() => {
+                        this.style.background = '';
+                        this.style.color = '';
+                        this.style.borderColor = '';
+                    }, 1000);
+                    
+                    // Show notification
+                    const notification = document.createElement('div');
+                    notification.innerHTML = `✅ Talle ${size} agregado al carrito`;
+                    notification.style.cssText = `
+                        position: fixed;
+                        top: 20px;
+                        right: 20px;
+                        background: #28a745;
+                        color: white;
+                        padding: 12px 20px;
+                        border-radius: 4px;
+                        z-index: 1000;
+                        font-size: 14px;
+                        font-weight: 500;
+                    `;
+                    document.body.appendChild(notification);
+                    
+                    setTimeout(() => {
+                        document.body.removeChild(notification);
+                    }, 2000);
+                }
+            });
+        });
+
+        // Initialize demo
+        applyDemoStates();
+    </script>
+</body>
+</html>

@@ -2293,24 +2293,25 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     padding: 15px;
   }
 
-  .item-actions {
-    visibility: hidden;
-    opacity: 0;
-  }
-  .item:hover .item-actions {
-    visibility: visible;
-    opacity: 1;
-  }
+  // Item actions should not be controlled by hover
+  // Their visibility is determined by template logic
 
-  // Size selector hover functionality - positioned like color selector
-  .item-sizes-container {
+  // Bottom elements container positioned at bottom of image
+  .item-bottom-elements {
     position: absolute;
-    bottom: 0;
+    bottom: 10px;
     left: 0;
     right: 0;
-    z-index: 9;
-    width: 100%;
-    padding: 5px 0;
+    z-index: 10;
+    text-align: center;
+    pointer-events: none;
+  }
+
+  // Size selector inside bottom elements container
+  .item-bottom-elements .item-sizes-container {
+    display: inline-block;
+    width: auto;
+    max-width: 90%;
     opacity: 0;
     visibility: hidden;
     transition: opacity 0.3s ease, visibility 0.3s ease;
@@ -2329,10 +2330,9 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     z-index: 9;
   }
 
-  .item-sizes-overlay {
-    text-align: right;
-    padding-right: 8px;
-    background: transparent;
+  .item-sizes-container .item-sizes-overlay {
+    border-radius: 4px;
+    padding: 8px;
   }
 
 
@@ -2373,7 +2373,7 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   }
 
   .item-size-btn.item-size-btn-disabled {
-    background: rgba(255, 255, 255, 0.5);
+    background: rgb(255, 255, 255);
     color: #999;
     cursor: not-allowed;
     border-color: rgba(255, 255, 255, 0.3);

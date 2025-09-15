@@ -85,10 +85,12 @@
                             <div class="js-product-item-slider-pagination-private item-slider-pagination swiper-pagination" data-item-slider-id="{{ product.id }}"></div>
                         </div>
                     {% endif %}
-                    {% if settings.product_size_hover_selector %}
-                        {% include 'snipplets/grid/item-sizes.tpl' %}
-                    {% endif %}
                 </div>
+                {% if settings.product_size_hover_selector %}
+                    <div class="item-bottom-elements">
+                        {% include 'snipplets/grid/item-sizes.tpl' %}
+                    </div>
+                {% endif %}
             {% endif %}
         {% endset %}
 
@@ -243,6 +245,7 @@
         {% if (settings.quick_shop or settings.product_color_variants) and not reduced_item %}
             </div>{# This closes the quickshop tag #}
         {% endif %}
+
 
         {# Structured data to provide information for Google about the product content #}
         {{ component('structured-data', {'item': true}) }}
