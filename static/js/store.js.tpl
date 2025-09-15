@@ -3270,13 +3270,13 @@ DOMContentLoaded.addEventOrExecute(() => {
         inputProduct.value = productId;
         tempForm.appendChild(inputProduct);
 
-        // Add variant ID input if available
-        if (variantId) {
-            var inputVariant = document.createElement('input');
-            inputVariant.type = 'hidden';
-            inputVariant.name = 'variant';
-            inputVariant.value = variantId;
-            tempForm.appendChild(inputVariant);
+        // Add variation input using TiendaNube format: variation[0] = sizeName
+        if (sizeName && variationId !== null) {
+            var inputVariation = document.createElement('input');
+            inputVariation.type = 'hidden';
+            inputVariation.name = 'variation[' + variationId + ']';
+            inputVariation.value = sizeName;
+            tempForm.appendChild(inputVariation);
         }
 
         // Add quantity input

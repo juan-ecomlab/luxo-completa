@@ -2307,15 +2307,40 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     pointer-events: none;
   }
 
-  // Size selector inside bottom elements container - always visible
+  // Desktop size selector - floating overlay (hidden by default, visible on hover)
   .item-bottom-elements .item-sizes-container {
     display: inline-block;
     width: auto;
     max-width: 90%;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s ease;
+
+    // Hide on mobile - mobile version is in description area
+    @media (max-width: 767px) {
+      display: none !important;
+    }
+  }
+
+  // Show desktop size selector on hover
+  .item:hover .item-bottom-elements .item-sizes-container {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
-    transition: all 0.3s ease;
+  }
+
+  // Mobile size selector - in description area
+  .item-description .item-sizes-container-mobile {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 8px 0;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    position: static;
+    max-width: none;
   }
 
   // Ensure labels remain clickable and unaffected by size selector hover
@@ -2327,6 +2352,14 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   .item-sizes-container .item-sizes-overlay {
     border-radius: 4px;
     padding: 8px;
+  }
+
+  // Mobile version overlay - no background, minimal padding
+  .item-description .item-sizes-overlay-mobile {
+    padding: 4px 0;
+    border-radius: 0;
+    background: none;
+    box-shadow: none;
   }
 
 
@@ -2354,6 +2387,33 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     cursor: pointer;
     transition: all 0.2s ease;
     padding: 0;
+  }
+
+  // Mobile size buttons - borderless, no spacing, no rounded corners
+  .item-description .item-sizes-container-mobile .item-size-btn {
+    width: 32px;
+    height: 32px;
+    font-size: 11px;
+    border: none;
+    background: #f8f9fa;
+    color: #333;
+    border-radius: 0;
+    margin: 0;
+
+    &:hover:not(.item-size-btn-disabled) {
+      background: #e9ecef;
+    }
+
+    &.item-size-btn-disabled {
+      background: #f8f9fa;
+      color: #999;
+      opacity: 0.6;
+    }
+
+    &.item-size-btn-success {
+      background: #28a745;
+      color: white;
+    }
   }
 
   .item-size-btn:hover:not(.item-size-btn-disabled) {

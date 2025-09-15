@@ -178,6 +178,8 @@
                         }}
                     </div>
                 {% endif %}
+
+
                 {% if settings.product_color_variants and not reduced_item %}
                     {% if columns_mobile == 3 or theme_editor %}
                         <span class="js-item-colors-container {% if columns_mobile == 3 %}d-none d-md-block{% endif %}">
@@ -197,6 +199,14 @@
                     {% endif %}
                 {% endif %}
             </a>
+
+            {# Mobile size selector outside link to prevent interference #}
+            {% if settings.product_size_hover_selector and not reduced_item %}
+                <div class="d-md-none">
+                    {% include 'snipplets/grid/item-sizes.tpl' with {mobile_version: true} %}
+                </div>
+            {% endif %}
+
             {% if settings.quick_shop and not reduced_item %}
                 <div class="js-item-quickshop item-actions{% if inline_quick_shop %}-inline{% else %} mt-3{% endif %} {% if columns_mobile == 3 %}d-none d-md-block{% endif %}">
                     {% if product.available and product.display_price %}
