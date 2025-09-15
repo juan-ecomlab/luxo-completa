@@ -3257,43 +3257,64 @@ DOMContentLoaded.addEventOrExecute(() => {
             formData['variation[' + variationId + ']'] = optionId;
         }
 
-        // Create a temporary form to use with LS.addToCartEnhanced
-        var $tempForm = jQueryNuvem('<form>', {
-            'method': 'post',
-            'action': '{{ store.cart_url }}'
-        });
-        
-        // Add hidden inputs for product and variant
-        $tempForm.append(jQueryNuvem('<input>', {
-            'type': 'hidden',
-            'name': 'add_to_cart',
-            'value': productId
-        }));
-        
+        // Create form with vanilla JS (more reliable than jQuery wrapper)
+        var tempForm = document.createElement('form');
+        tempForm.method = 'post';
+        tempForm.action = '/comprar/';
+        tempForm.className = 'js-product-form';
+
+        // Add product ID input
+        var inputProduct = document.createElement('input');
+        inputProduct.type = 'hidden';
+        inputProduct.name = 'add_to_cart';
+        inputProduct.value = productId;
+        tempForm.appendChild(inputProduct);
+
+        // Add variant ID input if available
         if (variantId) {
-            $tempForm.append(jQueryNuvem('<input>', {
-                'type': 'hidden',
-                'name': 'variant',
-                'value': variantId
-            }));
+            var inputVariant = document.createElement('input');
+            inputVariant.type = 'hidden';
+            inputVariant.name = 'variant';
+            inputVariant.value = variantId;
+            tempForm.appendChild(inputVariant);
         }
 
+        // Add quantity input
+        var inputQuantity = document.createElement('input');
+        inputQuantity.type = 'hidden';
+        inputQuantity.name = 'quantity';
+        inputQuantity.value = '1';
+        tempForm.appendChild(inputQuantity);
+
+        // Add to DOM
+        document.body.appendChild(tempForm);
+
+        // Wrap in jQueryNuvem for LS.addToCartEnhanced
+        var $tempForm = jQueryNuvem(tempForm);
+
         // Success callback
-        var callback_add_to_cart = function(){
+        var callback_add_to_cart = function(data){
             // Hide loading state
             $loadingOverlay.hide();
             $sizeButton.removeClass('adding-to-cart');
+            
+            // Remove temporary form
+            document.body.removeChild(tempForm);
 
-            // Hide size selector overlay after successful add
+            // Add visual feedback - briefly highlight the button that was clicked
+            $sizeButton.addClass('item-size-btn-success');
             setTimeout(function(){
-                $sizesContainer.css('opacity', '0');
-            }, 1000);
+                $sizeButton.removeClass('item-size-btn-success');
+            }, 2000);
         };
 
         // Error callback
-        var callback_error = function(){
+        var callback_error = function(error){
             $loadingOverlay.hide();
             $sizeButton.removeClass('adding-to-cart');
+            
+            // Remove temporary form
+            document.body.removeChild(tempForm);
         };
 
         // Use the theme's built-in add to cart function

@@ -2307,21 +2307,15 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     pointer-events: none;
   }
 
-  // Size selector inside bottom elements container
+  // Size selector inside bottom elements container - always visible
   .item-bottom-elements .item-sizes-container {
     display: inline-block;
     width: auto;
     max-width: 90%;
-    opacity: 0;
-    visibility: hidden;
-    transition: opacity 0.3s ease, visibility 0.3s ease;
-    pointer-events: none;
-  }
-  
-  .item:hover .item-sizes-container {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
+    transition: all 0.3s ease;
   }
 
   // Ensure labels remain clickable and unaffected by size selector hover
@@ -2339,7 +2333,7 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   .item-sizes-grid {
     display: flex;
     flex-wrap: nowrap;
-    gap: 4px;
+    gap: 0;
     justify-content: center;
     margin: 0;
   }
@@ -2377,6 +2371,13 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     color: #999;
     cursor: not-allowed;
     border-color: rgba(255, 255, 255, 0.3);
+  }
+
+  .item-size-btn.item-size-btn-success {
+    background: #28a745;
+    color: white;
+    border-color: #28a745;
+    transform: scale(1.1);
   }
 
 
