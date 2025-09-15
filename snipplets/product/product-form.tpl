@@ -41,6 +41,12 @@
 
 <div class="divider"></div>
 
+{# Description #}
+
+{% if not settings.full_width_description %}
+                    {% include 'snipplets/product/product-description.tpl' %}
+                {% endif %}
+
 {# Product availability #}
 
 {% set product_available = product.available and product.display_price %}

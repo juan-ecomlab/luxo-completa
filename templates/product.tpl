@@ -12,9 +12,7 @@
                     <div class="js-sticky-product sticky-product">
                 {% endif %}
             	{% include 'snipplets/product/product-form.tpl' %}
-                {% if not settings.full_width_description %}
-                    {% include 'snipplets/product/product-description.tpl' %}
-                {% endif %}
+                
                 {% if settings.scroll_product_images %}
                     </div>
                 {% endif %}

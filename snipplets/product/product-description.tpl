@@ -3,6 +3,7 @@
 
     {% if product.description is not empty %}
         <div class="product-description user-content">
+            <h4>Descripción</h4>
             {{ product.description }}
         </div>
     {% endif %}
