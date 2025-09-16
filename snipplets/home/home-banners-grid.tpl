@@ -91,12 +91,13 @@
                         {% endif %}
                         {% if has_banner_text %}
                             <div class="js-textbanner-text textbanner-text{% if module %} textbanner-module col-md-6 px-3 text-center {% if not section_slider and loop.index is even %}order-md-first{% endif %}{% else %}{% if not section_text_outside %} over-image{% endif %}{% if slide.link %} pr-5{% endif %}{% endif %}">
-                                {% if slide.title %}
-                                    <h3 class="js-banner-title {{ banner_title_classes }}">{{ slide.title }}</h3>
-                                {% endif %}
                                 {% if slide.description %}
                                     <div class="{{ banner_description_classes }}">{{ slide.description }}</div>
                                 {% endif %}
+                                {% if slide.title %}
+                                    <h3 class="js-banner-title {{ banner_title_classes }}">{{ slide.title }}</h3>
+                                {% endif %}
+                                
                                 {% if slide.button and slide.link %}
                                     <div class="btn btn-secondary btn-small mt-2">{{ slide.button }}</div>
                                 {% endif %}
