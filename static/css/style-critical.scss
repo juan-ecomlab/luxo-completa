@@ -2097,6 +2097,28 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 
 /* // Min width 768px */
 
+// Mobile size buttons - borderless, no spacing, no rounded corners
+// This MUST be outside the media query to apply on mobile
+.js-size-variant-add.item-size-btn {
+  border: 0;
+  border-width: 0;
+  border-style: none;
+  border-radius: 0;
+  background: #f8f9fa;
+  width: 20px;
+  height: 32px;
+  font-size: 10px;
+  font-weight: 600;
+  margin: 0;
+  padding: 0;
+}
+
+// Center the mobile size selector
+.item-sizes-container-mobile .item-sizes-grid {
+  display: flex;
+  justify-content: center;
+}
+
 @media (min-width: 768px) { 
 
   /* //// Components */
@@ -2371,50 +2393,27 @@ body > div.js-home-sections-container.home-sections-container > section.section-
     margin: 0;
   }
 
-  .item-size-btn {
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 24px;
-    height: 24px;
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    background: rgba(255, 255, 255, 0.9);
-    border-radius: 0;
-    font-size: 10px;
-    font-weight: 600;
-    color: #333;
-    cursor: pointer;
-    transition: all 0.2s ease;
-    padding: 0;
-  }
-
-  // Mobile size buttons - borderless, no spacing, no rounded corners
-  .item-description .item-sizes-container-mobile .item-size-btn {
-    width: 32px;
-    height: 32px;
-    font-size: 11px;
-    border: none;
-    background: #f8f9fa;
-    color: #333;
-    border-radius: 0;
-    margin: 0;
-
-    &:hover:not(.item-size-btn-disabled) {
-      background: #e9ecef;
-    }
-
-    &.item-size-btn-disabled {
-      background: #f8f9fa;
-      color: #999;
-      opacity: 0.6;
-    }
-
-    &.item-size-btn-success {
-      background: #28a745;
-      color: white;
+  // Desktop size buttons with borders
+  @media (min-width: 768px) {
+    .item-size-btn {
+      position: relative;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 24px;
+      height: 24px;
+      border: 1px solid rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.9);
+      border-radius: 0;
+      font-size: 10px;
+      font-weight: 600;
+      color: #333;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      padding: 0;
     }
   }
+
 
   .item-size-btn:hover:not(.item-size-btn-disabled) {
     border-color: rgba(255, 255, 255, 1);
