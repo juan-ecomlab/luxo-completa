@@ -33,26 +33,27 @@
                 <div class="item-sizes-overlay">
         {% endif %}
                 <div class="item-sizes-grid">
-                    {% for variant in product.variants %}
-                        {% if variant.option0 in size_options | map(v => v.name) or variant.option1 in size_options | map(v => v.name) or variant.option2 in size_options | map(v => v.name) %}
-                            {% set size_name = variant.option0 in size_options | map(v => v.name) ? variant.option0 : (variant.option1 in size_options | map(v => v.name) ? variant.option1 : variant.option2) %}
-                            {% set size_variant_available = variant.stock > 0 %}
+                    {% for size_option in size_options %}
+                        {% for variant in product.variants %}
+                            {% if variant.option0 == size_option.name or variant.option1 == size_option.name or variant.option2 == size_option.name %}
+                                {% set size_variant_available = variant.stock > 0 %}
 
-                            <button
-                                type="button"
-                                class="js-size-variant-add item-size-btn{% if not size_variant_available %} item-size-btn-disabled{% endif %}"
-                                data-product-id="{{ product.id }}"
-                                data-variant-id="{{ variant.id }}"
-                                data-variation-id="{{ size_variation_id }}"
-                                data-option-name="{{ size_name }}"
-                                data-size-name="{{ size_name }}"
-                                data-stock="{{ variant.stock }}"
-                                data-available="{{ size_variant_available ? 'true' : 'false' }}"
-                                {% if not size_variant_available %}disabled{% endif %}
-                                title="{% if size_variant_available %}{{ size_name }} - {{ variant.stock }} disponible{% else %}{{ size_name }} - Sin stock{% endif %}">
-                                {{ size_name }}
-                            </button>
-                        {% endif %}
+                                <button
+                                    type="button"
+                                    class="js-size-variant-add item-size-btn{% if not size_variant_available %} item-size-btn-disabled{% endif %}"
+                                    data-product-id="{{ product.id }}"
+                                    data-variant-id="{{ variant.id }}"
+                                    data-variation-id="{{ size_variation_id }}"
+                                    data-option-name="{{ size_option.name }}"
+                                    data-size-name="{{ size_option.name }}"
+                                    data-stock="{{ variant.stock }}"
+                                    data-available="{{ size_variant_available ? 'true' : 'false' }}"
+                                    {% if not size_variant_available %}disabled{% endif %}
+                                    title="{% if size_variant_available %}{{ size_option.name }} - {{ variant.stock }} disponible{% else %}{{ size_option.name }} - Sin stock{% endif %}">
+                                    {{ size_option.name }}
+                                </button>
+                            {% endif %}
+                        {% endfor %}
                     {% endfor %}
                 </div>
             </div>
