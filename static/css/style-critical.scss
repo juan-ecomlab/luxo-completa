@@ -2120,6 +2120,67 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
   font-size: var(--h6);
 }
 
+// Megamenu table layout for EMPRESA with image
+.megamenu-table-container {
+  display: table;
+  width: 100%;
+  min-width: 600px;
+  background: var(--header-background);
+}
+
+.megamenu-table-cell {
+  display: table-cell;
+  vertical-align: top;
+}
+
+.megamenu-menu-cell {
+  width: auto;
+  padding-right: 1rem;
+
+  // Remove background from nested list when inside table
+  .desktop-list-subitems {
+    background: none;
+    border: none;
+    box-shadow: none;
+    padding: 1rem;
+  }
+}
+
+.megamenu-image-cell {
+  width: 40%;
+  min-width: 300px;
+  padding: 1rem;
+}
+
+// Megamenu promotional image styling
+.megamenu-promo-container {
+  width: 100%;
+}
+
+.megamenu-promo-link {
+  display: block;
+  overflow: hidden;
+  transition: opacity 0.2s ease;
+
+  &:hover {
+    opacity: 0.8;
+    text-decoration: none;
+  }
+}
+
+.megamenu-promo-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+  max-height: 250px;
+}
+
+// Ensure dropdown accommodates table layout
+.desktop-dropdown {
+  min-width: 600px;
+}
+
 /*============================================================================
   #Media queries
 ==============================================================================*/
