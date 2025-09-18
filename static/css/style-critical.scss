@@ -2014,6 +2014,43 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   object-fit: cover;
 }
 
+/* Selectores que estaban en css online */
+
+body > div.js-home-sections-container.home-sections-container > section:nth-child(2) > div > div.js-banners-promotional-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div > div.js-textbanner-text.textbanner-text.over-image.pr-5 > div.textbanner-arrow {
+    display: none;
+}
+
+body > div.js-home-sections-container.home-sections-container > section:nth-child(2) > div > div.js-banners-promotional-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div > div.js-textbanner-text.textbanner-text.over-image.pr-5 > h3 {
+  font-size: 28px;
+}
+
+body > div.js-home-sections-container.home-sections-container > section:nth-child(2) > div > div.js-banners-promotional-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div > div.js-textbanner-text.textbanner-text.over-image.pr-5 > div.textbanner-paragraph{
+  font-size: 16px;
+  font-weight: 400;
+}
+
+body > div.js-home-sections-container.home-sections-container > section:nth-child(2) > div > div.js-banners-promotional-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div > div.js-textbanner-text.textbanner-text.over-image.pr-5 {
+  margin-bottom: 100px;
+}
+
+#ajax-cart-submit-div>input, #product_form>div.form-row.mb-2>div:nth-child(1)>input {
+	background-color: #3483f6;
+}
+
+body>div.js-home-sections-container.home-sections-container>section:nth-child(2)>div>div.js-banners-promotional.container-fluid.d-none.d-md-block>div.row>div>div>div>div>a>div>div.js-textbanner-text.textbanner-text.over-image.pr-5 {
+	background: none;
+	bottom: 40%;
+}
+
+body>div.js-home-sections-container.home-sections-container>section:nth-child(2)>div>div.js-banners-promotional.container-fluid.d-none.d-md-block>div.row>div>div>div>div>a>div>div.js-textbanner-text.textbanner-text.over-image.pr-5>div.btn.btn-secondary.btn-small.mt-2 {
+	border: none;
+	border-bottom: white 1px solid;
+}
+
+body>div.js-home-sections-container.home-sections-container>section:nth-child(3)>div>div>div>div>div:nth-child(3)>div>div.js-product-item-image-container-private.js-product-item-private-with-secondary-images.product-item-image-container.item-image.product-item-secondary-images-loaded>div>div>div:nth-child(3) {
+	margin-top: 10px;
+}
+
 .post-item-title,
 .post-item-summary {
   display: -webkit-box;
@@ -2122,6 +2159,20 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 @media (min-width: 768px) { 
 
   /* //// Components */
+
+  /* Selectores en css online SOLO MOBILE */
+
+  body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img {
+	filter: grayscale(100%);
+}
+
+body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img:hover {
+	filter: grayscale(0);
+}
+
+#single-product>div>div>div.col>div {
+	padding: 0;
+}
 
   .container-narrow {
     max-width: 680px;

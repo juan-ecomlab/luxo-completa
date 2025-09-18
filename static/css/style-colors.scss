@@ -1025,11 +1025,11 @@ input[type=number] {
 }
 
 .textbanner-text.over-image {
-  background: var(--main-foreground-opacity-40);
+  /* background: var(--main-foreground-opacity-40); */
   color: var(--main-background);
   .btn-secondary {
     color: var(--main-background);
-    border: 1px solid var(--main-background);
+    border-bottom: 1px solid var(--main-background);
   }
   .svg-icon-text {
     fill: var(--main-background);
