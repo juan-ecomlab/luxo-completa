@@ -80,8 +80,13 @@
 							{% set hamburger_val = true %}
 						{% endif %}
 						{% include 'snipplets/navigation/navigation-nav-list.tpl' with { 'navigation' : item.subitems, 'subitem' : true, 'hamburger' : hamburger_val  } %}
+
 					</ul>
+
 			{% if megamenu and not subitem %}
+			{# Esta es la imagen que se agrega al megamenu #}
+			<a href="https://eclabdemo.mitiendanube.com/productos/" class="imagen-nav"><img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg"></a>
+
 				</div>
 			{% endif %}
 		</li>
