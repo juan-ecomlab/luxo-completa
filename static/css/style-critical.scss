@@ -2030,14 +2030,9 @@ body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(
   margin-top: 20px;
 }
 
-.mostrarMobile {
-  display: block;
-  text-align: center;
-}
-
-.mostrarDesktop {
-  display: none;
-}
+#single-product > div > div > div.col > div > div.price-container.mb-3.row > div.col, #single-product > div > div > div.col > div > div.mostrarDesktop > section > h1 {
+    text-align: center;
+  }
 
 .imagen-nav {
   position: absolute;
@@ -2270,13 +2265,9 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 	padding: 0;
 }
 
-.mostrarMobile {
-  display: none;
-}
-
-.mostrarDesktop {
-  display: block;
-}
+#single-product > div > div > div.col > div > div.price-container.mb-3.row > div.col, #single-product > div > div > div.col > div > div.mostrarDesktop > section > h1 {
+    text-align: left;
+  }
 
 #price_display {
   margin-top: 0px;
@@ -2701,6 +2692,8 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
   #product-description > div.social-share {
     display: none;
   }
+
+  
 
   .sticky-product {
     position: sticky;

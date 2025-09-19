@@ -4,15 +4,7 @@
 <div id="single-product" class="js-has-new-shipping js-product-detail js-product-container js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}" data-store="product-detail">
     <div class="container-fluid">
         <div class="row section-single-product">
-        <div class="mostrarMobile"> 
-            {% if home_main_product %}    
-    <h2 class="h4 mb-3 pt-2">{{ product.name }}</h4>
-{% else %}
-    {% embed "snipplets/page-header.tpl" %}
-        {% block page_header_text %}{{ product.name }}{% endblock page_header_text %}
-    {% endembed %}
-{% endif %}
-        </div>
+        
         
             <div class="col-12 col-md-5{% if not settings.scroll_product_images and product.media_count > 1 %} pl-md-0{% endif %}">
                 {% include 'snipplets/product/product-image.tpl' %}
