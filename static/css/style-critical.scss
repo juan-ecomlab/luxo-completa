@@ -2020,6 +2020,24 @@ body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(
   display: none
 }
 
+#product-description > div.social-share {
+  display: none;
+}
+
+#price_display {
+  font-size: 24px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.mostrarMobile {
+  display: block;
+  text-align: center;
+}
+
+.mostrarDesktop {
+  display: none;
+}
 
 .imagen-nav {
   position: absolute;
@@ -2250,6 +2268,18 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 
 #single-product>div>div>div.col>div {
 	padding: 0;
+}
+
+.mostrarMobile {
+  display: none;
+}
+
+.mostrarDesktop {
+  display: block;
+}
+
+#price_display {
+  margin-top: 0px;
 }
 
   .container-narrow {

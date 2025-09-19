@@ -1,5 +1,5 @@
 {# Product name and breadcrumbs #}
-
+<div class="mostrarDesktop"> 
 {% if home_main_product %}    
     <h2 class="h4 mb-3 pt-2">{{ product.name }}</h4>
 {% else %}
@@ -7,6 +7,8 @@
         {% block page_header_text %}{{ product.name }}{% endblock page_header_text %}
     {% endembed %}
 {% endif %}
+</div>
+
 
 {# Product price #}
 
@@ -38,8 +40,6 @@
         }}
     </div>
 </div>
-
-<div class="divider"></div>
 
 {# Description #}
 
@@ -96,6 +96,7 @@
 
  <form id="product_form" class="js-product-form" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
 	<input type="hidden" name="add_to_cart" value="{{product.id}}" />
+    <h4>Seleccioná tu talle</h4>
     {% if template == "product" %}
         {% set show_size_guide = true %}
     {% endif %}
