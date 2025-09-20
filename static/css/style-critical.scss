@@ -2426,8 +2426,133 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     margin-left: -220px;
   }
 
+  /* Center logo layout with left navigation - new layout */
+  .head-logo-md-center {
+    /* Force everything onto one row and create positioning context */
+    .row.no-gutters.align-items-center {
+      flex-wrap: nowrap;
+      position: relative;  /* For logo absolute positioning */
+    }
+
+    /* Navigation div - take left half to push utilities right */
+    .col.d-none.d-md-inline-block {
+      flex: 1 1 50%;  /* Take at least 50% to push utilities past center */
+      max-width: 50%;
+    }
+
+    .nav-desktop {
+      width: 100%;
+
+      .nav-desktop-list {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        flex-wrap: nowrap;
+        gap: 10px;
+
+        li {
+          display: inline-flex;
+          white-space: nowrap;
+        }
+      }
+    }
+
+    /* Logo - absolute positioned to center on screen */
+    .col.logo-center.text-center.logo-md-center {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 100;  /* Above nav and utilities */
+      width: auto;
+      flex: none;
+    }
+
+    /* Create invisible spacer and group utilities to the right */
+    .col.logo-center + .col-auto.col-utility {
+      margin-left: auto;  /* Push first utility after logo to far right */
+    }
+
+    /* Keep utilities together */
+    .col-auto.col-utility {
+      margin-left: 0;  /* No gap between utilities */
+
+      &:first-of-type {
+        margin-left: auto;  /* Ensure first utility pushes all to right */
+      }
+    }
+
+    /* Remove offset when navigation is inline */
+    &:not(.head-hamburger-md) .logo-md-offset {
+      margin-left: 0;
+    }
+
+    /* Fix megamenu width - take full window width */
+    .nav-desktop-list .desktop-dropdown {
+      width: 100vw;
+      max-width: 100vw;
+      left: 0;
+      right: auto;
+      overflow-x: hidden;
+    }
+
+    /* Prevent flex inheritance in megamenu subitems - more specific selectors */
+    .nav-desktop-list .desktop-list-subitems {
+      display: block;
+      flex-direction: column;
+    }
+
+    .nav-desktop-list .desktop-list-subitems li {
+      display: block;
+      width: 100%;
+      flex: none;
+    }
+
+    /* Fix COMPRAR megamenu table layout */
+    .nav-desktop-list .megamenu-table-container {
+      display: table;
+      width: 100%;
+      table-layout: fixed;
+    }
+
+    .nav-desktop-list .megamenu-table-cell {
+      display: table-cell;
+      vertical-align: top;
+    }
+
+    .nav-desktop-list .megamenu-menu-cell {
+      width: 60%;
+      padding-right: 2rem;
+    }
+
+    .nav-desktop-list .megamenu-image-cell {
+      width: 40%;
+      min-width: 300px;
+    }
+  }
+
+/* Mobile logo centering fix - matching desktop specificity */
+@media (max-width: 767px) {
+  /* Logo - more specific selector to override Bootstrap .col */
+  .head-logo-md-center .row .col.logo-center.text-center.logo-md-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 100;
+    width: auto;
+    max-width: none;
+    flex: none;
+  }
+
+  /* Ensure row has positioning context */
+  .row.no-gutters.align-items-center {
+    position: relative;
+    flex-wrap: nowrap;
+    min-height: 60px;
+  }
+}
+
   .utilities-container {
-    margin: 0 10px;
+    margin: 0 4px;
   }
 
   .head-utilities-md-text .utilities-icon{

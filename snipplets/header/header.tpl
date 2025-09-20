@@ -97,33 +97,13 @@
                 </div>
             {% endif %}
 
-            {# Desktop navigation next to logo #}
+            {# Desktop navigation - inline for left_inline or center layouts #}
 
-            {% if not settings.hamburger_desktop and settings.logo_position_desktop == 'left_inline' %}
-                {# Desktop nav next logo #}
+            {% if not settings.hamburger_desktop and (settings.logo_position_desktop == 'left_inline' or settings.logo_position_desktop == 'center') %}
                 <div class="col d-none d-md-inline-block">
                     {% snipplet "navigation/navigation.tpl" %}
                 </div>
             {% endif %}
-
-            {# Search: Icon or box #}
-
-            <div class="col-auto col-utility {{ hide_mobile_on_tabnav_active }} {% if settings.search_big_mobile %}d-none d-md-inline-block{% endif %}">
-                {% set use_big_search_val = false %}
-                {% if settings.search_big_desktop %}
-                    {% set use_big_search_val = true %}
-                {% endif %}
-                {% if settings.search_big_desktop and not settings.search_big_mobile %}
-                    <span class="d-none d-md-block">
-                {% endif %}
-                        {% include "snipplets/header/header-search.tpl" with {use_big_search: use_big_search_val} %}
-                {% if settings.search_big_desktop and not settings.search_big_mobile %}
-                    </span>
-                    <span class="d-inline-block d-md-none">
-                        {% include "snipplets/header/header-search.tpl" %}
-                    </span>
-                {% endif %}
-            </div>
 
             {# Logo #}
 
@@ -143,6 +123,25 @@
                         logo_size: 'large'
                         })
                     }}
+                {% endif %}
+            </div>
+
+            {# Search: Icon or box #}
+
+            <div class="col-auto col-utility {{ hide_mobile_on_tabnav_active }} {% if settings.search_big_mobile %}d-none d-md-inline-block{% endif %}">
+                {% set use_big_search_val = false %}
+                {% if settings.search_big_desktop %}
+                    {% set use_big_search_val = true %}
+                {% endif %}
+                {% if settings.search_big_desktop and not settings.search_big_mobile %}
+                    <span class="d-none d-md-block">
+                {% endif %}
+                        {% include "snipplets/header/header-search.tpl" with {use_big_search: use_big_search_val} %}
+                {% if settings.search_big_desktop and not settings.search_big_mobile %}
+                    </span>
+                    <span class="d-inline-block d-md-none">
+                        {% include "snipplets/header/header-search.tpl" %}
+                    </span>
                 {% endif %}
             </div>
 
@@ -172,12 +171,12 @@
             </div>
         {% endif %}
 
-        {# Desktop navigation below logo #}
+        {# Desktop navigation below logo - only for 'left' position #}
 
-        {% if not settings.hamburger_desktop and settings.logo_position_desktop != 'left_inline' %}
+        {% if not settings.hamburger_desktop and settings.logo_position_desktop == 'left' %}
             {# Desktop nav below logo #}
             <div class="row d-none d-md-block">
-                <div class="{% if settings.logo_position_desktop == 'center' %}text-center{% endif %}">
+                <div>
                     {% snipplet "navigation/navigation.tpl" %}
                 </div>
             </div>
