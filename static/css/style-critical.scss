@@ -2086,6 +2086,32 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 	margin-top: 10px;
 }
 
+.iconos-talles {
+            display: flex;
+            justify-content: space-around;
+            margin-bottom: 10px;
+        }
+        .iconos-talles div {
+            display: flex;
+            align-items: center;
+        }
+
+        .iconos-talles div a{
+            color: black;
+            text-decoration: underline;
+            font-size: 14px;
+            font-weight: bold;
+        }
+
+        .iconos-talles div img {
+            width: 40px;
+            margin-right: 10px;
+            border: 1px solid black;
+            padding: 8px;
+            border-radius: 50%;
+        }
+
+
 .post-item-title,
 .post-item-summary {
   display: -webkit-box;
@@ -2259,6 +2285,14 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 
   #logo {
   margin-left: 0;
+}
+
+.iconos-talles {
+  justify-content: flex-start;
+}
+
+.iconos-talles .distinto {
+  margin-left: 30px;
 }
 
 #related-products > div > div.products-section-title-container.section-title.text-center > h2 {

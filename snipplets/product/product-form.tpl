@@ -86,6 +86,9 @@
     accordion_hide_svg_id: 'chevron',
 }) }}
 
+
+
+
 {# Product form, includes: Variants, CTA and Shipping calculator #}
 
  <form id="product_form" class="js-product-form" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
@@ -120,7 +123,16 @@
 
             {# Add to cart CTA #}
 
-            
+            <div class="iconos-talles">
+    <div>
+        <img src="{{ 'images/icons/camiseta.png' | static_url }}" alt="Conoce tu talle icono">
+        <a href="">Conocé tu talle</a> 
+    </div>
+    <div class="distinto">
+        <img src="{{ 'images/icons/camiseta-de-manga-corta.png' | static_url }}" alt="Guia de talle icono">
+        <a href="">Guía de talles</a>
+    </div>
+</div>
 
             <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
 
