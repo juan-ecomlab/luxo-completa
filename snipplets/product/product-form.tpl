@@ -41,12 +41,6 @@
     </div>
 </div>
 
-{# Description #}
-
-{% if not settings.full_width_description %}
-                    {% include 'snipplets/product/product-description.tpl' %}
-                {% endif %}
-
 {# Product availability #}
 
 {% set product_available = product.available and product.display_price %}
@@ -126,13 +120,21 @@
 
             {# Add to cart CTA #}
 
-            <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block mb-4 {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
+            
+
+            <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
 
             {# Fake add to cart CTA visible during add to cart event #}
 
             {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "mb-4"} %}
 
         </div>
+
+        {# Description #}
+
+{% if not settings.full_width_description %}
+                    {% include 'snipplets/product/product-description.tpl' %}
+                {% endif %}
 
         {% if settings.ajax_cart %}
             <div class="col-12">
