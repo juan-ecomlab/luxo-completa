@@ -2110,7 +2110,9 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
             padding: 8px;
             border-radius: 50%;
         }
-
+#related-products > div > div.products-section-title-container.section-title.text-center > h2 {
+  font-size: 24px;
+}
 
 .post-item-title,
 .post-item-summary {
@@ -2296,7 +2298,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 }
 
 #related-products > div > div.products-section-title-container.section-title.text-center > h2 {
-  font-size: 20px;
+  font-size: 28px;
 }
 
 .item-actions {
