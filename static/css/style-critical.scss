@@ -2255,7 +2255,15 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 
   /* //// Components */
 
-  /* Selectores en css online SOLO MOBILE */
+  /* Selectores en css online SOLO DESKTOP */
+
+  #logo {
+  margin-left: 0;
+}
+
+.item-actions {
+  display: none;
+}
 
   body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img {
 	filter: grayscale(100%);
