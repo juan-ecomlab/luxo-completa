@@ -2101,6 +2101,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
             text-decoration: underline;
             font-size: 14px;
             font-weight: bold;
+            white-space: nowrap;
         }
 
         .iconos-talles div img {
@@ -2299,6 +2300,11 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 
 #related-products > div > div.products-section-title-container.section-title.text-center > h2 {
   font-size: 28px;
+}
+
+#single-product > div > div {
+  max-width: 80%;
+  margin: 0 auto;
 }
 
 .item-actions {
