@@ -141,6 +141,9 @@
             {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "mb-4"} %}
 
         </div>
+       <div class="sla-entrega-desktop">
+            <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
+        </div>
 
         {# Description #}
 
@@ -159,6 +162,10 @@
                 </div>
             </div>
         {% endif %}
+
+         <div class="sla-entrega-mobile">
+            <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
+        </div>
 
         {# Free shipping visibility message #}
 
@@ -271,6 +278,7 @@
     {% endif %}
 
  </form>
+  
 
 {% if not home_main_product %}
     {# Product payments details #}
