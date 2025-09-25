@@ -29,5 +29,33 @@
     </div>
 </div>
 
+<div class="beneficios-pdp">
+    <div class="linea"></div>
+    <div class="conteiner">
+        <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono">
+        <div class="beneficios-content">
+            <p><b>Envios Bonificados</b></p>
+            <p>A partir de $80.000</p>
+        </div>
+    </div>
+     <div class="linea linea-desktop"></div>
+    <div class="conteiner beneficios-mercado-pago">
+        <img src="{{ 'images/icons/billetera-electronica (1).png' | static_url }}" alt="Billetera icono">
+        <div class="beneficios-content">
+            <p><b>Pagá con Mercado Pago</b></p>
+            <p>Hasta 6 cuotas sin interes</p>
+        </div>
+    </div>
+     <div class="linea linea-desktop"></div>
+    <div class="conteiner">
+        <img src="{{ 'images/icons/regreso-facil.png' | static_url }}" alt="regreso icono">
+        <div class="beneficios-content">    
+            <p><b>Cambios y devoluciones</b></p>
+            <p>Sin costos</p>
+        </div>
+    </div>
+     <div class="linea"></div>
+</div>
+
 {# Related products #}
 {% include 'snipplets/product/product-related.tpl' %}

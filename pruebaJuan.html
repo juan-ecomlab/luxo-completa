@@ -5,23 +5,70 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .sla-entrega {
+        .beneficios-pdp {
+            display: flex;
+        }
+
+        .beneficios-pdp .conteiner{
             display: flex;
             align-items: center;
+            height: 100px;
+            text-align: start;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 18px;
+        }
+        .beneficios-pdp img{
+            width: 50px;
+           
         }
 
-        .sla-entrega img {
-            width: 30px;
+        .beneficios-pdp .beneficios-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
-        .sla-entrega span {
-            margin-left: 10px;
+        .beneficios-content p{
+            margin: 0 60px;
+        }
+
+        .linea {
+            box-sizing: border-box;
+            width: 90%;
+            margin: 0 auto;
+            height: 1px;
+            background-color: black;
         }
     </style>
 </head>
 <body>
-<div class="sla-entrega">
-    <img src="/static/images/icons/entrega-urgente.png" alt=""><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
+<div class="beneficios-pdp">
+    <div class="linea"></div>
+    <div class="conteiner">
+        <img src="/static/images/icons/entrega-urgente.png" alt="">
+        <div class="beneficios-content">
+            <p><b>Envios Bonificados</b></p>
+            <p>A partir de $80.000</p>
+        </div>
+    </div>
+     <div class="linea"></div>
+    <div class="conteiner">
+        <img src="/static/images/icons/billetera-electronica (1).png" alt="">
+        <div class="beneficios-content">
+            <p><b>Pagá con Mercado Pago</b></p>
+            <p>Hasta 6 cuotas sin interes</p>
+        </div>
+    </div>
+     <div class="linea"></div>
+    <div class="conteiner">
+        <img src="/static/images/icons/regreso-facil.png" alt="">
+        <div class="beneficios-content">    
+            <p><b>Cambios y devoluciones</b></p>
+            <p>Sin costos</p>
+        </div>
+    </div>
+     <div class="linea"></div>
 </div>
 </body>
 </html>

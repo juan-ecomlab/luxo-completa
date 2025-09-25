@@ -2130,6 +2130,39 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
   display: none;
 }
 
+.beneficios-pdp .conteiner{
+            display: flex;
+            align-items: center;
+            height: 90px;
+            text-align: start;
+            width: 80%;
+            margin: 0 auto;
+            font-size: 16px;
+        }
+        .beneficios-pdp img{
+            width: 50px;
+           
+        }
+
+        .beneficios-pdp .beneficios-content{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .beneficios-content p{
+            margin: 0 40px;
+            white-space: nowrap;
+        }
+
+        .linea {
+            box-sizing: border-box;
+            width: 90%;
+            margin: 0 auto;
+            height: 1px;
+            background-color: #7c7b7b;
+        }
+
 #product_form > div.form-row.mb-2 > div:nth-child(2) > div {
   margin-top: 5px;
 }
@@ -2375,6 +2408,33 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 .sla-entrega-mobile {
   display: none;
 }
+
+.beneficios-pdp {
+            display: flex;
+            width: 80%;
+            margin: 0 auto;
+        }
+.beneficios-pdp img {
+  width: 40px;
+}
+
+  .linea {
+            display: none;
+        }
+
+  .beneficios-mercado-pago {
+    border-left: 1px solid #7c7b7b;
+    border-right: 1px solid #7c7b7b;
+  }
+
+  .beneficios-pdp .conteiner{
+    padding-left: 20px;
+    padding-right: 20px;
+    font-size: 14px;
+  }
+  .beneficios-content p{
+            margin: 0 20px;
+        }
 
   /* Titles and breadcrumbs */
 
