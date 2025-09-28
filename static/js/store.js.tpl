@@ -2432,7 +2432,7 @@ DOMContentLoaded.addEventOrExecute(() => {
 	        button.removeAttr('disabled');
 	        $product_shipping_calculator.hide();
 	    } else {
-	        button.val('{{ "Agregar al carrito" | translate }}');
+	        button.val('{{ "COMPRAR AHORA" | translate }}');
 	        button.addClass('cart');
 	        button.removeAttr('disabled');
 	        $product_shipping_calculator.show();

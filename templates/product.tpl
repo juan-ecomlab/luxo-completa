@@ -6,7 +6,7 @@
         <div class="row section-single-product">
         
         
-            <div class="col-12 col-md-5{% if not settings.scroll_product_images and product.media_count > 1 %} pl-md-0{% endif %}">
+            <div class="col-12 col-md-6{% if not settings.scroll_product_images and product.media_count > 1 %} pl-md-0{% endif %}">
                 {% include 'snipplets/product/product-image.tpl' %}
             </div>
             <div class="col" data-store="product-info-{{ product.id }}">

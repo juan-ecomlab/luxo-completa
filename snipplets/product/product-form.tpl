@@ -161,11 +161,12 @@
                     <div class="divider"></div>
                 </div>
             </div>
-        {% endif %}
-
-         <div class="sla-entrega-mobile">
+            <div class="sla-entrega-mobile">
             <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
         </div>
+        {% endif %}
+
+         
 
         {# Free shipping visibility message #}
 

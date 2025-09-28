@@ -2038,6 +2038,19 @@ body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(
     text-align: center;
   }
 
+#single-product > div > div > div.col > div > div.mostrarDesktop > section {
+  margin-bottom: 10px;
+}
+
+#product_form > h4 {
+  margin-top: 40px;
+  margin-bottom: 5px;
+}
+
+#product_form > div.form-row.mb-2 > div:nth-child(3) > div{
+  margin-top: 10px;
+}
+
 .imagen-nav {
   position: absolute;
   right: 20px;
@@ -2074,6 +2087,8 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
 
 #ajax-cart-submit-div>input, #product_form>div.form-row.mb-2>div:nth-child(1)>input {
 	background-color: #3483f6;
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
 }
 
 body>div.js-home-sections-container.home-sections-container>section:nth-child(2)>div>div.js-banners-promotional.container-fluid.d-none.d-md-block>div.row>div>div>div>div>a>div>div.js-textbanner-text.textbanner-text.over-image.pr-5 {
@@ -2092,9 +2107,14 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 
 .iconos-talles {
             display: flex;
-            justify-content: space-around;
-            margin-bottom: 10px;
+            justify-content: flex-start;
+            margin-bottom: 30px;
         }
+
+#product_form > div.form-row.mb-2 > div.col-md-6.col-12 > div.iconos-talles > div.distinto {
+  margin-left: 15px;
+}
+
         .iconos-talles div {
             display: flex;
             align-items: center;
@@ -2109,8 +2129,8 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
         }
 
         .iconos-talles div img {
-            width: 40px;
-            margin-right: 10px;
+            width: 30px;
+            margin-right: 5px;
             border: 1px solid black;
             padding: 8px;
             border-radius: 50%;
@@ -2120,6 +2140,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
             display: flex;
             align-items: center;
             justify-content: center;
+            margin-top: 30px;
         }
 
         .sla-entrega-mobile img {
@@ -2155,7 +2176,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
         }
 
         .beneficios-content p{
-            margin: 0 40px;
+            margin: 0 20px;
             white-space: nowrap;
         }
 
@@ -2358,6 +2379,11 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
   justify-content: flex-start;
 }
 
+.iconos-talles div img {
+            width: 40px;
+            margin-right: 10px;
+        }
+
 .iconos-talles .distinto {
   margin-left: 30px;
 }
@@ -2367,7 +2393,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 }
 
 #single-product > div > div {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0 auto;
 }
 
@@ -2398,6 +2424,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
   .sla-entrega-desktop {
             display: flex;
             align-items: center;
+            margin-top: 30px;
         }
 
         .sla-entrega-desktop img {
@@ -2408,6 +2435,10 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
             margin-left: 10px;
         }
 
+        
+        #single-product > div > div > div.col {
+          margin-left: 30px
+        }
 .sla-entrega-mobile {
   display: none;
 }
@@ -2435,9 +2466,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     padding-right: 20px;
     font-size: 14px;
   }
-  .beneficios-content p{
-            margin: 0 20px;
-        }
+  
 
   /* Titles and breadcrumbs */
 
