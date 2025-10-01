@@ -683,6 +683,7 @@ Página de inicio
 	i18n_input
 		name = institutional_text
 		description = Descripción
+
 	collapse
 		title = Banners de categorías
 		backto = home_order_position
@@ -727,55 +728,6 @@ Página de inicio
 		description = Cargar otras imágenes para celulares
 	gallery
 		name = banner_mobile
-		gallery_image = Agregar imagen
-		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
-		gallery_width = 820
-		gallery_height = 1000
-		gallery_more_info = true
-	collapse
-		title = Banners de categorías 2
-		backto = home_order_position
-	description
-		description = Podés cargar los banners que necesites, sin límite de cantidad.
-	checkbox
-		name = banner_text_outside2
-		description = Mostrar texto fuera de la imagen
-	checkbox
-		name = banner_slider2
-		description = Mostrar banners dentro de un carrusel
-	checkbox
-		name = banner_same_size2
-		description = Usar el mismo alto para todos los banners
-	subtitle
-		subtitle = Imágenes para computadoras
-	dropdown
-		name = banner_columns_desktop2
-		description = Disposición de banners en computadoras
-		values
-			1 = 1 banner por fila
-			2 = 2 banners por fila
-			3 = 3 banners por fila
-			4 = 4 banners por fila
-	gallery
-		name = banner2
-		gallery_image = Agregar imagen
-		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
-		gallery_width = 930
-		gallery_height = 465
-		gallery_more_info = true
-	subtitle
-		subtitle = Imágenes para celulares
-	dropdown
-		name = banner_columns_mobile2
-		description = Disposición de banners en celulares
-		values
-			1 = 1 banner por fila
-			2 = 2 banners por fila
-	checkbox
-		name = toggle_banner_mobile2
-		description = Cargar otras imágenes para celulares
-	gallery
-		name = banner_mobile2
 		gallery_image = Agregar imagen
 		gallery_link = [Opcional] Página web a la que quieres que te lleve la imagen al hacer click
 		gallery_width = 820
@@ -1083,7 +1035,6 @@ Página de inicio
 			products = Productos destacados
 			informatives = Información de envíos, pagos y compra
 			categories = Banners de categorías
-			categories_copy = Banners de categorías 2
 			promotional = Banners promocionales
 			news_banners = Banners de novedades
 			new = Productos nuevos
