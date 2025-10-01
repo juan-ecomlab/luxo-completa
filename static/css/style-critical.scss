@@ -2375,6 +2375,14 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
   margin-left: 0;
 }
 
+body > section.page-header.pt-4 > div > div > div > h1 {
+  text-align: center;
+}
+
+body > section.account-page > div > div {
+  justify-content: center;
+}
+
 .iconos-talles {
   justify-content: flex-start;
 }
