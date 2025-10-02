@@ -1711,6 +1711,7 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 }
 .item-name {
   line-height: 16px;
+  height: 2rem;
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -2059,6 +2060,10 @@ body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(
   margin: 0 auto;
 
 }
+/* 
+body > div.js-home-sections-container.home-sections-container > section:nth-child(5) > div.js-products-sale-container.container-fluid > div > div > div > div > div.swiper-slide.swiper-slide-next.js-swiper-slide-visible > div > div > div.js-product-item-image-container-private.js-product-item-private-with-secondary-images.product-item-image-container.item-image > div {
+  padding-bottom: 140%;
+} */
 
 .imagen-nav img {
   width: 80%;
@@ -2370,6 +2375,10 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
   /* //// Components */
 
   /* Selectores en css online SOLO DESKTOP */
+
+/*   body > div.js-home-sections-container.home-sections-container > section:nth-child(5) > div.js-products-sale-container.container-fluid > div > div > div > div > div.swiper-slide.swiper-slide-next.js-swiper-slide-visible > div > div > div.js-product-item-image-container-private.js-product-item-private-with-secondary-images.product-item-image-container.item-image > div {
+  padding-bottom: 160%;
+} */
 
   #logo {
   margin-left: 0;
