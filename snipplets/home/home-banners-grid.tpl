@@ -35,21 +35,6 @@
     {% set section_same_size = settings.banner_same_size2 %}
     {% set section_text_outside = settings.banner_text_outside2 %}
 {% endif %}
-{# Esto lo agregue distinto al archivo con categories_copy#}
-{# {% if banner2 %}
-    {% set has_banners = settings.categories_copy and settings.categories_copy is not empty %}
-    {% set has_mobile_banners = settings.toggle_categories_copy_mobile and settings.categories_copy_mobile and settings.categories_copy_mobile is not empty %}
-    {% set section_banner = mobile ? settings.categories_copy_mobile : settings.categories_copy %}
-    {% set section_id = mobile ? 'banners2-mobile' : 'banners2' %}
-    {% set section_slider = settings.categories_copy_slider %}
-    {% set section_columns_mobile_2 = settings.categories_copy_columns_mobile == 2 %}
-    {% set section_columns_desktop_4 = settings.categories_copy_columns_desktop == 4 %}
-    {% set section_columns_desktop_3 = settings.categories_copy_columns_desktop == 3 %}
-    {% set section_columns_desktop_2 = settings.categories_copy_columns_desktop == 2 %}
-    {% set section_columns_desktop_1 = settings.categories_copy_columns_desktop == 1 %}
-    {% set section_same_size = settings.categories_copy_same_size %}
-    {% set section_text_outside = settings.categories_copy_text_outside %}
-{% endif %} #}
 {% if banner_promotional %}
     {% set has_banners = settings.banner_promotional and settings.banner_promotional is not empty %}
     {% set has_mobile_banners = settings.toggle_banner_promotional_mobile and settings.banner_promotional_mobile and settings.banner_promotional_mobile is not empty %}
