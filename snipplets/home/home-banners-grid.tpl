@@ -23,17 +23,17 @@
 {# Esto lo agregue distinto al archivo con banner2#}
 {% if banner2 %}
     {% set has_banners = settings.banner2 and settings.banner2 is not empty %}
-    {% set has_mobile_banners = settings.toggle_banner2_mobile and settings.banner2_mobile and settings.banner2_mobile is not empty %}
-    {% set section_banner = mobile ? settings.banner2_mobile : settings.banner2 %}
+    {% set has_mobile_banners = settings.toggle_banner_mobile2 and settings.banner_mobile2 and settings.banner_mobile2 is not empty %}
+    {% set section_banner = mobile ? settings.banner_mobile2 : settings.banner2 %}
     {% set section_id = mobile ? 'banners2-mobile' : 'banners2' %}
-    {% set section_slider = settings.banner2_slider %}
-    {% set section_columns_mobile_2 = settings.banner2_columns_mobile == 2 %}
-    {% set section_columns_desktop_4 = settings.banner2_columns_desktop == 4 %}
-    {% set section_columns_desktop_3 = settings.banner2_columns_desktop == 3 %}
-    {% set section_columns_desktop_2 = settings.banner2_columns_desktop == 2 %}
-    {% set section_columns_desktop_1 = settings.banner2_columns_desktop == 1 %}
-    {% set section_same_size = settings.banner2_same_size %}
-    {% set section_text_outside = settings.banner2_text_outside %}
+    {% set section_slider = settings.banner_slider2 %}
+    {% set section_columns_mobile_2 = settings.banner_columns_mobile2 == 2 %}
+    {% set section_columns_desktop_4 = settings.banner_columns_desktop2 == 4 %}
+    {% set section_columns_desktop_3 = settings.banner_columns_desktop2 == 3 %}
+    {% set section_columns_desktop_2 = settings.banner_columns_desktop2 == 2 %}
+    {% set section_columns_desktop_1 = settings.banner_columns_desktop2 == 1 %}
+    {% set section_same_size = settings.banner_same_size2 %}
+    {% set section_text_outside = settings.banner_text_outside2 %}
 {% endif %}
 {# Esto lo agregue distinto al archivo con categories_copy#}
 {# {% if banner2 %}
