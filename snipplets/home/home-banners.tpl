@@ -3,6 +3,9 @@
 {% set has_banner = has_banner | default(false) %}
 {% set has_mobile_banners = (settings.toggle_banner_mobile and settings.banner_mobile and settings.banner_mobile is not empty) or theme_editor %}
 
+{% set has_banner2 = has_banner2 | default(false) %}
+{% set has_mobile_banners2 = (settings.toggle_banner_mobile2 and settings.banner_mobile2 and settings.banner_mobile2 is not empty) or theme_editor %}
+
 {% set has_banner_promotional = has_banner_promotional | default(false) %}
 {% set has_mobile_banners_promotional = (settings.toggle_banner_promotional_mobile and settings.banner_promotional_mobile and settings.banner_promotional_mobile is not empty) or theme_editor %}
 
@@ -19,6 +22,14 @@
     {% set section_grid_classes = settings.banner_columns_desktop == 4 ? 'col-md-3' : settings.banner_columns_desktop == 3 ? 'col-md-4' : settings.banner_columns_desktop == 2 ? 'col-md-6' : 'col-md-12' %}
     {% set section_text_position = settings.banner_text_outside ? 'outside' : 'above' %}
     {% set section_image_size = settings.banner_same_size ? 'same' : 'original' %}
+{% elseif has_banner2 %}
+    {% set section_name = 'banner2' %}
+    {% set section_format = settings.banner_slider2 ? 'slider' : 'grid' %}
+    {% set section_columns_mobile = settings.banner_columns_mobile2 %}
+    {% set section_columns_desktop = settings.banner_columns_desktop2 %}
+    {% set section_grid_classes = settings.banner_columns_desktop2 == 4 ? 'col-md-3' : settings.banner_columns_desktop2 == 3 ? 'col-md-4' : settings.banner_columns_desktop2 == 2 ? 'col-md-6' : 'col-md-12' %}
+    {% set section_text_position = settings.banner_text_outside2 ? 'outside' : 'above' %}
+    {% set section_image_size = settings.banner_same_size2 ? 'same' : 'original' %}
 {% elseif has_banner_promotional %}
     {% set section_name = 'banner-promotional' %}
     {% set section_format = settings.banner_promotional_slider ? 'slider' : 'grid' %}
@@ -46,6 +57,12 @@
         {% include 'snipplets/home/home-banners-grid.tpl' with {'banner': true} %}
         {% if has_mobile_banners %}
             {% include 'snipplets/home/home-banners-grid.tpl' with {'banner': true, mobile: true} %}
+        {% endif %}
+    {% endif %}
+    {% if has_banner2 %}
+        {% include 'snipplets/home/home-banners-grid.tpl' with {'banner2': true} %}
+        {% if has_mobile_banners2 %}
+            {% include 'snipplets/home/home-banners-grid.tpl' with {'banner2': true, mobile: true} %}
         {% endif %}
     {% endif %}
     {% if has_banner_promotional %}

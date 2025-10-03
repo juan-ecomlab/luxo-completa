@@ -47,13 +47,13 @@
 		{% endif %}
 	</section>
 
-{% elseif section_select == 'categories2' %}
-	{#  **** Categories2 banners ****  #}
+{% elseif section_select == 'categories_copy' %}
+	{#  **** Categories banners 2 ****  #}
 	<section class="section-banners-home position-relative" data-store="home-banner-categories2">
-		{% if show_help or (show_component_help and not has_banners) %}
+		{% if show_help or (show_component_help and not has_banners2) %}
 			{% snipplet 'defaults/home/category_banners_help.tpl' %}
 		{% else %}
-			{% include 'snipplets/home/home-banners.tpl' with {'has_banner': true} %}
+			{% include 'snipplets/home/home-banners.tpl' with {'has_banner2': true} %}
 		{% endif %}
 	</section>
 
@@ -112,17 +112,6 @@
 			{% include 'snipplets/home/home-banners.tpl' with {'has_banner_promotional': true} %}
 		{% endif %}
 	</section>
-
-{% elseif section_select == 'promotional2' %}
-    {% set banner_promotional2 = true %}
-    {% set has_banner_promotional2 = settings.banner_promotional2 and settings.banner_promotional2 is not empty %}
-    <section class="section-banners-home position-relative" data-store="home-banner-promotional2">
-        {% if show_help or (show_component_help and not has_banner_promotional2) %}
-            {% snipplet 'defaults/home/promotional_banners_help.tpl' %}
-        {% else %}
-            {% include 'snipplets/home/home-banners-grid-2.tpl' with {'banner_promotional2': true} %}
-        {% endif %}
-    </section>
 
 
 {% elseif section_select == 'news_banners' %}
