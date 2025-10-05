@@ -12,6 +12,9 @@
 {% set has_banner_news = has_banner_news | default(false) %}
 {% set has_mobile_banners_news = (settings.toggle_banner_news_mobile and settings.banner_news_mobile and settings.banner_news_mobile is not empty) or theme_editor %}
 
+{% set has_banner_news2 = has_banner_news2 | default(false) %}
+{% set has_mobile_banners_news2 = (settings.toggle_banner_news_mobile2 and settings.banner_news_mobile2 and settings.banner_news_mobile2 is not empty) or theme_editor %}
+
 {% set has_module = has_module | default(false) %}
 
 {% if has_banner %}
@@ -46,6 +49,14 @@
     {% set section_grid_classes = settings.banner_news_columns_desktop == 4 ? 'col-md-3' : settings.banner_news_columns_desktop == 3 ? 'col-md-4' : settings.banner_news_columns_desktop == 2 ? 'col-md-6' : 'col-md-12' %}
     {% set section_text_position = settings.banner_news_text_outside ? 'outside' : 'above' %}
     {% set section_image_size = settings.banner_news_same_size ? 'same' : 'original' %}
+{% elseif has_banner_news2 %}
+    {% set section_name = 'banner-news2' %}
+    {% set section_format = settings.banner_news_slider2 ? 'slider' : 'grid' %}
+    {% set section_columns_mobile = settings.banner_news_columns_mobile2 %}
+    {% set section_columns_desktop = settings.banner_news_columns_desktop2 %}
+    {% set section_grid_classes = settings.banner_news_columns_desktop2 == 4 ? 'col-md-3' : settings.banner_news_columns_desktop2 == 3 ? 'col-md-4' : settings.banner_news_columns_desktop2 == 2 ? 'col-md-6' : 'col-md-12' %}
+    {% set section_text_position = settings.banner_news_text_outside2 ? 'outside' : 'above' %}
+    {% set section_image_size = settings.banner_news_same_size2 ? 'same' : 'original' %}
 {% else %}
     {% set section_name = 'module' %}
     {% set section_format = settings.module_slider ? 'slider' : 'grid' %}
@@ -75,6 +86,12 @@
         {% include 'snipplets/home/home-banners-grid.tpl' with {'banner_news': true} %}
         {% if has_mobile_banners_news %}
             {% include 'snipplets/home/home-banners-grid.tpl' with {'banner_news': true, mobile: true} %}
+        {% endif %}
+    {% endif %}
+    {% if has_banner_news2 %}
+        {% include 'snipplets/home/home-banners-grid.tpl' with {'banner_news2': true} %}
+        {% if has_mobile_banners_news2 %}
+            {% include 'snipplets/home/home-banners-grid.tpl' with {'banner_news2': true, mobile: true} %}
         {% endif %}
     {% endif %}
     {% if has_module %}

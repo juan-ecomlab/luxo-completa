@@ -124,6 +124,16 @@
 		{% endif %}
 	</section>
 
+{% elseif section_select == 'news_banners2' %}
+	{#  **** News banners2 ****  #}
+	<section class="section-banners-home position-relative" data-store="home-banner-news2">
+		{% if show_help or (show_component_help and not has_news_banners2) %}
+			{% snipplet 'defaults/home/news_banners_help.tpl' %}
+		{% else %}
+			{% include 'snipplets/home/home-banners.tpl' with {'has_banner_news2': true} %}
+		{% endif %}
+	</section>
+
 {% elseif section_select == 'modules' %}
 	{#  **** Modules ****  #}
 	<section class="section-modules-home position-relative" data-store="home-image-text-module">

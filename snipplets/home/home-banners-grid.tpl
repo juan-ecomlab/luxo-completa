@@ -2,6 +2,7 @@
 {% set banner2 = banner2 | default(false) %}
 {% set banner_promotional = banner_promotional | default(false) %}
 {% set banner_news = banner_news | default(false) %}
+{% set banner_news2 = banner_news2 | default(false) %}
 {% set module = module | default(false) %}
 
 {% set theme_editor = params.preview %}
@@ -62,6 +63,20 @@
     {% set section_columns_desktop_1 = settings.banner_news_columns_desktop == 1 %}
     {% set section_same_size = settings.banner_news_same_size %}
     {% set section_text_outside = settings.banner_news_text_outside %}
+{% endif %}
+{% if banner_news2 %}
+    {% set has_banners = settings.banner_news2 and settings.banner_news2 is not empty %}
+    {% set has_mobile_banners = settings.toggle_banner_news_mobile2 and settings.banner_news_mobile2 and settings.banner_news_mobile2 is not empty %}
+    {% set section_banner = mobile ? settings.banner_news_mobile2 : settings.banner_news2 %}
+    {% set section_id = mobile ? 'banners-news-mobile2' : 'banners-news2' %}
+    {% set section_slider = settings.banner_news_slider2 %}
+    {% set section_columns_mobile_2 = settings.banner_news_columns_mobile2 == 2 %}
+    {% set section_columns_desktop_4 = settings.banner_news_columns_desktop2 == 4 %}
+    {% set section_columns_desktop_3 = settings.banner_news_columns_desktop2 == 3 %}
+    {% set section_columns_desktop_2 = settings.banner_news_columns_desktop2 == 2 %}
+    {% set section_columns_desktop_1 = settings.banner_news_columns_desktop2 == 1 %}
+    {% set section_same_size = settings.banner_news_same_size2 %}
+    {% set section_text_outside = settings.banner_news_text_outside2 %}
 {% endif %}
 {% if module %}
     {% set section_banner = settings.module %}
