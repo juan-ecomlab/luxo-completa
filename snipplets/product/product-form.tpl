@@ -126,12 +126,17 @@
             <div class="iconos-talles">
     <div>
         <img src="{{ 'images/icons/camiseta.png' | static_url }}" alt="Conoce tu talle icono">
-        <a href="">Conocé tu talle</a> 
+        <a data-fancybox data-src="#modaltalle2" href="javascript:;">Conocé tu talle</a> 
     </div>
     <div class="distinto">
         <img src="{{ 'images/icons/camiseta-de-manga-corta.png' | static_url }}" alt="Guia de talle icono">
         <a href="">Guía de talles</a>
     </div>
+
+     <div id="modaltalle2" style="display:none;" >
+                <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" style="width:100%;"/>
+            </div> 
+
 </div>
 
             <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
