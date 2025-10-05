@@ -2085,10 +2085,6 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   margin: 0 auto;
 
 }
-/* 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(5) > div.js-products-sale-container.container-fluid > div > div > div > div > div.swiper-slide.swiper-slide-next.js-swiper-slide-visible > div > div > div.js-product-item-image-container-private.js-product-item-private-with-secondary-images.product-item-image-container.item-image > div {
-  padding-bottom: 140%;
-} */
 
 .imagen-nav img {
   width: 80%;
@@ -2435,11 +2431,11 @@ body > section.account-page > div > div {
   margin: 0 auto;
 }
 
-  body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img {
+  body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img, body > div.js-home-sections-container.home-sections-container > section:nth-child(8) > div > div.js-banners-news2.container-fluid > div.row > div > div > div img {
 	filter: grayscale(100%);
 }
 
-body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img:hover {
+body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img:hover, body > div.js-home-sections-container.home-sections-container > section:nth-child(8) > div > div.js-banners-news2.container-fluid > div.row > div > div > div img:hover {
 	filter: grayscale(0);
 }
 
