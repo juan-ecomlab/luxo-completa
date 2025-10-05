@@ -130,11 +130,14 @@
     </div>
     <div class="distinto">
         <img src="{{ 'images/icons/camiseta-de-manga-corta.png' | static_url }}" alt="Guia de talle icono">
-        <a href="">Guía de talles</a>
+        <a data-fancybox data-src="#modaltalle" href="javascript:;">Guía de talles</a>
     </div>
 
      <div id="modaltalle2" style="display:none;" >
                 <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" style="width:100%;"/>
+            </div> 
+    <div id="modaltalle" style="display:none;" >
+                <img src="{{ 'images/como-me-mido.png' | static_url }}" style="width:100%;"/>
             </div> 
 
 </div>
