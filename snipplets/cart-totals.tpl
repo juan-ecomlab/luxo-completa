@@ -274,7 +274,7 @@
           {# Cart popup CTA and minimum alert #}
 
           <div class="js-ajax-cart-submit row mb-3" {{ not cart.checkout_enabled ? 'style="display:none"' }} id="ajax-cart-submit-div" >
-            <input class="btn btn-primary btn-block" type="submit" name="go_to_checkout" value="{{ 'Iniciar Compra' | translate }}" data-component="cart.checkout-button"/>
+            <input class="btn btn-primary btn-block" type="submit" name="go_to_checkout" value="{{ 'Finalizar compra' | translate }}" data-component="cart.checkout-button"/>
           </div>
           <div class="row">
             <div class="js-ajax-cart-minimum alert alert-warning mt-4" {{ cart.checkout_enabled ? 'style="display:none"' }} id="ajax-cart-minumum-div">
