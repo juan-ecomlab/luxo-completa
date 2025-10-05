@@ -1349,6 +1349,76 @@ DOMContentLoaded.addEventOrExecute(() => {
 
         {% endif %}
 
+        {# News banners 2 #}
+
+        {% if (settings.banner_news_slider2 or theme_editor and (settings.banner_news2 and settings.banner_news2 is not empty)) or theme_editor %}
+
+            {% set banner_news_columns_desktop2 = settings.banner_news_columns_desktop2 %}
+            {% set banner_news_columns_mobile2 = settings.banner_news_columns_mobile2 %}
+
+            var bannersNews2PerViewDesktopVal = {% if banner_news_columns_desktop2 == 4 %}4{% elseif banner_news_columns_desktop2 == 3 %}3{% elseif banner_news_columns_desktop2 == 2 %}2{% else %}1{% endif %};
+            var bannersNews2PerViewMobileVal = {% if banner_news_columns_mobile2 == 2 %}2.25{% else %}1.15{% endif %};
+
+            {# General banners #}
+
+            {% if (settings.banner_news2 and settings.banner_news2 is not empty) or theme_editor %}
+
+                createSwiper('.js-swiper-banners-news2', {
+                    lazy: true,
+                    watchOverflow: true,
+                    threshold: 5,
+                    watchSlideProgress: true,
+                    watchSlidesVisibility: true,
+                    slideVisibleClass: 'js-swiper-slide-visible',
+                    spaceBetween: itemSwiperSpaceBetween,
+                    navigation: {
+                        nextEl: '.js-swiper-banners-news2-next',
+                        prevEl: '.js-swiper-banners-news2-prev',
+                    },
+                    slidesPerView: bannersNews2PerViewMobileVal,
+                    breakpoints: {
+                        768: {
+                            slidesPerView: bannersNews2PerViewDesktopVal,
+                        }
+                    },
+                },
+                function(swiperInstance) {
+                    window.homeBannerNews2Swiper = swiperInstance;
+                });
+
+            {% endif %}
+
+            {# Mobile banners #}
+
+            {% if (settings.toggle_banner_news_mobile2 and settings.banner_news_mobile2 and settings.banner_news_mobile2 is not empty) or theme_editor %}
+
+                createSwiper('.js-swiper-banners-news2-mobile', {
+                    lazy: true,
+                    watchOverflow: true,
+                    threshold: 5,
+                    watchSlideProgress: true,
+                    watchSlidesVisibility: true,
+                    slideVisibleClass: 'js-swiper-slide-visible',
+                    spaceBetween: itemSwiperSpaceBetween,
+                    navigation: {
+                        nextEl: '.js-swiper-banners-news2-mobile-next',
+                        prevEl: '.js-swiper-banners-news2-mobile-prev',
+                    },
+                    slidesPerView: bannersNews2PerViewMobileVal,
+                    breakpoints: {
+                        768: {
+                            slidesPerView: bannersNews2PerViewDesktopVal,
+                        }
+                    },
+                },
+                function(swiperInstance) {
+                    window.homeBannerNews2MobileSwiper = swiperInstance;
+                });
+
+            {% endif %}
+
+        {% endif %}
+
         {# Image and text modules #}
 
         {% if (settings.module_slider or theme_editor and (settings.module and settings.module is not empty)) or theme_editor %}
