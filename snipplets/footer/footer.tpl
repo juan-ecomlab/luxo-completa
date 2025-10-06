@@ -50,7 +50,7 @@
 						{% endif %}
 					</div>
 				{% endif %}
-
+				
 				{# Foot Nav Secondary #}
 				{% if has_footer_menu_secondary %}
 					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md pr-md-5 mb-4">
@@ -78,7 +78,12 @@
 						{% endif %}
 					</div>
 				{% endif %}
-
+				    <div class="redes-sociales-footer">
+        				<a href="https://www.instagram.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/instagram-with-circle-svgrepo-com.svg' | static_url }}" alt="Logo Instagram"></a>
+        				<a href="https://www.facebook.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/facebook-app-round-icon.svg' | static_url }}" alt="Logo Facebook"></a>
+        				<a href="https://www.youtube.com/channel/UC_zqX1z9zGZKM2nFYyMSzUA" target="_blank"><img src="{{ 'images/icons/redes/youtube-with-circle-svgrepo-com.svg' | static_url }}" alt="Logo Youtube"></a>
+        				<a href="https://ar.pinterest.com/luxomt/" target="_blank"><img src="{{ 'images/icons/redes/pinterest-round-icon.svg' | static_url }}" alt="Logo Pinteres"></a>
+    				</div>
 				{# Contact info #}
 				{% if has_footer_contact_info %}
 					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md mb-4">
@@ -133,7 +138,7 @@
 				</div>
 			</div>
 		{% endif %}	
-
+		
 		{# AFIP - EBIT - Custom Seal #}
 		{% if has_seal_logos and template != 'password' %}
 			{% if store.afip or ebit %}
@@ -144,27 +149,37 @@
 	                            {{ store.afip | raw }}
 	                        </div>
 	                    {% endif %}
+						
 	                    {% if ebit %}
 	                        <div class="footer-logo ebit seal-ebit">
 	                            {{ ebit }}
 	                        </div>
 	                    {% endif %}
+						
 	 				</div>
 	 			</div>
  			{% endif %}
+			
  			{% if "seal_img.jpg" | has_custom_image or settings.custom_seal_code %}
                 <div class="row justify-content-center mb-4">
  					<div class="col text-center">
 	                    {% if "seal_img.jpg" | has_custom_image %}
 	                        <div class="footer-logo custom-seal">
+							
 	                            {% if settings.seal_url != '' %}
                                     <a href="{{ settings.seal_url | setting_url }}" target="_blank">
                                 {% endif %}
+								
                                     <img src="{{ 'images/empty-placeholder.png' | static_url }}" data-src="{{ "seal_img.jpg" | static_url }}" class="custom-seal-img lazyload" alt="{{ 'Sello de' | translate }} {{ store.name }}"/>
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
 	                        </div>
+							<h2>LUXO</h2>
+							<div class="footer-copy">
+	                        	<span>Copyright LUXO | Ropa sin género para humanos.2024. Todos los derechos reservados.Defensa de las y los consumidores.Para reclamos  <a href="">ingrese aquí</a></span>
+	                        </div>
+							<img class="logo-eclab" src="{{ 'images/logo-eclab.png' | static_url }}" alt="Logo Instagram">
 	                    {% endif %}
 	                    {% if settings.custom_seal_code %}
 	                        <div class="custom-seal custom-seal-code">
@@ -175,6 +190,7 @@
                 </div>
             {% endif %}
 		{% endif %}
+		
 	</div>
 	<div class="js-footer-legal footer-legal">
 		<div class="container-fluid">

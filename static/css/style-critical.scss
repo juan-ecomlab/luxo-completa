@@ -374,7 +374,6 @@ a {
   font-size: 1.33333em;
   line-height: .75em;
   vertical-align: -.0667em; 
-  display: none;
 }
 .icon-2x {
   font-size: 2em;  
@@ -2077,6 +2076,10 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   margin-top: 10px;
 }
 
+body > div.js-home-sections-container.home-sections-container > section:nth-child(7) > div > div.js-banners-news.container-fluid svg, body > div.js-home-sections-container.home-sections-container > section:nth-child(8) > div svg {
+  display: none;
+}
+
 .imagen-nav {
   position: absolute;
   right: 20px;
@@ -2225,6 +2228,92 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 #related-products > div > div.products-section-title-container.section-title.text-center > h2 {
   font-size: 24px;
 }
+
+body > div.js-home-sections-container.home-sections-container > section:nth-child(7) {
+  margin-bottom: 0px;
+}
+
+body > div.js-home-sections-container.home-sections-container > section.section-institutional-home.py-5 > div > div > div > p {
+  font-size: 16px;
+}
+
+/* Footer */
+
+body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-md-5.mb-5 > div.js-newsletter.newsletter.pb-2 > div {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-md-5.mb-5 > div.js-newsletter.newsletter.pb-2 > div span {
+  font-size: 12px;
+  font-weight: normal;
+}
+
+body > footer #email {
+  width: 80%;
+  margin: 0 auto;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-md-5.mb-5 > div.text-center.text-md-left {
+  display: none;
+}
+
+body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-md-5.mb-5 {
+  margin-bottom: 1rem !important;
+}
+
+body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.redes-sociales-footer {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 0;
+            width: 100%;
+        }
+        .redes-sociales-footer a img {
+            width: 40px;
+            height: 40px;
+            transition: all 0.4s ease;
+        }
+
+        .redes-sociales-footer a img:hover {
+            transform: scale(1.1);
+        }
+
+        
+        .logo-eclab {
+          display: block;
+          width: 50%;
+          margin: 15px auto;
+        }
+
+        .footer-copy{
+          width: 80%;
+          text-align: left;
+          margin: 40px auto;
+          font-size: 14px;
+        }
+
+        body > footer > div.container-fluid > div.row.justify-content-center.mb-4 > div > h2 {
+          letter-spacing: 7px;
+          font-weight: 400;
+          font-size: 28px;
+        }
+
+        /* .footer-legal {
+          display: none;
+        } */
+
+        body > footer > div.js-footer-legal.footer-legal > div > div > div.col-12.text-center.font-small.mb-3{
+          display: none;
+        }
+
 
 .post-item-title,
 .post-item-summary {

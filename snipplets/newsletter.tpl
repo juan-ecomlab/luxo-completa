@@ -3,7 +3,7 @@
 {% set newsletter_title = home_newsletter ? settings.home_news_title : settings.news_title %}
 {% set newsletter_text = settings.home_news_text %}
 
-{% set newsletter_classes = home_newsletter ? 'px-3 px-md-5' : 'pb-2 mb-3' %}
+{% set newsletter_classes = home_newsletter ? 'px-3 px-md-5' : 'pb-2' %}
 {% set newsletter_title_classes = home_newsletter ? 'h4 mb-2' : 'subtitle mb-3' %}
 {% set newsletter_form_group_class = home_newsletter ? 'mb-0' %}
 {% set newsletter_alert_classes = home_newsletter ? 'mt-3 mb-0' %}
@@ -11,7 +11,10 @@
 {% if (settings.news_show and not home_newsletter) or home_newsletter %}
     <div class="js-newsletter newsletter {{ newsletter_classes }}">
         {% if (settings.news_title and not home_newsletter) or home_newsletter %}
-            <div class="js-home-newsletter-title {{ newsletter_title_classes }}" {% if (home_newsletter and not newsletter_title) %} style="display: none"{% endif %}>{{ newsletter_title }}</div>
+            <div class="js-home-newsletter-title text-center {{ newsletter_title_classes }}" {% if (home_newsletter and not newsletter_title) %} style="display: none"{% endif %}>{{ newsletter_title }}
+            <br>
+            <span>¡Te enviaremos una sorpresa!</span>
+            </div>
         {% endif %}
         {% if home_newsletter %}
             <p class="js-home-newsletter-text mb-2" {% if not newsletter_text %} style="display: none"{% endif %}>{{ newsletter_text }}</p>
@@ -24,7 +27,7 @@
                     input_for: 'email', type_email: true, 
                     input_name: 'email', 
                     input_id: 'email', 
-                    input_placeholder: 'Email' | translate, 
+                    input_placeholder: 'Correo electronico' | translate, 
                     input_aria_label: 'Email' | translate,
                     input_group_custom_class: newsletter_form_group_class } %}
                 {% endembed %}
