@@ -2289,8 +2289,7 @@ body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
         
         .logo-eclab {
           display: block;
-          width: 50%;
-          margin: 15px auto;
+          margin: 25px auto;
         }
 
         .footer-copy{
@@ -2641,6 +2640,20 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   body > footer #email {
     width: 100%;
 }
+
+.footer-copy{
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 100%;
+          margin: 0px
+        }
+.footer-copy span {
+          width: 70%;
+        }
+.logo-eclab {
+          margin: 0px 100px 0px 0px;
+        }
   
   /* Titles and breadcrumbs */
 
