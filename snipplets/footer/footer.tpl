@@ -193,7 +193,7 @@
 	                        </div>
 							
 							<div class="footer-copy">
-	                        	<span>Copyright LUXO | Ropa sin género para humanos.2024. Todos los derechos reservados.Defensa de las y los consumidores.Para reclamos  <a href="">ingrese aquí</a></span>
+	                        	<span>Copyright LUXO | Ropa sin género para humanos.2024. Todos los derechos reservados.Defensa de las y los consumidores.Para reclamos  <a href="https://api.whatsapp.com/send/?phone=5491126193903&text&type=phone_number&app_absent=0" target="_blank">ingrese aquí</a></span>
 								<a href="https://ecommercelab.agency/" target="_blank"><img class="logo-eclab" src="{{ 'images/logo-eclab.png' | static_url }}" alt="Logo Instagram"></a>
 	                        </div>
 							 
