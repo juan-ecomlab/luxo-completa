@@ -2314,6 +2314,9 @@ body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
           display: none;
         }
 
+.logo-footer-desktop {
+  display: none;
+}
 
 .post-item-title,
 .post-item-summary {
@@ -2609,8 +2612,36 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     padding-right: 20px;
     font-size: 14px;
   }
-  
 
+  .logo-footer-desktop {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-bottom: 30px;
+  }
+
+  .logo-footer-desktop img {
+    width: 50px;
+  }
+
+  body>footer>div.container-fluid>div:nth-child(1)>div.col-12.col-md-4.pr-md-5.mb-5>div.js-newsletter.newsletter.pb-2>div {
+    text-align: left !important;
+    margin-left: 20px;
+  }
+  
+  .logo-footer-mobile {
+    display: none;
+  }
+
+  .redes-sociales-footer {
+            margin-left: 50px;
+            justify-content: flex-start;     
+        }
+
+  body > footer #email {
+    width: 100%;
+}
+  
   /* Titles and breadcrumbs */
 
   .font-md-normal {

@@ -16,6 +16,21 @@
 
 			{% if settings.news_show or has_social_network %}
 				<div class="col-12 col-md{% if template == 'password' %}-3{% else %}{% if not has_footer_menu_secondary or not has_footer_contact_info %}-4{% endif %} pr-md-5{% endif %} mb-5">
+				{% if "seal_img.jpg" | has_custom_image %}
+	                        <div class="footer-logo custom-seal logo-footer-desktop">
+							
+	                            {% if settings.seal_url != '' %}
+                                    <a href="{{ settings.seal_url | setting_url }}" target="_blank">
+                                {% endif %}
+								
+                                    <img src="{{ 'images/empty-placeholder.png' | static_url }}" data-src="{{ "seal_img.jpg" | static_url }}" class="custom-seal-img lazyload" alt="{{ 'Sello de' | translate }} {{ store.name }}"/>
+                                {% if settings.seal_url != '' %}
+                                    </a>
+                                {% endif %}
+								<h2>LUXO</h2>
+	                        </div>
+							
+							{% endif %}
 					{% include 'snipplets/newsletter.tpl' %}
 					{% include "snipplets/social/social-links.tpl" %}
 				</div>
@@ -164,7 +179,7 @@
                 <div class="row justify-content-center mb-4">
  					<div class="col text-center">
 	                    {% if "seal_img.jpg" | has_custom_image %}
-	                        <div class="footer-logo custom-seal">
+	                        <div class="footer-logo custom-seal logo-footer-mobile">
 							
 	                            {% if settings.seal_url != '' %}
                                     <a href="{{ settings.seal_url | setting_url }}" target="_blank">
@@ -174,8 +189,9 @@
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
+								<h2>LUXO</h2>
 	                        </div>
-							<h2>LUXO</h2>
+							
 							<div class="footer-copy">
 	                        	<span>Copyright LUXO | Ropa sin género para humanos.2024. Todos los derechos reservados.Defensa de las y los consumidores.Para reclamos  <a href="">ingrese aquí</a></span>
 	                        </div>
