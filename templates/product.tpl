@@ -35,7 +35,7 @@
         <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono">
         <div class="beneficios-content">
             <p><b>Envios Bonificados</b></p>
-            <p>A partir de $190.000</p>
+            <p>A partir de $150.000</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
