@@ -17,7 +17,7 @@
                 En menos de un año, ya evitamos la emisión de 8,5 toneladas de dióxido de carbono. Y recién estamos
                 empezando.</p>
         </section>
-        <section>
+        <div class="cajas">
             <div class="box">
                 <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
                 <p>Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
@@ -32,7 +32,7 @@
                     propósito.
                 </p>
             </div>
-            <div class="box">
+            <div class="box reverse">
                 <p>Esta planta fue clave para lograr nuestra certificación como Empresa B, pero más allá del sello, es
                     un reflejo de un camino que elegimos: el camino del triple impacto, donde el crecimiento económico
                     camina de la mano con el impacto social y ambiental.
@@ -43,9 +43,9 @@
                 </p>
                 <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
             </div>
-
-        </section>
-        <video src=""></video>
+        </div>
+        
+        {# <video src=""></video> #}
         <h2>Nuestros datos</h2>
         <section class="datos">
             <div><span>72</span>
