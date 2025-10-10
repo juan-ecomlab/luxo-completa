@@ -2420,6 +2420,59 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     width: 100%;
 }
 
+.coleccion * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+.coleccion h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 24px;
+}
+
+.coleccion .contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    gap: 20px;
+}
+
+.coleccion .contenedor a {
+    width: 45%;
+}
+
+.coleccion .contenedor a p {
+    font-size: 14px;
+}
+
+.coleccion .contenedor a h3 {
+    font-size: 16px;
+}
+
+.coleccion .contenedor a img {
+    width: 100%;
+    height: auto;
+}
+
+.coleccion .final {
+    text-align: center;
+    margin: 70px 0 40px;
+}
+
+.coleccion .final h2 {
+    font-size: 32px;
+}
+
 .post-item-title,
 .post-item-summary {
   display: -webkit-box;
@@ -2781,7 +2834,32 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
 #solarPark .reverse {
     flex-direction: row;
 }
-  
+
+.coleccion h1 {
+    font-size: 32px;
+}
+
+.coleccion .contenedor a {
+    width: 28%;
+}
+.coleccion .contenedor a p {
+    font-size: 16px;
+}
+
+.coleccion .contenedor a h3 {
+    font-size: 18px;
+}
+
+.coleccion .contenedor a img {
+    filter: grayscale(100%);
+    transition: all 0.3s ease;
+}
+
+.coleccion .contenedor a:hover > img {
+    filter: grayscale(0%);
+    transform: scale(1.01);
+}
+
   /* Titles and breadcrumbs */
 
   .font-md-normal {
