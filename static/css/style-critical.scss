@@ -2841,6 +2841,7 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
 
 .coleccion .contenedor a {
     width: 28%;
+    transition: all 0.3s ease;
 }
 .coleccion .contenedor a p {
     font-size: 16px;
@@ -2855,9 +2856,12 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     transition: all 0.3s ease;
 }
 
+.coleccion .contenedor a:hover {
+    transform: scale(1.01);
+}
+
 .coleccion .contenedor a:hover > img {
     filter: grayscale(0%);
-    transform: scale(1.01);
 }
 
   /* Titles and breadcrumbs */

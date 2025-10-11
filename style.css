@@ -1,59 +1,70 @@
-.coleccion * {
-    margin: 0;
+.empresab * {
     padding: 0;
+    margin: 0;
     box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
 }
 
-a {
-    text-decoration: none;
-    color: black;
-}
-
-.coleccion h1 {
-    text-align: center;
-    margin-bottom: 30px;
-    font-size: 32px;
-}
-
-.coleccion .contenedor {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    width: 90%;
-    margin: 0 auto;
-    gap: 20px;
-}
-
-.coleccion .contenedor a {
-    width: 28%;
-}
-
-.coleccion .contenedor a p {
-    font-size: 16px;
-}
-
-.coleccion .contenedor a h3 {
-    font-size: 18px;
-}
-
-.coleccion .contenedor a img {
+.empresab .banner {
     width: 100%;
-    height: auto;
-    filter: grayscale(100%);
-    transition: all 0.3s ease;
+    height: 60vh;
 }
 
-.coleccion .contenedor a:hover > img {
-    filter: grayscale(0%);
-    transform: scale(1.01);
-}
-
-.coleccion .final {
+.empresab {
     text-align: center;
-    margin: 70px 0 40px;
 }
 
-.coleccion .final h2 {
-    font-size: 32px;
+.empresab h2 {
+    padding: 40px 0;
+    font-size: 1.8rem;
+    font-weight: bolder;
+}
+
+.empresab p {
+    width: 60%;
+    margin: 0 auto;
+}
+
+.empresab .responsabilidad div {
+    display: flex;
+    align-items: center;
+    width: 60%;
+    margin: 50px auto;
+}
+
+.empresab .responsabilidad div p {
+    width: 100%;
+    padding: 20px;
+}
+
+.empresab .responsabilidad div img {
+    width: 400px;
+    height: 400px;
+    border: 1px solid black;
+}
+
+.empresab .carbono {
+    background-color:#f6f6f6;
+}
+
+.empresab section div {
+    display: flex;
+    width: 50%;
+    justify-content: space-between;
+    margin: 40px auto;
+}
+
+.empresab section div img {
+    width: 150px;
+    height: 150px;
+    border: 1px solid black;
+}
+
+.empresab .carbono .logos img {
+    width: 100px;
+    height: 100px;
+}
+
+.empresab .carbono .logos {
+    width: 30%;
+    padding-bottom: 40px;
 }
