@@ -36,6 +36,9 @@
 {% elseif current_url == "solarpark" %}
 {% include 'templates/solarPark.tpl' %}
 
+{% elseif current_url == "empresab" %}
+{% include 'templates/empresab.tpl' %}
+
 {% elseif current_url == "test" %}
 {% include 'templates/test.tpl' %}
 
