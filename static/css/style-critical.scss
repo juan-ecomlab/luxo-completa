@@ -1832,9 +1832,10 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 .label {
   width: fit-content;
   padding: 4px 6px; 
-  font-size: var(--font-smallest);
+  font-size: 12px;
   letter-spacing: 1px;
   text-transform: uppercase;
+
 }
 
 .label-small {
@@ -2024,6 +2025,15 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(1) > div.nav-item-container > a > span, body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(3) > div.nav-item-container > a > span {
   display: none
 }
+
+#nav-search > div.modal-body > form > div > input {
+  font-size: 16px;
+  font-family: Helvetica, sans-serif;
+}
+
+/* body > div.js-home-sections-container.home-sections-container > section:nth-child(3) > div > div > div > div > div:nth-child(2) > div > div.js-product-item-image-container-private.js-product-item-private-with-secondary-images.product-item-image-container.item-image > div > div.item-floating-elements > div > div.js-promotion-label-private.label.label.label-accent{
+  font-size: 14px;
+} */
 
 #product-description > div.social-share {
   display: none;
@@ -2658,6 +2668,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     text-align: center;
     margin: 40px 0;
     background-color: #f2f2f2;
+    padding-bottom: 40px;
 }
 
 .kluv .unirse h2 {
@@ -3006,7 +3017,6 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
           justify-content: space-between;
           align-items: center;
           width: 100%;
-          margin: 0px 0px 40px 0px;
         }
 .footer-copy span {
           width: 70%;
