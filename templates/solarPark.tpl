@@ -19,7 +19,7 @@
         </section>
         <div class="cajas">
             <div class="box">
-                <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="{{ 'images/solar park/DSC00781.jpg' | static_url }}" alt="">
                 <p>Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
                     hasta el producto terminado que llega a tus manos. Esto significa no solo una mejora en la calidad,
                     sino también garantizar procesos responsables, condiciones laborales justas y un impacto ambiental
