@@ -11,6 +11,7 @@
                     <span>Lunes a Viernes de 12:00hs a 20:00hs.</span>
                     <span>Sábado de 11:30hs a 20:30hs.</span>
                     <span>Domingo de 14:00hs a 20:00hs.</span>
+                    <br>
                 </div>
             </div>
             <div class="local">
@@ -22,7 +23,7 @@
                     <span>Lunes a Jueves de 11:00hs a 19:00hs.</span>
                     <span>Viernes y Sábado de 10:30hs a 19:30hs.</span>
                     <span>Domingo de 13:00hs a 19:00hs.</span>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -34,7 +35,7 @@
                     <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -46,7 +47,7 @@
                     <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -58,7 +59,7 @@
                     <span>Lunes a Domingo de 10:00hs a 22:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -70,7 +71,7 @@
                     <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -82,7 +83,7 @@
                     <span>Lunes a Sábado de 09:00hs a 13:00hs. | 18:00hs a 22:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -93,6 +94,7 @@
                     <h4>HORARIO DE ATENCIÓN:</h4>
                     <span>Lunes a Jueves de 10:30hs a 19:30hs.</span>
                     <span>Viernes y Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
                     <br>
                     <br>
                 </div>
@@ -106,7 +108,7 @@
                     <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
                     <br>
                     <br>
-                    <p>HABILITADO PARA RETIRO.</p>
+                    <span>HABILITADO PARA RETIRO.</span>
                 </div>
             </div>
             <div class="local">
@@ -116,6 +118,9 @@
                     <P>RUTA 10 ENTRE LOS REMANCES Y LOS REMANSOS LA BARRA</P>
                     <h4>HORARIO DE ATENCIÓN:</h4>
                     <span>Viernes y Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                    <br>
                 </div>
             </div>
         </div>

@@ -1,9 +1,7 @@
-
-
-<div class="container">
+<div class="container" style="font-family: Helvetica, sans-serif;">
 <div class="col col-lg-8 offset-lg-2">
 <div style="height:120px;" id="como_comprar"></div>
-<span class="fs-16 ls-1 font-weight-bold d-block" >¿CÓMO COMPRAR?</span><br/>
+<h3 class="fs-16 ls-1 font-weight-bold d-block" >¿CÓMO COMPRAR?</h3><br/>
 <p class="fs-12">
 Elegí tus artículos a medida que navegás por nuestra web y añadilos al carrito, seleccionando los talles que prefieras.<br/>
 En el ícono del carrito, ubicado arriba a la derecha de la pantalla, podés ver el detalle y saldo parcial de tu pedido. Si seleccionás la opción “iniciar compra”, el sistema te redirigirá a la instancia final del proceso.<br/>
@@ -12,25 +10,25 @@ Elegí el método de envío (a domicilio, retiro en sucursales de correo o retir
 ¡Listo! Una vez validada la información, recibirás un correo electrónico de confirmación de tu pedido para que puedas hacer el seguimiento del estado del mismo.</p>
 
 <div style="height:120px;" id="cambios"></div>
-<span class="fs-16 ls-1 font-weight-bold d-block">CAMBIOS Y DEVOLUCIONES</span><br/>
-<span class="fs-12 ls-1 font-weight-bold">¿Puedo hacer el cambio de mi producto?</span><br/>
+<h3 class="fs-16 ls-1 font-weight-bold d-block">CAMBIOS Y DEVOLUCIONES</h3><br/>
+<h4 class="fs-12 ls-1 font-weight-bold">¿Puedo hacer el cambio de mi producto?</h4><br/>
 <p class="fs-12 mb-5">
 Podrás realizar un cambio por el mismo producto en otra variante o por cualquier otro producto de la marca. Podés hacerlo hasta 30 (treinta) días corridos después de recibida tu compra. <br/>
 Los productos deberán encontrarse en el mismo estado en que fueron remitidos, sin haber sido utilizados, y con el embalaje y etiquetas originales en buen estado. <br/>
 No se realizan cambios de medias y ropa interior.</p>
 
 
-<span class="fs-12 ls-1 font-weight-bold ">Autogestiona tu cambio </span><br/><br/>
+<h3 class="fs-12 ls-1 font-weight-bold ">Autogestiona tu cambio </h3><br/><br/>
 <div class="boris"> </div>
 
 <br/><br/>
 <br/>
 
-<span class="fs-12 ls-1 font-weight-bold">Opciones de cambio</span><br/>
+<h4 class="fs-12 ls-1 font-weight-bold">Opciones de cambio</h4><br/>
 <p class="fs-12 mb-5">
 Cambio en nuestros locales de CABA y GBA:<br/>
 Podés acercarte con las prendas que deseás cambiar, la factura digital de compra, que te llega automáticamente a tu e-mail, y el número de orden -en caso de haber comprado online-.<br/>
-Mirá los locales acá <a href="/locales/" target="_self"><strong>VER LOCALES</strong></a>.<br/><br/>
+Mirá los locales acá <a href="/locales/" target="_self"><b>VER LOCALES</b></a>.<br/><br/>
 
 Para determinar el valor del cambio, se toma el costo de la prenda que abonó el cliente al momento de realizar la compra. En caso de haber una diferencia a favor del cliente, podrás usarla como parte de pago en tu próxima compra o te realizaremos el reintegro parcial por el mismo medio de pago. No se realizan devoluciones en efectivo. Si la diferencia es a favor de la marca, deberás abonarla en el momento.</p>
 
@@ -84,7 +82,7 @@ Es muy importante nos des información detallada de tu experiencia con el produc
 
 <div style="height:120px;" id="envios"></div>
 
-<span class="fs-16 ls-1 font-weight-bold d-block" id="envios">ENVÍOS</span><br/>
+<h3 class="fs-16 ls-1 font-weight-bold d-block" id="envios">ENVÍOS</h3><br/>
 <span class="fs-12 ls-1 font-weight-bold">¿Cuánto tarda en llegar mi compra?</span><br/>
 <p class="fs-12 mb-5">
 Los pedidos se despachan dentro de las primeras 24hs. Hábiles luego de confirmada la compra.<br/>
@@ -129,7 +127,7 @@ Cualquier persona puede retirar tu compra, pero tené en cuenta de avisar median
 Es inadmisible las entregas a personas NO TITULARES de compras online sin documentación/consentimiento previo del titular en conjunto con el número de orden.</p>
 
 <div style="height:120px;" id="pagos"></div>
-<span class="fs-16 ls-1 font-weight-bold d-block" id="pagos">PAGOS</span><br/>
+<h3 class="fs-16 ls-1 font-weight-bold d-block" id="pagos">PAGOS</h3><br/>
 <span class="fs-12 ls-1 font-weight-bold">Métodos de pago</span><br/>
 <p class="fs-12 mb-5">
 Podrás efectuar tu pago por cualquiera de los siguientes medios:<br/><br/>
@@ -161,7 +159,7 @@ Al finalizar tu compra, recibirás un mail de confirmación con el que podrás r
 
 <div style="height:120px;" id="preguntas"></div>
 
-<span class="fs-16 ls-1 font-weight-bold d-block" id="preguntas">PREGUNTAS GENERALES</span><br/>
+<h3 class="fs-16 ls-1 font-weight-bold d-block" id="preguntas">PREGUNTAS GENERALES</h3><br/>
 
 <span class="fs-12 ls-1 font-weight-bold">¿El precio en el e-shop es el mismo que en los locales?</span><br/>
 <p class="fs-12 mb-5">
