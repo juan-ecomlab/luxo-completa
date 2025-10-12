@@ -41,7 +41,7 @@
                     grande que dimos como empresa y un verdadero compromiso con la industria nacional y la
                     sustentabilidad. Porque lo que hacemos importa, y cómo lo hacemos, todavía más.
                 </p>
-                <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+                <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="">
             </div>
         </div>
         
@@ -84,14 +84,14 @@
         <p>Sabemos que la onda de la ropa no es lo único que te importa de tu marca favorita.</p>
         <p><b>A nosotros tampoco.</b></p>
         <section class="imagenes">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
-            <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" alt="">
+            <img src="{{ 'images/solar park/DSC00725.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00727.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00729.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00730.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00731.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00744.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00746.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/DSC00750.jpg' | static_url }}" alt="">
         </section>
     </main>
 </div>
