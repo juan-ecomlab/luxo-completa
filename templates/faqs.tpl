@@ -18,10 +18,12 @@ Los productos deberán encontrarse en el mismo estado en que fueron remitidos, s
 No se realizan cambios de medias y ropa interior.</p>
 
 
-<h3 class="fs-12 ls-1 font-weight-bold ">Autogestiona tu cambio </h3><br/><br/>
-<div class="boris"> </div>
+<h3 class="fs-12 ls-1 font-weight-bold ">Autogestiona tu cambio </h3><br/>
+<div class="boris">
+    <a href="https://frontprod.borisreturns.com/buscar?empresa=188770" target="_blank" style="font-size: 18px;">Inicia tu gestión</a>
+</div>
 
-<br/><br/>
+<br/>
 <br/>
 
 <h4 class="fs-12 ls-1 font-weight-bold">Opciones de cambio</h4><br/>
