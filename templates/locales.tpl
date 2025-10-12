@@ -1,179 +1,123 @@
-<div class="container">
-  <div class="row my-4">
-    <div class="col-12">
-      <img src="https://d1a9qnv764bsoo.cloudfront.net/stores/188/770/rte/BANNER RETIRO LOCALES (1).jpg" alt="Nuestros locales" class="img-fluid">
+<div class="locales">
+        <h1>LOCALES</h1>
+        <img src="{{ 'images/locales/banner locales.jpg' | static_url }}" alt="">
+        <div class="contenedor">
+            <div class="local">
+                <img src="{{ 'images/locales/soho.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>PALERMO SOHO</h2>
+                    <P>Gurruchaga 1744</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Viernes de 12:00hs a 20:00hs.</span>
+                    <span>Sábado de 11:30hs a 20:30hs.</span>
+                    <span>Domingo de 14:00hs a 20:00hs.</span>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/hangar.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>HANGAR</h2>
+                    <P>Gurruchaga 974</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Jueves de 11:00hs a 19:00hs.</span>
+                    <span>Viernes y Sábado de 10:30hs a 19:30hs.</span>
+                    <span>Domingo de 13:00hs a 19:00hs.</span>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/lomas.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>LOMITAS</h2>
+                    <P>España 145</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/ramos.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>RAMOS MEJIA</h2>
+                    <P>Necochea 234</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/dot.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>DOT BAIRES SHOPPING</h2>
+                    <P>Nivel 2 Local 39</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Domingo de 10:00hs a 22:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/montevideo.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>MONTEVIDEO</h2>
+                    <P>Williman 642, Montevideo</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/rioja.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>LA RIOJA</h2>
+                    <P>25 de Mayo 94</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Sábado de 09:00hs a 13:00hs. | 18:00hs a 22:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/la plata.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>LA PLATA</h2>
+                    <P>C. 49 N711</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Jueves de 10:30hs a 19:30hs.</span>
+                    <span>Viernes y Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/mdp.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>MAR DEL PLATA</h2>
+                    <P>GARAY 1382</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>
+                    <br>
+                    <br>
+                    <p>HABILITADO PARA RETIRO.</p>
+                </div>
+            </div>
+            <div class="local">
+                <img src="{{ 'images/locales/pde.png' | static_url }}" alt="">
+                <div class="texto">
+                    <h2>PUNTA DEL ESTE</h2>
+                    <P>RUTA 10 ENTRE LOS REMANCES Y LOS REMANSOS LA BARRA</P>
+                    <h4>HORARIO DE ATENCIÓN:</h4>
+                    <span>Viernes y Sábado de 11:00hs a 20:00hs.</span>
+                </div>
+            </div>
+        </div>
+
     </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 col-md-6 img_palermo02">
-      <div class="dire">
-      <h1>PALERMO SOHO</h1>
-
-      <h2>Gurruchaga 1744</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Viernes de 12:00hs a 20:00hs.<br />
-      S&aacute;bado&nbsp;de 11:30hs a 20:30hs.<br />
-      Domingo de 14:00hs a 20:00hs.</p>
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 img_hangar02">
-      <div class="dire">
-      <h1>HANGAR</h1>
-
-      <h2>Gurruchaga 974</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Jueves de 11:00hs a 19:00hs.<br />
-      Viernes y&nbsp;S&aacute;bado&nbsp;de 10:30hs a 19:30hs.<br />
-      Domingo de 13:00hs a 19:00hs.
-      <br/><br/>HABILITADO PARA RETIRO.
-      </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 col-md-6 img_lomitas01">
-      <div class="dire">
-      <h1>LOMITAS</h1>
-
-      <h2>Espa&ntilde;a 145</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a S&aacute;bado&nbsp;de 11:00hs a 20:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </p>
-      </div>
-    </div>
-
-    <div class="col-sm-12 col-md-6 img_ramos02">
-      <div class="dire">
-      <h1>RAMOS MEJIA</h1>
-
-      <h2>Necochea 234</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Sábado de 11:00hs a 20:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </div>
-    </div>
-  </div>
-
-    <div class="row">
-    <div class="col-sm-12 col-md-6 img_dot01">
-      <div class="dire">
-      <h1>DOT BAIRES SHOPPING</h1>
-
-      <h2>Nivel 2 Local 39</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Domingo de 10:00hs a 22:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </div>
-    </div> 
-
-        <div class="col-sm-12 col-md-6 img_uruguay01">
-      <div class="dire">
-      <h1>MONTEVIDEO</h1>
-
-      <h2>Williman 642, Montevideo</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Sábado de 11:00hs a 20:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </div>
-    </div> 
- 
-  </div>
-
-  <div class="row">
-    <div class="col-sm-12 col-md-6 img_larioja01">
-      <div class="dire">
-      <h1>LA RIOJA</h1>
-
-      <h2>25 de Mayo 94</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a S&aacute;bado de 09:00hs a 13:00hs. | 18:00hs a 22:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </div>
-    </div> 
-
-    <div class="col-sm-12 col-md-6 img_laplata01">
-      <div class="dire">
-      <h1>LA PLATA</h1>
-
-      <h2>C. 49 N711</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a Jueves de 10:30hs a 19:30hs.<br/><br/>
-      Viernes y Sábado de 11:00hs a 20:00hs.
-        <br/><br/>
-      </div>
-    </div> 
- 
-  </div>
-
-   <div class="row">
-    <div class="col-sm-12 col-md-6 img_mdq01">
-      <div class="dire">
-      <h1>MAR DEL PLATA</h1>
-
-      <h2>GARAY 1382</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br />
-      Lunes a S&aacute;bado de 11:00hs a 20:00hs.
-        <br/><br/>HABILITADO PARA RETIRO.
-      </div>
-    </div> 
-
-    <div class="col-sm-12 col-md-6 img_pde01">
-      <div class="dire">
-      <h1> PUNTA DEL ESTE</h1>
-
-      <h2>RUTA  10 ENTRE LOS REMANCES Y LOS REMANSOS LA BARRA</h2>
-
-      <p>&nbsp;</p>
-      &nbsp;
-
-      <p><strong>HORARIO DE ATENCI&Oacute;N:</strong><br /
-      Lunes a Jueves de 10:00hs a 20:00hs.<br/><br/>
-      Viernes y Sábado de 11:00hs a 20:00hs.
-        <br/><br/> 
-        
-      </div>
-    </div> 
- 
-  </div>
-
-</div>
