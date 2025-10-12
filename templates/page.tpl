@@ -39,6 +39,9 @@
 {% elseif current_url == "empresab" %}
 {% include 'templates/empresab.tpl' %}
 
+{% elseif current_url == "thekluv" %}
+{% include 'templates/thekluv.tpl' %}
+
 {% elseif current_url == "test" %}
 {% include 'templates/test.tpl' %}
 
