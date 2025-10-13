@@ -2688,6 +2688,68 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     border: none;
 }
 
+.artistas * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
+
+.artistas a {
+    text-decoration: none;
+}
+
+.artistas .banner-mobile {
+    width: 100%;
+}
+
+.artistas .banner-desktop {
+    width: 100%;
+    display: none;
+}
+
+.artistas {
+    text-align: center;
+}
+
+.artistas h1 {
+    margin: 20px 0;
+}
+
+.artistas p {
+        width: 100%;
+        margin: 20px auto;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+.artistas .imagenes img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.artistas .imagenes a {
+    position: relative;
+}
+
+.artistas .imagenes a p {
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    background-color: rgba(0,0,0, 0.5);
+    color:  white;
+    width: 100%;
+}
+
+.artistas .final {
+    text-align: center;
+    margin: 70px 0 40px;
+}
+
+.artistas .final h2 {
+    font-size: 32px;
+}
+
 .post-item-title,
 .post-item-summary {
   display: -webkit-box;
@@ -3161,6 +3223,40 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     }
     .kluv .unirse input {
         width: 300px;
+    }
+
+    .artistas .banner-mobile {
+        display: none;
+    }
+
+    .artistas .banner-desktop {
+        display: block;
+        height: 80vh;
+    }
+
+    .artistas p {
+        width: 50%;
+    }
+
+    .artistas .imagenes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 8px;
+        row-gap: 4px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .artistas .imagenes div{
+        transition: all 0.6s ease;
+    }
+
+    .artistas .imagenes div:hover {
+        transform: scale(1.02);
+    }
+
+    .artistas .imagenes img {
+        margin: 0;
     }
 
   /* Titles and breadcrumbs */

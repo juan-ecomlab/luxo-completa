@@ -1,75 +1,97 @@
-.kluv * {
+.artistas * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
     font-family: Helvetica, sans-serif;
 }
 
-.kluv h1, .kluv h2 {
+.artistas a {
+    text-decoration: none;
+}
+
+.artistas .banner-mobile {
+    width: 100%;
+}
+
+.artistas .banner-desktop {
+    width: 100%;
+    display: none;
+}
+
+.artistas {
     text-align: center;
-    margin: 40px 0;
 }
 
-.kluv .banner {
+.artistas h1 {
+    margin: 20px 0;
+}
+
+.artistas p {
+        width: 100%;
+        margin: 20px auto;
+        font-size: 1.2rem;
+        line-height: 1.5;
+    }
+
+.artistas .imagenes img {
+    width: 100%;
+    margin: 10px 0;
+}
+
+.artistas .imagenes a {
+    position: relative;
+}
+
+.artistas .imagenes a p {
+    position: absolute;
+    bottom: 30px;
+    z-index: 10;
+    background-color: rgba(0,0,0, 0.5);
+    color:  white;
     width: 100%;
 }
 
-.kluv p {
-    width: 100%;
-    margin: 20px auto;
+.artistas .final {
     text-align: center;
+    margin: 70px 0 40px;
 }
 
-.kluv .imagenes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    width: 100%;
-}
-
-.kluv .imagenes img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.kluv .unirse {
-    text-align: center;
-    margin: 40px 0;
-    background-color: #f2f2f2;
-}
-
-.kluv .unirse h2 {
-    padding-top: 30px;
-}
-
-.kluv .unirse input {
-    padding: 10px;
-    border: 1px solid #c4c5c7;
-    background-color: #c4c5c7;
-}
-
-.kluv .unirse button {
-    background-color: #3483f6;
-    color: white;
-    padding: 10px;
-    border: none;
+.artistas .final h2 {
+    font-size: 32px;
 }
 
 @media (min-width: 768px) {
-    .kluv .banner {
-        height: 80vh;
-        object-fit: cover;
+    .artistas .banner-mobile {
+        display: none;
     }
 
-    .kluv p {
-        width: 60%;
+    .artistas .banner-desktop {
+        display: block;
+        height: 80vh;
     }
-    .kluv .imagenes {
-        grid-template-columns: repeat(4, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+
+    .artistas p {
+        width: 50%;
     }
-    .kluv .unirse input {
-        width: 300px;
+
+    .artistas .imagenes {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        column-gap: 8px;
+        row-gap: 4px;
+        width: 80%;
+        margin: 0 auto;
+    }
+
+    .artistas .imagenes img {
+        margin: 0;
+    }
+
+    .artistas .imagenes div{
+        transition: all 0.6s ease;
+    }
+
+    .artistas .imagenes div:hover {
+        transform: scale(1.02);
     }
 }
