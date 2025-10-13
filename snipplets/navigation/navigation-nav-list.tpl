@@ -38,7 +38,7 @@
 			{% endif %}
 			{% if megamenu and not subitem %}
 				<div class="js-desktop-dropdown nav-dropdown-content desktop-dropdown">
-					{% if item.name == 'COMPRAR' or item.name == 'Comprar' %}
+					{% if item.name == 'COLECCIÓN' or item.name == 'Colección' %}
 						{# Use table layout for COMPRAR to include image within background #}
 						<div class="megamenu-table-container">
 							<div class="megamenu-table-cell megamenu-menu-cell">
@@ -89,12 +89,12 @@
 					</ul>
 
 			{% if megamenu and not subitem %}
-					{% if item.name == 'COMPRAR' or item.name == 'Comprar' %}
+					{% if item.name == 'COLECCIÓN' or item.name == 'Colección' %}
 							</div>
 							<div class="megamenu-table-cell megamenu-image-cell">
 								<div class="megamenu-promo-container">
 									<a href="https://eclabdemo.mitiendanube.com/productos/" class="megamenu-promo-link">
-										<img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg"
+										<img src="{{ 'images/kluv/banner-thekluv.jpg' | static_url }}"
 											 alt="Empresa"
 											 class="megamenu-promo-image">
 									</a>
