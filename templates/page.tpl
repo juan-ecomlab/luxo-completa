@@ -42,6 +42,27 @@
 {% elseif current_url == "thekluv" %}
 {% include 'templates/thekluv.tpl' %}
 
+{% elseif current_url == "insuave" %}
+{% include 'templates/insuave.tpl' %}
+
+{% elseif current_url == "castiglioni" %}
+{% include 'templates/castiglioni.tpl' %}
+
+{% elseif current_url == "artista-canalla" %}
+{% include 'templates/artista-canalla.tpl' %}
+
+{% elseif current_url == "totosanchez" %}
+{% include 'templates/totosanchez.tpl' %}
+
+{% elseif current_url == "aldagrama" %}
+{% include 'templates/aldagrama.tpl' %}
+
+{% elseif current_url == "dalia" %}
+{% include 'templates/dalia.tpl' %}
+
+{% elseif current_url == "tamo" %}
+{% include 'templates/tamo.tpl' %}
+
 {% elseif current_url == "test" %}
 {% include 'templates/test.tpl' %}
 

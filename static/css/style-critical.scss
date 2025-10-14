@@ -3231,7 +3231,7 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
 
     .artistas .banner-desktop {
         display: block;
-        height: 80vh;
+        height: 80vh !important;
     }
 
     .artistas p {
@@ -3243,7 +3243,7 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
         grid-template-columns: repeat(3, 1fr);
         column-gap: 8px;
         row-gap: 4px;
-        width: 80%;
+        width: 60%;
         margin: 0 auto;
     }
 

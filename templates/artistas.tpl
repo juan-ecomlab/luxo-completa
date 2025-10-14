@@ -26,13 +26,13 @@
                 </a>
             </div>
             <div>
-                <a href="canalla">
+                <a href="/artista-canalla">
                     <img src="{{ 'images/artistas/fal_0003_CANALLA PERFIL.jpg' | static_url }}" alt="">
                     <p>CANALLA</p>
                 </a>
             </div>
             <div>
-                <a href="totosanchez">
+                <a href="/totosanchez">
                     <img src="{{ 'images/artistas/fal_0007_TOTO PERFIL.jpg' | static_url }}" alt="">
                     <p>TOTO SANCHEZ</p>
                 </a>
