@@ -164,11 +164,11 @@
                     <div class="js-item-price-container item-price-container {% if columns_mobile == 3 %}mb-0 mb-md-2{% else %}mb-2{% endif %}" data-store="product-item-price-{{ product.id }}">
                         {% if not reduced_item %}
                             <span class="js-compare-price-display price-compare {% if columns_mobile == 3 and product.compare_at_price %}d-none d-md-inline-block{% endif %}" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %}style="display:inline-block;"{% endif %} data-price-compare-visibility="{{ product.compare_at_price ? 'true' : 'false' }}">
-                                {{ product.compare_at_price | money }}
+                                {{ product.compare_at_price | money_nocents }}
                             </span>
                         {% endif %}
                         <span class="js-price-display item-price" data-product-price="{{ product.price }}">
-                            {{ product.price | money }}
+                            {{ product.price | money_nocents }}
                         </span>
                         {{ component('payment-discount-price', {
                                 visibility_condition: settings.payment_discount_price and not reduced_item,

@@ -82,7 +82,7 @@
                                 </div>
                                 <div class="col-2 d-none d-md-block text-center">
                                     <p>
-                                        {{ item.unit_price | money }}
+                                        {{ item.unit_price | money_nocents }}
                                     </p>
                                 </div>
                                 <div class="col-2 d-none d-md-block text-center">
@@ -92,7 +92,7 @@
                                 </div>
                                 <div class="col-5 col-md-2 text-center">
                                     <p>
-                                        {{ item.subtotal | money }}
+                                        {{ item.subtotal | money_nocents }}
                                     </p>
                                 </div>
                             </div>
@@ -116,16 +116,16 @@
                     {% if order.discount %}
                         <p class="mt-3">
                            <strong class="font-small">{{ 'Descuento ({1})' | translate(order.coupon) }}:</strong>
-                            - {{ order.discount | money }}
+                            - {{ order.discount | money_nocents }}
                         </p>
                     {% endif %}
                     {% if order.shipping or order.discount %}
                         <p class="mt-3">
                             <strong class="font-small">{{ 'Subtotal' | translate }}:</strong>
-                            {{ order.subtotal | money }}
+                            {{ order.subtotal | money_nocents }}
                         </p>
                     {% endif %}  
-                    <h3 class="font-large">{{ 'Total' | translate }}: {{ order.total | money }}</h3>
+                    <h3 class="font-large">{{ 'Total' | translate }}: {{ order.total | money_nocents }}</h3>
                     {% if order.pending %}
                         <a class="btn btn-primary d-inline-block" href="{{ order.checkout_url | add_param('ref', 'orders_details') }}" target="_blank">{{ 'Realizar el pago' | translate }}</a>
                     {% endif %}

@@ -53,7 +53,7 @@
                 </span>
 
             </span>
-            <strong class="js-cart-total col text-right">{{ cart.total | money }}</strong>
+            <strong class="js-cart-total col text-right">{{ cart.total | money_nocents }}</strong>
         </div>
         <a href="#" class="{% if related_products %}js-modal-close{% else %}js-cart-notification-close{% endif %} js-modal-open js-open-cart js-fullscreen-modal-open btn btn-primary btn-medium w-100 d-inline-block" data-toggle="#modal-cart" data-modal-url="modal-fullscreen-cart">
             {{'Ver carrito' | translate }}

@@ -12,7 +12,7 @@
                 	</p>
                     {% if product.display_price %}
                     	<p>
-                    		{{ product.price | money }}
+                    		{{ product.price | money_nocents }}
 
                             {% set product_can_show_installments = product.show_installments and product.display_price and product.get_max_installments.installment > 1 and settings.product_installments %}
                             {% if product_can_show_installments %}
