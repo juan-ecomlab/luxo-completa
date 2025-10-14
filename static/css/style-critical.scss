@@ -2675,17 +2675,27 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     padding-top: 30px;
 }
 
-.kluv .unirse input {
-    padding: 10px;
-    border: 1px solid #c4c5c7;
-    background-color: #c4c5c7;
+.kluv .logos {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    width: 100%;
+    margin: 20px auto;
 }
 
-.kluv .unirse button {
-    background-color: #3483f6;
-    color: white;
-    padding: 10px;
-    border: none;
+.kluv .logos img {
+    width: 40%;
+    margin: 20px auto;
+    padding: 20px 0;
+}
+
+.kluv .final {
+    text-align: center;
+    margin: 70px 0 40px;
+}
+
+.kluv .final h2 {
+    font-size: 32px;
 }
 
 .artistas * {
@@ -3209,7 +3219,7 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     }
 
     .kluv .banner {
-        height: 80vh;
+        height: 80vh !important;
         object-fit: cover;
     }
 
@@ -3223,6 +3233,11 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     }
     .kluv .unirse input {
         width: 300px;
+    }
+
+    .kluv .logos {
+        grid-template-columns: repeat(4, 1fr);
+        width: 80%;
     }
 
     .artistas .banner-mobile {
