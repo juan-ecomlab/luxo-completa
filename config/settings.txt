@@ -390,6 +390,14 @@ Encabezado
 	i18n_input
 		name = ad_03_url
 		description = Link (opcional)
+	subtitle
+		subtitle = Mensaje 4
+	i18n_input
+		name = ad_04_text
+		description = Texto
+	i18n_input
+		name = ad_04_url
+		description = Link (opcional)
 
 Menú de navegación
 	meta

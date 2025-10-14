@@ -1,5 +1,5 @@
 {% set num_messages = 0 %}
-{% for adbar in ['ad', 'ad_02', 'ad_03'] %}
+{% for adbar in ['ad', 'ad_02', 'ad_03', 'ad_04'] %}
     {% set advertising_text = attribute(settings,"#{adbar}_text") %}
     {% if advertising_text %}
         {% set has_advertising_bar = true %}
@@ -19,6 +19,12 @@
                 {% if adbar_animated %}
                     {% if num_messages == 1 %}
                         {% set repeat_number = 16 %}
+                    {% elseif num_messages == 2 %}
+                        {% set repeat_number = 8 %}
+                    {% elseif num_messages == 3 %}
+                        {% set repeat_number = 5 %}
+                    {% elseif num_messages == 4 %}
+                        {% set repeat_number = 4 %}
                     {% else %}
                         {% set repeat_number = num_messages == 2 ? '8' : '5' %}
                     {% endif %}
@@ -26,7 +32,7 @@
                     {% set repeat_number = 1 %}
                 {% endif %}
                 {% for i in 1..repeat_number %}
-                    {% for adbar in ['ad', 'ad_02', 'ad_03'] %}
+                    {% for adbar in ['ad', 'ad_02', 'ad_03', 'ad_04'] %}
                         {% set advertising_text = attribute(settings,"#{adbar}_text") %}
                         {% set advertising_url = attribute(settings,"#{adbar}_url") %}
                         {% if advertising_text %}
