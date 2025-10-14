@@ -535,6 +535,12 @@ DOMContentLoaded.addEventOrExecute(() => {
             createSwiper('.js-swiper-adbar', {
                 loop: true,
                 slidesPerView: 1,
+                {% if settings.ad_bar_autoplay %}
+                autoplay: {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                },
+                {% endif %}
                 navigation: {
                     nextEl: '.js-swiper-adbar-next',
                     prevEl: '.js-swiper-adbar-prev',

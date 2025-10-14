@@ -366,6 +366,9 @@ Encabezado
 	checkbox
 		name = ad_bar_animate
 		description = Animar texto de derecha a izquierda
+	checkbox
+		name = ad_bar_autoplay
+		description = Rotar mensajes automáticamente (solo aplica cuando la animación está desactivada)
 	subtitle
 		subtitle = Mensaje 1
 	i18n_input
