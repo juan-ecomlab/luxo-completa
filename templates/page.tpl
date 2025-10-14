@@ -63,6 +63,9 @@
 {% elseif current_url == "tamo" %}
 {% include 'templates/tamo.tpl' %}
 
+{% elseif current_url == "colecciones-pasadas" %}
+{% include 'templates/coleccionespasadas.tpl' %}
+
 {% elseif current_url == "test" %}
 {% include 'templates/test.tpl' %}
 

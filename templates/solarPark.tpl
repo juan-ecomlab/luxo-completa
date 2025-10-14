@@ -1,6 +1,6 @@
 <div id="solarPark" style= text-align: center;>
     <main>
-        <img src="https://www.ceupe.com/images/easyblog_articles/3089/empresa.jpg" class="banner" alt="banner">
+        <img src="" class="banner" alt="banner">
         <section class="welcome">
             <h2>BIENVENIDOS A SOLAR PARK ☀️</h2>
             <p>Nuestra planta de confección textil en el Parque Industrial de La Rioja es mucho más que un espacio de
