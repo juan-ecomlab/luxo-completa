@@ -21,14 +21,21 @@
         <h2>PRODUCTORAS QUE NOS ACOMPAÑAN</h2>
         <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus recusandae, distinctio rem eveniet repudiandae porro placeat assumenda voluptate autem cum iusto alias. Vitae nisi ullam dolor expedita minus dolorum beatae!</p>
         <div class="logos">
-            
+            <img src="{{ 'images/kluv/logos/Asset 26-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 27-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 28-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 29-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 30-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 31-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 32-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 33-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 34-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 35-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 36-8.png' | static_url }}" alt="">
+            <img src="{{ 'images/kluv/logos/Asset 37-8.png' | static_url }}" alt="">
         </div>
-        <section class="unirse">
-            <h2>UNITE AL KLUV</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, maiores autem assumenda voluptates ipsa provident officia nihil ipsum explicabo est fugiat. Quidem cupiditate deserunt tempore nobis reiciendis quas, asperiores fugit!</p>
-            <form action="" method="post">
-                <input type="text" name="email" id="email" placeholder="Ingresa tu correo ...">
-                <button type="submit">Recibir información</button>
-            </form>
-        </section>
+         <div class="final">
+            <h2>ROPA SIN GENERO</h2>
+            <P>Diseñada para seres humanos</P>
+        </div>
     </div>
