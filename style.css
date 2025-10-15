@@ -1,169 +1,153 @@
-.pasadas * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-      font-family: Helvetica, sans-serif;
-    }
+#solarPark * {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Helvetica, sans-serif;
+}
 
-    .pasadas {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-    }
+#solarPark {
+    text-align: center;
+}
 
-    .pasadas h1 {
-        margin: 40px auto;
-    }
+#solarPark .banner {
+    width: 100%;
+    height: 50vh;
+}
 
-    .pasadas p {
-        text-align: center;
-        margin-bottom: 40px;
-    }
+#solarPark h2 {
+    font-size: 22px;
+    margin: 40px 0;
+    text-align: center;
+}
 
-    .pasadas .carousel {
-      position: relative;
-      width: 90%;
-      max-width: 700px;
-      overflow: hidden;
-      box-shadow: 0 0 10px rgba(0,0,0,0.2);
-    }
+#solarPark h3 {
+  font-size: 24px;
+  margin: 40px 0;
+}
 
-    .pasadas .carousel-images {
-      display: flex;
-      width: 1000%;
-      transition: all 0.5s ease-in-out;
-    }
+#solarPark p {
+    text-align: center;
+    margin: 0 auto;
+    font-size: 16px;
+}
 
-    .pasadas .carousel-images img {
-      width: 10%;
-      object-fit: cover;
-    }
+#solarPark .cajas {
+  margin: 0 auto;
+}
 
-    .pasadas input[type="radio"] {
-      display: none;
-    }
+ #solarPark .cajas {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    width: 100%;
+    margin: 30px auto;
+    gap: 20px;
+  }
 
-    /* desplazamientos */
-    .pasadas #slide1:checked ~ .carousel-images { transform: translateX(0%); }
-    .pasadas #slide2:checked ~ .carousel-images { transform: translateX(-10%); }
-    .pasadas #slide3:checked ~ .carousel-images { transform: translateX(-20%); }
-    .pasadas #slide4:checked ~ .carousel-images { transform: translateX(-30%); }
-    .pasadas #slide5:checked ~ .carousel-images { transform: translateX(-40%); }
-    .pasadas #slide6:checked ~ .carousel-images { transform: translateX(-50%); }
-    .pasadas #slide7:checked ~ .carousel-images { transform: translateX(-60%); }
-    .pasadas #slide8:checked ~ .carousel-images { transform: translateX(-70%); }
-    .pasadas #slide9:checked ~ .carousel-images { transform: translateX(-80%); }
-    .pasadas #slide10:checked ~ .carousel-images { transform: translateX(-90%); }
+  #solarPark .cajas .distinta {
+    grid-row: 3/4;
+  }
 
-    /* Flechas */
-    .pasadas .nav {
-      position: absolute;
-      top: 50%;
-      width: 100%;
-      display: flex;
-      justify-content: space-between;
-      transform: translateY(-50%);
-      z-index: 10;
-      pointer-events: none;
-    }
+  #solarPark .cajas p {
+    margin: 0;
+  }
 
-    .pasadas .nav label {
-      background: rgba(0,0,0,0.3);
-      color: white;
-      font-size: 20px;
-      padding: 5px 10px;
-      border-radius: 50%;
-      cursor: pointer;
-      pointer-events: auto;
-      user-select: none;
-      transition: all 0.3s;
-    }
+#solarPark .reverse {
+    flex-direction: column-reverse;
+}
 
-    .pasadas .nav label:hover {
-      background: rgba(0,0,0,0.6);
-    }
+#solarPark .cajas img {
+    width: 100%;
+}
 
-    /* Puntos */
-    .pasadas .carousel-nav {
-      position: absolute;
-      bottom: 5px;
-      width: 100%;
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      z-index: 5;
-    }
+#solarPark .datos {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+}
 
-    .pasadas .carousel-nav label {
-      width: 12px;
-      height: 12px;
-      border-radius: 50%;
-      background-color: #ccc;
-      cursor: pointer;
-      transition: all 0.3s;
-    }
+#solarPark .datos div {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
 
-    /* Punto activo */
-    .pasadas #slide1:checked ~ .carousel-nav label[for="slide1"],
-    .pasadas #slide2:checked ~ .carousel-nav label[for="slide2"],
-    .pasadas #slide3:checked ~ .carousel-nav label[for="slide3"],
-    .pasadas #slide4:checked ~ .carousel-nav label[for="slide4"],
-    .pasadas #slide5:checked ~ .carousel-nav label[for="slide5"],
-    .pasadas #slide6:checked ~ .carousel-nav label[for="slide6"],
-    .pasadas #slide7:checked ~ .carousel-nav label[for="slide7"],
-    .pasadas #slide8:checked ~ .carousel-nav label[for="slide8"],
-    .pasadas #slide9:checked ~ .carousel-nav label[for="slide9"],
-    .pasadas #slide10:checked ~ .carousel-nav label[for="slide10"] {
-      background-color: #333;
-    }
+#solarPark .datos span{
+    font-size: 45px;
+}
 
-    /* Visibilidad de flechas según slide */
-    .pasadas #slide1:checked ~ .nav .prev[for="slide10"],
-    .pasadas #slide2:checked ~ .nav .prev[for="slide1"],
-    .pasadas #slide3:checked ~ .nav .prev[for="slide2"],
-    .pasadas #slide4:checked ~ .nav .prev[for="slide3"],
-    .pasadas #slide5:checked ~ .nav .prev[for="slide4"],
-    .pasadas #slide6:checked ~ .nav .prev[for="slide5"],
-    .pasadas #slide7:checked ~ .nav .prev[for="slide6"],
-    .pasadas #slide8:checked ~ .nav .prev[for="slide7"],
-    .pasadas #slide9:checked ~ .nav .prev[for="slide8"],
-    .pasadas #slide10:checked ~ .nav .prev[for="slide9"] {
-      display: block;
-    }
+#solarPark .datos div p {
+    font-size: 14px;
+    width: 60%;
+}
 
-    .pasadas #slide1:checked ~ .nav .next[for="slide2"],
-    .pasadas #slide2:checked ~ .nav .next[for="slide3"],
-    .pasadas #slide3:checked ~ .nav .next[for="slide4"],
-    .pasadas #slide4:checked ~ .nav .next[for="slide5"],
-    .pasadas #slide5:checked ~ .nav .next[for="slide6"],
-    .pasadas #slide6:checked ~ .nav .next[for="slide7"],
-    .pasadas #slide7:checked ~ .nav .next[for="slide8"],
-    .pasadas #slide8:checked ~ .nav .next[for="slide9"],
-    .pasadas #slide9:checked ~ .nav .next[for="slide10"],
-    .pasadas #slide10:checked ~ .nav .next[for="slide1"] {
-      display: block;
-    }
+#solarPark .pmas {
+    grid-row: 3/4;
+    grid-column: 4/5;
+    width: 100%;
+    align-self: flex-end
+}
 
-    .pasadas .nav label {
-      display: none;
-    }
+#solarPark .imagenes {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+}
 
-    .pasadas .final {
-        text-align: center;
-        margin: 70px 0 40px;
-    }
-
-    .pasadas .final h2 {
-        font-size: 32px;
-    }
+#solarPark .imagenes img {
+    width: 100%;
+}
 
 @media (min-width: 768px) {
-    .pasadas p {
-        width: 50%;
-    }
 
-    .pasadas .final p {
-        width: 100%;
-    }
+  #solarPark h2 {
+    font-size: 40px;
+}
+
+#solarPark p {
+    width: 55%;
+}
+    #solarPark .datos {
+    width: 60%;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    row-gap: 15px;
+    align-items: center;
+}
+
+  #solarPark .imagenes {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+  }
+
+  #solarPark .cajas {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    width: 70%;
+    margin: 30px auto;
+    align-items: center;
+  }
+
+  #solarPark .cajas p{
+    width: 80%;
+  }
+
+  #solarPark .cajas img {
+    width: 100%;
+    height: 100%;
+  }
+
+  #solarPark .cajas .distinta {
+    grid-row: 2/3;
+    grid-column: 2/3;
+  }
+
+  
 }

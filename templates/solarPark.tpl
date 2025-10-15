@@ -1,4 +1,4 @@
-<div id="solarPark" style= text-align: center;>
+<div id="solarPark" style= text-align:center;>
     <main>
         <img src="" class="banner" alt="banner">
         <section class="welcome">
@@ -18,9 +18,8 @@
                 empezando.</p>
         </section>
         <div class="cajas">
-            <div class="box">
             <img src="{{ 'images/solar park/DSC00781.jpg' | static_url }}" alt="">
-                <p>Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
+                <p class="segunda">Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
                     hasta el producto terminado que llega a tus manos. Esto significa no solo una mejora en la calidad,
                     sino también garantizar procesos responsables, condiciones laborales justas y un impacto ambiental
                     minimizado.
@@ -31,8 +30,8 @@
                     industria nacional y a demostrar que es posible construir un negocio rentable, auténtico y con
                     propósito.
                 </p>
-            </div>
-            <div class="box reverse">
+            
+            
                 <p>Esta planta fue clave para lograr nuestra certificación como Empresa B, pero más allá del sello, es
                     un reflejo de un camino que elegimos: el camino del triple impacto, donde el crecimiento económico
                     camina de la mano con el impacto social y ambiental.
@@ -41,11 +40,10 @@
                     grande que dimos como empresa y un verdadero compromiso con la industria nacional y la
                     sustentabilidad. Porque lo que hacemos importa, y cómo lo hacemos, todavía más.
                 </p>
-                <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="">
-            </div>
+                <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="" class="distinta">            
         </div>
         
-        {# <video src=""></video> #}
+        <!-- {# <video src=""></video> #} -->
         <h2>Nuestros datos</h2>
         <section class="datos">
             <div><span>72</span>
@@ -80,7 +78,7 @@
             </div>
             <p class="pmas">Y vamos por muchos más...</p>
         </section>
-        <h2>Detrás de estos números, hay humanos comprometidos.</h2>
+        <h3>Detrás de estos números, hay humanos comprometidos.</h3>
         <p>Sabemos que la onda de la ropa no es lo único que te importa de tu marca favorita.</p>
         <p><b>A nosotros tampoco.</b></p>
         <section class="imagenes">
