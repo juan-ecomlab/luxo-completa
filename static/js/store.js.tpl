@@ -923,7 +923,7 @@ DOMContentLoaded.addEventOrExecute(() => {
     {% set columns_mobile = settings.grid_columns_mobile %}
     var slidesPerViewDesktopVal = {% if columns_desktop == 2 %}2{% elseif columns_desktop == 3 %}3{% else %}4{% endif %};
     var slidesPerViewMobileVal = {% if columns_mobile == 1 %}1.15{% elseif columns_mobile == 2 %}2.25{% else %}3.25{% endif %};
-    var itemSwiperSpaceBetween = 15;
+    var itemSwiperSpaceBetween = 2;
 
     {# Hide arrow controls when swiper is not swipable #}
 
@@ -1564,7 +1564,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             centerInsufficientSlides: true,
             threshold: 5,
             slidesPerView: 3.5,
-            spaceBetween: 15,
+            spaceBetween: 2,
             navigation: {
                 nextEl: '.js-swiper-brands-next',
                 prevEl: '.js-swiper-brands-prev',
@@ -1586,7 +1586,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             centerInsufficientSlides: true,
             threshold: 5,
             slidesPerView: 3.5,
-            spaceBetween: 15,
+            spaceBetween: 2,
             navigation: {
                 nextEl: '.js-swiper-empty-brands-next',
                 prevEl: '.js-swiper-empty-brands-prev',
@@ -3030,12 +3030,19 @@ DOMContentLoaded.addEventOrExecute(() => {
             var quantity = $productContainer.find('.js-quantity-input').val();
             var name = $productContainer.find('.js-product-name').text();
             var price = $productContainer.find('.js-price-display').text();
+            console.log('🔍 DEBUG - Product Page Add to Cart:');
+            console.log('  .js-price-display element:', $productContainer.find('.js-price-display'));
+            console.log('  .js-price-display text:', price);
+            console.log('  .js-price-display html:', $productContainer.find('.js-price-display').html());
             var addedToCartCopy = "{{ 'Agregar al carrito' | translate }}";
         } else {
             var imageSrc = getQuickShopImgSrc(this);
             var quantity = 1;
             var name = $productContainer.find('.js-item-name').text();
             var price = $productContainer.find('.js-price-display').text().trim();
+            console.log('🔍 DEBUG - Quick Shop Add to Cart:');
+            console.log('  .js-price-display element:', $productContainer.find('.js-price-display'));
+            console.log('  .js-price-display text:', price);
             var addedToCartCopy = "{{ 'Comprar' | translate }}";
             if ($productContainer.hasClass("js-quickshop-has-variants")) {
                 var addedToCartCopy = "{{ 'Agregar al carrito' | translate }}";
@@ -3066,10 +3073,21 @@ DOMContentLoaded.addEventOrExecute(() => {
 
                     {# Fill notification info #}
 
+                    console.log('🔍 DEBUG - Callback Setting Notification:');
+                    console.log('  Setting .js-cart-notification-item-price to:', price);
+                    console.log('  .js-cart-total element:', jQueryNuvem('.js-cart-total'));
+                    console.log('  .js-cart-total initial text:', jQueryNuvem('.js-cart-total').text());
+
                     jQueryNuvem('.js-cart-notification-item-img').attr('srcset', imageSrc);
                     jQueryNuvem('.js-cart-notification-item-name').text(name);
                     jQueryNuvem('.js-cart-notification-item-quantity').text(quantity);
                     jQueryNuvem('.js-cart-notification-item-price').text(price);
+
+                    console.log('  .js-cart-notification-item-price after set:', jQueryNuvem('.js-cart-notification-item-price').text());
+
+                    setTimeout(function() {
+                        console.log('  .js-cart-total after 500ms:', jQueryNuvem('.js-cart-total').text());
+                    }, 500);
 
                     if($productVariants.length){
                         var output = [];

@@ -72,7 +72,7 @@
       {% endif %}
 
       {# Cart item subtotal #}
-      <span class="js-cart-item-subtotal {% if cart_page %}col-5 col-md-2 text-right text-md-center mt-2 mt-md-0{% else %}cart-item-subtotal{% endif %}" data-line-item-id="{{ item.id }}" data-component="subtotal.value" data-component-value={{ item.subtotal | money }}'>{{ item.subtotal | money_nocents }}</span>
+      <span class="js-cart-item-subtotal {% if cart_page %}col-5 col-md-2 text-right text-md-center mt-2 mt-md-0{% else %}cart-item-subtotal{% endif %}" data-line-item-id="{{ item.id }}" data-component="subtotal.value" data-component-value={{ item.subtotal | money_nocents }}'>{{ item.subtotal | money_nocents }}</span>
     </div>
   </div>
 

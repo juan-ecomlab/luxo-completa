@@ -69,7 +69,7 @@
                            <div id="compare_price_display" class="js-compare-price-display price-compare font-weight-normal" style="display:block;">{{"28000" | money }}</div>
                         </span>
                         <span class="d-inline-block mr-3">
-                            <div class="js-price-display" id="price_display">{{"18200" | money }}</div>
+                            <div class="js-price-display" id="price_display">{{"18200" | money_nocents }}</div>
                         </span>
                     </div>
                 {% else %}
@@ -78,7 +78,7 @@
                            <div id="compare_price_display" class="js-compare-price-display price-compare font-weight-normal" style="display:block;">{{"280000" | money }}</div>
                         </span>
                         <span class="d-inline-block mr-3">
-                            <div class="js-price-display" id="price_display">{{"182000" | money }}</div>
+                            <div class="js-price-display" id="price_display">{{"182000" | money_nocents }}</div>
                         </span>
                     </div>
                 {% endif %}
