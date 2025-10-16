@@ -1002,13 +1002,28 @@ footer {
 }
 
 .footer-logo {
-  /* display: inline-block; */
+  display: block;
+  text-align: left;
   img {
     max-height: 50px;
   }
   &:last-child {
     margin: 0;
   }
+}
+
+.footer-logo-wrapper {
+  display: inline-block;
+  text-align: center;
+}
+
+.footer-logo-text {
+  font-family: var(--font-primary);
+  font-size: 1.5rem;
+  font-weight: normal;
+  margin-top: 10px;
+  letter-spacing: 7px;
+  padding-left: 7px
 }    
    
 /*============================================================================

@@ -17,19 +17,20 @@
 			{% if settings.news_show or has_social_network %}
 				<div class="col-12 col-md{% if template == 'password' %}-3{% else %}{% if not has_footer_menu_secondary or not has_footer_contact_info %}-4{% endif %} pr-md-5{% endif %} mb-5">
 				{% if "seal_img.jpg" | has_custom_image %}
-	                        <div class="footer-logo custom-seal logo-footer-desktop">
-							
+	                        <div class="footer-logo custom-seal logo-footer-desktop d-none d-md-block">
+								<span class="footer-logo-wrapper">
 	                            {% if settings.seal_url != '' %}
                                     <a href="{{ settings.seal_url | setting_url }}" target="_blank">
                                 {% endif %}
-								
+
                                     <img src="{{ 'images/empty-placeholder.png' | static_url }}" data-src="{{ "seal_img.jpg" | static_url }}" class="custom-seal-img lazyload" alt="{{ 'Sello de' | translate }} {{ store.name }}"/>
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
-								<h2>LUXO</h2>
+								<span class="footer-logo-text">LUXO</span>
+								</span>
 	                        </div>
-							
+
 							{% endif %}
 					{% include 'snipplets/newsletter.tpl' %}
 					{% include "snipplets/social/social-links.tpl" %}
@@ -179,17 +180,18 @@
                 <div class="row justify-content-center mb-4">
  					<div class="col text-center">
 	                    {% if "seal_img.jpg" | has_custom_image %}
-	                        <div class="footer-logo custom-seal logo-footer-mobile">
-							
+	                        <div class="footer-logo custom-seal logo-footer-mobile d-md-none">
+								<span class="footer-logo-wrapper">
 	                            {% if settings.seal_url != '' %}
                                     <a href="{{ settings.seal_url | setting_url }}" target="_blank">
                                 {% endif %}
-								
+
                                     <img src="{{ 'images/empty-placeholder.png' | static_url }}" data-src="{{ "seal_img.jpg" | static_url }}" class="custom-seal-img lazyload" alt="{{ 'Sello de' | translate }} {{ store.name }}"/>
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
-								<h2>LUXO</h2>
+								<span class="footer-logo-text">LUXO</span>
+								</span>
 	                        </div>
 								<a href="https://api.whatsapp.com/send/?phone=5491126193903&text&type=phone_number&app_absent=0" target="_blank">BOTÒN DE ARREPENTIMIENTO</a>
 							<div class="footer-copy">

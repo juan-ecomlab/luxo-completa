@@ -2309,11 +2309,13 @@ body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
           font-size: 14px;
         }
 
+        /* Removed: Mobile logo now uses .footer-logo-text class like desktop
         body > footer > div.container-fluid > div.row.justify-content-center.mb-4 > div > h2 {
           letter-spacing: 7px;
           font-weight: 400;
           font-size: 28px;
         }
+        */
 
         /* .footer-legal {
           display: none;
@@ -2323,8 +2325,29 @@ body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
           display: none;
         }
 
-.logo-footer-desktop {
-  display: none;
+/* Logo styles - visibility controlled by Bootstrap's d-none d-md-block and d-md-none classes */
+
+/* Mobile logo - centered block layout */
+.logo-footer-mobile {
+  text-align: center;
+}
+
+.logo-footer-mobile .footer-logo-wrapper {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+
+.logo-footer-mobile .footer-logo-wrapper img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100px;
+}
+
+.logo-footer-mobile .footer-logo-text {
+  display: block;
+  text-align: center;
+  margin-top: 10px;
 }
 
 /* Estaticas */
@@ -3221,24 +3244,32 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
     font-size: 14px;
   }
 
+  /* Desktop logo styling - visibility handled by d-none d-md-block in HTML */
   .logo-footer-desktop {
-    display: flex;
-    flex-direction: column;
     margin-left: 20px;
     margin-bottom: 30px;
+    text-align: left;
   }
 
-  .logo-footer-desktop img {
+  .logo-footer-desktop .footer-logo-wrapper {
+    display: inline-block;
+    text-align: center;
+    width: auto;
+  }
+
+  .logo-footer-desktop .footer-logo-wrapper img {
+    display: block;
+    margin: 0 auto;
     width: 50px;
+  }
+
+  .logo-footer-desktop .footer-logo-text {
+    display: block;
   }
 
   body>footer>div.container-fluid>div:nth-child(1)>div.col-12.col-md-4.pr-md-5.mb-5>div.js-newsletter.newsletter.pb-2>div {
     text-align: left !important;
     margin-left: 20px;
-  }
-  
-  .logo-footer-mobile {
-    display: none;
   }
 
   .redes-sociales-footer {
@@ -3859,24 +3890,22 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   }
 
   // Desktop size buttons with borders
-  @media (min-width: 768px) {
-    .item-size-btn {
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 24px;
-      height: 24px;
-      border: 1px solid rgba(255, 255, 255, 0.8);
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 0;
-      font-size: 10px;
-      font-weight: 600;
-      color: #333;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      padding: 0;
-    }
+  .item-size-btn {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 24px;
+    height: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    background: rgba(255, 255, 255, 0.9);
+    border-radius: 0;
+    font-size: 10px;
+    font-weight: 600;
+    color: #333;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    padding: 8px;
   }
 
 
