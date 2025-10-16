@@ -64,7 +64,7 @@
         <h2 class="js-products-{{ section_id }}-title section-title h5 mb-1 text-center col-12" {% if not section_title %}style="display: none;"{% endif %}>
             {{ section_title }}
         </h2>
-        <div class="js-products-{{ section_id }}-col col-12 {% if use_slider %}p-0{% else %}pl-0{% endif %}">
+        <div class="js-products-{{ section_id }}-col col-12 {% if use_slider %}p-0{% endif %}">
             {% if use_slider %}
                 <div class="js-swiper-{{ section_id }} swiper-container">
             {% endif %}
