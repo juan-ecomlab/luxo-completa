@@ -2045,23 +2045,24 @@ body > header > div > div.row.d-none.d-md-block > div > div > ul > li:nth-child(
   display: none;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 {
+/* Locales banner styling - Mobile */
+.js-banners2-mobile .js-textbanner-text.textbanner-text.pr-5 {
   text-align: center;
   padding: 20px 0 40px !important;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 > h3 {
+.js-banners2-mobile .js-textbanner-text.textbanner-text.pr-5 > h3 {
   font-size: 30px;
   margin: 20px 0;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 div.textbanner-paragraph {
+.js-banners2-mobile .js-textbanner-text.textbanner-text.pr-5 div.textbanner-paragraph {
   font-size: 14px;
   padding: 0 20px;
   margin: 30px 0;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2-mobile.container-fluid.d-md-none > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 > div.btn.btn-secondary.btn-small.mt-2 {
+.js-banners2-mobile .js-textbanner-text.textbanner-text.pr-5 > div.btn.btn-secondary.btn-small.mt-2 {
   border: none;
   color: black;
   border-bottom: black 1px solid;
@@ -3130,7 +3131,8 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 	filter: grayscale(0);
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2.container-fluid.d-none.d-md-block > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 {
+/* Locales banner styling - Desktop */
+.js-banners2.container-fluid.d-none.d-md-block .js-textbanner-text.textbanner-text.pr-5 {
   position: absolute;
   top: 45%;
   left: 20px;
@@ -3138,12 +3140,12 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   width: 30%;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2.container-fluid.d-none.d-md-block > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 > h3 {
+.js-banners2.container-fluid.d-none.d-md-block .js-textbanner-text.textbanner-text.pr-5 > h3 {
   font-size: 28px;
   margin-bottom: 40px;
 }
 
-body > div.js-home-sections-container.home-sections-container > section:nth-child(9) > div > div.js-banners2.container-fluid.d-none.d-md-block > div.row > div > div > div > div > a > div.js-textbanner-text.textbanner-text.pr-5 > div.btn.btn-secondary.btn-small.mt-2 {
+.js-banners2.container-fluid.d-none.d-md-block .js-textbanner-text.textbanner-text.pr-5 > div.btn.btn-secondary.btn-small.mt-2 {
   border: none;
   border-bottom: white 1px solid;
   color: white;
