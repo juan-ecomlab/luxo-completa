@@ -3105,7 +3105,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
   font-size: 12px;
   font-weight: 600;
   margin: 0;
-  padding: 1;
+  padding: 8px;
 }
 
 // Center the mobile size selector
@@ -3890,7 +3890,7 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   }
 
   // Desktop size buttons with borders
-  .item-size-btn {
+  .js-size-variant-add.item-size-btn {
     position: relative;
     display: flex;
     align-items: center;
