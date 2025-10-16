@@ -1,6 +1,6 @@
 {% set noFilterResult = "No tenemos resultados para tu búsqueda. Por favor, intentá con otros filtros." %}
 
-<div class="col pl-0" data-store="category-grid-{{ category.id }}">
+<div class="col" data-store="category-grid-{{ category.id }}">
     {% if products %}
         <div class="js-product-table row">
             {% include 'snipplets/product_grid.tpl' %}

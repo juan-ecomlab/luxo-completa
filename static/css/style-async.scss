@@ -1036,6 +1036,10 @@ footer {
   @extend %section-margin;
 }
 
+.section-featured-home {
+  margin-top: 3px;
+}
+
 .section-banners-home {
   @extend %element-margin;
 }
@@ -1718,6 +1722,11 @@ footer {
 @media (max-width: 767px) {
   .product-image-limited {
     max-height: 210px;
+  }
+
+  /* Hide desktop size selector (floating overlay) in swiper slides on mobile */
+  .js-item-slide .item-bottom-elements {
+    display: none;
   }
 }
 /*============================================================================
