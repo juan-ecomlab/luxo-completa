@@ -79,6 +79,7 @@ Tipo de letra
 		title = Fuentes para títulos
 		description = Fuente
 		values
+			"Helvetica", sans-serif = Helvetica
 			"Almarai", sans-serif = Almarai
 			"Archivo", sans-serif = Archivo
 			"Archivo Black", sans-serif = Archivo Black
