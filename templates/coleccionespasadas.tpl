@@ -75,8 +75,5 @@
 			<label for="slide10"></label>
 		</div>
 	</div>
-	<div class="final">
-		<h2>ROPA SIN GENERO</h2>
-		<P>Diseñada para seres humanos</P>
-	</div>
 </div>
+{% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}

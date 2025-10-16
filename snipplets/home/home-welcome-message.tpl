@@ -7,7 +7,7 @@
 		<div class="container py-3">
 			<div class="row justify-content-md-center">
 				<div class="col-md-6 text-center">
-					<h2 class="js-{{ message_name }}-message-title h1{% if not message_title %} mb-0{% endif %}" {% if not message_title %}style="display: none"{% endif %}>{{ message_title }}</h2>
+					<h2 class="js-{{ message_name }}-message-title welcome-message-title h1 mb-2{% if not message_title %} mb-0{% endif %}" {% if not message_title %}style="display: none"{% endif %}>{{ message_title }}</h2>
 					<p class="js-{{ message_name }}-message-text" {% if not message_description %}style="display: none"{% endif %}>{{ message_description }}</p>
 				</div>
 			</div>

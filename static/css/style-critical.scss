@@ -1396,6 +1396,12 @@ header.head-main.compress .logo-img-small {
   margin-top: -70px;
 }
 
+.section-welcome-home .welcome-message-title,
+.section-institutional-home .welcome-message-title {
+  font-size: 3rem;
+  white-space: nowrap;
+}
+
 body > div.js-home-sections-container.home-sections-container > section.section-slider-home > div.js-home-main-slider-container.home-slider-container.is-inViewport > div {
     margin-bottom: 0rem !important;
 }
@@ -2504,15 +2510,6 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     height: auto;
 }
 
-.coleccion .final {
-    text-align: center;
-    margin: 70px 0 40px;
-}
-
-.coleccion .final h2 {
-    font-size: 32px;
-}
-
 .empresab * {
     padding: 0;
     margin: 0;
@@ -2718,15 +2715,6 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     padding: 20px 0;
 }
 
-.kluv .final {
-    text-align: center;
-    margin: 70px 0 40px;
-}
-
-.kluv .final h2 {
-    font-size: 32px;
-}
-
 .artistas * {
     padding: 0;
     margin: 0;
@@ -2778,15 +2766,6 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     background-color: rgba(0,0,0, 0.5);
     color:  white;
     width: 100%;
-}
-
-.artistas .final {
-    text-align: center;
-    margin: 70px 0 40px;
-}
-
-.artistas .final h2 {
-    font-size: 32px;
 }
 
 .pasadas * {
@@ -2938,15 +2917,6 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
     .pasadas .nav label {
       display: none;
-    }
-
-    .pasadas .final {
-        text-align: center;
-        margin: 70px 0 40px;
-    }
-
-    .pasadas .final h2 {
-        font-size: 32px;
     }
 
 .post-item-title,
@@ -3492,10 +3462,6 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
 
     .pasadas p {
         width: 50%;
-    }
-
-    .pasadas .final p {
-        width: 100%;
     }
 
   /* Titles and breadcrumbs */

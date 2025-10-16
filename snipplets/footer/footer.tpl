@@ -193,11 +193,13 @@
 								<span class="footer-logo-text">LUXO</span>
 								</span>
 	                        </div>
-								<a href="https://api.whatsapp.com/send/?phone=5491126193903&text&type=phone_number&app_absent=0" target="_blank">BOTÒN DE ARREPENTIMIENTO</a>
+								<p>
+								<a href="https://api.whatsapp.com/send/?phone=5491126193903&text&type=phone_number&app_absent=0" target="_blank">BOTÓN DE ARREPENTIMIENTO</a>
+								</p>
 							<div class="footer-copy">
 							
 							<br>
-	                        	<span>Copyright LUXO | Ropa sin género para humanos.2024. Todos los derechos reservados.Defensa de las y los consumidores.Para reclamos  <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingrese aquí</a></span>
+	                        	<span>Copyright LUXO | Ropa sin género para humanos. 2024. Todos los derechos reservados. Defensa de las y los consumidores. Para reclamos  <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingrese aquí</a></span>
 								<a href="https://ecommercelab.agency/?utm_source=Web_LUXOAR&utm_medium=Web_LUXOAR&utm_campaign=Web_LUXOAR&utm_content=Web_LUXOAR&utm_term=Web_LUXOAR" target="_blank"><img class="logo-eclab" src="{{ 'images/logo-eclab.png' | static_url }}" alt="Logo Instagram"></a>
 	                        </div>
 							 

@@ -34,8 +34,5 @@
             <img src="{{ 'images/kluv/logos/Asset 36-8.png' | static_url }}" alt="">
             <img src="{{ 'images/kluv/logos/Asset 37-8.png' | static_url }}" alt="">
         </div>
-         <div class="final">
-            <h2>ROPA SIN GENERO</h2>
-            <P>Diseñada para seres humanos</P>
-        </div>
     </div>
+{% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
