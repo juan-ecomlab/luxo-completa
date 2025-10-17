@@ -2369,13 +2369,13 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 #solarPark .banner {
     width: 100%;
-    height: 50vh;
 }
 
 #solarPark h2 {
     font-size: 22px;
     margin: 40px 0;
     text-align: center;
+    display: inline-block;
 }
 
 #solarPark h3 {
@@ -2385,37 +2385,29 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 #solarPark p {
     text-align: center;
-    margin: 0 auto;
+    margin: 30px auto;
     font-size: 16px;
 }
 
-#solarPark .cajas {
-  margin: 0 auto;
+#solarPark .cajas .box {
+    display: flex;
+    flex-direction: column;
 }
 
- #solarPark .cajas {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-    width: 100%;
-    margin: 30px auto;
-    gap: 20px;
-  }
-
-  #solarPark .cajas .distinta {
-    grid-row: 3/4;
-  }
-
-  #solarPark .cajas p {
-    margin: 0;
-  }
-
-#solarPark .reverse {
+#solarPark .cajas .reverse {
     flex-direction: column-reverse;
 }
+  
 
-#solarPark .cajas img {
-    width: 100%;
+  #solarPark .cajas p {
+    margin: 20px 0;
+  }
+
+
+
+#solarPark .cajas .box img {
+    width: 400px;
+    height: 300px !important;
 }
 
 #solarPark .datos {
@@ -2441,6 +2433,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 #solarPark .datos div p {
     font-size: 14px;
     width: 60%;
+    margin: 5px auto;
 }
 
 #solarPark .pmas {
@@ -3295,12 +3288,14 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 
         /* Estaticas */
 
-#solarPark h2 {
-    font-size: 40px;
+  #solarPark h2 {
+    font-size: 24px;
 }
 
 #solarPark p {
-    width: 55%;
+    width: 40%;
+    font-size: 12px;
+    margin: 0 auto;
 }
     #solarPark .datos {
     width: 60%;
@@ -3318,27 +3313,26 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
   }
 
   #solarPark .cajas {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    width: 70%;
-    margin: 30px auto;
-    align-items: center;
-  }
-
-  #solarPark .cajas p{
     width: 80%;
+    margin: 20px auto;
   }
 
-  #solarPark .cajas img {
-    width: 100%;
-    height: 100%;
-  }
+  #solarPark .cajas .box {
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
 
-  #solarPark .cajas .distinta {
-    grid-row: 2/3;
-    grid-column: 2/3;
-  }
+#solarPark .cajas .box p {
+  width: 400px;
+  font-size: 12px;
+  margin: 0;
+  padding: 0 40px;
+}
+
+  #solarPark .cajas .reverse {
+    flex-direction: row;
+}
 
 .coleccion h1 {
     font-size: 32px;

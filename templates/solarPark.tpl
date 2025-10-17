@@ -18,7 +18,8 @@
                 empezando.</p>
         </section>
         <div class="cajas">
-            <img src="{{ 'images/solar park/DSC00781.jpg' | static_url }}" alt="">
+            <div class="box">
+                <img src="{{ 'images/solar park/DSC00781.jpg' | static_url }}" alt="">
                 <p class="segunda">Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima
                     hasta el producto terminado que llega a tus manos. Esto significa no solo una mejora en la calidad,
                     sino también garantizar procesos responsables, condiciones laborales justas y un impacto ambiental
@@ -30,8 +31,8 @@
                     industria nacional y a demostrar que es posible construir un negocio rentable, auténtico y con
                     propósito.
                 </p>
-            
-            
+            </div>
+            <div class="box reverse">
                 <p>Esta planta fue clave para lograr nuestra certificación como Empresa B, pero más allá del sello, es
                     un reflejo de un camino que elegimos: el camino del triple impacto, donde el crecimiento económico
                     camina de la mano con el impacto social y ambiental.
@@ -40,7 +41,8 @@
                     grande que dimos como empresa y un verdadero compromiso con la industria nacional y la
                     sustentabilidad. Porque lo que hacemos importa, y cómo lo hacemos, todavía más.
                 </p>
-                <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="" class="distinta">            
+                <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="" class="distinta">
+            </div>              
         </div>
         
         <!-- {# <video src=""></video> #} -->
