@@ -1398,8 +1398,7 @@ header.head-main.compress .logo-img-small {
 
 .section-welcome-home .welcome-message-title,
 .section-institutional-home .welcome-message-title {
-  font-size: 3rem;
-  white-space: nowrap;
+  font-size: clamp(2rem, 8vw, 3rem);
 }
 
 body > div.js-home-sections-container.home-sections-container > section.section-slider-home > div.js-home-main-slider-container.home-slider-container.is-inViewport > div {
@@ -2335,6 +2334,7 @@ body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
 /* Mobile logo - centered block layout */
 .logo-footer-mobile {
   text-align: center;
+  margin-bottom: 30px;
 }
 
 .logo-footer-mobile .footer-logo-wrapper {
@@ -2638,7 +2638,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .locales .local {
     background-color: black;
     color: white;
-    margin-top: 50px;
+    margin-top: 15px;
 }
 
 .locales .local .texto {
