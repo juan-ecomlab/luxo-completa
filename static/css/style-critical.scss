@@ -1392,18 +1392,34 @@ header.head-main.compress .logo-img-small {
 
 /* // Consistent section spacing */
 
+.section-slider-home,
 .section-featured-home,
-.section-banners-home,
 .section-video-home,
 .section-instafeed-home,
 .section-brands-home,
 .section-testimonials-home,
 .section-modules-home {
-  padding: 1rem 0;
+  padding-bottom: 1rem;
 
   @media (max-width: 768px) {
     padding: 1rem 0;
   }
+}
+
+/* Banners naturally have correct spacing - no extra padding needed */
+
+/* Remove any extra spacing from slider internal elements */
+.section-slider-home .home-slider-container,
+.section-slider-home .swiper-container {
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Remove any extra spacing from product section containers */
+.section-featured-home .container-fluid,
+.section-featured-home .row {
+  margin-top: 0;
+  margin-bottom: 0;
 }
 
 .section-newsletter-home {
