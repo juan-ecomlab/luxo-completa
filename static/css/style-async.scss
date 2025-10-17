@@ -1033,15 +1033,15 @@ footer {
 .section-video-home,
 .section-featured-home,
 .section-instafeed-home {
-  @extend %section-margin;
+  margin-bottom: 0;
 }
 
 .section-featured-home {
-  margin-top: 3px;
+  margin-top: 0;
 }
 
 .section-banners-home {
-  @extend %element-margin;
+  margin-bottom: 0;
 }
 
 /* // Instafeed */

@@ -1378,7 +1378,7 @@ header.head-main.compress .logo-img-small {
 /* // Sections title */
 
 .section-title {
-  padding: 40px 0;
+  padding: 0;
 }
 
 /* // Welcome message */
@@ -1388,6 +1388,30 @@ header.head-main.compress .logo-img-small {
 .section-welcome-home .welcome-message-title,
 .section-institutional-home .welcome-message-title {
   font-size: clamp(2rem, 8vw, 3rem);
+}
+
+/* // Consistent section spacing */
+
+.section-featured-home,
+.section-banners-home,
+.section-video-home,
+.section-instafeed-home,
+.section-brands-home,
+.section-testimonials-home,
+.section-modules-home {
+  padding: 1rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
+}
+
+.section-newsletter-home {
+  padding: 1rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 }
 
 body > div.js-home-sections-container.home-sections-container > section.section-slider-home > div.js-home-main-slider-container.home-slider-container.is-inViewport > div {
@@ -1457,7 +1481,11 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 /* // Main categories */
 
 .section-categories-home {
-  padding: 25px 0;
+  padding: 1rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 }
 
 .home-category {
@@ -1556,7 +1584,11 @@ body > div.js-home-sections-container.home-sections-container > section.section-
 
 .section-informative-banners {
   position: relative;
-  padding: 90px 0 110px 0;
+  padding: 1rem 0;
+
+  @media (max-width: 768px) {
+    padding: 1rem 0;
+  }
 }
 
 .service-pagination {
