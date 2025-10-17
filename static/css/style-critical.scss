@@ -2278,11 +2278,6 @@ body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-
   margin-bottom: 1rem !important;
 }
 
-body > footer > div.container-fluid > div:nth-child(1) > div:nth-child(2) {
-  font-size: 16px;
-  font-weight: bold;
-}
-
 .redes-sociales-footer {
             display: flex;
             justify-content: center;
@@ -2745,7 +2740,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .artistas p {
         width: 100%;
         margin: 20px auto;
-        font-size: 1.2rem;
+        font-size: 12px;
         line-height: 1.5;
     }
 
@@ -2759,12 +2754,14 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 }
 
 .artistas .imagenes a p {
-    position: absolute;
-    bottom: 30px;
+    position: relative;
+    bottom: 50%;
     z-index: 10;
     /* background-color: rgba(0,0,0, 0.5); */
     color:  white;
     width: 100%;
+    font-weight: bold;
+    font-size: 1.2rem;
 }
 
 .pasadas * {
@@ -3038,17 +3035,28 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 @media (max-width: 768px) {
   /* Remove transitions for main LCP elements */
-  .home-sections-container > 
-    :is(.section-slider-home, .section-banners-home):first-of-type 
+  .home-sections-container >
+    :is(.section-slider-home, .section-banners-home):first-of-type
     :is(
       .home-slider-container,
       :is(.banners-row, .banners-slider-wrapper) > .banner-container:is(
-        :first-child, 
+        :first-child,
         :nth-child(2).banner-2-cols
       )
     ) {
       opacity: 1;
       transform: none;
+  }
+
+  .artistas .imagenes a {
+    display: inline-block;
+  }
+
+  .artistas .imagenes a p {
+    position: absolute;
+    top: 43%;
+    left: 0;
+    transform: translateY(-50%);
   }
 }
 
