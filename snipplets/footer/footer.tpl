@@ -27,7 +27,7 @@
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
-								<span class="footer-logo-text">LUXO</span>
+								
 								</span>
 	                        </div>
 
@@ -190,7 +190,7 @@
                                 {% if settings.seal_url != '' %}
                                     </a>
                                 {% endif %}
-								<span class="footer-logo-text">LUXO</span>
+								
 								</span>
 	                        </div>
 								<p>
