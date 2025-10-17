@@ -95,10 +95,10 @@
 					</div>
 				{% endif %}
 				    <div class="redes-sociales-footer">
-        				<a href="https://www.instagram.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/instagram-with-circle-svgrepo-com.svg' | static_url }}" alt="Logo Instagram"></a>
-        				<a href="https://www.facebook.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/facebook-app-round-icon.svg' | static_url }}" alt="Logo Facebook"></a>
-        				<a href="https://www.youtube.com/channel/UC_zqX1z9zGZKM2nFYyMSzUA" target="_blank"><img src="{{ 'images/icons/redes/youtube-with-circle-svgrepo-com.svg' | static_url }}" alt="Logo Youtube"></a>
-        				<a href="https://ar.pinterest.com/luxomt/" target="_blank"><img src="{{ 'images/icons/redes/pinterest-round-icon.svg' | static_url }}" alt="Logo Pinteres"></a>
+        				<a href="https://www.instagram.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/instagram-icon.svg' | static_url }}" alt="Logo Instagram"></a>
+        				<a href="https://www.facebook.com/luxomust" target="_blank"><img src="{{ 'images/icons/redes/facebook-icon.svg' | static_url }}" alt="Logo Facebook"></a>
+        				<a href="https://www.youtube.com/channel/UC_zqX1z9zGZKM2nFYyMSzUA" target="_blank"><img src="{{ 'images/icons/redes/youtube-icon.svg' | static_url }}" alt="Logo Youtube"></a>
+        				<a href="https://ar.pinterest.com/luxomt/" target="_blank"><img src="{{ 'images/icons/redes/pinterest-icon.svg' | static_url }}" alt="Logo Pinterest"></a>
     				</div>
 				{# Contact info #}
 				{% if has_footer_contact_info %}
