@@ -16,43 +16,43 @@
             <div>
                 <a href="/insuave">
                     <img src="{{ 'images/artistas/fal_0001_INSUAVE PERFIL.jpg' | static_url }}" alt="">
-                    <p>INSUAVE</p>
+                    <span>INSUAVE</span>
                 </a>
             </div>
             <div>
                 <a href="/castiglioni">
                     <img src="{{ 'images/artistas/fal_0002_CASTIGLIONI.jpg' | static_url }}" alt="">
-                    <p>CASTIGLIONI</p>
+                    <span>CASTIGLIONI</span>
                 </a>
             </div>
             <div>
                 <a href="/artista-canalla">
                     <img src="{{ 'images/artistas/fal_0003_CANALLA PERFIL.jpg' | static_url }}" alt="">
-                    <p>CANALLA</p>
+                    <span>CANALLA</span>
                 </a>
             </div>
             <div>
                 <a href="/totosanchez">
                     <img src="{{ 'images/artistas/fal_0007_TOTO PERFIL.jpg' | static_url }}" alt="">
-                    <p>TOTO SANCHEZ</p>
+                    <span>TOTO SANCHEZ</span>
                 </a>
             </div>
             <div>
                 <a href="/aldagrama">
                     <img src="{{ 'images/artistas/fal_0004_ADALGRAMA PERFIL.jpg' | static_url }}" alt="">
-                    <p>ALDAGRAMA</p>
+                    <span>ALDAGRAMA</span>
                 </a>
             </div>
             <div>
                 <a href="/dalia">
                     <img src="{{ 'images/artistas/fal_0005_DALIA PERFIL.jpg' | static_url }}" alt="">
-                    <p>DALIA</p>
+                    <span>DALIA</span>
                 </a>
             </div>
             <div>
                 <a href="/tamo">
                     <img src="{{ 'images/artistas/TAMO PERFIL.jpg' | static_url }}" alt="">
-                    <p>TAMO</p>
+                    <span>TAMO</span>
                 </a>
             </div>
         </div>

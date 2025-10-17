@@ -20,25 +20,25 @@ Ahora que ya sabés de qué se trata ser B, cada vez que veas el logo vas a ente
         <P>Por nuestra Huella de Carbono del 2022, medida en 37,76 TnCO2e, decidimos compensar el 100% de nuestras emisiones contribuyendo económicamente a los siguientes proyectos:</P>
         <div>
             <article>
-                <span>PROYECTO</span>
+                <span class="proyecto-header">PROYECTO</span>
                 <h2>PARQUE EÓLICO</h2>
                 <h4>CHUBUT ARGENTINA</h4>
                 <p>Se compenso 16 ThCO2e, <b>representa un 40%</b></p>
-                <span>[Merrimás Báir Wind Farm]</span>
+                <span class="farm-name">[Merrimás Báir Wind Farm]</span>
             </article>
             <article>
-                <span>PROYECTO</span>
+                <span class="proyecto-header">PROYECTO</span>
                 <h2>FORESTACIÓN</h2>
                 <h4>URUGUAY ORIENTAL</h4>
                 <p>Se compensó 8 TnCO2e, <b>representa un 20%</b></p>
-                <span>[Lumin/Euquipie Uruguay Forest]</span>
+                <span class="farm-name">[Lumin/Euquipie Uruguay Forest]</span>
             </article>
             <article>
-                <span>PROYECTO</span>
+                <span class="proyecto-header">PROYECTO</span>
                 <h2>BIOMASA</h2>
                 <h4>TUCUMÁN ARGENTINA</h4>
                 <p>Se compensó 16 TnCO2e, <b>representa un 40%</b></p>
-                <span>[Fuel Switching Project]</span>
+                <span class="farm-name">[Fuel Switching Project]</span>
             </article>
         </div>
         <div class="logos">

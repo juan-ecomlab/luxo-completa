@@ -2535,7 +2535,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .empresab p {
     width: 90%;
     margin: 0 auto;
-    font-size: 16px;
+    font-size: 12px;
 }
 
 .empresab .responsabilidad div{
@@ -2553,6 +2553,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .empresab .responsabilidad div img{
     width: 100%;
+    height: auto;
 }
 
 .empresab .carbono {
@@ -2574,7 +2575,12 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .empresab section div article h2 {
     padding: 0;
-    font-size: 24px;    
+    font-size: 24px;
+}
+
+.empresab section div article h4 {
+    font-size: 16px;
+    font-weight: bold;
 }
 
 .empresab section div article p {
@@ -2584,11 +2590,21 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .empresab section div article span {
     color: #41b696;
-    font-size: 14px;    
+}
+
+.empresab section div article .proyecto-header {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.empresab section div article .farm-name {
+    font-size: 12px;
 }
 
 .empresab .carbono .logos img {
     width: 30%;
+    height: auto;
+    object-fit: contain;
 }
 
 .empresab .carbono .logos {
@@ -2608,6 +2624,8 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .empresab .adicional img {
     width: 40%;
+    height: auto;
+    object-fit: contain;
 }
 
 .empresab .adicional h3 {
@@ -2746,14 +2764,15 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .artistas .imagenes img {
     width: 100%;
-    margin: 10px 0;
+    margin: 0;
+    display: block;
 }
 
 .artistas .imagenes a {
     position: relative;
 }
 
-.artistas .imagenes a p {
+.artistas .imagenes a span {
     position: relative;
     bottom: 50%;
     z-index: 10;
@@ -2762,6 +2781,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     width: 100%;
     font-weight: bold;
     font-size: 1.2rem;
+    display: block;
 }
 
 .pasadas * {
@@ -3052,11 +3072,12 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     display: inline-block;
   }
 
-  .artistas .imagenes a p {
+  .artistas .imagenes a span {
     position: absolute;
-    top: 43%;
+    top: 48%;
     left: 0;
     transform: translateY(-50%);
+    font-size: 1.5rem;
   }
 }
 
@@ -3370,7 +3391,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     }
     .empresab .responsabilidad div img {
         width: 450px;
-        height: 300px;
+        height: auto;
     }
 
     .empresab section div {
@@ -3450,14 +3471,16 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     .artistas .imagenes {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
-        column-gap: 8px;
-        row-gap: 4px;
+        column-gap: 0;
+        row-gap: 0;
         width: 60%;
         margin: 0 auto;
+        grid-auto-rows: min-content;
     }
 
     .artistas .imagenes div{
         transition: all 0.6s ease;
+        line-height: 0;
     }
 
     .artistas .imagenes div:hover {
@@ -3466,6 +3489,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 
     .artistas .imagenes img {
         margin: 0;
+        display: block;
     }
 
     .pasadas p {
