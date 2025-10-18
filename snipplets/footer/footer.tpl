@@ -15,7 +15,7 @@
 		<div class="row mb-4 {% if template == 'password' %}justify-content-md-center{% endif %}">
 
 			{% if settings.news_show or has_social_network %}
-				<div class="col-12 col-md{% if template == 'password' %}-3{% else %}{% if not has_footer_menu_secondary or not has_footer_contact_info %}-4{% endif %} pr-md-5{% endif %} mb-5">
+				<div class="col-12 col-md{% if template == 'password' %}-3{% else %}{% if not has_footer_menu_secondary or not has_footer_contact_info %}-4{% endif %} pr-md-5{% endif %} mb-5 footerIzq">
 				{% if "seal_img.jpg" | has_custom_image %}
 	                        <div class="footer-logo custom-seal logo-footer-desktop d-none d-md-block">
 								<span class="footer-logo-wrapper">
@@ -41,7 +41,7 @@
 
 				{# Foot Nav #}
 				{% if has_footer_menu %}
-					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md pr-md-5 mb-4">
+					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md pr-md-5 mb-4 footerMenu">
 						{% if settings.footer_menus_toggle %}
 							<a href="#" class="js-accordion-toggle-mobile row no-gutters">
 						{% endif %}
@@ -69,7 +69,7 @@
 				
 				{# Foot Nav Secondary #}
 				{% if has_footer_menu_secondary %}
-					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md pr-md-5 mb-4">
+					<div class="{% if settings.footer_menus_toggle %}js-accordion-container{% endif %} col-12 col-md pr-md-5 mb-4 footerDer">
 						{% if settings.footer_menus_toggle %}
 							<a href="#" class="js-accordion-toggle-mobile row no-gutters">
 						{% endif %}
