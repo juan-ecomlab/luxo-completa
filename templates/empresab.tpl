@@ -1,18 +1,17 @@
 <div class="empresab">
-    <img src="{{ 'images/empresab/b-desktop.png' | static_url }}" alt="" class="bannerDesktop">
+    <img src="{{ 'images/empresab/banner-empresab.webp' | static_url }}" alt="" class="bannerDesktop">
      <img src="{{ 'images/empresab/b-mobile.png' | static_url }}" alt="" class="bannerMobile">
     <section class="responsabilidad">
         <h2>RESPONSABILIDAD - TRANSPARENCIA - CONSCIENCIA</h2>
         <P>Nuestro mundo actual está evolucionando hacia modelos de negocio más conscientes, sostenibles y responsables y en LUXO estamos firmemente comprometidos en ser parte de este cambio.</P>
-        <div>
-            <img src="{{ 'images/empresab/triangulo desktop.png' | static_url }}" alt="">
-            <p>Certificar B significa que logramos un impacto positivo en tres áreas claves: social, ambiental y económica. Para obtener la distintiva, tuvimos que cumplir algunos requisitos y también comprometernos a otros:
-
-Sacar 80 puntos o + en una evaluación sobre nuestro impacto en el medio ambiente, los empleados, los clientes y la comunidad. Lo medimos cuando no solo a los accionistas, sino también a todos nuestros grupos de interés: empleados, clientes, proveedores y adversarios organizacionales dentro y fuera de nuestra empresa. Vamos a recibir auditorías aleatorias y verificaciones presenciales para garantizar el cumplimiento de los estándares que mantenemos.
-
-Por último, debemos renovar nuestro estado cada tres años y cumplir con un requisito adicional, la transparencia. Esto implica que toda la información sobre nuestro desempeño está fácilmente disponible en el sitio web de la ONG estadounidense que nos otorgó la certificación B. B. Lab.
-
-Ahora que ya sabés de qué se trata ser B, cada vez que veas el logo vas a entender el valor que tiene y porqué es tan importante para nosotros poder decir “SOMOS EMPRESA B CERTIFICADA”.</p>
+        <div class="responsabilidad-grid">
+            <img src="{{ 'images/empresab/triangulo.webp' | static_url }}" alt="">
+            <div>
+                <p>Certificar B significa que logramos un impacto positivo en tres áreas claves: social, ambiental y económica. Para obtener la distintiva, tuvimos que cumplir algunos requisitos y también comprometernos a otros:</p>
+                <p>Sacar 80 puntos o + en una evaluación sobre nuestro impacto en el medio ambiente, los empleados, los clientes y la comunidad. Lo medimos cuando no solo a los accionistas, sino también a todos nuestros grupos de interés: empleados, clientes, proveedores y adversarios organizacionales dentro y fuera de nuestra empresa. Vamos a recibir auditorías aleatorias y verificaciones presenciales para garantizar el cumplimiento de los estándares que mantenemos.</p>
+                <p>Por último, debemos renovar nuestro estado cada tres años y cumplir con un requisito adicional, la transparencia. Esto implica que toda la información sobre nuestro desempeño está fácilmente disponible en el sitio web de la ONG estadounidense que nos otorgó la certificación B. B. Lab.</p>
+                <p>Ahora que ya sabés de qué se trata ser B, cada vez que veas el logo vas a entender el valor que tiene y porqué es tan importante para nosotros poder decir "SOMOS EMPRESA B CERTIFICADA".</p>
+            </div>
         </div>
     </section>
     <section class="carbono">

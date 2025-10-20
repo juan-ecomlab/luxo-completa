@@ -2514,7 +2514,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     font-size: 12px;
 }
 
-.empresab .responsabilidad div{
+.empresab .responsabilidad-grid {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -2522,12 +2522,18 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     margin: 50px auto;
 }
 
-.empresab .responsabilidad div p {
+.empresab .responsabilidad-grid > div {
     width: 100%;
-    padding: 20px;
 }
 
-.empresab .responsabilidad div img{
+.empresab .responsabilidad-grid p {
+    width: 100%;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    margin: 0;
+}
+
+.empresab .responsabilidad-grid img{
     width: 100%;
     height: auto;
 }
@@ -2545,7 +2551,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .empresab section div article {
     width: 100%;
     text-align: center;
-    margin: 40px 0
+
 }
 
 
@@ -3339,20 +3345,43 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
         width: 60%;
         margin: 0 auto;
     }
-    
-    .empresab .responsabilidad div {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        width: 90%;
+
+    .empresab .responsabilidad-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1px;
+        width: 66.666%;
+        max-width: 900px;
         margin: 50px auto;
-    }
-    .empresab .responsabilidad div img {
-        width: 450px;
-        height: auto;
+        padding: 0;
     }
 
-    .empresab section div {
+    .empresab .responsabilidad-grid img {
+        max-width: 100%;
+        height: auto;
+        display: block;
+        justify-self: center;
+        align-self: start;
+    }
+
+    .empresab .responsabilidad-grid > div {
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 300px;
+    }
+
+    .empresab .responsabilidad-grid p {
+        font-size: 12px;
+        text-align: center;
+        margin: 0;
+        padding: 0;
+    }
+
+    .empresab .carbono > div,
+    .empresab .adicional > div {
         display: flex;
         flex-direction: row;
         width: 80%;
