@@ -125,11 +125,11 @@
 
             <div class="iconos-talles">
     <div>
-        <img src="{{ 'images/icons/camiseta.png' | static_url }}" alt="Conoce tu talle icono">
+        <img src="{{ 'images/icons/conoce-tu-talle.svg' | static_url }}" alt="Conoce tu talle icono">
         <a data-fancybox data-src="#modaltalle2" href="javascript:;">Conocé tu talle</a> 
     </div>
     <div class="distinto">
-        <img src="{{ 'images/icons/camiseta-de-manga-corta.png' | static_url }}" alt="Guia de talle icono">
+        <img src="{{ 'images/icons/guia-de-talles.svg' | static_url }}" alt="Guia de talle icono">
         <a data-fancybox data-src="#modaltalle" href="javascript:;">Guía de talles</a>
     </div>
 
@@ -150,7 +150,7 @@
 
         </div>
        <div class="sla-entrega-desktop col-12">
-            <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
+            <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
         </div>
 
         {# Description #}
@@ -170,7 +170,7 @@
                 </div>
             </div>
             <div class="sla-entrega-mobile">
-            <img src="{{ 'images/icons/entrega-urgente.png' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
+            <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
         </div>
         {% endif %}
 
