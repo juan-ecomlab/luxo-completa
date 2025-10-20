@@ -4089,70 +4089,6 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     text-align: center;
 }
 
-/* Hero Banner - Critical (above the fold) */
-.solar-park__hero {
-    width: 100%;
-    margin-bottom: 2rem;
-}
-
-.solar-park__banner {
-    width: 100%;
-    height: 40vh;
-    object-fit: cover;
-    display: block;
-}
-
-/* Welcome Section - Critical (above the fold) */
-.solar-park__welcome {
-    padding: 2rem 1rem;
-    margin-bottom: 3rem;
-}
-
-.solar-park__title {
-    font-size: 1.75rem;
-    margin-bottom: 1.5rem;
-    line-height: 1.3;
-}
-
-.solar-park__intro {
-    max-width: 100%;
-    margin: 0 auto;
-}
-
-.solar-park__intro p {
-    font-size: 1rem;
-    line-height: 1.7;
-    margin-bottom: 1.25rem;
-    text-align: left;
-}
-
-.solar-park__intro p:last-child {
-    margin-bottom: 0;
-}
-
-/* Tablet - Critical Styles */
-@media (min-width: 768px) {
-    .solar-park__banner {
-        height: 50vh;
-    }
-
-    .solar-park__welcome {
-        padding: 3rem 2rem;
-    }
-
-    .solar-park__title {
-        font-size: 2.25rem;
-    }
-
-    .solar-park__intro {
-        max-width: 80%;
-    }
-
-    .solar-park__intro p {
-        font-size: 1.125rem;
-        text-align: center;
-    }
-}
 
 /* Desktop - Critical Styles */
 @media (min-width: 1200px) {
@@ -4171,9 +4107,3 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
     }
 }
 
-/* Large Desktop - Critical Styles */
-@media (min-width: 1600px) {
-    .solar-park__intro {
-        max-width: 55%;
-    }
-}

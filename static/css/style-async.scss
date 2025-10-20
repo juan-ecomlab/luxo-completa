@@ -1754,11 +1754,10 @@ footer {
 }
 
 .content-grid img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    object-position: center;
-    justify-self: center;
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
 }
 
 .content-grid div {
@@ -1826,6 +1825,8 @@ footer {
     height: auto;
     object-fit: cover;
     display: block;
+    margin: 0;
+    padding: 0;
 }
 
 /* Tablet - Async Styles */
@@ -1833,7 +1834,7 @@ footer {
     /* Content Grid - 2x2 layout with 1/3 margins on desktop */
     .content-grid {
         grid-template-columns: repeat(2, 1fr);
-        grid-template-rows: repeat(2, 1fr);
+        grid-template-rows: auto auto;
         gap: 1px;
         width: 66.666%;
         max-width: 900px;
@@ -1859,10 +1860,11 @@ footer {
     }
 
     .content-grid img {
-        width: 100%;
-        aspect-ratio: 1 / 1;
-        object-fit: cover;
-        object-position: center;
+        max-width: 100%;
+        height: auto;
+        display: block;
+        justify-self: center;
+        align-self: start;
     }
 
     .content-grid div {
