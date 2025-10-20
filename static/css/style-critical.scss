@@ -2393,101 +2393,45 @@ body > section.page-header.pt-4 > div > div > div > h1 {
   display: none;
 }
 
-#solarPark * {
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
-    font-family: Helvetica, sans-serif;
-}
-
+/* Solar Park - Critical (Above the fold) */
 #solarPark {
     text-align: center;
 }
 
 #solarPark .banner {
     width: 100%;
+    height: 40vh;
+    display: block;
+}
+
+#solarPark .welcome {
+    padding: 2rem 1rem;
+    margin-bottom: 3rem;
+}
+
+#solarPark .welcome h2 {
+    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+}
+
+#solarPark .welcome p {
+    font-size: 12px;
+    line-height: 1.7;
+    margin: 0 auto 1.25rem;
+    max-width: 100%;
+    text-align: left;
+    padding: 0 1rem;
 }
 
 #solarPark h2 {
-    font-size: 22px;
+    font-size: 2rem;
     margin: 40px 0;
-    text-align: center;
-    display: inline-block;
 }
 
 #solarPark h3 {
-  font-size: 24px;
-  margin: 40px 0;
-}
-
-#solarPark p {
-    text-align: center;
-    margin: 30px auto;
-    font-size: 16px;
-}
-
-#solarPark .cajas .box {
-    display: flex;
-    flex-direction: column;
-}
-
-#solarPark .cajas .reverse {
-    flex-direction: column-reverse;
-}
-  
-
-  #solarPark .cajas p {
-    margin: 20px 0;
-  }
-
-
-
-#solarPark .cajas .box img {
-    width: 400px;
-    height: 300px !important;
-}
-
-#solarPark .datos {
-    width: 100%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    align-items: end;
-}
-
-#solarPark .datos div {
-    display: flex;
-    flex-direction: column;
-    width: 100%;
-    font-weight: 700;
-    margin-bottom: 15px;
-}
-
-#solarPark .datos span{
-    font-size: 45px;
-}
-
-#solarPark .datos div p {
-    font-size: 14px;
-    width: 60%;
-    margin: 5px auto;
-}
-
-#solarPark .pmas {
-    grid-row: 3/4;
-    grid-column: 4/5;
-    width: 100%;
-    align-self: flex-end
-}
-
-#solarPark .imagenes {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(4, 1fr);
-}
-
-#solarPark .imagenes img {
-    width: 100%;
+    font-size: 1.5rem;
+    margin: 40px 0;
 }
 
 .coleccion * {
@@ -3333,51 +3277,24 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 
         /* Estaticas */
 
-  #solarPark h2 {
-    font-size: 24px;
-}
-
-#solarPark p {
-    width: 40%;
-    font-size: 12px;
-    margin: 0 auto;
-}
-    #solarPark .datos {
-    width: 60%;
-    margin: 0 auto;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(3, 1fr);
-    row-gap: 15px;
-    align-items: center;
-}
-
-  #solarPark .imagenes {
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+  /* Solar Park - Desktop Critical */
+  #solarPark .banner {
+      height: 50vh;
   }
 
-  #solarPark .cajas {
-    width: 80%;
-    margin: 20px auto;
+  #solarPark .welcome {
+      padding: 3rem 2rem;
   }
 
-  #solarPark .cajas .box {
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-}
+  #solarPark .welcome h2 {
+      font-size: 2.25rem;
+  }
 
-#solarPark .cajas .box p {
-  width: 400px;
-  font-size: 12px;
-  margin: 0;
-  padding: 0 40px;
-}
-
-  #solarPark .cajas .reverse {
-    flex-direction: row;
-}
+  #solarPark .welcome p {
+      max-width: 80%;
+      font-size: 12px;
+      text-align: center;
+  }
 
 .coleccion h1 {
     font-size: 32px;
@@ -4239,24 +4156,18 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
 
 /* Desktop - Critical Styles */
 @media (min-width: 1200px) {
-    .solar-park__banner {
+    /* Solar Park - Large Desktop Critical */
+    #solarPark .banner {
         height: 60vh;
     }
 
-    .solar-park__welcome {
-        padding: 4rem 2rem;
-    }
-
-    .solar-park__title {
+    #solarPark .welcome h2 {
         font-size: 2.5rem;
     }
 
-    .solar-park__intro {
+    #solarPark .welcome p {
         max-width: 65%;
-    }
-
-    .solar-park__intro p {
-        font-size: 1.25rem;
+        font-size: 12px;
     }
 }
 
