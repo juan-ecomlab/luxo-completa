@@ -1,6 +1,6 @@
 <div id="solarPark">
     <main>
-        <img src="" class="banner" alt="banner">
+        <img src="{{ 'images/solar park/banner solar.webp' | static_url }}" class="banner" alt="Solar Park Banner">
 
         <section class="welcome">
             <h2>BIENVENIDOS A SOLAR PARK ☀️</h2>
@@ -19,7 +19,7 @@
         </section>
 
         <div class="content-grid">
-            <img src="{{ 'images/solar park/DSC00781.jpg' | static_url }}" alt="Solar Park">
+            <img src="{{ 'images/solar park/top-grid/1.webp' | static_url }}" alt="Solar Park">
             <div>
                 <p>
                     Tener nuestra propia planta nos permite controlar cada paso: desde la llegada de la materia prima hasta el producto terminado que llega a tus manos. Esto significa no solo una mejora en la calidad, sino también garantizar procesos responsables, condiciones laborales justas y un impacto ambiental minimizado.
@@ -31,7 +31,7 @@
                     Solar Park abrió sus puertas en diciembre del 2022, sumando 50 nuevos puestos de trabajo, con el objetivo de llegar a más de 150 colaboradores en los próximos años. Apostamos al talento local, a la industria nacional y a demostrar que es posible construir un negocio rentable, auténtico y con propósito.
                 </p>
             </div>
-            <img src="{{ 'images/solar park/DSC00777.jpg' | static_url }}" alt="Solar Park">
+            <img src="{{ 'images/solar park/top-grid/2.webp' | static_url }}" alt="Solar Park">
             <div>
                 <p>
                     Esta planta fue clave para lograr nuestra certificación como Empresa B, pero más allá del sello, es un reflejo de un camino que elegimos: el camino del triple impacto, donde el crecimiento económico camina de la mano con el impacto social y ambiental.
@@ -62,14 +62,14 @@
         <p><b>A nosotros tampoco.</b></p>
 
         <section class="imagenes">
-            <img src="{{ 'images/solar park/DSC00725.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00727.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00729.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00730.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00731.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00744.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00746.jpg' | static_url }}" alt="">
-            <img src="{{ 'images/solar park/DSC00750.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/solar park/bottom-grid/1.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/2.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/3.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/5.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/6.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/7.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/8.webp' | static_url }}" alt="Solar Park Team">
+            <img src="{{ 'images/solar park/bottom-grid/9.webp' | static_url }}" alt="Solar Park Team">
         </section>
     </main>
 </div>

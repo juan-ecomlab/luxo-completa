@@ -1744,18 +1744,21 @@ footer {
   #Solar Park Page - Async Styles (Below the fold)
 ==============================================================================*/
 
-/* 2x2 Content Grid - Async (below the fold) */
+/* Content Grid - 2x2 alternating layout */
 .content-grid {
     display: grid;
     grid-template-columns: 1fr;
     gap: 2rem;
-    width: 80%;
+    max-width: 1200px;
     margin: 30px auto;
 }
 
 .content-grid img {
     width: 100%;
-    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    object-position: center;
+    justify-self: center;
 }
 
 .content-grid div {
@@ -1763,39 +1766,31 @@ footer {
 }
 
 .content-grid p {
-    font-size: 1rem;
+    font-size: 12px;
     line-height: 1.7;
+    margin-left: 1rem;
     margin-bottom: 1rem;
     text-align: left;
 }
 
-/* Stats Section - Async */
-.solar-park__stats {
-    padding: 3rem 1rem;
-    margin-bottom: 3rem;
-}
-
-.solar-park__stats-title {
-    font-size: 2rem;
-    margin-bottom: 2.5rem;
-}
-
-.stats-grid {
+/* Stats Section */
+.datos {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 2rem;
     max-width: 1200px;
     margin: 0 auto 2rem;
+    padding: 3rem 1rem;
 }
 
-.stats-grid__item {
+.datos div {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
 
-.stats-grid__number {
+.datos span {
     font-size: 2.5rem;
     font-weight: 700;
     line-height: 1.2;
@@ -1803,75 +1798,50 @@ footer {
     display: block;
 }
 
-.stats-grid__label {
+.datos div p {
     font-size: 0.875rem;
     line-height: 1.4;
     font-weight: 600;
     margin: 0;
 }
 
-.solar-park__stats-footer {
-    font-size: 1.125rem;
+.pmas {
+    grid-column: 1 / -1;
+    font-size: 12px;
     font-style: italic;
     margin-top: 2rem;
 }
 
-/* Team Section - Async */
-.solar-park__team {
-    padding: 2rem 1rem;
-    margin-bottom: 2rem;
-}
-
-.solar-park__team-title {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-}
-
-.solar-park__team-subtitle {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-}
-
-.solar-park__team-emphasis {
-    font-size: 1rem;
-    margin-bottom: 0;
-}
-
-/* Gallery Section - Async */
-.solar-park__gallery {
-    padding: 2rem 0;
-    margin-bottom: 3rem;
-}
-
-.gallery-grid {
+/* Gallery */
+.imagenes {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0.5rem;
+    gap: 0;
     max-width: 100%;
+    margin: 2rem 0;
 }
 
-.gallery-grid__image {
+.imagenes img {
     width: 100%;
-    height: 100%;
+    height: auto;
     object-fit: cover;
     display: block;
 }
 
 /* Tablet - Async Styles */
 @media (min-width: 768px) {
-    /* Content Grid - 2x2 layout */
+    /* Content Grid - 2x2 layout with 1/3 margins on desktop */
     .content-grid {
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(2, 1fr);
-        gap: 2.5rem;
-        padding: 0 2rem;
+        gap: 1px;
+        width: 66.666%;
+        max-width: 900px;
+        margin: 30px auto;
+        padding: 0;
     }
 
     /* Grid positioning for 2x2 layout */
-    .content-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-
     .content-grid img:nth-child(1) {
         grid-area: 1 / 1 / 2 / 2;
     }
@@ -1888,8 +1858,15 @@ footer {
         grid-area: 2 / 1 / 3 / 2;
     }
 
+    .content-grid img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+        object-fit: cover;
+        object-position: center;
+    }
+
     .content-grid div {
-        padding: 0 40px;
+        padding: 20px 20px;
         display: flex;
         align-items: center;
         flex-direction: column;
@@ -1897,98 +1874,27 @@ footer {
     }
 
     .content-grid p {
-        font-size: 1.125rem;
+        font-size: 12px;
         text-align: center;
     }
 
-    /* Stats */
-    .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2.5rem;
-    }
-
-    .stats-grid__number {
-        font-size: 3rem;
-    }
-
-    .stats-grid__label {
-        font-size: 1rem;
-    }
-
-    /* Team */
-    .solar-park__team-title {
-        font-size: 1.75rem;
-    }
-
-    .solar-park__team-subtitle,
-    .solar-park__team-emphasis {
-        font-size: 1.125rem;
-    }
-
-    /* Gallery */
-    .gallery-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: 0.75rem;
-    }
-}
-
-/* Desktop - Async Styles */
-@media (min-width: 1200px) {
-    /* Content Grid */
-    .content-grid {
-        gap: 3rem;
-        max-width: 1400px;
-    }
-
-    .content-grid__text {
-        padding: 2.5rem;
-    }
-
-    .content-grid__text p {
-        font-size: 1.25rem;
-    }
-
-    /* Stats */
-    .solar-park__stats {
-        padding: 4rem 2rem;
-    }
-
-    .stats-grid {
+    /* Stats - 4 columns */
+    .datos {
         grid-template-columns: repeat(4, 1fr);
         gap: 3rem;
     }
 
-    .stats-grid__number {
+    .datos span {
         font-size: 3.5rem;
     }
 
-    .stats-grid__label {
-        font-size: 1.125rem;
+    .datos div p {
+        font-size: 12px;
     }
 
-    /* Team */
-    .solar-park__team {
-        padding: 3rem 2rem;
-    }
-
-    .solar-park__team-title {
-        font-size: 2rem;
-    }
-
-    .solar-park__team-subtitle,
-    .solar-park__team-emphasis {
-        font-size: 1.25rem;
-    }
-
-    /* Gallery */
-    .gallery-grid {
-        gap: 1rem;
-    }
-}
-
-/* Large Desktop - Async Styles */
-@media (min-width: 1600px) {
-    .content-grid {
-        max-width: 1600px;
+    /* Gallery - 4 columns */
+    .imagenes {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
     }
 }
