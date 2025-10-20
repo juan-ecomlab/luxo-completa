@@ -1207,11 +1207,12 @@ p{
 }
 
 .desktop-dropdown {
-  position: fixed;
-  top: calc(100% - 10px);
+  position: absolute;
+  top: 100%;
   left: 0;
-  width: 100%; 
+  width: 100%;
   overflow-y: auto;
+  z-index: 1050;
 }
 
 .nav-categories {
@@ -1281,6 +1282,7 @@ p{
 .nav-dropdown-content {
   visibility: hidden;
   opacity: 0;
+  pointer-events: none;
   transition: visibility 0s linear .3s, opacity .3s linear;
 }
 
