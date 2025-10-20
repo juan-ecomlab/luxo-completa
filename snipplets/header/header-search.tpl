@@ -3,7 +3,8 @@
         <div class="form-group m-0">
             <input class="js-search-input form-control search-input" autocomplete="off" type="search" name="q" placeholder="{{ '¿Qué estás buscando?' | translate }}" aria-label="{{ '¿Qué estás buscando?' | translate }}" />
             <button type="submit" class="btn search-input-submit" value="{{ 'Buscar' | translate }}" aria-label="{{ 'Buscar' | translate }}">
-                <svg class="icon-inline icon-lg svg-icon-text"><use xlink:href="#search"/></svg>
+                {# <svg class="icon-inline icon-lg svg-icon-text"><use xlink:href="#search"/></svg> #}
+                <img src="{{ 'images/icons/search.svg' | static_url }}" alt="Busqueda icono">
             </button>
         </div>
     </form>
