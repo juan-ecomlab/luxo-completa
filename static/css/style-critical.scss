@@ -1754,8 +1754,8 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   width: 100%;
 }
 .item-name {
-  line-height: 16px;
-  height: 2rem;
+  /* line-height: 16px;
+  height: 2rem; */
   text-overflow: ellipsis;
   overflow: hidden;
   -webkit-line-clamp: 2;
@@ -2310,6 +2310,10 @@ body > footer #email {
 }
 
 body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-md-5.mb-5 > div.text-center.text-md-left {
+  display: none;
+}
+
+.banner-coleccion svg, .banner-coleccion2 svg {
   display: none;
 }
 
@@ -3159,11 +3163,15 @@ body > section.account-page > div > div {
   margin: 0 auto;
 }
 
-  body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img, body > div.js-home-sections-container.home-sections-container > section:nth-child(8) > div > div.js-banners-news2.container-fluid > div.row > div > div > div img {
+.banner-coleccion img, .banner-coleccion2 img {
 	filter: grayscale(100%);
 }
 
-body>div.js-home-sections-container.home-sections-container>section:nth-child(7)>div>div.js-banners-news.container-fluid>div.row>div>div img:hover, body > div.js-home-sections-container.home-sections-container > section:nth-child(8) > div > div.js-banners-news2.container-fluid > div.row > div > div > div img:hover {
+.banner-coleccion a:hover > div > img {
+	filter: grayscale(0);
+}
+
+.banner-coleccion2 a:hover > div > img {
 	filter: grayscale(0);
 }
 

@@ -116,7 +116,7 @@
 
 {% elseif section_select == 'news_banners' %}
 	{#  **** News banners ****  #}
-	<section class="section-banners-home position-relative" data-store="home-banner-news">
+	<section class="section-banners-home position-relative banner-coleccion" data-store="home-banner-news">
 		{% if show_help or (show_component_help and not has_news_banners) %}
 			{% snipplet 'defaults/home/news_banners_help.tpl' %}
 		{% else %}
@@ -126,7 +126,7 @@
 
 {% elseif section_select == 'news_banners2' %}
 	{#  **** News banners2 ****  #}
-	<section class="section-banners-home position-relative" data-store="home-banner-news2">
+	<section class="section-banners-home position-relative banner-coleccion2" data-store="home-banner-news2">
 		{% if show_help or (show_component_help and not has_news_banners2) %}
 			{% snipplet 'defaults/home/news_banners_help.tpl' %}
 		{% else %}
