@@ -3075,8 +3075,13 @@ body > section.page-header.pt-4 > div > div > div > h1 {
       transform: none;
   }
 
+  .artistas .imagenes div {
+    line-height: 0;
+  }
+
   .artistas .imagenes a {
     display: inline-block;
+    line-height: 0;
   }
 
   .artistas .imagenes a span {
