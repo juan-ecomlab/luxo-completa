@@ -2215,7 +2215,6 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
         .iconos-talles div img {
             width: 40px;
             margin-right: 5px;
-            padding: 8px;
         }
 
 .sla-entrega-mobile {
@@ -2230,7 +2229,7 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
         }
 
         .sla-entrega-mobile span {
-            margin-left: 10px;
+            margin-left: 5px;
         }
 
 .sla-entrega-desktop {
@@ -2279,7 +2278,8 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(3)
 }
 
 #related-products > div > div.products-section-title-container.section-title.text-center > h2 {
-  font-size: 24px;
+  font-size: 18px;
+  padding: 40px 0 20px;
 }
 
 body > div.js-home-sections-container.home-sections-container > section:nth-child(7) {
@@ -3147,16 +3147,15 @@ body > section.account-page > div > div {
 
 .iconos-talles div img {
             width: 40px;
-            margin-right: 10px;
         }
 
 .iconos-talles .distinto {
   margin-left: 30px;
 }
 
-#related-products > div > div.products-section-title-container.section-title.text-center > h2 {
+/* #related-products > div > div.products-section-title-container.section-title.text-center > h2 {
   font-size: 28px;
-}
+} */
 
 #single-product > div > div {
   max-width: 90%;
@@ -3223,7 +3222,7 @@ body > section.account-page > div > div {
         }
 
         .sla-entrega-desktop span {
-            margin-left: 10px;
+            margin-left: 5px;
         }
 
         
@@ -3239,9 +3238,9 @@ body > section.account-page > div > div {
             width: 80%;
             margin: 0 auto;
         }
-.beneficios-pdp img {
+/* .beneficios-pdp img {
   width: 40px;
-}
+} */
 
   .linea {
             display: none;
