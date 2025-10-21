@@ -2551,7 +2551,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .empresab section div article {
     width: 100%;
     text-align: center;
-
+    margin: 2rem 0;
 }
 
 
@@ -2601,7 +2601,22 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 .empresab .adicional div{
     display: flex;
     justify-content: center;
-    align-items: end;
+}
+
+.empresab .adicional .image-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.empresab .adicional .image-container img {
+    width: 40%;
+    height: auto;
+    object-fit: contain;
+}
+
+.empresab .adicional .text-container {
+    text-align: center;
 }
 
 .empresab .adicional img {
@@ -3398,6 +3413,29 @@ body>div.js-home-sections-container.home-sections-container>section:nth-child(7)
         justify-content: space-between;
         margin: 40px auto;
     }
+
+    .empresab .adicional article {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .empresab .adicional .image-container {
+        height: 8rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .empresab .adicional .image-container img {
+        max-height: 100%;
+        max-width: 12rem;
+        object-fit: contain;
+    }
+
+    .empresab .adicional .text-container {
+        text-align: center;
+    }
+
     .empresab .carbono .logos img {
         width: 30%;
     }

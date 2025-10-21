@@ -16,7 +16,7 @@
     </section>
     <section class="carbono">
         <h2>SOMOS CARBONO NEUTRAL</h2>
-        <P>Por nuestra Huella de Carbono del 2022, medida en 37,76 TnCO2e, decidimos compensar el 100% de nuestras emisiones contribuyendo económicamente a los siguientes proyectos:</P>
+        <P>Por nuestra <b>Huella de Carbono</b> del 2022, medida en 37,76 TnCO2e, decidimos <b>compensar el 100% de nuestras emisiones</b> contribuyendo económicamente a los siguientes proyectos:</P>
         <div>
             <article>
                 <span class="proyecto-header">PROYECTO</span>
@@ -51,24 +51,36 @@
         <p>Contribuimos económicamente para que se planten 10 árboles con BAUM–Fábrica de Árboles, 31 árboles con Asociación Amigos de Patagonia y 9 árboles con Seamos Bosques.</p>
         <div>
             <article>
-                <img src="{{ 'images/empresab/baumfda_logo.jfif' | static_url }}" alt="">
-                <h3>PROYECTO FORESTACIÓN:</h3>
-                <p>Adicionalmente ha generado un plus de impacto: <br>
-                La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
-            </article>
-                <article>
-                    <img src="{{ 'images/empresab/Logo-Seamos-Bosques.png' | static_url }}" alt="">
-                    <h3 class="distinto">PROYECTO FORESTACIÓN:</h3>
-                    <p>Adicionalmente ha generado un plus de impacto: <br>
-                    La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
-                </article>
-                <article>
-                    <img src="{{ 'images/empresab/LOGO-AAP-EN-PNG.png' | static_url }}" alt="">
+                <div class="image-container">
+                    <img src="{{ 'images/empresab/baumfda_logo.jfif' | static_url }}" alt="">
+                </div>
+                <div class="text-container">
                     <h3>PROYECTO FORESTACIÓN:</h3>
                     <p>Adicionalmente ha generado un plus de impacto: <br>
                     La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
-                </article>
-            </div>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <img src="{{ 'images/empresab/Logo-Seamos-Bosques.png' | static_url }}" alt="">
+                </div>
+                <div class="text-container">
+                    <h3 class="distinto">PROYECTO FORESTACIÓN:</h3>
+                    <p>Adicionalmente ha generado un plus de impacto: <br>
+                    La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
+                </div>
+            </article>
+            <article>
+                <div class="image-container">
+                    <img src="{{ 'images/empresab/LOGO-AAP-EN-PNG.png' | static_url }}" alt="">
+                </div>
+                <div class="text-container">
+                    <h3>PROYECTO FORESTACIÓN:</h3>
+                    <p>Adicionalmente ha generado un plus de impacto: <br>
+                    La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
+                </div>
+            </article>
+        </div>
             
         </section>
     </div>
