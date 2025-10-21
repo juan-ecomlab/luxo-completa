@@ -19,7 +19,8 @@
     {% endif %}
     <span class="utilities-container">
         <a href="#" class="js-modal-open js-search-button {% if tabnav %}js-toggle-tabnav tabnav-link{% endif %} utilities-link utilities-item" data-toggle="#nav-search" aria-label="{{ 'Buscador' | translate }}">
-            <svg class="icon-inline utilities-icon {{ tabnav_icon_class }}"><use xlink:href="#search"/></svg>
+            {# <svg class="icon-inline utilities-icon {{ tabnav_icon_class }}"><use xlink:href="#search"/></svg> #}
+            <img src="{{ 'images/icons/search.svg' | static_url }}" alt="Busqueda icono" style="width: 30px;">
             {% if tabnav %}
                 <svg class="tabnav-icon tabnav-icon-close icon-inline utilities-icon"><use xlink:href="#times"/></svg>
             {% endif %}
