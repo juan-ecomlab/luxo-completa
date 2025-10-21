@@ -200,7 +200,7 @@
 							
 							<br>
 	                        	<span>Copyright LUXO | Ropa sin género para humanos. 2024. Todos los derechos reservados. Defensa de las y los consumidores. Para reclamos  <a href="https://autogestion.produccion.gob.ar/consumidores" target="_blank">ingrese aquí</a></span>
-								<a href="https://ecommercelab.agency/?utm_source=Web_LUXOAR&utm_medium=Web_LUXOAR&utm_campaign=Web_LUXOAR&utm_content=Web_LUXOAR&utm_term=Web_LUXOAR" target="_blank"><img class="logo-eclab" src="{{ 'images/logo-eclab.png' | static_url }}" alt="Logo Instagram"></a>
+								<a href="https://ecommercelab.agency/?utm_source=Web_LUXOAR&utm_medium=Web_LUXOAR&utm_campaign=Web_LUXOAR&utm_content=Web_LUXOAR&utm_term=Web_LUXOAR" target="_blank" class="a-logo-eclab"><img class="logo-eclab" src="{{ 'images/eclab logo.svg' | static_url }}" alt="Logo Eclab"></a>
 	                        </div>
 							 
 							

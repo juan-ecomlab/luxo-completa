@@ -2340,6 +2340,7 @@ body > footer > div.container-fluid > div:nth-child(1) > div.col-12.col-md-4.pr-
 
         
         .logo-eclab {
+          width: 60%;
           display: block;
           margin: 25px auto;
         }
@@ -3311,8 +3312,12 @@ body > section.account-page > div > div {
   margin-left: 60px;
 }
 
+.a-logo-eclab {
+  width: 30%;
+}
+
 .logo-eclab {
-          margin: 0px 100px 0px 0px;
+          width: 40%;
         }
 
         /* Estaticas */
