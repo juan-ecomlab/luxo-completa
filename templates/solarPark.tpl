@@ -73,3 +73,4 @@
         </section>
     </main>
 </div>
+{% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}

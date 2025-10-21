@@ -2405,6 +2405,10 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     text-align: center;
 }
 
+#solarPark p {
+  text-align: center !important;
+}
+
 #solarPark .banner {
     width: 100%;
     height: 40vh;
@@ -2427,7 +2431,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
     line-height: 1.7;
     margin: 0 auto 1.25rem;
     max-width: 100%;
-    text-align: left;
+    text-align: center;
     padding: 0 1rem;
 }
 
@@ -2529,6 +2533,7 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
 .empresab .responsabilidad-grid > div {
     width: 100%;
+    margin-top: 20px;
 }
 
 .empresab .responsabilidad-grid p {
@@ -3408,6 +3413,7 @@ body > section.account-page > div > div {
         flex-direction: column;
         justify-content: center;
         min-height: 300px;
+        margin-top: 0;
     }
 
     .empresab .responsabilidad-grid p {
