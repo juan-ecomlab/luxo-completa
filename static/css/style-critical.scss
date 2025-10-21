@@ -3081,11 +3081,21 @@ body > section.page-header.pt-4 > div > div > div > h1 {
   border-style: none;
   border-radius: 0;
   background: #f8f9fa;
+  color: #000;
   height: 32px;
   font-size: 12px;
   font-weight: 600;
   margin: 0;
-  padding: 8px;
+  padding: 8px 6px;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+// Reduce padding further on very narrow screens (iPhone SE, small devices)
+@media (max-width: 375px) {
+  .js-size-variant-add.item-size-btn {
+    padding: 8px 4px;
+  }
 }
 
 // Center the mobile size selector
