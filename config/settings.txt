@@ -1471,26 +1471,3 @@ Edición avanzada de CSS
 		description = Acá podes escribir código CSS para que se muestre en tu tienda
 	subtitle
 		subtitle = <a target='_blank' href='https://ayuda.tiendanube.com/es_ES/123225-edicion-avanzada-de-css/como-editar-el-diseno-con-codigo-css'>¿Cómo edito el código CSS de mi tienda?</a>
-
-Solar Park
-	meta
-		icon = image
-		advanced = false
-	title
-		title = Configuración de Solar Park
-	subtitle
-		subtitle = Personaliza las imágenes de la página Solar Park
-	image
-		original = images/solar park/banner.jpg
-		title = Banner principal de Solar Park
-		name = solar_park_banner_img
-	image
-		original = images/solar park/DSC00781.jpg
-		title = Imagen del grid (posición A1)
-		name = solar_park_grid_image_1
-		description = Primera imagen del grid de contenido
-	image
-		original = images/solar park/DSC00777.jpg
-		title = Imagen del grid (posición B2)
-		name = solar_park_grid_image_2
-		description = Segunda imagen del grid de contenido
