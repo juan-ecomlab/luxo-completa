@@ -27,7 +27,7 @@
                     input_for: 'email', type_email: true, 
                     input_name: 'email', 
                     input_id: 'email', 
-                    input_placeholder: 'Correo electronico' | translate, 
+                    input_placeholder: 'Correo electrónico' | translate, 
                     input_aria_label: 'Email' | translate,
                     input_group_custom_class: newsletter_form_group_class } %}
                 {% endembed %}

@@ -41,7 +41,7 @@
             <div class="local">
                 <img src="{{ 'images/locales/ramos.png' | static_url }}" alt="">
                 <div class="texto">
-                    <h2>RAMOS MEJIA</h2>
+                    <h2>RAMOS MEJÍA</h2>
                     <P>Necochea 234</P>
                     <h4>HORARIO DE ATENCIÓN:</h4>
                     <span>Lunes a Sábado de 11:00hs a 20:00hs.</span>

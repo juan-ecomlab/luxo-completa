@@ -117,7 +117,7 @@ Recibirás un mail con un código de seguimiento (tracking number) y las instruc
 Podés retirar tu pedido en cualquiera de los siguientes locales de LUXO sin costo adicional:<br/><br/>
 
 · LUXO HANGAR - Gurruchaga 974 | Villa Crespo | (+54 9) 11-6599-2902<br/>
-· LUXO RAMOS – Necochea 234 | Ramos Mejia | (+54 9) 11-5486-1866<br/>
+· LUXO RAMOS – Necochea 234 | Ramos Mejía | (+54 9) 11-5486-1866<br/>
 · LUXO LOMITAS - España 145 | Lomas de Zamora | (+54 9) 11-6553-8915<br/><br/>
 
 El local que elijas te contactará vía WhatsApp cuando tu compra esté lista para retirar. El plazo estimado de entrega es de 1 a 3 días hábiles.</p>
