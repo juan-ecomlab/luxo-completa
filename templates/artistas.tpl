@@ -1,6 +1,6 @@
 <div class="artistas">
-        <img src="{{ 'images/artistas/art-mobile.png' | static_url }}" class="banner-mobile">
-        <img src="{{ 'images/artistas/art-desktop.png' | static_url }}" alt="banner-desktop" class="banner-desktop">
+        <img src="{{ 'images/artistas/banner-art-support.webp' | static_url }}" class="banner-mobile">
+        <img src="{{ 'images/artistas/banner-art-support.webp' | static_url }}" alt="banner-desktop" class="banner-desktop">
 
         <h1>ART SUPPORT</h1>
         <P><b>Art Support</b> es el concepto que engloba todo el arte dentro de LUXO.<br>
@@ -53,6 +53,12 @@
                 <a href="/tamo">
                     <img src="{{ 'images/artistas/TAMO PERFIL.jpg' | static_url }}" alt="">
                     <span>TAMO</span>
+                </a>
+            </div>
+            <div>
+                <a href="/villy-villain">
+                    <img src="{{ 'images/artistas/villy-villian.jpg' | static_url }}" alt="">
+                    <span>VILLY VILLAIN</span>
                 </a>
             </div>
         </div>
