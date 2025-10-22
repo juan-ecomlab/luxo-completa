@@ -67,7 +67,7 @@
                 <div class="text-container">
                     <h3 class="distinto">PROYECTO FORESTACIÓN:</h3>
                     <p>Adicionalmente ha generado un plus de impacto: <br>
-                    La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
+                    La plantación de 9 árboles junto a SeamosBosques.</p>
                 </div>
             </article>
             <article>
@@ -77,7 +77,7 @@
                 <div class="text-container">
                     <h3>PROYECTO FORESTACIÓN:</h3>
                     <p>Adicionalmente ha generado un plus de impacto: <br>
-                    La plantación de 10 árboles junto a BAUM – Fábrica de Árboles.</p>
+                    La plantación de 31 árboles junto a la Asociación Amigos de la Patagonia.</p>
                 </div>
             </article>
         </div>
