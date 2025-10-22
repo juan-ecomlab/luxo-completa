@@ -3328,6 +3328,124 @@ body > section.account-page > div > div {
           width: 40%;
         }
 
+/* New Footer Layout Styles */
+.footer-content-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+@media (min-width: 768px) {
+  .footer-content-wrapper {
+    max-width: 70%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Row 1: Three columns */
+.footer-row-1 {
+  .col-md-4 {
+    text-align: left;
+  }
+
+  /* Newsletter left-align in footer */
+  .newsletter {
+    .js-home-newsletter-title,
+    .text-center {
+      text-align: left !important;
+    }
+  }
+}
+
+/* Row 2: Copyright section */
+.footer-row-2 {
+  .footer-copyright-section {
+    font-size: 0.75rem;
+    line-height: 1.6;
+
+    a {
+      text-decoration: none;
+      font-weight: normal;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .footer-regret-button {
+    display: inline-block;
+    margin-top: 0.25rem;
+    font-weight: normal;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* Row 3: AFIP */
+.footer-row-3 {
+  .seal-afip,
+  .seal-ebit {
+    display: inline-block;
+  }
+}
+
+/* Row 4: Platform logos */
+.footer-row-4 {
+  .footer-platform-logos {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+
+    .eclab-link {
+      .logo-eclab {
+        width: auto;
+        height: 45px;
+      }
+    }
+  }
+}
+
+/* Mobile adjustments */
+@media (max-width: 767px) {
+  .footer-row-1 {
+    .col-12 {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .newsletter {
+      .js-home-newsletter-title,
+      .text-center {
+        text-align: center !important;
+      }
+    }
+  }
+
+  .footer-row-2 {
+    text-align: center;
+  }
+
+  .footer-row-4 {
+    .footer-platform-logos {
+      flex-direction: column;
+      gap: 1rem;
+
+      .eclab-link {
+        .logo-eclab {
+          height: 35px;
+        }
+      }
+    }
+  }
+}
+
         /* Estaticas */
 
   /* Solar Park - Desktop Critical */
