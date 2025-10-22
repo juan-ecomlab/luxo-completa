@@ -86,7 +86,7 @@
     {% if settings.ad_bar %}
         {% snipplet "header/header-advertising.tpl" %}
     {% endif %}
-	<div class="container-fluid">
+	<div class="container-fluid header-container">
 		<div class="{% if not settings.head_fix_desktop %}js-nav-logo-bar{% endif %} row no-gutters align-items-center">
 
             {# Menu icon #}
