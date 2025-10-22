@@ -1900,3 +1900,89 @@ footer {
         gap: 0;
     }
 }
+
+/*============================================================================
+  #FAQ Page
+==============================================================================*/
+
+.faq-anchor {
+  display: block;
+  position: relative;
+  top: -60px;
+  visibility: hidden;
+
+  @media (max-width: 767px) {
+    top: -40px;
+  }
+}
+
+.btn-external-service {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: var(--font-base);
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0px;
+  transition: all 0.3s ease;
+  background-color: #040404;
+  color: #fffffb;
+  fill: #fffffb;
+  margin-bottom: 1rem;
+
+  &:hover {
+    color: #fffffb;
+    text-decoration: underline;
+    transform: translateY(-1px);
+  }
+}
+
+.faq-page {
+  // Main section titles (H3) - tight bottom margin
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 15px;
+    }
+  }
+
+  // Subsection titles (H4) - tight bottom margin
+  h4 {
+    margin-top: 0;
+    margin-bottom: 15px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 12px;
+    }
+  }
+
+  // Paragraphs - moderate bottom margin
+  p {
+    margin-bottom: 25px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 20px;
+    }
+  }
+
+  // Bold spans (questions) - tight bottom margin
+  span.font-weight-bold {
+    display: block;
+    margin-top: 0;
+    margin-bottom: 10px;
+
+    @media (max-width: 767px) {
+      margin-bottom: 8px;
+    }
+  }
+
+  // Space between sections - last paragraph before new section
+  p + .faq-anchor {
+    margin-top: 35px;
+
+    @media (max-width: 767px) {
+      margin-top: 30px;
+    }
+  }
+}
