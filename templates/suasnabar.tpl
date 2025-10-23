@@ -9,7 +9,7 @@
         </p>
 
         <div class="imagenes">
-            <img src="{{ 'images/artistas/suasnabar/Lautaro-Suasnabar-arte.jpg' | static_url }}" alt="">
+            <img src="{{ 'images/artistas/suasnabar/Lautaro-Suasnabar-arte.jpg' | static_url }}" alt="" class="unica">
         </div>
          
 </div>

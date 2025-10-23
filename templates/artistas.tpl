@@ -85,6 +85,30 @@
                     <span>CAVEMAN</span>
                 </a>
             </div>
+            <div>
+                <a href="/poms">
+                    <img src="{{ 'images/artistas/poms.jpg' | static_url }}" alt="">
+                    <span>POMS</span>
+                </a>
+            </div>
+            <div>
+                <a href="/tavella">
+                    <img src="{{ 'images/artistas/tavella.jpg' | static_url }}" alt="">
+                    <span>SILVINA TAVELLA</span>
+                </a>
+            </div>
+            <div>
+                <a href="/oliver">
+                    <img src="{{ 'images/artistas/oliver.jpg' | static_url }}" alt="">
+                    <span>OLIVER</span>
+                </a>
+            </div>
+            <div>
+                <a href="/escalante">
+                    <img src="{{ 'images/artistas/vero-escalante.jpg' | static_url }}" alt="">
+                    <span>VERO ESCALANTE</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}

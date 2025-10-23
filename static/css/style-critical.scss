@@ -3668,6 +3668,10 @@ body > section.account-page > div > div {
         grid-auto-rows: min-content;
     }
 
+    .artistas .unica {
+        grid-column: 2/3;
+    }
+
     .artistas .imagenes div{
         transition: all 0.6s ease;
         line-height: 0;

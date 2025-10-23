@@ -78,6 +78,18 @@
 {% elseif current_url == "caveman" %}
 {% include 'templates/caveman.tpl' %}
 
+{% elseif current_url == "poms" %}
+{% include 'templates/poms.tpl' %}
+
+{% elseif current_url == "tavella" %}
+{% include 'templates/tavella.tpl' %}
+
+{% elseif current_url == "oliver" %}
+{% include 'templates/oliver.tpl' %}
+
+{% elseif current_url == "escalante" %}
+{% include 'templates/escalante.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 
