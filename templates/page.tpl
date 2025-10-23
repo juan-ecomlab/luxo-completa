@@ -87,6 +87,9 @@
 {% elseif current_url == "oliver" %}
 {% include 'templates/oliver.tpl' %}
 
+{% elseif current_url == "escalante" %}
+{% include 'templates/escalante.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 

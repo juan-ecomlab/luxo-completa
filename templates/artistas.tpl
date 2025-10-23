@@ -103,6 +103,12 @@
                     <span>OLIVER</span>
                 </a>
             </div>
+            <div>
+                <a href="/escalante">
+                    <img src="{{ 'images/artistas/vero-escalante.jpg' | static_url }}" alt="">
+                    <span>VERO ESCALANTE</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
