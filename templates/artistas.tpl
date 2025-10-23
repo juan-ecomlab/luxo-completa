@@ -56,12 +56,6 @@
                 </a>
             </div>
             <div>
-                <a href="/villy-villain">
-                    <img src="{{ 'images/artistas/villy-villian.jpg' | static_url }}" alt="">
-                    <span>VILLY VILLAIN</span>
-                </a>
-            </div>
-            <div>
                 <a href="/piranha">
                     <img src="{{ 'images/artistas/fal_0000_PIRANHA PERFIL.jpg' | static_url }}" alt="">
                     <span>PIRANHA</span>
@@ -71,6 +65,18 @@
                 <a href="/pioppo">
                     <img src="{{ 'images/artistas/PIOPPO PERFIL.jpg' | static_url }}" alt="">
                     <span>PIOPPO</span>
+                </a>
+            </div>
+            <div>
+                <a href="/villy-villain">
+                    <img src="{{ 'images/artistas/villy-villian.jpg' | static_url }}" alt="">
+                    <span>VILLY VILLAIN</span>
+                </a>
+            </div>
+            <div>
+                <a href="/suasnabar">
+                    <img src="{{ 'images/artistas/Lautaro-Suasnabar-perfil.jpg' | static_url }}" alt="">
+                    <span>LAUTARO SUASNABAR</span>
                 </a>
             </div>
         </div>
