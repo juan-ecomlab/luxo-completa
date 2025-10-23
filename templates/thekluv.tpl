@@ -19,7 +19,7 @@
             <img src="{{ 'images/kluv/Untitled-2_0003_CARL COX.jpg' | static_url }}" alt="">
         </div>
         <h2>PRODUCTORAS QUE NOS ACOMPAÑAN</h2>
-        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus recusandae, distinctio rem eveniet repudiandae porro placeat assumenda voluptate autem cum iusto alias. Vitae nisi ullam dolor expedita minus dolorum beatae!</p>
+        <!-- p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus recusandae, distinctio rem eveniet repudiandae porro placeat assumenda voluptate autem cum iusto alias. Vitae nisi ullam dolor expedita minus dolorum beatae!</p -->
         <div class="logos">
             <img src="{{ 'images/kluv/logos/Asset 26-8.png' | static_url }}" alt="">
             <img src="{{ 'images/kluv/logos/Asset 27-8.png' | static_url }}" alt="">
