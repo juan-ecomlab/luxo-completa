@@ -75,6 +75,9 @@
 {% elseif current_url == "suasnabar" %}
 {% include 'templates/suasnabar.tpl' %}
 
+{% elseif current_url == "caveman" %}
+{% include 'templates/caveman.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 

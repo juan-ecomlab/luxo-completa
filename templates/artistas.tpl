@@ -79,6 +79,12 @@
                     <span>LAUTARO SUASNABAR</span>
                 </a>
             </div>
+            <div>
+                <a href="/caveman">
+                    <img src="{{ 'images/artistas/caveman.jpg' | static_url }}" alt="">
+                    <span>CAVEMAN</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
