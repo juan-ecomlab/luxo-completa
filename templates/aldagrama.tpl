@@ -12,8 +12,5 @@
             <img src="{{ 'images/artistas/aldagrama/1.png' | static_url }}" alt="">
             <img src="{{ 'images/artistas/aldagrama/2.png' | static_url }}" alt="">
         </div>
-         <div class="final">
-            <h2>LUXO ART SUPPORT</h2>
-            <P>Generando y trabajando con artistas desde el 2015.</P>
-        </div>
     </div>
+        {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
