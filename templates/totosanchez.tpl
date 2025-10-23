@@ -1,12 +1,11 @@
 <div class="artistas">
         <img src="{{ 'images/artistas/toto sanchez/MOBILE_0000_TOTO SANCHEZ.jpg' | static_url }}" alt="" class="banner-mobile">
         <img src="{{ 'images/artistas/toto sanchez/TOTO SANCHEZ.jpg' | static_url }}" alt="" class="banner-desktop">
-        <h1>TOTO SANCHEZ</h1>
+        <h1>TOTO SÁNCHEZ</h1>
 
-        <p><b>Toto Sánchez</b> es, primero, nuestro gran amigo. Y después, uno de nuestros artistas favoritos.<br><br>
-        A través de sus obras, explora lo más profundo del ser humano y sus procesos internos. Su arte es un viaje emocional y espiritual que logra llevarte directo al autoconocimiento y al crecimiento personal. Cada pieza que crea es un espejo, una invitación a mirar hacia adentro. <br><br>
-        Ya perdimos la cuenta de cuántas cápsulas creamos juntos, pero de algo estamos seguros: <b>siempre hay una próxima.</b><br><br>
-        El arte de Toto está presente en nuestra ropa desde hace años, cuelga en nuestras oficinas y vive en nuestra piel. Literalmente.
+        <p>Artista cuya obra se centra en la exploración del ser humano y sus procesos internos.<br><br>
+        A través de su trabajo busca representar viajes emocionales y espirituales, invitando a la introspección y al autoconocimiento. <br><br>
+        Cada trazo y color en su obra funciona como reflejo de una transformación interior.
         </p>
 
         <div class="imagenes">
@@ -30,8 +29,5 @@
             <img src="{{ 'images/artistas/toto sanchez/18.png' | static_url }}" alt="">
             <img src="{{ 'images/artistas/toto sanchez/19.png' | static_url }}" alt="">
         </div>
-         <div class="final">
-            <h2>LUXO ART SUPPORT</h2>
-            <P>Generando y trabajando con artistas desde el 2015.</P>
-        </div>
     </div>
+    {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}

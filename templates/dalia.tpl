@@ -1,6 +1,6 @@
 <div class="artistas">
-        <img src="{{ 'images/artistas/dalia/MOBILE_0005_BANNER DALIA.jpg' | static_url }}" alt="" class="banner-mobile">
-        <img src="{{ 'images/artistas/dalia/BANNER DALIA.jpg' | static_url }}" alt="" class="banner-desktop">
+        <img src="{{ 'images/artistas/dalia/BANNER-ART-SUPORT-DALIA.jpg' | static_url }}" alt="" class="banner-mobile">
+        <img src="{{ 'images/artistas/dalia/BANNER-ART-SUPORT-DALIA.jpg' | static_url }}" alt="" class="banner-desktop">
         <h1>DALIA</h1>
 
         <p><b>Dalia Fubini</b>, nacida en Buenos Aires en 1988 y criada entre los excesos visuales y culturales de los 90, es artista plástica devenida en tatuadora. Tatuadora desde hace 11 años, dibujante desde siempre. <br><br>
@@ -13,8 +13,5 @@
             <img src="{{ 'images/artistas/dalia/2.png' | static_url }}" alt="">
             <img src="{{ 'images/artistas/dalia/3.png' | static_url }}" alt="">
         </div>
-         <div class="final">
-            <h2>LUXO ART SUPPORT</h2>
-            <P>Generando y trabajando con artistas desde el 2015.</P>
-        </div>
     </div>
+        {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
