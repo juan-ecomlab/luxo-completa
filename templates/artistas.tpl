@@ -76,7 +76,7 @@
             <div>
                 <a href="/suasnabar">
                     <img src="{{ 'images/artistas/Lautaro-Suasnabar-perfil.jpg' | static_url }}" alt="">
-                    <span>LAUTARO SUASNABAR</span>
+                    <span>SUASNABAR</span>
                 </a>
             </div>
             <div>
@@ -94,7 +94,7 @@
             <div>
                 <a href="/tavella">
                     <img src="{{ 'images/artistas/tavella.jpg' | static_url }}" alt="">
-                    <span>SILVINA TAVELLA</span>
+                    <span>TAVELLA</span>
                 </a>
             </div>
             <div>
@@ -106,7 +106,7 @@
             <div>
                 <a href="/escalante">
                     <img src="{{ 'images/artistas/vero-escalante.jpg' | static_url }}" alt="">
-                    <span>VERO ESCALANTE</span>
+                    <span>ESCALANTE</span>
                 </a>
             </div>
         </div>
