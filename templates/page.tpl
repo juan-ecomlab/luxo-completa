@@ -66,6 +66,12 @@
 {% elseif current_url == "villy-villain" %}
 {% include 'templates/villy-villain.tpl' %}
 
+{% elseif current_url == "piranha" %}
+{% include 'templates/piranha.tpl' %}
+
+{% elseif current_url == "pioppo" %}
+{% include 'templates/pioppo.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 

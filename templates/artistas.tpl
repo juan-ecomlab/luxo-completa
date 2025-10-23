@@ -61,6 +61,18 @@
                     <span>VILLY VILLAIN</span>
                 </a>
             </div>
+            <div>
+                <a href="/piranha">
+                    <img src="{{ 'images/artistas/fal_0000_PIRANHA PERFIL.jpg' | static_url }}" alt="">
+                    <span>PIRANHA</span>
+                </a>
+            </div>
+            <div>
+                <a href="/pioppo">
+                    <img src="{{ 'images/artistas/PIOPPO PERFIL.jpg' | static_url }}" alt="">
+                    <span>PIOPPO</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
