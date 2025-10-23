@@ -85,6 +85,12 @@
                     <span>CAVEMAN</span>
                 </a>
             </div>
+            <div>
+                <a href="/poms">
+                    <img src="{{ 'images/artistas/poms.jpg' | static_url }}" alt="">
+                    <span>POMS</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}

@@ -78,6 +78,9 @@
 {% elseif current_url == "caveman" %}
 {% include 'templates/caveman.tpl' %}
 
+{% elseif current_url == "poms" %}
+{% include 'templates/poms.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 
