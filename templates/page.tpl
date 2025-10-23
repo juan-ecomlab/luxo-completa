@@ -12,7 +12,7 @@
 {% elseif current_url == "coleccion" %}
 {% include 'templates/coleccion.tpl' %}
 
-{% elseif current_url == "artistas" %}
+{% elseif current_url == "art-support" %}
 {% include 'templates/artistas.tpl' %}
 
 {% elseif current_url == "dot" %}
