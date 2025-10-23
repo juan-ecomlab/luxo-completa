@@ -22,9 +22,6 @@
 				{% if store.contact_intro %}
 					<p>{{ store.contact_intro }}</p>
 				{% endif %}	
-				{% if has_contact_info %}
-					{% include "snipplets/contact-links.tpl" %}
-				{% endif %}
 			</div>
 		</div>
 		<div class="row justify-content-md-center">
