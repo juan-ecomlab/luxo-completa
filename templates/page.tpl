@@ -63,6 +63,21 @@
 {% elseif current_url == "tamo" %}
 {% include 'templates/tamo.tpl' %}
 
+{% elseif current_url == "villy-villain" %}
+{% include 'templates/villy-villain.tpl' %}
+
+{% elseif current_url == "piranha" %}
+{% include 'templates/piranha.tpl' %}
+
+{% elseif current_url == "pioppo" %}
+{% include 'templates/pioppo.tpl' %}
+
+{% elseif current_url == "suasnabar" %}
+{% include 'templates/suasnabar.tpl' %}
+
+{% elseif current_url == "caveman" %}
+{% include 'templates/caveman.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 

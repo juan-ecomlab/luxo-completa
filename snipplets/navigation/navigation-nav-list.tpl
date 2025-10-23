@@ -93,8 +93,8 @@
 							</div>
 							<div class="megamenu-table-cell megamenu-image-cell">
 								<div class="megamenu-promo-container">
-									<a href="https://eclabdemo.mitiendanube.com/productos/" class="megamenu-promo-link">
-										<img src="{{ 'images/kluv/banner-thekluv.jpg' | static_url }}"
+									<a href="/productos" class="megamenu-promo-link">
+										<img src="{{ 'images/megamenu.jpg' | static_url }}"
 											 alt="Empresa"
 											 class="megamenu-promo-image">
 									</a>

@@ -1,6 +1,6 @@
 <div class="artistas">
-        <img src="{{ 'images/artistas/art-mobile.png' | static_url }}" class="banner-mobile">
-        <img src="{{ 'images/artistas/art-desktop.png' | static_url }}" alt="banner-desktop" class="banner-desktop">
+        <img src="{{ 'images/artistas/banner-art-support.webp' | static_url }}" class="banner-mobile">
+        <img src="{{ 'images/artistas/banner-art-support.webp' | static_url }}" alt="banner-desktop" class="banner-desktop">
 
         <h1>ART SUPPORT</h1>
         <P><b>Art Support</b> es el concepto que engloba todo el arte dentro de LUXO.<br>
@@ -53,6 +53,36 @@
                 <a href="/tamo">
                     <img src="{{ 'images/artistas/TAMO PERFIL.jpg' | static_url }}" alt="">
                     <span>TAMO</span>
+                </a>
+            </div>
+            <div>
+                <a href="/piranha">
+                    <img src="{{ 'images/artistas/fal_0000_PIRANHA PERFIL.jpg' | static_url }}" alt="">
+                    <span>PIRANHA</span>
+                </a>
+            </div>
+            <div>
+                <a href="/pioppo">
+                    <img src="{{ 'images/artistas/PIOPPO PERFIL.jpg' | static_url }}" alt="">
+                    <span>PIOPPO</span>
+                </a>
+            </div>
+            <div>
+                <a href="/villy-villain">
+                    <img src="{{ 'images/artistas/villy-villian.jpg' | static_url }}" alt="">
+                    <span>VILLY VILLAIN</span>
+                </a>
+            </div>
+            <div>
+                <a href="/suasnabar">
+                    <img src="{{ 'images/artistas/Lautaro-Suasnabar-perfil.jpg' | static_url }}" alt="">
+                    <span>LAUTARO SUASNABAR</span>
+                </a>
+            </div>
+            <div>
+                <a href="/caveman">
+                    <img src="{{ 'images/artistas/caveman.jpg' | static_url }}" alt="">
+                    <span>CAVEMAN</span>
                 </a>
             </div>
         </div>
