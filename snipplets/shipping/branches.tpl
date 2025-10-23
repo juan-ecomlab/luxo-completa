@@ -4,7 +4,7 @@
             <svg class="icon-inline icon-w svg-icon-text mr-1"><use xlink:href="#store-alt"/></svg>
             <span class="subtitle">
                 {% if store.branches|length > 1 %}
-                    {{ 'Nuestros locales' | translate }}
+                    {{ 'Retirá gratis en nuestros locales' | translate }}
                 {% else %}
                     {{ 'Nuestro local' | translate }}
                 {% endif %}

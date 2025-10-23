@@ -17,7 +17,7 @@
         {% set price_big_class = settings.payment_discount_price ? 'font-big' %}
         <span class="d-inline-block {{ price_big_class }}"><div id="compare_price_display" class="js-compare-price-display price-compare" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money_nocents }}{% endif %}</div></span><span class="d-inline-block {{ price_big_class }}"><div class="js-price-display" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money_nocents }}{% endif %}</div></span>
     </div>
-    <div class="col-12">
+    <!-- Currently using an app for installments div class="col-12">
         {{ component('price-without-taxes', {
                 container_classes: "mt-2",
             })
@@ -33,7 +33,7 @@
                 })
             }}
         </div>
-    </div>
+    </div  -->
 </div>
 
 {# Product availability #}
@@ -143,57 +143,42 @@
     {# Fake add to cart CTA visible during add to cart event #}
 
     {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "mb-4"} %}
-
-    <div class="sla-entrega-desktop col-12">
-            <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
-        </div>
-
-        {# Description #}
-
-{% if not settings.full_width_description %}
-                    {% include 'snipplets/product/product-description.tpl' %}
-                {% endif %}
-
-        {% if settings.ajax_cart %}
-            <div class="col-12">
-                <div class="js-added-to-cart-product-message font-small" style="display: none;">
-                    <svg class="icon-inline icon-lg svg-icon-text mr-2 d-table float-left"><use xlink:href="#check"/></svg>
-                    <span>
-                        {{'Ya agregaste este producto.' | translate }}<a href="#" class="js-modal-open js-open-cart js-fullscreen-modal-open btn-link float-right subtitle ml-1" data-toggle="#modal-cart" data-modal-url="modal-fullscreen-cart">{{ 'Ver carrito' | translate }}</a>
-                    </span>
-                    <div class="divider"></div>
-                </div>
+    {# Description #}
+    {% if settings.ajax_cart %}
+        <div class="col-12">
+            <div class="js-added-to-cart-product-message font-small" style="display: none;">
+                <svg class="icon-inline icon-lg svg-icon-text mr-2 d-table float-left"><use xlink:href="#check"/></svg>
+                <span>
+                    {{'Ya agregaste este producto.' | translate }}<a href="#" class="js-modal-open js-open-cart js-fullscreen-modal-open btn-link float-right subtitle ml-1" data-toggle="#modal-cart" data-modal-url="modal-fullscreen-cart">{{ 'Ver carrito' | translate }}</a>
+                </span>
+                <div class="divider"></div>
             </div>
-            <div class="sla-entrega-mobile">
-            <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
         </div>
+    {% endif %}
+
+    {# Free shipping visibility message #}
+
+    {% set free_shipping_minimum_label_changes_visibility = has_free_shipping and cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
+
+    {% set include_product_free_shipping_min_wording = cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
+
+    {% if not product.is_non_shippable and product_available and has_free_shipping and not has_product_free_shipping %}
+
+        {# Free shipping add to cart message #}
+
+        {% if include_product_free_shipping_min_wording %}
+
+            {% include "snipplets/shipping/shipping-free-rest.tpl" with {'product_detail': true} %}
+
         {% endif %}
 
-         
+        {# Free shipping achieved message #}
 
-        {# Free shipping visibility message #}
+        <div class="{% if free_shipping_minimum_label_changes_visibility %}js-free-shipping-message{% endif %} text-accent mb-3 w-100" {% if not cart.free_shipping.cart_has_free_shipping %}style="display: none;"{% endif %}>
+            {{ "¡Genial! Tenés envío gratis" | translate }}
+        </div>
 
-        {% set free_shipping_minimum_label_changes_visibility = has_free_shipping and cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
-
-        {% set include_product_free_shipping_min_wording = cart.free_shipping.min_price_free_shipping.min_price_raw > 0 %}
-
-        {% if not product.is_non_shippable and product_available and has_free_shipping and not has_product_free_shipping %}
-
-            {# Free shipping add to cart message #}
-
-            {% if include_product_free_shipping_min_wording %}
-
-                {% include "snipplets/shipping/shipping-free-rest.tpl" with {'product_detail': true} %}
-
-            {% endif %}
-
-            {# Free shipping achieved message #}
-
-            <div class="{% if free_shipping_minimum_label_changes_visibility %}js-free-shipping-message{% endif %} text-accent mb-3 w-100" {% if not cart.free_shipping.cart_has_free_shipping %}style="display: none;"{% endif %}>
-                {{ "¡Genial! Tenés envío gratis" | translate }}
-            </div>
-
-        {% endif %}
+    {% endif %}
 
     {# Product installments #}
 
@@ -205,7 +190,7 @@
 
         {# If product detail installments, include container with "see installments" link #}
 
-        <div class="js-accordion-container w-100 mb-3">
+        <div class="js-accordion-container payments-accordion w-100 mb-3">
             <a href="#" class="js-accordion-toggle py-1 row">
                 <div class="col">
                     <svg class="icon-inline icon-w svg-icon-text mr-1"><use xlink:href="#credit-card"/></svg>
@@ -279,6 +264,10 @@
         {% endif %}
 
     {% endif %}
+
+    {% if not settings.full_width_description %}
+                    {% include 'snipplets/product/product-description.tpl' %}
+                {% endif %}
 
  </form>
   

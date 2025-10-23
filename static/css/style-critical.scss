@@ -2176,6 +2176,11 @@ body > div.js-home-sections-container.home-sections-container > section:nth-chil
   font-family: Helvetica, sans-serif;
 }
 
+#ajax-cart-submit-div {
+  display: flex;
+  justify-content: center;
+}
+
 body>div.js-home-sections-container.home-sections-container>section:nth-child(2)>div>div.js-banners-promotional.container-fluid.d-none.d-md-block>div.row>div>div>div>div>a>div>div.js-textbanner-text.textbanner-text.over-image.pr-5 {
 	background: none;
 	bottom: 40%;
