@@ -674,6 +674,27 @@ textarea {
   }
 }
 
+.btn-block {
+  font-size: 1rem;
+}
+
+#single-product .price-container {
+  margin-top: 0 !important;
+}
+
+.item .item-installments {
+  font-size: var(--font-small);
+}
+
+#single-product .payment-discount-price-product-container {
+  font-size: 1rem;
+}
+
+#single-product .payment-discount-price-product {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
 input::-webkit-inner-spin-button,
 input::-webkit-outer-spin-button{
   -webkit-appearance: none;
@@ -1603,6 +1624,17 @@ footer {
   .form-quantity{
     padding: 10px;
     font-size: var(--font-base);
+  }
+
+  .form-quantity-product {
+    width: 12rem;
+    margin-left: 0;
+    margin-right: auto;
+  }
+
+  .btn-block {
+    max-width: 20rem;
+    font-size: 1rem;
   }
 
   .search-input {

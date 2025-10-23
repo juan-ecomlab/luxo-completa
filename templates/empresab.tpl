@@ -41,8 +41,8 @@
             </article>
         </div>
         <div class="logos">
-            <img src="{{ 'images/empresab/carbono-neutral.png' | static_url }}" alt="">
-            <img src="{{ 'images/empresab/verra-vector-logo.png' | static_url }}" alt="">
+            <img src="{{ 'images/empresab/carbon_neutral_B.svg' | static_url }}" alt="">
+            <img src="{{ 'images/empresab/verra.svg' | static_url }}" alt="">
             <img src="{{ 'images/empresab/VCSLogoColor.png' | static_url }}" alt="">
         </div>
     </section>

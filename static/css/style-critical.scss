@@ -1774,7 +1774,8 @@ body > div.js-home-sections-container.home-sections-container > section.section-
   opacity: .8;
 }
 .item-installments {
-  font-size: var(--font-small);
+  font-size: var(--font-large);
+  margin-top: 0.5rem;
 }
 .item-actions {
   -webkit-transition: all 0.4s ease;
@@ -3092,6 +3093,17 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
   .empresab h2 {
     font-size: 0.8rem;
+  }
+
+  .empresab .carbono .logos {
+    flex-direction: column;
+    align-items: center;
+    width: 80%;
+    gap: 20px;
+  }
+
+  .empresab .carbono .logos img {
+    width: 50%;
   }
 }
 

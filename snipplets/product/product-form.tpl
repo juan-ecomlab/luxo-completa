@@ -15,29 +15,24 @@
 <div class="price-container mb-3 row" data-store="product-price-{{ product.id }}">
     <div class="col">
         {% set price_big_class = settings.payment_discount_price ? 'font-big' %}
-        <span class="d-inline-block {{ price_big_class }}">
-           <div id="compare_price_display" class="js-compare-price-display price-compare" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money_nocents }}{% endif %}</div>
-        </span>
-        <span class="d-inline-block {{ price_big_class }}">
-        	<div class="js-price-display" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money_nocents }}{% endif %}</div>
-        </span>
+        <span class="d-inline-block {{ price_big_class }}"><div id="compare_price_display" class="js-compare-price-display price-compare" {% if not product.compare_at_price or not product.display_price %}style="display:none;"{% else %} style="display:block;"{% endif %}>{% if product.compare_at_price and product.display_price %}{{ product.compare_at_price | money_nocents }}{% endif %}</div></span><span class="d-inline-block {{ price_big_class }}"><div class="js-price-display" id="price_display" {% if not product.display_price %}style="display:none;"{% endif %} data-product-price="{{ product.price }}">{% if product.display_price %}{{ product.price | money_nocents }}{% endif %}</div></span>
     </div>
-    {% if settings.product_detail_installments %}
-        <div class="col-auto">
-            {{ component('installments', {'location' : 'product_detail', container_classes: { installment: "item-installments"}}) }}
-        </div>
-    {% endif %}
     <div class="col-12">
         {{ component('price-without-taxes', {
-                container_classes: "mt-2 font-small opacity-60",
-            })
-        }}
-        {{ component('payment-discount-price', {
-                visibility_condition: settings.payment_discount_price,
-                location: 'product',
                 container_classes: "mt-2",
             })
         }}
+        {% if settings.product_detail_installments %}
+            {{ component('installments', {'location' : 'product_detail', container_classes: { installment: "item-installments"}}) }}
+        {% endif %}
+        <div class="payment-discount-wrapper">
+            {{ component('payment-discount-price', {
+                    visibility_condition: settings.payment_discount_price,
+                    location: 'product',
+                    container_classes: "mt-2",
+                })
+            }}
+        </div>
     </div>
 </div>
 
@@ -97,9 +92,6 @@
     {% if template == "product" %}
         {% set show_size_guide = true %}
     {% endif %}
- 	{% if product.variations %}
-        {% include "snipplets/product/product-variants.tpl" with {show_size_guide: show_size_guide} %}
-    {% endif %}
 
     {% set show_product_quantity = product_available and settings.quantity_input %}
 
@@ -109,47 +101,50 @@
         </div>
     {% endif %}
 
-    <div class="form-row mb-2">
-        {% if show_product_quantity %}
-            {% include "snipplets/product/product-quantity.tpl" %}
-        {% endif %}
-        {% set state = store.is_catalog ? 'catalog' : (product.available ? product.display_price ? 'cart' : 'contact' : 'nostock') %}
-        {% set texts = {'cart': "COMPRAR AHORA", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
-        <div class="{% if show_product_quantity %}col-8{% else %}col-md-6 col-12{% endif %}">
+    {# Size selector #}
+    {% if product.variations %}
+        {% include "snipplets/product/product-variants.tpl" with {show_size_guide: show_size_guide} %}
+    {% endif %}
 
-            {% if settings.product_stock and not settings.quantity_input and product.available and product.display_price %}
-                {% include "snipplets/product/product-stock.tpl" with {custom_class: "pb-3"} %}
-            {% endif %}
-
-            {# Add to cart CTA #}
-
-            <div class="iconos-talles">
-    <div>
-        <img src="{{ 'images/icons/conoce-tu-talle.svg' | static_url }}" alt="Conoce tu talle icono">
-        <a data-fancybox data-src="#modaltalle2" href="javascript:;">Conocé tu talle</a> 
-    </div>
-    <div class="distinto">
-        <img src="{{ 'images/icons/guia-de-talles.svg' | static_url }}" alt="Guia de talle icono">
-        <a data-fancybox data-src="#modaltalle" href="javascript:;">Guía de talles</a>
-    </div>
-
-     <div id="modaltalle2" style="display:none;" >
-                <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" style="width:100%;"/>
-            </div> 
-    <div id="modaltalle" style="display:none;" >
-                <img src="{{ 'images/como-me-mido.png' | static_url }}" style="width:100%;"/>
-            </div> 
-
-</div>
-
-            <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
-
-            {# Fake add to cart CTA visible during add to cart event #}
-
-            {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "mb-4"} %}
-
+    {# Conocé tu talle and Guía de talles links #}
+    <div class="iconos-talles mb-3">
+        <div>
+            <img src="{{ 'images/icons/conoce-tu-talle.svg' | static_url }}" alt="Conoce tu talle icono">
+            <a data-fancybox data-src="#modaltalle2" href="javascript:;">Conocé tu talle</a>
         </div>
-       <div class="sla-entrega-desktop col-12">
+        <div class="distinto">
+            <img src="{{ 'images/icons/guia-de-talles.svg' | static_url }}" alt="Guia de talle icono">
+            <a data-fancybox data-src="#modaltalle" href="javascript:;">Guía de talles</a>
+        </div>
+
+        <div id="modaltalle2" style="display:none;" >
+            <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" style="width:100%;"/>
+        </div>
+        <div id="modaltalle" style="display:none;" >
+            <img src="{{ 'images/como-me-mido.png' | static_url }}" style="width:100%;"/>
+        </div>
+    </div>
+
+    {# Quantity selector #}
+    {% if show_product_quantity %}
+        {% include "snipplets/product/product-quantity.tpl" %}
+    {% endif %}
+
+    {# CTA button #}
+    {% set state = store.is_catalog ? 'catalog' : (product.available ? product.display_price ? 'cart' : 'contact' : 'nostock') %}
+    {% set texts = {'cart': "COMPRAR AHORA", 'contact': "Consultar precio", 'nostock': "Sin stock", 'catalog': "Consultar"} %}
+
+    {% if settings.product_stock and not settings.quantity_input and product.available and product.display_price %}
+        {% include "snipplets/product/product-stock.tpl" with {custom_class: "pb-3"} %}
+    {% endif %}
+
+    <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
+
+    {# Fake add to cart CTA visible during add to cart event #}
+
+    {% include 'snipplets/placeholders/button-placeholder.tpl' with {custom_class: "mb-4"} %}
+
+    <div class="sla-entrega-desktop col-12">
             <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono"><span>Llega antes del AMBA: 12 ABR - Interior: 18 ABR</span>
         </div>
 
@@ -199,7 +194,6 @@
             </div>
 
         {% endif %}
-    </div>
 
     {# Product installments #}
 

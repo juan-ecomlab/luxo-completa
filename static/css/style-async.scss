@@ -710,8 +710,10 @@ button{
   }
 }
 
-.header-container {
-  padding-left: 0;
+@media (min-width: 768px) {
+  .header-container {
+    padding-left: 0;
+  }
 }
 
 /* // Nav */
