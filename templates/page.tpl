@@ -84,6 +84,9 @@
 {% elseif current_url == "tavella" %}
 {% include 'templates/tavella.tpl' %}
 
+{% elseif current_url == "oliver" %}
+{% include 'templates/oliver.tpl' %}
+
 {% elseif current_url == "colecciones-pasadas" %}
 {% include 'templates/coleccionespasadas.tpl' %}
 

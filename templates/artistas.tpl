@@ -97,6 +97,12 @@
                     <span>SILVINA TAVELLA</span>
                 </a>
             </div>
+            <div>
+                <a href="/oliver">
+                    <img src="{{ 'images/artistas/oliver.jpg' | static_url }}" alt="">
+                    <span>OLIVER</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
