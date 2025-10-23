@@ -1,7 +1,7 @@
 <div class="pasadas">
 	<h1>COLECCIONES PASADAS</h1>
 
-	<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam amet libero porro enim cumque nobis esse quibusdam? Expedita necessitatibus inventore aperiam harum corporis unde commodi, asperiores nostrum iusto quis veritatis.</p>
+	<!-- p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nam amet libero porro enim cumque nobis esse quibusdam? Expedita necessitatibus inventore aperiam harum corporis unde commodi, asperiores nostrum iusto quis veritatis.</p -->
 	<div
 		class="carousel">
 		<!-- Radios -->
