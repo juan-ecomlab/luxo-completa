@@ -91,6 +91,12 @@
                     <span>POMS</span>
                 </a>
             </div>
+            <div>
+                <a href="/tavella">
+                    <img src="{{ 'images/artistas/tavella.jpg' | static_url }}" alt="">
+                    <span>SILVINA TAVELLA</span>
+                </a>
+            </div>
         </div>
     </div>
 {% include 'snipplets/home/home-welcome-message.tpl' with {'institutional': true} %}
