@@ -118,10 +118,10 @@
         </div>
 
         <div id="modaltalle2" style="display:none;" >
-            <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" style="width:100%;"/>
+            <img src="{{ ('images/tabla/' ~ product.handle ~ '.jpg' ) | static_url }}" />
         </div>
         <div id="modaltalle" style="display:none;" >
-            <img src="{{ 'images/como-me-mido.png' | static_url }}" style="width:100%;"/>
+            <img src="{{ 'images/como-me-mido.png' | static_url }}" />
         </div>
     </div>
 
@@ -138,7 +138,7 @@
         {% include "snipplets/product/product-stock.tpl" with {custom_class: "pb-3"} %}
     {% endif %}
 
-    <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
+    <input type="submit" class="js-addtocart js-prod-submit-form btn btn-primary btn-block mb-3 {{ state }}" value="{{ texts[state] | translate }}" {% if state == 'nostock' %}disabled{% endif %} data-store="product-buy-button" data-component="product.add-to-cart"/>
 
     {# Fake add to cart CTA visible during add to cart event #}
 
