@@ -2008,3 +2008,42 @@ footer {
     }
   }
 }
+
+/*============================================================================
+  #Countdown Timer
+==============================================================================*/
+
+.countdown-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 2rem auto;
+  text-align: center;
+
+  .countdown-label {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+  }
+
+  .countdown-timer {
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+  }
+}
+
+// Homepage countdown section spacing
+.section-countdown-home {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+
+  @media (min-width: 768px) {
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+  }
+}

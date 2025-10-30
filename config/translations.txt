@@ -51,6 +51,12 @@
 --- --- Social
 
 
+es "Temporizador de cuenta regresiva"
+pt "Temporizador de contagem regressiva"
+en "Countdown timer"
+es_mx "Temporizador de cuenta regresiva"
+
+
 --- General ---
 
 es "Si"

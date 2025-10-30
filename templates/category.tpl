@@ -42,9 +42,28 @@
 		{% include 'snipplets/grid/filters-modals.tpl' %}
 	</div>
 </section>
-{% if category.description %} 
-	<p class="mt-2 mb-3 mt-md-0 mb-md-4 container-fluid">{{ category.description }}</p> 
+{% if category.description %}
+	<p class="mt-2 mb-3 mt-md-0 mb-md-4 container-fluid">{{ category.description }}</p>
 {% endif %}
+
+{# Countdown timer for category pages #}
+{% if settings.show_countdown_category and settings.countdown_category_url %}
+	<div class="container-fluid">
+		<div class="countdown-container">
+			{% if settings.countdown_category_label %}
+				<div class="countdown-label">
+					{{ settings.countdown_category_label }}
+				</div>
+			{% endif %}
+			<div class="countdown-timer" {% if settings.countdown_category_max_width %}style="max-width: {{ settings.countdown_category_max_width }}px; margin: 0 auto;"{% endif %}>
+				<img src="{{ settings.countdown_category_url }}"
+				     alt="{{ 'Temporizador de cuenta regresiva' | translate }}"
+				     class="img-fluid" />
+			</div>
+		</div>
+	</div>
+{% endif %}
+
 <div class="container-fluid visible-when-content-ready d-md-none">
 	{% include "snipplets/grid/filters.tpl" with {mobile: true, applied_filters: true} %}
 </div>

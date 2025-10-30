@@ -1135,6 +1135,26 @@ Página de inicio
 	subtitle
 		subtitle = <span class='legend'>El texto y link del botón no se van a mostrar si está habilitada la suscripción al newsletter</span>
 	collapse
+		title = Temporizador de cuenta regresiva - Inicio
+		backto = home_order_position
+	checkbox
+		name = show_countdown_home
+		description = Mostrar temporizador de cuenta regresiva en la página de inicio
+	i18n_input
+		name = countdown_home_label
+		description = Texto de la etiqueta del temporizador (opcional)
+	textarea
+		name = countdown_home_url
+		description = URL del temporizador de Sendtric
+		placeholder = https://gen.sendtric.com/countdown/k9j1v0vwj9
+		rows = 2
+	text
+		name = countdown_home_max_width
+		description = Ancho máximo en píxeles
+		placeholder = 350
+	subtitle
+		subtitle = <span class='legend'>Creá tu temporizador en <a target='_blank' href='https://sendtric.com'>sendtric.com</a> y copiá la URL completa</span>
+	collapse
 		title = Página de inicio
 		backto = _top
 	section_order
@@ -1161,6 +1181,10 @@ Página de inicio
 			testimonials = Testimonios
 			brands = Marcas
 			modules = Módulos de imagen y texto
+			countdown = Temporizador de cuenta regresiva
+	link
+		text = Temporizador de cuenta regresiva - Inicio
+		linkto = show_countdown_home
 	link
 		text = Pop-up promocional
 		linkto = home_promotional_popup
@@ -1239,6 +1263,25 @@ Listado de productos
 	checkbox
 		name = product_installments
 		description = Mostrar cuotas en listado de productos
+	title
+		title = Temporizador de cuenta regresiva
+	checkbox
+		name = show_countdown_category
+		description = Mostrar temporizador de cuenta regresiva en páginas de categorías
+	i18n_input
+		name = countdown_category_label
+		description = Texto de la etiqueta del temporizador (opcional)
+	textarea
+		name = countdown_category_url
+		description = URL del temporizador de Sendtric
+		placeholder = https://gen.sendtric.com/countdown/k9j1v0vwj9
+		rows = 2
+	text
+		name = countdown_category_max_width
+		description = Ancho máximo en píxeles
+		placeholder = 350
+	subtitle
+		subtitle = <span class='legend'>Creá tu temporizador en <a target='_blank' href='https://sendtric.com'>sendtric.com</a> y copiá la URL completa</span>
 
 Detalle de producto
 	meta

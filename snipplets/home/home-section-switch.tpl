@@ -180,4 +180,8 @@
 		{% endif %}
 	</section>
 
+{% elseif section_select == 'countdown' %}
+	{#  **** Countdown timer ****  #}
+	{% include 'snipplets/home/home-countdown.tpl' %}
+
 {% endif %}
