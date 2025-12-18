@@ -12,7 +12,7 @@
         {% endif %}
     {% endfor %}
 
-    {% if has_size_variants and size_options | length >= 1 %}
+    {# {% if has_size_variants and size_options | length >= 1 %} #}
         {% if mobile_version %}
             {# Mobile version - always visible in description area #}
             <div class="js-item-sizes-container item-sizes-container item-sizes-container-mobile"
@@ -66,5 +66,5 @@
                 </div>
             </div>
         </div>
-    {% endif %}
+    {# {% endif %} #}
 {% endif %}
