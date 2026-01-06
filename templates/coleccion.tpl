@@ -41,11 +41,6 @@
             <p>VER COLECCIÓN</p>
             <h3>CAMPERAS</h3>
         </a>
-        <a href="/camperas">
-            <img src="{{ 'images/Colecciones/ABRIGOS.jpg' | static_url }}" alt="Muestra coleccion">
-            <p>VER COLECCIÓN</p>
-            <h3>ABRIGOS</h3>
-        </a>
         <a href="/medias">
             <img src="{{ 'images/Colecciones/MEDIAS.jpg' | static_url }}" alt="Muestra coleccion">
             <p>VER COLECCIÓN</p>
@@ -65,11 +60,6 @@
             <img src="{{ 'images/Colecciones/GIFT CARDS.png' | static_url }}" alt="Muestra coleccion">
             <p>VER COLECCIÓN</p>
             <h3>GIFTCARDS</h3>
-        </a>
-        <a href="/lxferia?mpage=3">
-            <img src="{{ 'images/Colecciones/FERIA.png' | static_url }}" alt="Muestra coleccion">
-            <p>VER COLECCIÓN</p>
-            <h3>FERIA</h3>
         </a>
         <a href="/productos">
             <img src="{{ 'images/Colecciones/VER TODOS.jpg' | static_url }}" alt="Muestra coleccion">

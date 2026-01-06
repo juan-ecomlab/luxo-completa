@@ -115,7 +115,7 @@
                 <img src="{{ 'images/locales/pde.png' | static_url }}" alt="">
                 <div class="texto">
                     <h2>PUNTA DEL ESTE</h2>
-                    <P>RUTA 10 ENTRE LOS REMANCES Y LOS REMANSOS LA BARRA</P>
+                    <P>RUTA 10 ENTRE LOS ROMANCES Y LOS REMANSOS LA BARRA</P>
                     <h4>HORARIO DE ATENCIÓN:</h4>
                     <span>Viernes y Sábado de 11:00hs a 20:00hs.</span>
                     <br>
