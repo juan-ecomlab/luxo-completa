@@ -1,6 +1,6 @@
-{% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
+{# {% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
 	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
-{% endembed %}
+{% endembed %} #}
 
 {# Institutional page  #}
 

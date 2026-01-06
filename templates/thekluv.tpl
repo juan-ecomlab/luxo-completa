@@ -1,3 +1,6 @@
+{% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
+	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
+{% endembed %}
 <div class="kluv">
         <img src="{{ 'images/kluv/BANNER THE KLUV.jpg' | static_url }}" alt="" class="banner">
         <h1>THE KLUV</h1>

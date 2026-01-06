@@ -1,3 +1,6 @@
+{% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
+	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
+{% endembed %}
 <div class="empresab">
     <img src="{{ 'images/empresab/banner-empresab.webp' | static_url }}" alt="" class="bannerDesktop">
      <img src="{{ 'images/empresab/b-mobile.png' | static_url }}" alt="" class="bannerMobile">

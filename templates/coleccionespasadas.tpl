@@ -1,3 +1,7 @@
+{% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
+	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
+{% endembed %}
+
 <div class="pasadas">
 	<h1>COLECCIONES PASADAS</h1>
 
