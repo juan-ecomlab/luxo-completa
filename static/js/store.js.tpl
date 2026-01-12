@@ -3911,3 +3911,26 @@ DOMContentLoaded.addEventOrExecute(() => {
     {% endif %}
 
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo-img");
+
+  if (!logo) return;
+
+  const logoOriginal = logo.src;
+  const logoScroll = "{{ 'images/Logo-Palabra.svg' | static_url }}"; // 👈 segunda imagen
+
+  window.addEventListener("scroll", function () {
+    if (window.scrollY > 50) {
+      if (logo.src !== logoScroll) {
+        logo.src = logoScroll;
+        logo.classList.add("logo-scrolled");
+      }
+    } else {
+      if (logo.src !== logoOriginal) {
+        logo.src = logoOriginal;
+        logo.classList.remove("logo-scrolled");
+      }
+    }
+  });
+});

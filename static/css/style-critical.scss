@@ -556,10 +556,6 @@ h6,
   font-weight: 400;
 }
 
-.page-header h1 {
-  display: none
-}
-
 /* // Texts */
 
 .font-large{
@@ -1312,6 +1308,12 @@ p{
   vertical-align: middle;
   max-width: 90%;
   max-height: 50px;
+  transition: all 1s ease;
+}
+
+.logo-scrolled {
+  width: 80px !important;
+  margin-left: 0px !important;
 }
 
 #logo {

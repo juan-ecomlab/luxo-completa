@@ -1,6 +1,16 @@
-{% embed "snipplets/page-header.tpl" with {'breadcrumbs': true} %}
-	{% block page_header_text %}{{ page.name }}{% endblock page_header_text %}
-{% endembed %}
+<section class="page-header pt-4 " data-store="page-title">
+	<div class="container-fluid ">
+		<div class="row">
+		    <div class="col">
+                <div class="breadcrumbs">
+                    <a class="crumb" href="/" title="LUXO | Ropa sin género para humanos.">Inicio</a>
+                    <span class="separator">.</span>
+                    <span class="crumb active">Solar park</span>
+		        </div>
+	        </div>
+        </div>
+    </div>
+</section>
 <div id="solarPark">
     <main>
         <img src="{{ 'images/solar park/banner solar.webp' | static_url }}" class="banner" alt="Solar Park Banner">
