@@ -94,7 +94,7 @@
 							<div class="megamenu-table-cell megamenu-image-cell">
 								<div class="megamenu-promo-container">
 									<a href="/productos" class="megamenu-promo-link">
-										<img src="{{ 'images/megamenu.jpg' | static_url }}"
+										<img src="{{ 'images/megamenu.webp' | static_url }}"
 											 alt="Empresa"
 											 class="megamenu-promo-image">
 									</a>
