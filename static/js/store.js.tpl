@@ -3912,7 +3912,7 @@ DOMContentLoaded.addEventOrExecute(() => {
 
 });
 
-document.addEventListener("DOMContentLoaded", function () {
+{# document.addEventListener("DOMContentLoaded", function () {
   const logo = document.querySelector(".logo-img");
 
   if (!logo) return;
@@ -3925,13 +3925,41 @@ document.addEventListener("DOMContentLoaded", function () {
     if (window.scrollY > 50) {
       if (logo.src !== logoScroll) {
         logo.src = logoScroll;
-        {# logo.classList.toggle("logo-scrolled"); #}
+        logo.classList.add("logo-scrolled");
       }
     } else {
       if (logo.src !== logoOriginal) {
         logo.src = logoOriginal;
-        {# logo.classList.toggle("logo-scrolled"); #}
+        logo.classList.remove("logo-scrolled");
       }
     }
   });
+}); #}
+
+document.addEventListener("DOMContentLoaded", function () {
+  const logo = document.querySelector(".logo-img");
+
+  if (!logo) return;
+
+  const logoOriginal = logo.src;
+  const logoScroll = "{{ 'images/logo palabra.png' | static_url }}";
+
+  let isScrolled = false;
+
+  window.addEventListener("scroll", function () {
+    const shouldScroll = window.scrollY > 50;
+
+    if (shouldScroll === isScrolled) return;
+
+    isScrolled = shouldScroll;
+
+    logo.style.opacity = "0";
+
+    setTimeout(() => {
+      logo.src = shouldScroll ? logoScroll : logoOriginal;
+      logo.classList.toggle("logo-scrolled", shouldScroll);
+      logo.style.opacity = "1";
+    }, 200);
+  });
 });
+

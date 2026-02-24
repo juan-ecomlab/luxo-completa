@@ -1308,12 +1308,43 @@ p{
   vertical-align: middle;
   max-width: 90%;
   max-height: 50px;
-  transition: all 1s ease;
+  transition: opacity 0.25s ease, max-height 0.3s ease;
 }
 
-.logo-scrolled {
-  width: 80px !important;
+/* .logo-scrolled {
+  max-height: 50px !important;
   margin-left: 0px !important;
+} */
+
+/* Estado inicial */
+.logo-normal {
+  opacity: 1;
+}
+
+.logo-scroll {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  opacity: 0;
+}
+
+/* Con scroll */
+.logo-is-scrolled .logo-normal {
+  opacity: 0;
+}
+
+.logo-is-scrolled .logo-scroll {
+  opacity: 1;
+}
+
+/* Tamaños */
+/* .logo-img {
+  max-height: 80px;
+} */
+
+.logo-is-scrolled .logo-img {
+  max-height: 45px;
 }
 
 #logo {

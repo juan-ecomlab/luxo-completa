@@ -14,6 +14,7 @@
 
     {# {% if has_size_variants and size_options | length >= 1 %} #}
         {% if mobile_version %}
+            
             {# Mobile version - always visible in description area #}
             <div class="js-item-sizes-container item-sizes-container item-sizes-container-mobile"
                  data-variants="{{ product.variants_object | json_encode }}"
@@ -22,6 +23,7 @@
                  data-debug-variants="{{ product.variants | json_encode }}"
                  data-debug-options="{{ size_options | json_encode }}">
                 <div class="item-sizes-overlay item-sizes-overlay-mobile">
+                
         {% else %}
             {# Desktop version - floating overlay #}
             <div class="js-item-sizes-container item-sizes-container"
@@ -33,11 +35,12 @@
                 <div class="item-sizes-overlay">
         {% endif %}
                 <div class="item-sizes-grid">
+                <p>Elegir:</p>
                     {% for size_option in size_options %}
                         {% for variant in product.variants %}
                             {% if variant.option0 == size_option.name or variant.option1 == size_option.name or variant.option2 == size_option.name %}
                                 {% set size_variant_available = variant.stock > 0 %}
-
+                                
                                 <button
                                     type="button"
                                     class="js-size-variant-add item-size-btn{% if not size_variant_available %} item-size-btn-disabled{% endif %}"
