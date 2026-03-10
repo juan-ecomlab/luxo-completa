@@ -57,7 +57,8 @@
             {{ settings.css_code | raw }}
         </style>
 
-
+        {# TNX A/B Testing - Preload script #}
+        {% snipplet 'header/tnx-preload.tpl' %}
 
         {#/*============================================================================
             #Javascript: Needed before HTML loads
