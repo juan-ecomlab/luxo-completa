@@ -126,24 +126,14 @@
                 {% endif %}
             </div>
 
-            {# Search: Icon or box #}
+            {# Search always visible inline #}
+<div class="col d-none d-md-block search-desktop">
+    <div class="header-search-inline">
+        {% include "snipplets/header/header-search.tpl" with {use_big_search: true} %}
+    </div>
+</div>
 
-            <div class="col-auto col-utility {{ hide_mobile_on_tabnav_active }} {% if settings.search_big_mobile %}d-none d-md-inline-block{% endif %}">
-                {% set use_big_search_val = false %}
-                {% if settings.search_big_desktop %}
-                    {% set use_big_search_val = true %}
-                {% endif %}
-                {% if settings.search_big_desktop and not settings.search_big_mobile %}
-                    <span class="d-none d-md-block">
-                {% endif %}
-                        {% include "snipplets/header/header-search.tpl" with {use_big_search: use_big_search_val} %}
-                {% if settings.search_big_desktop and not settings.search_big_mobile %}
-                    </span>
-                    <span class="d-inline-block d-md-none">
-                        {% include "snipplets/header/header-search.tpl" %}
-                    </span>
-                {% endif %}
-            </div>
+            {# Search icon removed (we use inline search) #}
 
             {# Languages #}
 
@@ -184,11 +174,20 @@
 
         {# Mobile search big #}
 
-        {% if settings.search_big_mobile and not settings.show_tab_nav %}
+        {# {% if settings.search_big_mobile and not settings.show_tab_nav %}
             <div class="row no-gutters pb-3 d-block d-md-none">
                 {% include "snipplets/header/header-search.tpl" with {use_big_search: true} %}
             </div>
-        {% endif %}
+        {% endif %} #}
+        {# Search always visible (custom) #}
+
+<div class="row no-gutters py-2 justify-content-center">
+    <div class="col-12 col-md-6">
+        <div class="header-search-visible">
+            {% include "snipplets/header/header-search.tpl" with {use_big_search: true} %}
+        </div>
+    </div>  
+</div>
 	</div>    
     {% include "snipplets/notification.tpl" with {order_notification: true} %}
 </header>

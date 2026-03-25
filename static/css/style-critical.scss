@@ -1348,7 +1348,7 @@ p{
 }
 
 #logo {
-  margin-left: 35px;
+  margin-left: 13px;
 }
 
 .logo-img-small,
@@ -1389,6 +1389,50 @@ header.head-main.compress .logo-img-small {
 
 .head-transparent-on-section.head-transparent-contrast .logo-header-transparent{
   opacity: 1;
+}
+
+/* Buscador */
+
+.header-search-visible {
+  width: 100%;
+}
+
+.header-search-visible form {
+  width: 100%;
+}
+
+.header-search-visible input {
+  width: 100%;
+  padding: 10px;
+  border-radius: 6px;
+}
+
+/* Opcional: mejorar estética */
+.header-search-visible input::placeholder {
+  opacity: 0.7;
+}
+
+.header-search-inline {
+  width: 80%;
+}
+
+.search-desktop {
+  justify-content: flex-end;
+  display: none !important;
+}
+
+.header-search-visible {
+    display: none !important;
+    text-align: center;
+  }
+
+
+
+/* Que no se oculte nunca */
+@media (max-width: 768px) {
+  .header-search-visible {
+    display: block !important;
+  }
 }
 
 /* // Cart widget and search */
@@ -3199,6 +3243,10 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
   #logo {
   margin-left: 0;
+}
+
+ .search-desktop {
+  display: flex !important;
 }
 
 body > section.page-header.pt-4 > div > div > div > h1 {
