@@ -87,6 +87,7 @@ home_order_position_15 = empty
 home_order_position_16 = empty
 home_order_position_17 = empty
 home_order_position_18 = empty
+show_price_sort = 1
 grid_columns_mobile = 2
 grid_columns_desktop = 4
 product_color_variants = 1

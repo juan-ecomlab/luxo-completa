@@ -1207,6 +1207,9 @@ Listado de productos
 	checkbox
 		name = filters_desktop_modal
 		description = Abrir filtros a la derecha del listado de productos al cliquear en 'filtrar' (solo en computadoras)
+	checkbox
+		name = show_price_sort
+		description = Mostrar opciones de ordenar por precio en los listados de productos
 	subtitle
 		subtitle = <span class='js-description-html'><strong>Configurá los filtros</strong> de tu tienda desde <a target='_blank' href='/admin/v2/filters' class='font-bold'>el administrador</a></span>
 	title

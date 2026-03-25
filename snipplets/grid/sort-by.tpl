@@ -15,7 +15,9 @@
 		{% for sort_method in sort_methods %}
 	        {# This is done so we only show the user sorting method when the user chooses it #}
 	        {% if sort_method != 'user' or category.sort_method == 'user' %}
+	        {% if settings.show_price_sort or (sort_method != 'price-ascending' and sort_method != 'price-descending') %}
 	            <option value="{{ sort_method }}" {% if sort_by == sort_method %}selected{% endif %}>{{ sort_text[sort_method] | t }}</option>
+	        {% endif %}
 	        {% endif %}
 	    {% endfor %}
 	{% endblock select_options%}
