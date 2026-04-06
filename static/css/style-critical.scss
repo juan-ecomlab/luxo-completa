@@ -1392,6 +1392,11 @@ header.head-main.compress .logo-img-small {
 }
 
 /* Buscador */
+input[type="search"] {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+}
 
 .header-search-visible {
   width: 100%;
@@ -1428,10 +1433,14 @@ header.head-main.compress .logo-img-small {
 
 
 
+
+
 /* Que no se oculte nunca */
 @media (max-width: 768px) {
   .header-search-visible {
     display: block !important;
+    width: 100%;
+    margin: 0 auto;
   }
 }
 
@@ -3247,6 +3256,12 @@ body > section.page-header.pt-4 > div > div > div > h1 {
 
  .search-desktop {
   display: flex !important;
+}
+
+.search-desktop input {
+  width: 60%;
+  margin-left: 38%;
+  border: 1px solid gray !important;
 }
 
 body > section.page-header.pt-4 > div > div > div > h1 {
