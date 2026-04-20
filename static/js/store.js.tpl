@@ -3412,7 +3412,7 @@ DOMContentLoaded.addEventOrExecute(() => {
             // Hide loading state
             $loadingOverlay.hide();
             $sizeButton.removeClass('adding-to-cart');
-            
+
             // Remove temporary form
             document.body.removeChild(tempForm);
 
@@ -3421,6 +3421,24 @@ DOMContentLoaded.addEventOrExecute(() => {
             setTimeout(function(){
                 $sizeButton.removeClass('item-size-btn-success');
             }, 2000);
+
+            {# Open cart modal - Fly cart #}
+            setTimeout(function(){
+                var modal_id = '#modal-cart';
+                var $overlay_id = jQueryNuvem('.js-modal-overlay[data-modal-id="' + modal_id + '"]');
+
+                if(!jQueryNuvem(".js-modal.modal-show").length){
+                    jQueryNuvem("body").addClass("overflow-none move-right");
+                }
+
+                jQueryNuvem(modal_id).detach().appendTo("body");
+                jQueryNuvem(modal_id).show().addClass("modal-show");
+                $overlay_id.fadeIn(400);
+                $overlay_id.detach().insertBefore(modal_id);
+
+                {# Hide notification when modal opens #}
+                jQueryNuvem(".js-alert-added-to-cart").removeClass("notification-visible").addClass("notification-hidden");
+            }, 300);
         };
 
         // Error callback
