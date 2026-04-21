@@ -1123,6 +1123,85 @@ p{
   -webkit-transform: translate(-50%, -50%);
   -ms-transform: translate(-50%, -50%);
 }
+
+/*============================================================================
+#Blog
+==============================================================================*/
+
+.post-item-image-container {
+  position: relative;
+  height: 200px;
+  overflow: hidden;
+}
+
+.post-item-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.post-item-title,
+.post-item-summary {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  line-height: 1.5em;
+}
+
+.post-content,
+.post-content p {
+  font-size: 16px;
+  line-height: 1.8rem;
+}
+
+.post-content h1,
+.post-content h2,
+.post-content h3,
+.post-content h4,
+.post-content h5,
+.post-content h6 {
+  margin: 2rem 0 1rem 0;
+  line-height: initial;
+}
+
+.post-content h1,
+.post-content .h1 {
+  font-size: 28px;
+}
+
+.post-content h2,
+.post-content .h2 {
+  font-size: 24px;
+}
+
+.post-content h3,
+.post-content .h3 {
+  font-size: 20px;
+}
+
+.post-content h4,
+.post-content .h4 {
+  font-size: 18px;
+}
+
+.post-content h5,
+.post-content .h5 {
+  font-size: 16px;
+}
+
+.post-content h6,
+.post-content .h6 {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) { 
+  .container-narrow {
+    max-width: 680px;
+  }
+}
+
 /* // Brands */
 
 .brand-swiper {

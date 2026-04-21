@@ -1,29 +1,36 @@
-<div class="container mb-5">
-    {% embed "snipplets/page-header.tpl" with { breadcrumbs: true, page_header_custom_classes: 'px-0' } %}
+<div class="container">
+<br>
+<br>
+<br>
+<br>
+<br>
+    {% embed "snipplets/page-header.tpl" with { breadcrumbs: true } %}
         {% block page_header_text %}{{ "Blog" | translate }}{% endblock page_header_text %}
     {% endembed %}
+
     <section class="blog-page">
-        <div class="row">
-            {% for post in blog.posts %}
-                <div class="col-md-4">
-                    {{ component(
-                        'blog/blog-post-item', {
-                            image_lazy: true,
-                            image_lazy_js: true,
-                            post_item_classes: {
-                                item: 'item',
-                                image_container: '',
-                                image: 'img-absolute img-absolute-centered fade-in',
-                                information: 'item-description px-0',
-                                title: 'item-name mb-2',
-                                summary: 'mb-3 font-big',
-                                read_more: 'btn-link btn-link-primary',
-                            },
-                        })
-                    }}
+        {% for post in blog.posts %}
+            {% if loop.index % 3 == 1 %}
+                <div class="row">
+            {% endif %}
+            {{ component(
+                'blog/blog-post-item', {
+                    image_lazy: true,
+                    image_lazy_js: true,
+                    post_item_classes: {
+                        item: 'col-md-4 item',
+                        image_container: 'mb-2',
+                        image: 'img-absolute img-absolute-centered fade-in',
+                        title: 'font-big mb-2',
+                        summary: 'mb-3',
+                        read_more: 'btn-link d-inline-block',
+                    },
+                })
+            }}
+            {% if loop.index % 3 == 0 or loop.last %}
                 </div>
-            {% endfor %}
-        </div>
-        {% include 'snipplets/grid/pagination.tpl' with {'pages': blog.pages} %}
+            {% endif %}
+        {% endfor %}
     </section>
+    {% include 'snipplets/grid/pagination.tpl' with {'pages': blog.pages} %}
 </div>
