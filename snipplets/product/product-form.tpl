@@ -117,7 +117,7 @@
         </div>
 
         <div id="modaltalle2" style="display:none;" >
-            <img src="{{ ('images/tabla/tabla-generica.jpeg' ) | static_url }}" />
+            <img src="{{ ('images/tabla/tabla-generica.jpg' ) | static_url }}" />
         </div>
         <div id="modaltalle" style="display:none;" >
             <img src="{{ 'images/como-me-mido.jpg' | static_url }}" />
