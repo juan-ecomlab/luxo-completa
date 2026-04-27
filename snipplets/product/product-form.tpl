@@ -88,7 +88,7 @@
 
  <form id="product_form" class="js-product-form" method="post" action="{{ store.cart_url }}" data-store="product-form-{{ product.id }}">
 	<input type="hidden" name="add_to_cart" value="{{product.id}}" />
-    <h4>Seleccioná tu talle</h4>
+    
     {% if template == "product" %}
         {% set show_size_guide = true %}
     {% endif %}
@@ -103,10 +103,9 @@
 
     {# Size selector #}
     {% if product.variations %}
+    <h4>Seleccioná tu talle</h4>
         {% include "snipplets/product/product-variants.tpl" with {show_size_guide: show_size_guide} %}
-    {% endif %}
-
-    {# Conocé tu talle and Guía de talles links #}
+        {# Conocé tu talle and Guía de talles links #}
     <div class="iconos-talles mb-3">
         <div>
             <img src="{{ 'images/icons/conoce-tu-talle.svg' | static_url }}" alt="Conoce tu talle icono">
@@ -124,6 +123,9 @@
             <img src="{{ 'images/como-me-mido.jpg' | static_url }}" />
         </div>
     </div>
+    {% endif %}
+
+    
 
     {# Quantity selector #}
     {% if show_product_quantity %}
