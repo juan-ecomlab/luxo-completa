@@ -130,6 +130,7 @@
 <div class="col d-none d-md-block search-desktop">
     <div class="header-search-inline">
         {% include "snipplets/header/header-search.tpl" with {use_big_search: true} %}
+        <img class="lupa-img" src="{{ 'images/icons/lupita.svg' | static_url }}" alt="icono lupita busqueda">
     </div>
 </div>
 
@@ -185,6 +186,7 @@
     <div class="col-12 col-md-6">
         <div class="header-search-visible">
             {% include "snipplets/header/header-search.tpl" with {use_big_search: true} %}
+            <img class="lupa-img" src="{{ 'images/icons/lupita.svg' | static_url }}" alt="icono lupita busqueda">
         </div>
     </div>  
 </div>
