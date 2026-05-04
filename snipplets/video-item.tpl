@@ -4,7 +4,7 @@
 
 	<div id="product-video-modal-{{ media.id }}" class="js-product-video-modal product-video" style="display: none;">
 {% endif %}
-		<div class="{% if not thumb and not product_native_video %}js-video{% endif %} {% if product_video and not product_modal %}js-video-product{% endif %} embed-responsive embed-responsive-16by9 visible-when-content-ready">
+		<div class="{% if not thumb and not product_native_video %}js-video{% endif %} {% if product_video and not product_modal %}js-video-product{% endif %} embed-responsive {% if not product_native_video or not media.dimensions %}embed-responsive-16by9{% endif %} visible-when-content-ready"{% if product_native_video and media.dimensions %} style="padding-bottom: {{ media.dimensions['height'] / media.dimensions['width'] * 100 }}%; height: 0;"{% endif %}>
 
 			{% if thumb %}
 				<div class="video-player">

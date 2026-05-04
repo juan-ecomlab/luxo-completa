@@ -2683,6 +2683,39 @@ DOMContentLoaded.addEventOrExecute(() => {
                     player.pause();
                 });
             }
+            function autoplayNativeVideoInSlide(slideEl){
+                if (!slideEl) return;
+                const btn = slideEl.querySelector(".js-play-native-button");
+                if (!btn) return;
+                const id = btn.getAttribute("data-video_uid");
+                const iframe = document.getElementById("video-" + id);
+                const image = document.querySelector("img[data-video_uid='" + id + "']");
+                const container = document.querySelector("div[data-video_uid='" + id + "']");
+                const parent = btn.parentElement;
+                if (iframe && !iframe.getAttribute("src")) {
+                    let src = iframe.getAttribute("data-src");
+                    if (src) {
+                        src += (src.indexOf("?") === -1 ? "?" : "&") + "muted=true&autoplay=true&loop=true";
+                        iframe.setAttribute("src", src);
+                    }
+                }
+                if (container) container.style.display = "";
+                if (image) image.style.display = "none";
+                slideEl.querySelectorAll(".js-play-native-button, .js-play-button").forEach(function(b){
+                    b.style.setProperty("display", "none", "important");
+                    b.classList.remove("d-md-block", "d-block");
+                });
+                if (parent && parent.classList) parent.classList.remove("embed-responsive-16by9");
+                if (iframe && typeof Stream === "function") {
+                    try {
+                        const player = Stream(iframe);
+                        player.muted = true;
+                        player.loop = true;
+                        const p = player.play();
+                        if (p && p.catch) p.catch(function(){});
+                    } catch(e) {}
+                }
+            }
             jQueryNuvem(".js-play-native-button").on("click", function($el){
                 pauseAllVideos();
                 const link = jQueryNuvem(this);
@@ -2813,11 +2846,20 @@ DOMContentLoaded.addEventOrExecute(() => {
                             slideChange : function () {
                                 pauseAllVideos();
                             },
+                            slideChangeTransitionEnd : function () {
+                                autoplayNativeVideoInSlide(this.slides[this.activeIndex]);
+                            },
+                            update : function () {
+                                autoplayNativeVideoInSlide(this.slides[this.activeIndex]);
+                            },
                         {% endif %}
                     },
                 },
                 function(swiperInstance) {
                     productSwiper = swiperInstance;
+                    {% if native_videos_enabled %}
+                        autoplayNativeVideoInSlide(swiperInstance.slides[swiperInstance.activeIndex]);
+                    {% endif %}
                 }
             );
 

@@ -7,6 +7,11 @@
 
   try { if (new URLSearchParams(location.search).get('tnx_visual_editor') === 'true') return; } catch(e) {}
 
+  // Signal to tnx-core that preload is active (managed mode).
+  // Core uses this to skip DOM mutations and avoid double-application; it still
+  // fetches assignments and fires exposure tracking.
+  window.__TNX_PRELOAD = true;
+
   // Visitor ID — same localStorage key as tnx-core
   var visitorId;
   try {
@@ -27,6 +32,9 @@
 
   // URL matching (same as tnx-core)
   function matchUrl(path, pattern) {
+    if (/^https?:\/\//i.test(pattern)) {
+      try { pattern = new URL(pattern).pathname; } catch(e) {}
+    }
     if (!pattern || pattern === '/*' || pattern === '*') return true;
     if (pattern === path) return true;
     if (pattern.endsWith('/*')) return path.startsWith(pattern.slice(0, -2));
@@ -93,19 +101,58 @@
   function applyToggle(cfg, variant) {
     var path = location.pathname;
     var hideRules = [];
+    var removeSelectors = [];
     (cfg.elements_to_hide || []).forEach(function(item) {
       if (!matchUrl(path, item.urlPattern || '/*') || item.hideIn !== variant) return;
-      hideRules.push(item.selector);
+      if (item.action === 'remove') removeSelectors.push(item.selector);
+      else hideRules.push(item.selector);
     });
-    if (hideRules.length === 0) return;
-    var s = document.createElement('style');
-    s.id = 'tnx-hide-rules';
-    s.textContent = hideRules.map(function(sel) { return sel + ' { display: none !important; }'; }).join('');
-    (document.head || document.documentElement).appendChild(s);
+    // CSS hide
+    if (hideRules.length > 0) {
+      var s = document.createElement('style');
+      s.id = 'tnx-hide-rules';
+      s.textContent = hideRules.map(function(sel) { return sel + ' { display: none !important; }'; }).join('');
+      (document.head || document.documentElement).appendChild(s);
+    }
+    // DOM removal
+    removeSelectors.forEach(function(sel) {
+      try {
+        var els = document.querySelectorAll(sel);
+        if (els.length > 0) { els.forEach(function(el) { el.remove(); }); }
+        else { observeFor(sel, function(el) { el.remove(); }); }
+      } catch(e) {}
+    });
+  }
+
+  // Post-mutation processing — declarative, whitelisted operations
+  function applyPostMutations(mutations) {
+    if (!mutations || !mutations.length) return;
+    mutations.forEach(function(m) {
+      try {
+        if (m.type === 'reindex') {
+          document.querySelectorAll(m.selector).forEach(function(el, i) {
+            el.setAttribute(m.attribute, i);
+          });
+        } else if (m.type === 'widget_update' && m.widget === 'swiper') {
+          var attempt = 0;
+          var tryUpdate = function() {
+            var container = document.querySelector(m.selector);
+            var swiper = container && container.swiper;
+            if (swiper) {
+              swiper.update();
+              if (m.slideTo != null) swiper.slideTo(m.slideTo, 0);
+            } else if (++attempt < 5) {
+              setTimeout(tryUpdate, 200);
+            }
+          };
+          tryUpdate();
+        }
+      } catch(e) {}
+    });
   }
 
   function applyInsert(cfg, variant) {
-    if (variant !== 'treatment') return;
+    if (variant === 'control') return;
     var path = location.pathname;
     (cfg.elements_to_insert || []).forEach(function(item) {
       if (!matchUrl(path, item.urlPattern || '/*')) return;
@@ -127,16 +174,24 @@
   // Anti-flicker — injected in <head> before body parses, elements born hidden
   var afStyle = null;
   function hideSelectors(exps) {
-    var sels = [];
+    var hideSels = [];   // display:none items — opacity:0 is enough
+    var removeSels = []; // action:'remove' items — collapse out of flow so Swiper doesn't count them
     exps.forEach(function(exp) {
       var c = exp.config || {};
-      if (c.modifications) c.modifications.forEach(function(m) { if (m.selector) sels.push(m.selector); });
-      if (c.elements_to_hide) c.elements_to_hide.forEach(function(h) { if (h.selector) sels.push(h.selector); });
+      if (c.modifications) c.modifications.forEach(function(m) { if (m.selector) hideSels.push(m.selector); });
+      if (c.elements_to_hide) c.elements_to_hide.forEach(function(h) {
+        if (!h.selector) return;
+        if (h.action === 'remove') removeSels.push(h.selector);
+        else hideSels.push(h.selector);
+      });
     });
-    if (!sels.length) return;
+    if (!hideSels.length && !removeSels.length) return;
     afStyle = document.createElement('style');
     afStyle.id = 'tnx-preload-af';
-    afStyle.textContent = sels.map(function(s) { return s + '{opacity:0!important;transition:none!important}'; }).join('');
+    var rules = [];
+    if (hideSels.length) rules.push(hideSels.join(',') + '{opacity:0!important;transition:none!important}');
+    if (removeSels.length) rules.push(removeSels.join(',') + '{opacity:0!important;position:absolute!important;pointer-events:none!important;transition:none!important}');
+    afStyle.textContent = rules.join('\n');
     (document.head || document.documentElement).appendChild(afStyle);
   }
   function showAll() { if (afStyle) { try { afStyle.remove(); } catch(e) {} afStyle = null; } }
@@ -150,6 +205,7 @@
       if (c.modifications) applyMods(c.modifications);
       if (c.elements_to_hide) applyToggle(c, exp.variant);
       if (c.elements_to_insert) applyInsert(c, exp.variant);
+      if (c.post_mutations) applyPostMutations(c.post_mutations);
       try { sessionStorage.setItem('tnx_current_exp', exp.id); sessionStorage.setItem('tnx_current_var', exp.variant); } catch(e) {}
     });
     showAll();
