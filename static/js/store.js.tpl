@@ -2788,11 +2788,33 @@ DOMContentLoaded.addEventOrExecute(() => {
                                 }
                             },
                             {% endif %}
-                             {% if native_videos_enabled %}
-                                "Carousel.change": (fancybox) => {
-                                    pauseAllVideos();
-                                },
-                            {% endif %}
+                            "Carousel.change": (fancybox) => {
+                                {% if native_videos_enabled %}
+                                pauseAllVideos();
+                                {% endif %}
+                                const slide = fancybox.getSlide?.();
+                                const el = slide?.$el?.querySelector?.('.js-product-video-modal');
+                                if (!el) return;
+                                const iframe = el.querySelector('iframe[id^="video-"]');
+                                const container = el.querySelector('.js-external-video-iframe-container');
+                                const image = el.querySelector('.video-image');
+                                const btn = el.querySelector('.js-play-native-button');
+                                if (iframe) {
+                                    const src = iframe.getAttribute('src') || iframe.getAttribute('data-src') || '';
+                                    if (src && !/[?&]muted=true/.test(src)) {
+                                        iframe.setAttribute('src', src.split('?')[0] + '?autoplay=true&muted=true&loop=true');
+                                    } else if (typeof Stream === 'function') {
+                                        try {
+                                            const player = Stream(iframe);
+                                            player.muted = true;
+                                            player.play()?.catch(() => {});
+                                        } catch (e) {}
+                                    }
+                                }
+                                if (container) container.style.display = '';
+                                if (image) image.style.display = 'none';
+                                if (btn) btn.style.setProperty('display', 'none', 'important');
+                            },
                         },
                 });
             {% endblock %}
