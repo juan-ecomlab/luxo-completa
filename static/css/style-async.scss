@@ -1641,6 +1641,31 @@ footer {
     height: auto;
   }
 
+  .fancybox__container .has-inline .fancybox__content.js-product-video-modal {
+    height: calc(100vh - 128px);
+    width: auto;
+    aspect-ratio: var(--vid-aspect, 16 / 9);
+    min-height: 0;
+    align-self: center;
+    flex: 0 0 auto;
+  }
+  .fancybox__container .has-inline .fancybox__content.js-product-video-modal .embed-responsive {
+    padding-bottom: 0 !important;
+    height: 100% !important;
+    background: transparent;
+  }
+  .fancybox__container .has-inline .fancybox__content.js-product-video-modal .js-external-video-iframe-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
+  .fancybox__container .has-inline .fancybox__content.js-product-video-modal .js-external-video-iframe-container > div {
+    padding-top: 0 !important;
+    height: 100%;
+  }
+
   /* Notifications */
 
   .notification-with-tabnav {
