@@ -729,6 +729,13 @@ input[type=number] {
   }
 }
 
+.js-search-input.form-control-ios {
+  font-size: 16px;
+  line-height: normal;
+  width: 100%;
+  transform: none;
+}
+
 .form-group-quantity-ios {
   padding: 0 10px;
   .form-control-ios{
