@@ -12,7 +12,7 @@
     </div>
 </section>
 <div class="kluv">
-        <img src="{{ 'images/kluv/banner-kluv.jpg' | static_url }}" alt="" class="banner">
+        <img src="{{ 'images/kluv/bannerKluv.jpeg' | static_url }}" alt="" class="banner">
         <h1>THE KLUV</h1>
 
         <!-- p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit commodi pariatur laboriosam modi ratione animi eligendi alias. Magni porro, autem ullam modi ut nam asperiores expedita, molestias, soluta explicabo aperiam.
