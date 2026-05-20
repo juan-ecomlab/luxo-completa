@@ -1784,6 +1784,60 @@ footer {
   .js-item-slide .item-bottom-elements {
     display: none;
   }
+
+  /* Let swipe gestures pass through the inline product video iframe
+     (both in the product slider and inside the Fancybox lightbox) */
+  .js-swiper-product .js-external-video-iframe-container,
+  .js-swiper-product .js-external-video-iframe-container iframe,
+  .fancybox__container .js-product-video-modal .js-external-video-iframe-container,
+  .fancybox__container .js-product-video-modal .js-external-video-iframe-container iframe {
+    pointer-events: none;
+  }
+
+  /* Hide the play icon overlay in product slider video slides (autoplay always on,
+     the <a> overlay still receives taps to open the lightbox modal) */
+  .js-swiper-product .js-play-button .video-player-icon {
+    display: none;
+  }
+}
+
+/* Custom mute toggle inside the product video modal — restores the only
+   meaningful interaction lost to pointer-events: none on the iframe.
+   Mobile-only: desktop uses Cloudflare Stream's native player controls. */
+.video-mute-toggle {
+  position: absolute;
+  bottom: 12px;
+  right: 12px;
+  z-index: 10;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.55);
+  color: #fff;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  pointer-events: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+.video-mute-toggle-icon {
+  width: 18px;
+  height: 18px;
+  display: none;
+}
+.video-mute-toggle.is-muted .video-mute-toggle-icon-muted {
+  display: block;
+}
+.video-mute-toggle:not(.is-muted) .video-mute-toggle-icon-unmuted {
+  display: block;
+}
+@media (min-width: 768px) {
+  .video-mute-toggle {
+    display: none;
+  }
 }
 /*============================================================================
   #Critical path utilities

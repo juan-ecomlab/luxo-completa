@@ -2701,7 +2701,7 @@ DOMContentLoaded.addEventOrExecute(() => {
                 }
                 if (container) container.style.display = "";
                 if (image) image.style.display = "none";
-                slideEl.querySelectorAll(".js-play-native-button, .js-play-button").forEach(function(b){
+                slideEl.querySelectorAll(".js-play-native-button").forEach(function(b){
                     b.style.setProperty("display", "none", "important");
                     b.classList.remove("d-md-block", "d-block");
                 });
@@ -2729,6 +2729,22 @@ DOMContentLoaded.addEventOrExecute(() => {
                 image.hide();
                 link.hide().removeClass("d-md-block");
                 parent.removeClass("embed-responsive-16by9");
+            });
+
+            jQueryNuvem(document).on("click", ".js-video-mute-toggle", function(e){
+                e.preventDefault();
+                e.stopPropagation();
+                const btn = this;
+                const modal = btn.closest(".js-product-video-modal");
+                if (!modal) return;
+                const iframe = modal.querySelector("iframe[id^='video-']");
+                if (!iframe || typeof Stream !== "function") return;
+                try {
+                    const player = Stream(iframe);
+                    const willMute = !btn.classList.contains("is-muted") ? true : false;
+                    player.muted = willMute;
+                    btn.classList.toggle("is-muted", willMute);
+                } catch(err) {}
             });
         {% endif %}
 
@@ -2800,20 +2816,25 @@ DOMContentLoaded.addEventOrExecute(() => {
                                 const image = el.querySelector('.video-image');
                                 const btn = el.querySelector('.js-play-native-button');
                                 if (iframe) {
-                                    const src = iframe.getAttribute('src') || iframe.getAttribute('data-src') || '';
-                                    if (src && !/[?&]muted=true/.test(src)) {
-                                        iframe.setAttribute('src', src.split('?')[0] + '?autoplay=true&muted=true&loop=true');
-                                    } else if (typeof Stream === 'function') {
-                                        try {
-                                            const player = Stream(iframe);
-                                            player.muted = true;
-                                            player.play()?.catch(() => {});
-                                        } catch (e) {}
+                                    let src = iframe.getAttribute('src') || iframe.getAttribute('data-src') || '';
+                                    if (src) {
+                                        if (!/[?&]muted=true/.test(src)) {
+                                            src = src.split('?')[0] + '?autoplay=true&muted=true&loop=true';
+                                        }
+                                        // Force reload — Cloudflare Stream player.play() doesn't reliably
+                                        // resume after pause, so blank src first then re-set.
+                                        if (iframe.getAttribute('src')) {
+                                            iframe.setAttribute('src', '');
+                                        }
+                                        iframe.setAttribute('src', src);
                                     }
                                 }
                                 if (container) container.style.display = '';
                                 if (image) image.style.display = 'none';
                                 if (btn) btn.style.setProperty('display', 'none', 'important');
+                                // Resync the mute toggle button — the reloaded iframe starts muted.
+                                const muteBtn = el.querySelector('.js-video-mute-toggle');
+                                if (muteBtn) muteBtn.classList.add('is-muted');
                             },
                         },
                 });
@@ -2866,7 +2887,8 @@ DOMContentLoaded.addEventOrExecute(() => {
                         {% endif %}
                         {% if native_videos_enabled %}
                             slideChange : function () {
-                                pauseAllVideos();
+                                // EXPERIMENT: skip pauseAllVideos to test if video resumes naturally
+                                // pauseAllVideos();
                             },
                             slideChangeTransitionEnd : function () {
                                 autoplayNativeVideoInSlide(this.slides[this.activeIndex]);
