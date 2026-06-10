@@ -4,7 +4,7 @@
 <div id="single-product" class="js-has-new-shipping js-product-detail js-product-container js-shipping-calculator-container" data-variants="{{product.variants_object | json_encode }}" data-store="product-detail">
     <div class="container-fluid">
         <div class="row section-single-product">
-        
+            
         
             <div class="col-12 col-md-6{% if not settings.scroll_product_images and product.media_count > 1 %} pl-md-0{% endif %}">
                 {% include 'snipplets/product/product-image.tpl' %}
@@ -47,7 +47,7 @@
         </div>
     </div>
      <div class="linea linea-desktop"></div>
-    <div class="conteiner">
+    <div class="conteiner" id="resenas">
         <img src="{{ 'images/icons/cambios.svg' | static_url }}" alt="regreso icono">
         <div class="beneficios-content">    
             <p><b>Cambios y devoluciones</b></p>
@@ -56,6 +56,10 @@
     </div>
      <div class="linea"></div>
 </div>
+
+<div class="resenas">
+       
+    </div>
 
 {# Related products #}
 {% include 'snipplets/product/product-related.tpl' %}

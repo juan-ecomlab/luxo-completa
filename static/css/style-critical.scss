@@ -2421,6 +2421,32 @@ div.iconos-talles > div.distinto {
   display: none;
 }
 
+/* Reseñas */
+
+.estrellas {
+  font-size: 24px;
+  margin-top: -40px;
+}
+
+.resenas {
+  margin-left: 2%;
+}
+
+.resenas div{
+  font-size: 16px;
+}
+
+.detalleResenas{
+  font-size: 12px;
+  color: #999;
+}
+
+.resenas div span {
+  font-size: 24px;
+}
+
+
+
 .beneficios-pdp .conteiner{
             display: flex;
             align-items: center;
@@ -3450,6 +3476,14 @@ body > section.account-page > div > div {
         }
 .sla-entrega-mobile {
   display: none;
+}
+
+.resenas {
+  margin-left: 10%;
+}
+
+.resenas div {
+  margin-left: 0;
 }
 
 .beneficios-pdp {
