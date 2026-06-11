@@ -7,9 +7,9 @@
         {% block page_header_text %}{{ product.name }}{% endblock page_header_text %}
     {% endembed %}
 {% endif %}
-<a href="#resenas" class="estrellas">
-        
-    </a>
+<div  class="estrellas">
+    
+</div>
 </div>
 
 
