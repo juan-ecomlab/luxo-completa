@@ -35,7 +35,7 @@
         <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono">
         <div class="beneficios-content">
             <p><b>Envios Bonificados</b></p>
-            <p>A partir de $190.000</p>
+            <p>A partir de $160.000</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
@@ -43,7 +43,7 @@
         <img src="{{ 'images/icons/billetera.svg' | static_url }}" alt="Billetera icono">
         <div class="beneficios-content">
             <p><b>Pagá con Mercado Pago</b></p>
-            <p>Hasta 6 cuotas sin interes</p>
+            <p>Hasta 9 cuotas sin interes</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
