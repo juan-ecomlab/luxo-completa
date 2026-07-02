@@ -2421,6 +2421,29 @@ div.iconos-talles > div.distinto {
   display: none;
 }
 
+/* Countdown Juan */
+
+#countdown {
+  display: none;
+}
+
+#countdown .countdown {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#countdown .grupo {
+    line-height: 1;
+}
+
+#countdown .grande {
+    font-size: 3.8rem;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
 /* Reseñas */
 
 .estrellas {

@@ -4088,3 +4088,81 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+{# Countdown Juan #}
+
+const $ = id => document.getElementById(id);
+
+{# let fechaInicio = new Date(2026, 6, 2, 13, 31);
+
+let fechaFin = new Date(2026, 6, 2, 13, 32); #}
+
+function parseFecha(fecha) {
+    if (!fecha) return null;
+
+    const [fechaParte, horaParte] = fecha.trim().split(" ");
+
+    if (!fechaParte || !horaParte) return null;
+
+    const [anio, mes, dia] = fechaParte.split("-").map(Number);
+    const [hora, minuto] = horaParte.split(":").map(Number);
+
+    return new Date(anio, mes - 1, dia, hora, minuto);
+}
+
+let fechaInicio = parseFecha("{{ settings.countdown_start | escape('js') }}");
+let fechaFin = parseFecha("{{ settings.countdown_end | escape('js') }}");
+
+{# let msInicio = fechaInicio.getTime();
+let msFin = fechaFin.getTime(); #}
+
+if (!fechaInicio || !fechaFin) {
+    console.error("Las fechas del contador no están configuradas.");
+} else {
+
+let msInicio = fechaInicio.getTime();
+let msFin = fechaFin.getTime();
+
+let parrafoDias = $("dias");
+let parrafoHoras = $("horas");
+let parrafoMinutos = $("minutos");
+let parrafoSegundos = $("segundos");
+let countdown = $("countdown");
+
+countdown.style.display = "none";
+
+let intervalo = setInterval(() => {
+
+    let hoy = new Date().getTime();
+
+    if (hoy < msInicio) {
+        countdown.style.display = "none";
+        return;
+    }
+
+    if (hoy >= msFin) {
+        countdown.style.display = "none";
+        clearInterval(intervalo);
+        return;
+    }
+
+    countdown.style.display = "block";
+
+    let distancia = msFin - hoy;
+
+    let msPorDia = 1000 * 60 * 60 * 24;
+    let msPorHora = 1000 * 60 * 60;
+    let msPorMinuto = 1000 * 60;
+    let msPorSegundo = 1000;
+
+    let dias = Math.floor(distancia / msPorDia);
+    let horas = Math.floor((distancia % msPorDia) / msPorHora);
+    let minutos = Math.floor((distancia % msPorHora) / msPorMinuto);
+    let segundos = Math.floor((distancia % msPorMinuto) / msPorSegundo);
+
+    parrafoDias.innerText = dias < 10 ? "0" + dias : dias;
+    parrafoHoras.innerText = horas < 10 ? "0" + horas : horas;
+    parrafoMinutos.innerText = minutos < 10 ? "0" + minutos : minutos;
+    parrafoSegundos.innerText = segundos < 10 ? "0" + segundos : segundos;
+
+}, 1000);
+}

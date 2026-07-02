@@ -17,4 +17,37 @@
 			</div>
 		</div>
 	</section>
+
+	<section class="section-countdown-home" data-store="home-countdown" id="countdown">
+		<div class="container-fluid">
+			<div class="countdown-container">
+				{% if settings.countdown_home_label %}
+					<div class="countdown-label" {% if settings.countdown_label_color %}style="color: {{ settings.countdown_label_color }};"{% endif %}>
+						{{ settings.countdown_home_label }}
+					</div>
+				{% endif %}
+				<div class="countdownTitle" >
+            
+           <div class="countdown" {% if settings.countdown_numbers_color %}style="color: {{ settings.countdown_numbers_color }};"{% endif %}>
+                <div class="grupo">
+                    <p class="grande" id="dias">00</p>
+                    <p class="chico">DIAS</p>
+                </div>
+                <div class="grupo">
+                    <p class="grande" id="horas">00</p>
+                    <p class="chico">HORAS</p>
+                </div>
+                <div class="grupo">
+                    <p class="grande" id="minutos">00</p>
+                    <p class="chico">MINUTOS</p>
+                </div>
+                <div class="grupo">
+                    <p class="grande" id="segundos">00</p>
+                    <p class="chico">SEGUNDOS</p>
+                </div>
+            </div>
+        </div>
+			</div>
+		</div>
+	</section>
 {% endif %}

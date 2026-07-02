@@ -1143,6 +1143,18 @@ Página de inicio
 	i18n_input
 		name = countdown_home_label
 		description = Texto de la etiqueta del temporizador (opcional)
+	i18n_input
+		name = countdown_label_color
+		description = Color del título (#FFFFFF)
+	i18n_input
+		name = countdown_start
+		description = Fecha de inicio (AAAA-MM-DD HH:MM)
+	i18n_input
+		name = countdown_end
+		description = Fecha de fin (AAAA-MM-DD HH:MM)
+	i18n_input
+		name = countdown_numbers_color
+		description = Color del countdown (#FFFFFF)
 	textarea
 		name = countdown_home_url
 		description = URL del temporizador de Sendtric
