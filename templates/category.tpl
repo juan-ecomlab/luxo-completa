@@ -47,21 +47,49 @@
 {% endif %}
 
 {# Countdown timer for category pages #}
-{% if settings.show_countdown_category and settings.countdown_category_url %}
-	<div class="container-fluid">
-		<div class="countdown-container">
-			{% if settings.countdown_category_label %}
-				<div class="countdown-label">
-					{{ settings.countdown_category_label }}
-				</div>
-			{% endif %}
-			<div class="countdown-timer" {% if settings.countdown_category_max_width %}style="max-width: {{ settings.countdown_category_max_width }}px; margin: 0 auto;"{% endif %}>
-				<img src="{{ settings.countdown_category_url }}"
-				     alt="{{ 'Temporizador de cuenta regresiva' | translate }}"
-				     class="img-fluid" />
-			</div>
-		</div>
-	</div>
+{% if settings.show_countdown_category %}
+
+<section class="section-countdown-home" data-store="category-countdown" id="countdown">
+    <div class="container-fluid">
+        <div class="countdown-container">
+
+            {% if settings.countdown_home_label %}
+                <div class="countdown-label" {% if settings.countdown_home_label_color %}style="color: {{ settings.countdown_home_label_color }};"{% endif %}>
+                    {{ settings.countdown_home_label }}
+                </div>
+            {% endif %}
+
+            <div class="countdownTitle">
+
+                <div class="countdown" {% if settings.countdown_home_numbers_color %}style="color: {{ settings.countdown_home_numbers_color }};"{% endif %}>
+
+                    <div class="grupo">
+                        <p class="grande" id="dias">00</p>
+                        <p class="chico">DIAS</p>
+                    </div>
+
+                    <div class="grupo">
+                        <p class="grande" id="horas">00</p>
+                        <p class="chico">HORAS</p>
+                    </div>
+
+                    <div class="grupo">
+                        <p class="grande" id="minutos">00</p>
+                        <p class="chico">MINUTOS</p>
+                    </div>
+
+                    <div class="grupo">
+                        <p class="grande" id="segundos">00</p>
+                        <p class="chico">SEGUNDOS</p>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+</section>
+
 {% endif %}
 
 <div class="container-fluid visible-when-content-ready d-md-none">
