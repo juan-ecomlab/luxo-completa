@@ -66,8 +66,7 @@ Deberás acercarte a tu sucursal de OCA más cercana con el producto que querés
 Una vez que recibamos el paquete en nuestras oficinas, proceso que puede demorar de 7 a 15 días hábiles, procederemos al nuevo envío.
 En caso de haber una diferencia de valor a tu favor, te enviaremos un código de crédito para que puedas utilizarlo en tu próxima compra (sólo válido para compras online) o reintegro parcial por la diferencia utilizando el mismo método de pago.<br/>
 Si la diferencia es a favor de la marca, deberás abonarla en el momento a través de un link de pago.<br/>
-En el primer cambio por correo, el envío es totalmente bonificado (únicamente Correo Oca). En caso de realizar el proceso de devolución por otro correo, el cliente deberá afrontar el costo hasta nuestras oficinas; pero no de la nueva recepción que corre por nuestra cuenta. <br/>
-A partir del segundo cambio, los costos corren por cuenta del cliente. </p>
+ </p>
 
 <span class="font-small ls-1 font-weight-bold">¿Puedo modificar mi pedido?</span>
 <p class="font-small">
