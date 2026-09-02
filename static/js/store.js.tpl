@@ -4123,77 +4123,247 @@ document.addEventListener("DOMContentLoaded", function () {
 
 const $ = id => document.getElementById(id);
 
-{# let fechaInicio = new Date(2026, 6, 2, 13, 31);
 
-let fechaFin = new Date(2026, 6, 2, 13, 32); #}
+/* =====================================================
+   PARSEAR FECHAS
+   ===================================================== */
 
 function parseFecha(fecha) {
+
     if (!fecha) return null;
 
-    const [fechaParte, horaParte] = fecha.trim().split(" ");
+    const partes = fecha.trim().split(" ");
 
-    if (!fechaParte || !horaParte) return null;
+    if (partes.length < 2) return null;
 
-    const [anio, mes, dia] = fechaParte.split("-").map(Number);
-    const [hora, minuto] = horaParte.split(":").map(Number);
+    const [anio, mes, dia] = partes[0].split("-").map(Number);
+    const [hora, minuto] = partes[1].split(":").map(Number);
+
+    if (
+        isNaN(anio) ||
+        isNaN(mes) ||
+        isNaN(dia) ||
+        isNaN(hora) ||
+        isNaN(minuto)
+    ) {
+        return null;
+    }
 
     return new Date(anio, mes - 1, dia, hora, minuto);
 }
 
-let fechaInicio = parseFecha("{{ settings.countdown_start | escape('js') }}");
-let fechaFin = parseFecha("{{ settings.countdown_end | escape('js') }}");
 
-{# let msInicio = fechaInicio.getTime();
-let msFin = fechaFin.getTime(); #}
+/* =====================================================
+   FECHAS HOME
+   ===================================================== */
 
-if (!fechaInicio || !fechaFin) {
-    console.error("Las fechas del contador no están configuradas.");
-} else {
+let fechaInicio_home = parseFecha(
+    "{{ settings.countdown_home_start | escape('js') }}"
+);
 
-let msInicio = fechaInicio.getTime();
-let msFin = fechaFin.getTime();
+let fechaFin_home = parseFecha(
+    "{{ settings.countdown_home_end | escape('js') }}"
+);
 
-let parrafoDias = $("dias");
-let parrafoHoras = $("horas");
-let parrafoMinutos = $("minutos");
-let parrafoSegundos = $("segundos");
+
+/* =====================================================
+   FECHAS CATEGORÍAS
+   ===================================================== */
+
+let fechaInicio_category = parseFecha(
+    "{{ settings.countdown_home_start | escape('js') }}"
+);
+
+let fechaFin_category = parseFecha(
+    "{{ settings.countdown_home_end | escape('js') }}"
+);
+
+
+/* =====================================================
+   DETECTAR DÓNDE ESTAMOS
+   ===================================================== */
+
 let countdown = $("countdown");
 
-countdown.style.display = "none";
+let esCategoria = document.querySelector(
+    '[data-store="category-countdown"]'
+);
 
-let intervalo = setInterval(() => {
+let esHome = window.location.pathname === "/";
 
-    let hoy = new Date().getTime();
 
-    if (hoy < msInicio) {
-        countdown.style.display = "none";
-        return;
+/* =====================================================
+   SI NO HAY COUNTDOWN, SALIR
+   ===================================================== */
+
+if (!countdown) {
+
+    console.log("No hay countdown en esta página.");
+
+} else {
+
+    let fechaInicio = null;
+    let fechaFin = null;
+
+
+    /* =================================================
+       CATEGORÍA
+       ================================================= */
+
+    if (esCategoria) {
+
+        console.log("Countdown: CATEGORÍA");
+
+        fechaInicio = fechaInicio_category;
+        fechaFin = fechaFin_category;
+
     }
 
-    if (hoy >= msFin) {
-        countdown.style.display = "none";
-        clearInterval(intervalo);
-        return;
+
+    /* =================================================
+       HOME
+       ================================================= */
+
+    else if (esHome) {
+
+        console.log("Countdown: HOME");
+
+        fechaInicio = fechaInicio_home;
+        fechaFin = fechaFin_home;
+
     }
 
-    countdown.style.display = "block";
 
-    let distancia = msFin - hoy;
+    /* =================================================
+       OTRA PÁGINA
+       ================================================= */
 
-    let msPorDia = 1000 * 60 * 60 * 24;
-    let msPorHora = 1000 * 60 * 60;
-    let msPorMinuto = 1000 * 60;
-    let msPorSegundo = 1000;
+    else {
 
-    let dias = Math.floor(distancia / msPorDia);
-    let horas = Math.floor((distancia % msPorDia) / msPorHora);
-    let minutos = Math.floor((distancia % msPorHora) / msPorMinuto);
-    let segundos = Math.floor((distancia % msPorMinuto) / msPorSegundo);
+        console.log("Esta página no utiliza countdown.");
 
-    parrafoDias.innerText = dias < 10 ? "0" + dias : dias;
-    parrafoHoras.innerText = horas < 10 ? "0" + horas : horas;
-    parrafoMinutos.innerText = minutos < 10 ? "0" + minutos : minutos;
-    parrafoSegundos.innerText = segundos < 10 ? "0" + segundos : segundos;
+    }
 
-}, 1000);
+
+    /* =================================================
+       VALIDAR FECHAS
+       ================================================= */
+
+    if (!fechaInicio || !fechaFin) {
+
+        console.error(
+            "Las fechas del countdown no están configuradas correctamente."
+        );
+
+        countdown.style.display = "none";
+
+    } else {
+
+        let msInicio = fechaInicio.getTime();
+        let msFin = fechaFin.getTime();
+
+        let parrafoDias = $("dias");
+        let parrafoHoras = $("horas");
+        let parrafoMinutos = $("minutos");
+        let parrafoSegundos = $("segundos");
+
+
+        /* =============================================
+           OCULTAR INICIALMENTE
+           ============================================= */
+
+        countdown.style.display = "none";
+
+
+        /* =============================================
+           INICIAR CONTADOR
+           ============================================= */
+
+        let intervalo = setInterval(() => {
+
+            let hoy = new Date().getTime();
+
+
+            /* -----------------------------------------
+               TODAVÍA NO COMENZÓ
+               ----------------------------------------- */
+
+            if (hoy < msInicio) {
+
+                countdown.style.display = "none";
+
+                return;
+            }
+
+
+            /* -----------------------------------------
+               YA TERMINÓ
+               ----------------------------------------- */
+
+            if (hoy >= msFin) {
+
+                countdown.style.display = "none";
+
+                clearInterval(intervalo);
+
+                return;
+            }
+
+
+            /* -----------------------------------------
+               MOSTRAR
+               ----------------------------------------- */
+
+            countdown.style.display = "block";
+
+
+            let distancia = msFin - hoy;
+
+
+            /* -----------------------------------------
+               CONVERSIONES
+               ----------------------------------------- */
+
+            let msPorDia = 1000 * 60 * 60 * 24;
+            let msPorHora = 1000 * 60 * 60;
+            let msPorMinuto = 1000 * 60;
+            let msPorSegundo = 1000;
+
+
+            let dias = Math.floor(
+                distancia / msPorDia
+            );
+
+            let horas = Math.floor(
+                (distancia % msPorDia) / msPorHora
+            );
+
+            let minutos = Math.floor(
+                (distancia % msPorHora) / msPorMinuto
+            );
+
+            let segundos = Math.floor(
+                (distancia % msPorMinuto) / msPorSegundo
+            );
+
+
+            /* -----------------------------------------
+               ACTUALIZAR HTML
+               ----------------------------------------- */
+
+            parrafoDias.innerText =
+                dias < 10 ? "0" + dias : dias;
+
+            parrafoHoras.innerText =
+                horas < 10 ? "0" + horas : horas;
+
+            parrafoMinutos.innerText =
+                minutos < 10 ? "0" + minutos : minutos;
+
+            parrafoSegundos.innerText =
+                segundos < 10 ? "0" + segundos : segundos;
+
+
+        }, 1000);
+    }
 }

@@ -64,18 +64,6 @@
                 </div>
             </div>
             <div class="local">
-                <img src="{{ 'images/locales/dot.png' | static_url }}" alt="">
-                <div class="texto">
-                    <h2>DOT BAIRES SHOPPING</h2>
-                    <P>Nivel 2 Local 39</P>
-                    <h4>HORARIO DE ATENCIÓN:</h4>
-                    <span>Lunes a Domingo de 10:00hs a 22:00hs.</span>
-                    <br>
-                    <br>
-                    <span>HABILITADO PARA RETIRO.</span>
-                </div>
-            </div>
-            <div class="local">
                 <img src="{{ 'images/locales/montevideo.png' | static_url }}" alt="">
                 <div class="texto">
                     <h2>MONTEVIDEO</h2>

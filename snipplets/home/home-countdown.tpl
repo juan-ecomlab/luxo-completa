@@ -1,7 +1,7 @@
-{% set has_countdown = settings.show_countdown_home and settings.countdown_home_url %}
+{% set has_countdown = settings.show_countdown_home%}
 
-{% if has_countdown %}
-	<section class="section-countdown-home" data-store="home-countdown">
+
+	{# <section class="section-countdown-home" data-store="home-countdown">
 		<div class="container-fluid">
 			<div class="countdown-container">
 				{% if settings.countdown_home_label %}
@@ -14,21 +14,24 @@
 					     alt="{{ 'Temporizador de cuenta regresiva' | translate }}"
 					     class="img-fluid" />
 				</div>
+			
 			</div>
 		</div>
-	</section>
+	</section> #}
+
+{% if has_countdown %}
 
 	<section class="section-countdown-home" data-store="home-countdown" id="countdown">
 		<div class="container-fluid">
 			<div class="countdown-container">
 				{% if settings.countdown_home_label %}
-					<div class="countdown-label" {% if settings.countdown_label_color %}style="color: {{ settings.countdown_label_color }};"{% endif %}>
+					<div class="countdown-label" {% if settings.countdown_home_label_color %}style="color: {{ settings.countdown_home_label_color }};"{% endif %}>
 						{{ settings.countdown_home_label }}
 					</div>
 				{% endif %}
 				<div class="countdownTitle" >
             
-           <div class="countdown" {% if settings.countdown_numbers_color %}style="color: {{ settings.countdown_numbers_color }};"{% endif %}>
+           <div class="countdown" {% if settings.countdown_home_numbers_color %}style="color: {{ settings.countdown_home_numbers_color }};"{% endif %}>
                 <div class="grupo">
                     <p class="grande" id="dias">00</p>
                     <p class="chico">DIAS</p>
@@ -50,4 +53,5 @@
 			</div>
 		</div>
 	</section>
+
 {% endif %}

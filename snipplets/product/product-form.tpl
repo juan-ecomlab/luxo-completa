@@ -111,14 +111,14 @@
         {% include "snipplets/product/product-variants.tpl" with {show_size_guide: show_size_guide} %}
         {# Conocé tu talle and Guía de talles links #}
     <div class="iconos-talles mb-3">
-        <div>
+        {# <div>
             <img src="{{ 'images/icons/conoce-tu-talle.svg' | static_url }}" alt="Conoce tu talle icono">
             <a data-fancybox data-src="#modaltalle2" href="javascript:;">Tabla de medidas</a>
         </div>
         <div class="distinto">
             <img src="{{ 'images/icons/guia-de-talles.svg' | static_url }}" alt="Guia de talle icono">
             <a data-fancybox data-src="#modaltalle" href="javascript:;">Como medir</a>
-        </div>
+        </div> #}
 
         <div id="modaltalle2" style="display:none;" >
             <img src="{{ ('images/tabla/tabla-generica.jpg' ) | static_url }}" />
