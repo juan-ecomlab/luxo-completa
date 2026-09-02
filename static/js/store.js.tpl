@@ -2683,28 +2683,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                     player.pause();
                 });
             }
-            // Stop every lightbox (modal) video except the one inside keepEl.
-            // Blanking the src is the only reliable stop for Cloudflare Stream; re-entering
-            // a slide force-reloads the src anyway (see "Carousel.change").
-            function stopModalVideosExcept(keepEl){
-                document.querySelectorAll('.js-product-video-modal iframe[id^="video-"]').forEach(function(iframe){
-                    if (keepEl && keepEl.contains(iframe)) return;
-                    if (iframe.getAttribute('src')) iframe.setAttribute('src', '');
-                    const modal = iframe.closest('.js-product-video-modal');
-                    const muteBtn = modal && modal.querySelector('.js-video-mute-toggle');
-                    if (muteBtn) muteBtn.classList.add('is-muted');
-                });
-            }
-            // Slider videos keep playing in the background on purpose (no resume needed),
-            // but must not keep *sounding* if the user unmuted them via the player controls.
-            function muteSliderVideosExcept(keepEl){
-                if (typeof Stream !== "function") return;
-                document.querySelectorAll('.js-swiper-product iframe[id^="video-"]').forEach(function(iframe){
-                    if (keepEl && keepEl.contains(iframe)) return;
-                    if (!iframe.getAttribute('src')) return;
-                    try { Stream(iframe).muted = true; } catch(e) {}
-                });
-            }
             function autoplayNativeVideoInSlide(slideEl){
                 if (!slideEl) return;
                 const btn = slideEl.querySelector(".js-play-native-button");
@@ -2832,9 +2810,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                                 {% endif %}
                                 const slide = fancybox.getSlide?.();
                                 const el = slide?.$el?.querySelector?.('.js-product-video-modal');
-                                {% if native_videos_enabled %}
-                                stopModalVideosExcept(el);
-                                {% endif %}
                                 if (!el) return;
                                 const iframe = el.querySelector('iframe[id^="video-"]');
                                 const container = el.querySelector('.js-external-video-iframe-container');
@@ -2861,11 +2836,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                                 const muteBtn = el.querySelector('.js-video-mute-toggle');
                                 if (muteBtn) muteBtn.classList.add('is-muted');
                             },
-                            {% if native_videos_enabled %}
-                            close: () => {
-                                stopModalVideosExcept(null);
-                            },
-                            {% endif %}
                         },
                 });
             {% endblock %}
@@ -2921,7 +2891,6 @@ DOMContentLoaded.addEventOrExecute(() => {
                                 // pauseAllVideos();
                             },
                             slideChangeTransitionEnd : function () {
-                                muteSliderVideosExcept(this.slides[this.activeIndex]);
                                 autoplayNativeVideoInSlide(this.slides[this.activeIndex]);
                             },
                             update : function () {
