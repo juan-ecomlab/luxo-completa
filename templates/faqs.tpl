@@ -126,9 +126,7 @@ Durante eventos especiales, como Hot Sale y Cyber Monday, los tiempos de procesa
 
 · LUXO HANGAR - Gurruchaga 974 | Villa Crespo | (+54 9) 11-6599-2902<br/>
 · LUXO RAMOS – Necochea 234 | Ramos Mejía | (+54 9) 11-5486-1866<br/>
-· LUXO LOMITAS - España 145 | Lomas de Zamora | (+54 9) 11-6553-8915<br/><br/>
-
-El local que elijas te contactará vía WhatsApp cuando tu compra esté lista para retirar. El plazo estimado de entrega es de 1 a 3 días hábiles.</p>
+· LUXO LOMITAS - España 145 | Lomas de Zamora | (+54 9) 11-6553-8915<br/><br/></p>
 
 <span class="font-small ls-1 font-weight-bold">¿Quién puede retirar mi compra?</span>
 <p class="font-small">
@@ -142,7 +140,7 @@ Es inadmisible las entregas a personas NO TITULARES de compras online sin docume
 Podrás efectuar tu pago por cualquiera de los siguientes medios:<br/><br/>
 
 <span class="font-small ls-1 font-weight-bold">SITIO WEB</span><br/>
-1) Transferencia bancaria, 15% de descuento (sólo válido para compras online)<br/>
+1) Transferencia bancaria<br/>
 Una vez seleccionado este método de pago, en nuestra web encontrarás la información de la cuenta bancaria. Realizada la misma, deberás enviarnos el comprobante de transferencia a <a href="mailto:atencionalcliente@luxo.com.ar">atencionalcliente@luxo.com.ar</a>, o vía WhatsApp al <a href="https://wa.me/5491126193903">(+549 )11-2619-3903</a>. El plazo de validez de la orden es de 72hs. corridas. En caso de que se cumpla el plazo y no hayamos recibido el comprobante de transferencia, automáticamente se cancelará tu orden.<br/><br/>
 
 2)	Mercadopago<br/>
