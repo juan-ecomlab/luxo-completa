@@ -126,45 +126,12 @@ Durante eventos especiales, como Hot Sale y Cyber Monday, los tiempos de procesa
 
 · LUXO HANGAR - Gurruchaga 974 | Villa Crespo | (+54 9) 11-6599-2902<br/>
 · LUXO RAMOS – Necochea 234 | Ramos Mejía | (+54 9) 11-5486-1866<br/>
-· LUXO LOMITAS - España 145 | Lomas de Zamora | (+54 9) 11-6553-8915<br/><br/>
-
-El local que elijas te contactará vía WhatsApp cuando tu compra esté lista para retirar. El plazo estimado de entrega es de 1 a 3 días hábiles.</p>
+· LUXO LOMITAS - España 145 | Lomas de Zamora | (+54 9) 11-6553-8915<br/><br/></p>
 
 <span class="font-small ls-1 font-weight-bold">¿Quién puede retirar mi compra?</span>
 <p class="font-small">
 Cualquier persona puede retirar tu compra, pero tené en cuenta de avisar mediante WhatsApp a la sucursal seleccionada autorizando y validando el retiro de un tercero no especificado con anterioridad. <br/>
 Es inadmisible las entregas a personas NO TITULARES de compras online sin documentación/consentimiento previo del titular en conjunto con el número de orden.</p>
-
-<div class="faq-anchor" id="pagos"></div>
-<h3 class="ls-1 font-weight-bold" id="pagos">PAGOS</h3>
-<span class="font-small ls-1 font-weight-bold">Métodos de pago</span>
-<p class="font-small">
-Podrás efectuar tu pago por cualquiera de los siguientes medios:<br/><br/>
-
-<span class="font-small ls-1 font-weight-bold">SITIO WEB</span><br/>
-1) Transferencia bancaria, 15% de descuento (sólo válido para compras online)<br/>
-Una vez seleccionado este método de pago, en nuestra web encontrarás la información de la cuenta bancaria. Realizada la misma, deberás enviarnos el comprobante de transferencia a <a href="mailto:atencionalcliente@luxo.com.ar">atencionalcliente@luxo.com.ar</a>, o vía WhatsApp al <a href="https://wa.me/5491126193903">(+549 )11-2619-3903</a>. El plazo de validez de la orden es de 72hs. corridas. En caso de que se cumpla el plazo y no hayamos recibido el comprobante de transferencia, automáticamente se cancelará tu orden.<br/><br/>
-
-2)	Mercadopago<br/>
-Tarjeta de crédito, 3 & 6 cuotas sin interés en toda la web, con posibilidad de 9 cuotas sin interés superando los $150.000 en el total de tu carrito de compras.<br/>
-Se te redirigirá a la web Mercado Pago para que puedas abonar con tus tarjetas de débito y crédito, utilizando hasta dos tarjetas, o con dinero en cuenta. 
-
-3) RapiPago o Pago Fácil en efectivo<br/>
-En el caso de las compras online pero abonando en efectivo, podés efectuarlo en Rapi Pago o Pago Fácil. Presentando el código que corresponde a tu compra, que se genererá automáticamente en nuestra web al momento de seleccionar la opción de pago. (Esta opción de pago en efectivo NO APLICA el 15% de descuento)</p>
-
-
-<span class="font-small ls-1 font-weight-bold">Locales LUXO</span>
-<p class="font-small">
-1)	Efectivo o débito, 15% de descuento sobre el valor total.<br/>
-2)	Tarjeta de crédito, hasta 3 (tres) cuotas sin interés.<br/>
-3)	Mercadopago, escaneando el QR que encontrarás en nuestros locales pudiendo abonar con tarjetas vinculadas en tu cuenta, utilizando hasta dos tarjetas, o dinero en cuenta.<br/><br/>
-
-Mediante nuestro sitio web o locales LUXO, las facturas se emiten electrónicamente al momento de efectuar el pago y llegando instantáneamente vía correo electrónico.<br/>
-Por favor, no abandone la sucursal sin su respectivo comprobante o dar aviso si no recepcionaste por mail realizando tu compra en mediante nuestra web. </p>
-
-<span class="font-small ls-1 font-weight-bold">¿Cómo sé que la compra se realizó correctamente?</span>
-<p class="font-small">
-Al finalizar tu compra, recibirás un mail de confirmación con el que podrás realizar el seguimiento de tu pedido.</p>
 
 <div class="faq-anchor" id="preguntas"></div>
 
