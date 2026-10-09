@@ -43,7 +43,7 @@
         <img src="{{ 'images/icons/billetera.svg' | static_url }}" alt="Billetera icono">
         <div class="beneficios-content">
             <p><b>Pagá con Mercado Pago</b></p>
-            <p>Hasta 9 cuotas sin interes</p>
+            <p>Hasta 3 cuotas sin interes</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
