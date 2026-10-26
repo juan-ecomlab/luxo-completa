@@ -1496,6 +1496,61 @@ Pie de página
 	textarea
 		name = custom_seal_code
 
+CyberMonday
+	meta
+		icon = calendar
+		advanced = true
+	title
+		title = Configuración del evento
+	i18n_input
+		name = cyber_start
+		description = Fecha y hora de inicio (AAAA-MM-DD HH:MM)
+	i18n_input
+		name = cyber_end
+		description = Fecha y hora de finalización (AAAA-MM-DD HH:MM)
+	i18n_input
+		name = cyber_label
+		description = Texto de la etiqueta del countdown
+	i18n_input
+		name = cyber_label_color
+		description = Color del título del countdown (#FFFFFF)
+	i18n_input
+		name = cyber_numbers_color
+		description = Color de los números del countdown (#FFFFFF)
+	text
+		name = cyber_max_width
+		description = Ancho máximo en píxeles
+		placeholder = 350
+	i18n_input
+		name = cyber_pre_title
+		description = Texto antes del evento
+	i18n_input
+		name = cyber_end_title
+		description = Mensaje cuando finalice el evento
+	title
+		title = Banner exclusivo
+		description = Configuración del banner de CyberMonday
+	checkbox
+		name = cyber_banner_enabled
+		description = Mostrar banner en la categoría CyberMonday
+	title
+		title = Banner para desktop
+	gallery
+		name = cyber_banner_desktop
+		gallery_image = Agregar imagen para desktop
+		gallery_width = 1920
+		gallery_height = 600
+		gallery_more_info = true
+	title
+		title = Banner para mobile
+	gallery
+		name = cyber_banner_mobile
+		gallery_image = Agregar imagen para mobile
+		gallery_width = 820
+		gallery_height = 1000
+		gallery_more_info = true
+
+
 Edición avanzada de CSS
 	meta
 		icon = code

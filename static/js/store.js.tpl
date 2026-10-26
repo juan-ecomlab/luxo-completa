@@ -4336,3 +4336,169 @@ if (!countdown) {
         }, 1000);
     }
 }
+
+
+/* =====================================================
+   CYBERMONDAY - LOGICA INDEPENDIENTE
+   No modifica el countdown existente
+   ===================================================== */
+
+(function () {
+    function iniciarCyberMonday() {
+        const cyber = document.getElementById("cyber-event");
+
+        // Esta lógica solo funciona donde existe el bloque CyberMonday.
+        if (!cyber) return;
+
+        const productos = document.querySelector(".js-category-body");
+        const titulo = document.getElementById("cyber-event-title");
+        const timer = document.getElementById("cyber-timer");
+        const newsletter = document.getElementById("cyber-newsletter");
+        const etiqueta = document.getElementById("cyber-event-label");
+
+        const dias = document.getElementById("cyber-dias");
+        const horas = document.getElementById("cyber-horas");
+        const minutos = document.getElementById("cyber-minutos");
+        const segundos = document.getElementById("cyber-segundos");
+
+        function leerFecha(valor) {
+            if (!valor) return null;
+
+            const coincidencia = valor.trim().match(
+                /^(\d{4})-(\d{2})-(\d{2})\s+(\d{2}):(\d{2})$/
+            );
+
+            if (!coincidencia) return null;
+
+            const fecha = new Date(
+                Number(coincidencia[1]),
+                Number(coincidencia[2]) - 1,
+                Number(coincidencia[3]),
+                Number(coincidencia[4]),
+                Number(coincidencia[5])
+            );
+
+            // Evita aceptar fechas inexistentes.
+            if (
+                fecha.getFullYear() !== Number(coincidencia[1]) ||
+                fecha.getMonth() !== Number(coincidencia[2]) - 1 ||
+                fecha.getDate() !== Number(coincidencia[3]) ||
+                fecha.getHours() !== Number(coincidencia[4]) ||
+                fecha.getMinutes() !== Number(coincidencia[5])
+            ) {
+                return null;
+            }
+
+            return fecha;
+        }
+
+        const inicio = leerFecha(cyber.dataset.start);
+        const fin = leerFecha(cyber.dataset.end);
+
+        
+if (!inicio || !fin || fin <= inicio) {
+    console.warn(
+        "CyberMonday: revisá las fechas de inicio y finalización."
+    );
+
+    // Ocultar los productos si las fechas no son válidas.
+    if (productos) {
+        productos.style.display = "none";
+    }
+
+    // Mostrar el mensaje previo, pero sin countdown,
+    // porque no tenemos una fecha válida para calcularlo.
+    cyber.style.display = "block";
+    titulo.textContent = cyber.dataset.preTitle || "";
+    timer.style.display = "none";
+
+    return;
+}
+
+
+        const tituloPrevio = cyber.dataset.preTitle || "";
+        const tituloFinal = cyber.dataset.endTitle || "";
+        const textoEtiqueta = cyber.dataset.label || "";
+        const colorTitulo = cyber.dataset.labelColor || "";
+        const colorNumeros = cyber.dataset.numbersColor || "";
+        const ancho = parseInt(cyber.dataset.maxWidth, 10);
+
+        if (Number.isFinite(ancho) && ancho > 0) {
+            timer.style.maxWidth = ancho + "px";
+            timer.style.marginLeft = "auto";
+            timer.style.marginRight = "auto";
+        }
+
+        etiqueta.style.display = textoEtiqueta ? "block" : "none";
+
+        cyber.style.display = "block";
+
+        function actualizarCyberMonday() {
+            const ahora = new Date();
+
+            let objetivo;
+
+            if (ahora < inicio) {
+                // FASE 1: antes del evento.
+                titulo.textContent = tituloPrevio;
+                timer.style.display = "block";
+
+                if (productos) productos.style.display = "none";
+
+                if (newsletter) newsletter.style.display = "block";
+
+                objetivo = inicio;
+
+            } else if (ahora < fin) {
+                // FASE 2: evento activo.
+                titulo.textContent = "";
+                timer.style.display = "block";
+
+                if (productos) productos.style.display = "";
+                if (newsletter) newsletter.style.display = "none";
+
+                objetivo = fin;
+
+            } else {
+                // FASE 3: evento finalizado.
+                titulo.textContent = tituloFinal;
+                timer.style.display = "none";
+
+                if (productos) productos.style.display = "none";
+                if (newsletter) newsletter.style.display = "block";
+
+                clearInterval(intervaloCyberMonday);
+                return;
+            }
+
+            const diferencia = Math.max(0, objetivo.getTime() - ahora.getTime());
+
+            const totalSegundos = Math.floor(diferencia / 1000);
+            const valorDias = Math.floor(totalSegundos / 86400);
+            const valorHoras = Math.floor((totalSegundos % 86400) / 3600);
+            const valorMinutos = Math.floor((totalSegundos % 3600) / 60);
+            const valorSegundos = totalSegundos % 60;
+
+            dias.textContent = String(valorDias).padStart(2, "0");
+            horas.textContent = String(valorHoras).padStart(2, "0");
+            minutos.textContent = String(valorMinutos).padStart(2, "0");
+            segundos.textContent = String(valorSegundos).padStart(2, "0");
+        }
+
+        actualizarCyberMonday();
+
+        const intervaloCyberMonday = setInterval(
+            actualizarCyberMonday,
+            1000
+        );
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener(
+            "DOMContentLoaded",
+            iniciarCyberMonday
+        );
+    } else {
+        iniciarCyberMonday();
+    }
+})();
