@@ -22,10 +22,12 @@
         {% endif %}
 
         {% if cyber_newsletter %}
+    {% if settings.cyber_newsletter_title %}
         <div class="cyber-newsletter-title">
-            ¡Dejanos tu email y enterate de las novedades!
+            {{ settings.cyber_newsletter_title }}
         </div>
     {% endif %}
+{% endif %}
         
         <form method="post" action="/winnie-pooh" onsubmit="this.setAttribute('action', '');" data-store="{{ form_data_store }}">
             <div class="newsletter-form input-append">

@@ -1549,7 +1549,13 @@ CyberMonday
 		gallery_width = 820
 		gallery_height = 1000
 		gallery_more_info = true
-
+	title
+		title = Configuración del titulo de captura de email
+		description = Configurá la leyenda que aparece sobre el campo de email
+	text
+		name = cyber_newsletter_title
+		description = Leyenda del formulario de recolección de emails
+		default = ¡Dejanos tu email y enterate de las novedades!
 
 Edición avanzada de CSS
 	meta
