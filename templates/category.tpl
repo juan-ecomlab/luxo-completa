@@ -6,10 +6,58 @@
 
 {% if not show_help %}
 
-{% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
-{% if category_banner %}
-    {% include 'snipplets/category-banner.tpl' %}
+
+
+{% set is_cyber_category = category.id == 41752729 %}
+{% set cyber_custom_banner = is_cyber_category and settings.cyber_banner_enabled %}
+
+{% if cyber_custom_banner %}
+    {% set cyber_desktop = settings.cyber_banner_desktop %}
+    {% set cyber_mobile = settings.cyber_banner_mobile %}
+
+    {% set cyber_desktop_image = cyber_desktop ? cyber_desktop | first : false %}
+    {% set cyber_mobile_image = cyber_mobile ? cyber_mobile | first : false %}
+
+    {% set cyber_desktop_image = cyber_desktop_image ? cyber_desktop_image.image : false %}
+    {% set cyber_mobile_image = cyber_mobile_image ? cyber_mobile_image.image : false %}
+
+    {% set cyber_fallback_image = cyber_desktop_image ? cyber_desktop_image : cyber_mobile_image %}
+
+    {% if cyber_fallback_image %}
+        <section class="cyber-category-banner">
+
+            <div class="cyber-banner-desktop">
+                <img
+                    src="{{ (cyber_desktop_image ? cyber_desktop_image : cyber_fallback_image) | static_url | settings_image_url('original') }}"
+                    alt="Banner CyberMonday"
+                    class="img-fluid d-block w-100"
+                >
+            </div>
+
+            <div class="cyber-banner-mobile">
+                <img
+                    src="{{ (cyber_mobile_image ? cyber_mobile_image : cyber_fallback_image) | static_url | settings_image_url('original') }}"
+                    alt="Banner CyberMonday"
+                    class="img-fluid d-block w-100"
+                >
+            </div>
+
+        </section>
+    {% else %}
+        {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
+        {% if category_banner %}
+            {% include 'snipplets/category-banner.tpl' %}
+        {% endif %}
+    {% endif %}
+
+{% else %}
+    {% set category_banner = (category.images is not empty) or ("banner-products.jpg" | has_custom_image) %}
+    {% if category_banner %}
+        {% include 'snipplets/category-banner.tpl' %}
+    {% endif %}
 {% endif %}
+
+
 <section class="container-fluid mt-3 d-md-none">
 	{% include "snipplets/breadcrumbs.tpl" %}
 </section>
@@ -42,12 +90,96 @@
 		{% include 'snipplets/grid/filters-modals.tpl' %}
 	</div>
 </section>
+
 {% if category.description %}
 	<p class="mt-2 mb-3 mt-md-0 mb-md-4 container-fluid">{{ category.description }}</p>
 {% endif %}
 
+{% if category.id == 41752729 %}
+<section
+    id="cyber-event"
+    class="section-countdown-home"
+    data-start="{{ settings.cyber_start | escape }}"
+    data-end="{{ settings.cyber_end | escape }}"
+    data-pre-title="{{ settings.cyber_pre_title | escape }}"
+    data-end-title="{{ settings.cyber_end_title | escape }}"
+    data-label="{{ settings.cyber_label | escape }}"
+    data-label-color="{{ settings.cyber_label_color | escape }}"
+    data-numbers-color="{{ settings.cyber_numbers_color | escape }}"
+    data-max-width="{{ settings.cyber_max_width | escape }}"
+    style="display:none;"
+>
+
+<div class="container-fluid">
+    <div class="countdown-container">
+
+        <h2 id="cyber-event-title"></h2>
+
+        <div
+            id="cyber-timer"
+            class="countdownTitle"
+            style="display:none;"
+        >
+            {% if settings.cyber_label %}
+                <div
+                    class="countdown-label"
+                    id="cyber-event-label"
+                    {% if settings.cyber_label_color %}
+                        style="color: {{ settings.cyber_label_color }};"
+                    {% endif %}
+                >{{ settings.cyber_label }}</div>
+            {% else %}
+                <div
+                    class="countdown-label"
+                    id="cyber-event-label"
+                    style="display:none;"
+                ></div>
+            {% endif %}
+
+            <div
+                class="countdown"
+                id="cyber-countdown-numbers"
+                {% if settings.cyber_numbers_color %}
+                    style="color: {{ settings.cyber_numbers_color }};"
+                {% endif %}
+            >
+                <div class="grupo">
+                    <p class="grande" id="cyber-dias">00</p>
+                    <p class="chico">DIAS</p>
+                </div>
+
+                <div class="grupo">
+                    <p class="grande" id="cyber-horas">00</p>
+                    <p class="chico">HORAS</p>
+                </div>
+
+                <div class="grupo">
+                    <p class="grande" id="cyber-minutos">00</p>
+                    <p class="chico">MINUTOS</p>
+                </div>
+
+                <div class="grupo">
+                    <p class="grande" id="cyber-segundos">00</p>
+                    <p class="chico">SEGUNDOS</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+ 	<div id="cyber-newsletter" class="container-fluid" style="display:none;">
+        {% set cyber_newsletter = true %}
+        {% include 'snipplets/newsletter.tpl' %}
+        {% set cyber_newsletter = false %}
+    </div>
+
+</section>
+{% endif %}
+
+
 {# Countdown timer for category pages #}
-{% if settings.show_countdown_category %}
+{% if settings.show_countdown_category and category.id != 41752729 %}
 
 <section class="section-countdown-home" data-store="category-countdown" id="countdown">
     <div class="container-fluid">

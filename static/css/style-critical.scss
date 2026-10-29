@@ -2445,6 +2445,30 @@ div.iconos-talles > div.distinto {
     line-height: 1;
 }
 
+#cyber-event .countdown {
+   display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+#cyber-event .grupo {
+    line-height: 1;
+    margin-left: 10px;
+}
+
+#cyber-event .grande {
+    font-size: 3rem;
+    margin-bottom: 0;
+    line-height: 1;
+}
+
+.cyber-newsletter-title {
+  text-align: center;
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
 /* Prueba */
 
 .post-date {
@@ -3393,6 +3417,11 @@ body > section.page-header.pt-4 > div > div > div > h1 {
   /* //// Components */
 
   /* Selectores en css online SOLO DESKTOP */
+
+  #cyber-email {
+  margin: 0 auto;
+  width: 50%;
+}
 
   #logo {
   margin-left: 0;
@@ -4603,3 +4632,50 @@ body > section.account-page > div > div {
     }
 }
 
+/* Newsletter CyberMonday: ajustes solo en desktop */
+@media (min-width: 768px) {
+    #cyber-newsletter .newsletter-form.input-append {
+        position: relative;
+        padding-right: 0 !important;
+    }
+
+    #cyber-newsletter svg.newsletter-btn {
+        position: absolute !important;
+        right: 27% !important;
+        top: 50% !important;
+        transform: translateY(-50%);
+        margin: 0 !important;
+    }
+}
+
+
+/* Banner exclusivo CyberMonday */
+.cyber-category-banner {
+    width: 100%;
+}
+
+.cyber-banner-desktop,
+.cyber-banner-mobile {
+    width: 100%;
+}
+
+.cyber-banner-desktop img,
+.cyber-banner-mobile img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+/* Desktop: mostrar solo el banner de computadoras */
+@media (min-width: 768px) {
+    .cyber-banner-mobile {
+        display: none;
+    }
+}
+
+/* Mobile: mostrar solo el banner de celulares */
+@media (max-width: 767px) {
+    .cyber-banner-desktop {
+        display: none;
+    }
+}
