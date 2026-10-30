@@ -1298,6 +1298,37 @@ Detalle de producto
 		name = product_detail_installments
 		description = Mostrar cuotas en la página de producto
 	collapse
+		title = Beneficios debajo del producto
+	checkbox
+		name = pdp_benefits_hide
+		description = Ocultar la franja de beneficios (envíos, pagos y cambios)
+	subtitle
+		subtitle = Las cuotas se configuran en la app de Mercado Pago. Cuando cambien, actualizá el texto de pagos de esta franja y la barra de anuncios.
+	subtitle
+		subtitle = Envíos
+	i18n_input
+		name = pdp_benefit_shipping_title
+		description = Título
+	i18n_input
+		name = pdp_benefit_shipping_text
+		description = Texto
+	subtitle
+		subtitle = Pagos
+	i18n_input
+		name = pdp_benefit_payment_title
+		description = Título
+	i18n_input
+		name = pdp_benefit_payment_text
+		description = Texto
+	subtitle
+		subtitle = Cambios y devoluciones
+	i18n_input
+		name = pdp_benefit_returns_title
+		description = Título
+	i18n_input
+		name = pdp_benefit_returns_text
+		description = Texto
+	collapse
 		title = Descuento por medio de pago
 	checkbox
 		name = payment_discount_price

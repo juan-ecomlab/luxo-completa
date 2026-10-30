@@ -29,33 +29,36 @@
     </div>
 </div>
 
+{# Benefits strip: texts come from Detalle de producto > Beneficios debajo del producto; empty fields fall back to these defaults #}
+{% if not settings.pdp_benefits_hide %}
 <div class="beneficios-pdp">
     <div class="linea"></div>
     <div class="conteiner">
         <img src="{{ 'images/icons/envios.svg' | static_url }}" alt="Entrega icono">
         <div class="beneficios-content">
-            <p><b>Envios Bonificados</b></p>
-            <p>A partir de $160.000</p>
+            <p><b>{{ settings.pdp_benefit_shipping_title | default('Envíos Bonificados') }}</b></p>
+            <p>{{ settings.pdp_benefit_shipping_text | default('A partir de $160.000') }}</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
     <div class="conteiner beneficios-mercado-pago">
         <img src="{{ 'images/icons/billetera.svg' | static_url }}" alt="Billetera icono">
         <div class="beneficios-content">
-            <p><b>Pagá con Mercado Pago</b></p>
-            <p>Hasta 3 cuotas sin interes</p>
+            <p><b>{{ settings.pdp_benefit_payment_title | default('Pagá con Mercado Pago') }}</b></p>
+            <p>{{ settings.pdp_benefit_payment_text | default('Hasta 9 cuotas sin interés') }}</p>
         </div>
     </div>
      <div class="linea linea-desktop"></div>
     <div class="conteiner" id="resenas">
         <img src="{{ 'images/icons/cambios.svg' | static_url }}" alt="regreso icono">
-        <div class="beneficios-content">    
-            <p><b>Cambios y devoluciones</b></p>
-            <p>Sin costos</p>
+        <div class="beneficios-content">
+            <p><b>{{ settings.pdp_benefit_returns_title | default('Cambios y devoluciones') }}</b></p>
+            <p>{{ settings.pdp_benefit_returns_text | default('Sin costos') }}</p>
         </div>
     </div>
      <div class="linea"></div>
 </div>
+{% endif %}
 
 <div class="resenas">
        
