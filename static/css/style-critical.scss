@@ -3406,6 +3406,23 @@ body > section.page-header.pt-4 > div > div > div > h1 {
   }
 }
 
+// Out of stock sizes (mobile and desktop) - diagonal strike-through like PDP btn-variant-no-stock
+.js-size-variant-add.item-size-btn.item-size-btn-disabled {
+  position: relative;
+  color: #999;
+  cursor: not-allowed;
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top left, transparent 49%, #999, transparent 52%);
+    content: '';
+    pointer-events: none;
+  }
+}
+
 // Center the mobile size selector
 .item-sizes-container-mobile .item-sizes-grid {
   display: flex;
