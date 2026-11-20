@@ -4231,6 +4231,16 @@ if (!countdown) {
         let msInicio = fechaInicio.getTime();
         let msFin = fechaFin.getTime();
 
+        /* Segunda fase opcional: al terminar la primera, sigue
+           contando hasta countdown_home_end_2 con su propio título. */
+        let fechaFin2 = parseFecha(
+            "{{ settings.countdown_home_end_2 | escape('js') }}"
+        );
+        let msFin2 = fechaFin2 ? fechaFin2.getTime() : null;
+        if (msFin2 !== null && msFin2 <= msFin) msFin2 = null;
+        let tituloFase2 = "{{ settings.countdown_home_title_2 | escape('js') }}";
+        let tituloCountdown = $("countdown-title");
+
         let parrafoDias = $("dias");
         let parrafoHoras = $("horas");
         let parrafoMinutos = $("minutos");
@@ -4269,13 +4279,27 @@ if (!countdown) {
                YA TERMINÓ
                ----------------------------------------- */
 
+            let objetivo = msFin;
+
             if (hoy >= msFin) {
 
-                countdown.style.display = "none";
+                if (msFin2 !== null && hoy < msFin2) {
 
-                clearInterval(intervalo);
+                    // SEGUNDA FASE
+                    objetivo = msFin2;
 
-                return;
+                    if (tituloCountdown && tituloCountdown.textContent !== tituloFase2) {
+                        tituloCountdown.textContent = tituloFase2;
+                    }
+
+                } else {
+
+                    countdown.style.display = "none";
+
+                    clearInterval(intervalo);
+
+                    return;
+                }
             }
 
 
@@ -4286,7 +4310,7 @@ if (!countdown) {
             countdown.style.display = "block";
 
 
-            let distancia = msFin - hoy;
+            let distancia = objetivo - hoy;
 
 
             /* -----------------------------------------
@@ -4441,7 +4465,7 @@ if (!inicio || !fin || fin <= inicio) {
             if (ahora < inicio) {
                 // FASE 1: antes del evento.
                 titulo.textContent = tituloPrevio;
-                timer.style.display = "block";
+                timer.style.display = "";
 
                 if (productos) productos.style.display = "none";
 
@@ -4452,7 +4476,7 @@ if (!inicio || !fin || fin <= inicio) {
             } else if (ahora < fin) {
                 // FASE 2: evento activo.
                 titulo.textContent = "";
-                timer.style.display = "block";
+                timer.style.display = "";
 
                 if (productos) productos.style.display = "";
                 if (newsletter) newsletter.style.display = "none";

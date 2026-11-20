@@ -2423,44 +2423,202 @@ div.iconos-talles > div.distinto {
 
 /* Countdown Juan */
 
-#countdown {
-  display: none;
-}
+/* Base: shared by every countdown (home, category, event) and every style.
+   Hidden until the JS shows it. IDs (#countdown, #cyber-*) are for JS only. */
 
-#countdown .countdown {
+.section-countdown-home {
+  display: none;
+
+  .countdown {
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: center;
-}
+  }
 
-#countdown .grupo {
+  .grupo {
     line-height: 1;
     margin-left: 10px;
-}
+  }
 
-#countdown .grande {
+  .grande {
     font-size: 3rem;
     margin-bottom: 0;
     line-height: 1;
+  }
+
+  .chico {
+    text-transform: uppercase;
+  }
+
+  .countdown-unit-short {
+    display: none;
+  }
+
+  .countdown-title {
+    margin-bottom: 0.25rem;
+    font-family: var(--heading-font);
+    font-size: 16px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+  }
+
+  .countdown-title:empty,
+  .countdown-container h2:empty {
+    display: none;
+  }
 }
 
-#cyber-event .countdown {
-   display: flex;
-    gap: 1rem;
+/* Style: Black (minimalista) — settings.countdown_style == 'black'
+   A slim full-width strip, designed to sit right above the hero banner:
+   one row on desktop, title + numbers on two lines on mobile.
+   Chained classes (0,3,0) so it beats the async rules (0,2,0) that load later.
+   Inline colors from the admin color fields still win over this block. */
+
+.section-countdown-home.section-countdown-black {
+  margin: 0;
+
+  // Full-bleed. Only the first container: the event category keeps
+  // its newsletter in a second .container-fluid inside this section.
+  .container-fluid:first-child {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .countdown-container {
+    width: 100%;
+    margin: 0;
+    padding: 14px 24px;
+    background-color: #000000;
+    color: #FFFFFF;
+  }
+
+  // Event category pre-title, above the strip row.
+  .countdown-container h2 {
+    margin: 0 0 8px;
+    color: #FFFFFF;
+    font-family: var(--heading-font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+
+  .countdownTitle {
+    display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-}
+    gap: 8px 24px;
+  }
 
-#cyber-event .grupo {
-    line-height: 1;
-    margin-left: 10px;
-}
+  .countdown-heading {
+    display: flex;
+    align-items: center;
+  }
 
-#cyber-event .grande {
-    font-size: 3rem;
-    margin-bottom: 0;
-    line-height: 1;
+  .countdown-title {
+    margin: 0;
+    color: #FFFFFF;
+    font-family: var(--heading-font);
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 4px;
+  }
+
+  .countdown-label {
+    margin: 0;
+    color: rgba(255, 255, 255, 0.7);
+    font-family: var(--body-font);
+    font-size: 10px;
+    font-weight: 400;
+    letter-spacing: 3px;
+  }
+
+  .countdown-title:not(:empty) + .countdown-label {
+    margin-left: 16px;
+    padding-left: 16px;
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .countdown {
+    gap: 0;
+    color: #FFFFFF;
+  }
+
+  .grupo {
+    display: flex;
+    align-items: baseline;
+    gap: 6px;
+    margin-left: 0;
+    padding: 0 16px;
+  }
+
+  .grupo + .grupo {
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
+  }
+
+  .grande {
+    font-family: var(--heading-font);
+    font-size: 24px;
+    font-weight: 400;
+    font-variant-numeric: tabular-nums;
+  }
+
+  .chico {
+    margin: 0;
+    font-family: var(--body-font);
+    font-size: 9px;
+    letter-spacing: 2px;
+    opacity: 0.7;
+  }
+
+  @media (max-width: 767px) {
+    .countdown-container {
+      padding: 12px 8px;
+    }
+
+    .countdownTitle {
+      flex-direction: column;
+    }
+
+    .countdown-title {
+      font-size: 11px;
+      letter-spacing: 3px;
+    }
+
+    .countdown-label {
+      font-size: 9px;
+      letter-spacing: 2px;
+    }
+
+    .countdown-title:not(:empty) + .countdown-label {
+      margin-left: 10px;
+      padding-left: 10px;
+    }
+
+    .grupo {
+      gap: 5px;
+      padding: 0 12px;
+    }
+
+    .grande {
+      font-size: 20px;
+    }
+
+    .chico {
+      font-size: 8px;
+      letter-spacing: 1.5px;
+    }
+
+    .countdown-unit-long {
+      display: none;
+    }
+
+    .countdown-unit-short {
+      display: inline;
+    }
+  }
 }
 
 .cyber-newsletter-title {

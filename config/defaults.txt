@@ -162,6 +162,7 @@ countdown_home_label_pt = TERMINA EM:
 countdown_home_label_es_mx = FINALIZA EN:
 countdown_home_url =
 countdown_home_max_width = 350
+countdown_style = default
 show_countdown_category = 0
 countdown_category_label_es = FINALIZA EN:
 countdown_category_label_en = ENDS IN:

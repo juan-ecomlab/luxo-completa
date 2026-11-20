@@ -98,7 +98,7 @@
 {% if category.id == 41752729 %}
 <section
     id="cyber-event"
-    class="section-countdown-home"
+    class="section-countdown-home{% if settings.countdown_style and settings.countdown_style != 'default' %} section-countdown-{{ settings.countdown_style }}{% endif %}"
     data-start="{{ settings.cyber_start | escape }}"
     data-end="{{ settings.cyber_end | escape }}"
     data-pre-title="{{ settings.cyber_pre_title | escape }}"
@@ -145,22 +145,22 @@
             >
                 <div class="grupo">
                     <p class="grande" id="cyber-dias">00</p>
-                    <p class="chico">DIAS</p>
+                    <p class="chico"><span class="countdown-unit-long">{{ 'Días' | translate }}</span><span class="countdown-unit-short">{{ 'Días' | translate }}</span></p>
                 </div>
 
                 <div class="grupo">
                     <p class="grande" id="cyber-horas">00</p>
-                    <p class="chico">HORAS</p>
+                    <p class="chico"><span class="countdown-unit-long">{{ 'Horas' | translate }}</span><span class="countdown-unit-short">{{ 'Hs' | translate }}</span></p>
                 </div>
 
                 <div class="grupo">
                     <p class="grande" id="cyber-minutos">00</p>
-                    <p class="chico">MINUTOS</p>
+                    <p class="chico"><span class="countdown-unit-long">{{ 'Minutos' | translate }}</span><span class="countdown-unit-short">{{ 'Min' | translate }}</span></p>
                 </div>
 
                 <div class="grupo">
                     <p class="grande" id="cyber-segundos">00</p>
-                    <p class="chico">SEGUNDOS</p>
+                    <p class="chico"><span class="countdown-unit-long">{{ 'Segundos' | translate }}</span><span class="countdown-unit-short">{{ 'Seg' | translate }}</span></p>
                 </div>
             </div>
         </div>
@@ -179,49 +179,8 @@
 
 
 {# Countdown timer for category pages #}
-{% if settings.show_countdown_category and category.id != 41752729 %}
-
-<section class="section-countdown-home" data-store="category-countdown" id="countdown">
-    <div class="container-fluid">
-        <div class="countdown-container">
-
-            {% if settings.countdown_home_label %}
-                <div class="countdown-label" {% if settings.countdown_home_label_color %}style="color: {{ settings.countdown_home_label_color }};"{% endif %}>
-                    {{ settings.countdown_home_label }}
-                </div>
-            {% endif %}
-
-            <div class="countdownTitle">
-
-                <div class="countdown" {% if settings.countdown_home_numbers_color %}style="color: {{ settings.countdown_home_numbers_color }};"{% endif %}>
-
-                    <div class="grupo">
-                        <p class="grande" id="dias">00</p>
-                        <p class="chico">DIAS</p>
-                    </div>
-
-                    <div class="grupo">
-                        <p class="grande" id="horas">00</p>
-                        <p class="chico">HORAS</p>
-                    </div>
-
-                    <div class="grupo">
-                        <p class="grande" id="minutos">00</p>
-                        <p class="chico">MINUTOS</p>
-                    </div>
-
-                    <div class="grupo">
-                        <p class="grande" id="segundos">00</p>
-                        <p class="chico">SEGUNDOS</p>
-                    </div>
-
-                </div>
-
-            </div>
-        </div>
-    </div>
-</section>
-
+{% if category.id != 41752729 %}
+    {% include 'snipplets/home/home-countdown.tpl' with {countdown_context: 'category'} %}
 {% endif %}
 
 <div class="container-fluid visible-when-content-ready d-md-none">

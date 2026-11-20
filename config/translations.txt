@@ -56,6 +56,41 @@ pt "Temporizador de contagem regressiva"
 en "Countdown timer"
 es_mx "Temporizador de cuenta regresiva"
 
+es "Días"
+pt "Dias"
+en "Days"
+es_mx "Días"
+
+es "Horas"
+pt "Horas"
+en "Hours"
+es_mx "Horas"
+
+es "Minutos"
+pt "Minutos"
+en "Minutes"
+es_mx "Minutos"
+
+es "Segundos"
+pt "Segundos"
+en "Seconds"
+es_mx "Segundos"
+
+es "Hs"
+pt "H"
+en "Hrs"
+es_mx "Hs"
+
+es "Min"
+pt "Min"
+en "Min"
+es_mx "Min"
+
+es "Seg"
+pt "Seg"
+en "Sec"
+es_mx "Seg"
+
 
 --- General ---
 

@@ -1144,6 +1144,9 @@ Página de inicio
 		name = show_countdown_category
 		description = Mostrar temporizador también en categorías
 	i18n_input
+		name = countdown_home_title
+		description = Título (opcional, ej: Black Friday)
+	i18n_input
 		name = countdown_home_label
 		description = Texto de la etiqueta del temporizador (opcional)
 	i18n_input
@@ -1155,6 +1158,14 @@ Página de inicio
 	i18n_input
 		name = countdown_home_end
 		description = Fecha de fin (AAAA-MM-DD HH:MM)
+	subtitle
+		subtitle = <span class='legend'>Segunda fase (opcional): al llegar a la fecha de fin, el temporizador sigue contando hasta esta nueva fecha con su propio título</span>
+	i18n_input
+		name = countdown_home_end_2
+		description = Fecha de fin de la segunda fase (AAAA-MM-DD HH:MM)
+	i18n_input
+		name = countdown_home_title_2
+		description = Título de la segunda fase (ej: Black Week extendida)
 	i18n_input
 		name = countdown_home_numbers_color
 		description = Color del countdown (#FFFFFF)
@@ -1162,6 +1173,12 @@ Página de inicio
 		name = countdown_home_max_width
 		description = Ancho máximo en píxeles
 		placeholder = 350
+	dropdown
+		name = countdown_style
+		description = Estilo del temporizador (aplica también a la categoría del evento)
+		values
+			default = Por defecto
+			black = Black (minimalista)
 	collapse
 		title = Página de inicio
 		backto = _top
